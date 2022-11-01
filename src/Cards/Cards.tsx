@@ -3,6 +3,10 @@ import style from './Crards.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {CardType, saveWordsToRedux} from "../Store/cardsReducer";
+import plusIcon from './../Common/Assets/images/plus.svg'
+import rusFlacIcon from './../Common/Assets/images/russianFlag.svg'
+import usaFlagIcon from './../Common/Assets/images/USAFlag.svg'
+import closeIcon from './../Common/Assets/images/close.svg'
 
 export const Cards = () => {
     const cards = useSelector<RootState ,Array<CardType>>(state=>state.cards.card)
@@ -18,6 +22,9 @@ export const Cards = () => {
     const saveEngWord = (e:ChangeEvent<HTMLInputElement>) =>{
         setEngWord(e.currentTarget.value)
     }
+    const closeModal = () =>{
+        setShowModal(false)
+    }
     const saveWords = (rusWord: string, engWord: string) =>{
         setShowWord(true)
         setShowModal(false)
@@ -28,21 +35,34 @@ export const Cards = () => {
     return (
         <div className={style.wrapper}>
             {showModal &&  <div className={style.modal}>
+                <div className={style.closeModal}>
+                    <img src={closeIcon}
+                         alt='close'
+                    onClick={closeModal}/>
+                </div>
+                <div className={style.greeting}>
+                    ВВЕДИТЕ НОВОЕ СЛОВО
+                </div>
                 <div className={style.modalItem}>
+                    <img src={rusFlacIcon} alt='russian word'/>
                     {showWord ? rusWord : <p>Слово на русском</p>}
+
                 </div>
                 <input value={rusWord}
                        onChange={saveRusWord}/>
                 <div className={style.modalItem}>
+                    <img src={usaFlagIcon} alt='english word'/>
                     {showWord ? engWord : <p>Слово на английском</p>}
 
                 </div>
                 <input value={engWord}
                        onChange={saveEngWord}/>
-                <button onClick={()=>saveWords(rusWord, engWord)}>Сохранить</button>
+                <button onClick={()=>saveWords(rusWord, engWord)}
+                className={style.saveButton}>Сохранить</button>
             </div>}
-            <div className={style.addCard}
-                 onClick={()=>setShowModal(true)}>+++</div>
+            <div className={style.addCard}><img src={plusIcon}
+                                                alt='add card'
+                                                onClick={()=>setShowModal(true)}/></div>
             {cards.map(cards =>  <div className={style.cards} key={cards.id}>
               <div className={style.cardsItem}>
                     {cards.question}

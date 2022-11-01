@@ -1,13 +1,15 @@
 .wrapper {
     width: 100%;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border: 1px solid black;
+    border-radius: 20px;
     padding: 10px;
     position: relative;
+    background-color: var(--background-primary);
 }
 
 .modal {
@@ -17,26 +19,65 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 300px;
-    border: 1px solid yellow;
-    background-color: yellow;
+    height: 500px;
+    border: 1px solid var(--background-primary);
+    border-radius: 20px;
+    background-color: #fff;
     inset: 0;
 }
-
-.modalItem {
+.closeModal{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.modal input{
+    margin-top: 20px;
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+.greeting{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: 100px;
-    border: 1px solid #33abd5;
+    height: 50px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.modalItem {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    min-height: 80px;
+    border-radius: 20px;
+    box-shadow:  5px -5px 10px #cfcece,
+    -5px 5px 10px #e5e4e4;
+    font-weight: bold;
+    font-size: 24px;
+}
+.modalItem img{
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 .addCard {
+    margin-top: 20px;
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
+    border-radius: 50%;
+    box-shadow:  5px -5px 10px #858484,
+    -5px 5px 10px #ffffff;
 }
 
 .cards {
@@ -45,13 +86,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #0637fa;
-    margin-top: 10px;
+    border: 1px solid var(--background-primary);
+    border-radius: 20px;
+    margin-top: 20px;
     padding: 10px;
+    box-shadow:  5px -5px 10px #858484,
+    -5px 5px 10px #ffffff;
 }
 
 .cardsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     height: 50px;
-    border: 1px solid #61dafb;
+    font-size: 26px;
+    font-weight: bold;
+    /*border: 1px solid #61dafb;*/
+}
+.saveButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: var(--background-primary);
 }

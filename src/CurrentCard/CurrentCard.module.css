@@ -5,7 +5,10 @@
     flex-direction: column;
     width: 90%;
     height: 300px;
-    border: 1px solid #0637fa;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto;
 }
 .currentCard{
     display: flex;
@@ -13,16 +16,30 @@
     justify-content: center;
     flex-direction: column;
     width: 80%;
-    height: 150px;
-    border: 1px solid #811dbb;
+    min-height: 120px;
+    box-shadow:  5px -5px 10px #cfcece,
+    -5px 5px 10px #e5e4e4;
+    border-radius: 20px;
 }
 .currentWord{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 70%;
-    height: 70px;
-    border: 1px solid #d0712f;
+    min-height: 50px;
+    font-size: 26px;
+    font-weight: bold;
+}
+.checkValue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 50%;
+    height: 20px;
+    box-shadow:  5px -5px 10px #cfcece,
+    -5px 5px 10px #e5e4e4;
+    border-radius: 20px;
 }
 .buttons{
     display: flex;
@@ -30,22 +47,32 @@
     justify-content: space-around;
     width: 80%;
     height: 60px;
+    font-size: 14px;
     margin-top: 10px;
-    border: 1px solid #0f0217;
+    box-shadow:  5px -5px 10px #cfcece,
+    -5px 5px 10px #e5e4e4;
+    border-radius: 20px;
 }
 .button{
     width: 70px;
     height: 50px;
-    border: 1px solid #6dbb3d;
+    box-shadow:  5px -5px 10px #cfcece,
+    -5px 5px 10px #e5e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .greenBox{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 80%;
-    height: 60px;
+    height: 50px;
     margin-top: 10px;
     color: #0f0217;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
     background-color: greenyellow;
     border: 1px solid #0f0217;
 }
@@ -54,9 +81,12 @@
     align-items: center;
     justify-content: space-around;
     width: 80%;
-    height: 60px;
+    height: 50px;
     margin-top: 10px;
     color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
     background-color: #e50338;
     border: 1px solid #0f0217;
 }

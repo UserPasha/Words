@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "../Store/store";
 import {CardType} from "../Store/cardsReducer";
 
+
 export const CurrentCard = () => {
     const currentCardsFromRedux = useSelector<RootState, CardType[]>(state=>state.cards.card)
     //let currentCard = currentCardsFromRedux[0]
@@ -19,12 +20,12 @@ export const CurrentCard = () => {
         setValue(e.currentTarget.value)
     }
     const showInputForCurrentWord = () => {
-        setShowInput(true)
+        setShowInput(!showInput)
     }
     const [greenBox, setGreenBox] = useState<boolean>(false)
     const [redBox, setRedBox] = useState<boolean>(false)
     const checkValue = (value: string)=>{
-        if (value.toLowerCase() === currentWord.answer.toLowerCase()){
+        if (value.toLowerCase() === currentWord.answer.toLowerCase().trim()){
             setGreenBox(true)
         }else{
             setRedBox(true)
@@ -32,8 +33,11 @@ export const CurrentCard = () => {
     }
 
     const showNextWord = () =>{
-        setCurrentWord(currentCardsFromRedux[1])
-
+        setCurrentWord(currentCardsFromRedux[Math.floor(Math.random()*currentCardsFromRedux.length)])
+        setGreenBox(false)
+        setRedBox(false)
+        setShowWord(false)
+        setShowInput(false)
     }
 //useEffect()
     return (
@@ -47,12 +51,13 @@ export const CurrentCard = () => {
                 </div>}
                 {showInput && <><input value={value}
                                        onChange={onChangeHandler}/>
-                    <div onClick={()=>checkValue(value)}>Проверить</div>
+                    <div className={style.checkValue}
+                        onClick={()=>checkValue(value)}>Проверить</div>
                 </>}
             </div>
             <div className={style.buttons}>
                 <div className={style.button}
-                     onClick={showInputForCurrentWord}>Ввести слово
+                     onClick={showInputForCurrentWord}>Проверить слово
                 </div>
                 <div className={style.button}
                      onClick={showCurrentWord}>Показать слово
