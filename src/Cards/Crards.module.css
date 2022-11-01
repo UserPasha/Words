@@ -11,6 +11,12 @@
     position: relative;
     background-color: var(--background-primary);
 }
+.backArrow{
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
 .modal {
     position: absolute;

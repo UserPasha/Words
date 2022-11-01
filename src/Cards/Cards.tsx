@@ -7,6 +7,8 @@ import plusIcon from './../Common/Assets/images/plus.svg'
 import rusFlacIcon from './../Common/Assets/images/russianFlag.svg'
 import usaFlagIcon from './../Common/Assets/images/USAFlag.svg'
 import closeIcon from './../Common/Assets/images/close.svg'
+import {Link} from "react-router-dom";
+import backArrowIcon from "../Common/Assets/images/arrowBack.svg";
 
 export const Cards = () => {
     const cards = useSelector<RootState ,Array<CardType>>(state=>state.cards.card)
@@ -34,6 +36,9 @@ export const Cards = () => {
 
     return (
         <div className={style.wrapper}>
+            <Link to={"/"}><img src={backArrowIcon}
+                                className={style.backArrow}
+                                alt='back'/></Link>
             {showModal &&  <div className={style.modal}>
                 <div className={style.closeModal}>
                     <img src={closeIcon}

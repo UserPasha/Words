@@ -9,6 +9,13 @@
     border-radius: 20px;
     padding: 10px;
     margin: 0 auto;
+    position: relative;
+}
+.backArrow{
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 .currentCard{
     display: flex;

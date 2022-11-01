@@ -3,6 +3,8 @@ import style from './CurrentCard.module.css'
 import {useSelector} from "react-redux";
 import {RootState} from "../Store/store";
 import {CardType} from "../Store/cardsReducer";
+import backArrowIcon from './../Common/Assets/images/arrowBack.svg'
+import {Link} from "react-router-dom";
 
 
 export const CurrentCard = () => {
@@ -42,6 +44,10 @@ export const CurrentCard = () => {
 //useEffect()
     return (
         <div className={style.wrapper}>
+            <Link to={"/"}><img src={backArrowIcon}
+                                className={style.backArrow}
+                                alt='back'/></Link>
+
             <div className={style.currentCard}>
                 <div className={style.currentWord}>
                     {currentWord.question}
