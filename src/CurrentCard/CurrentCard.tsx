@@ -5,6 +5,7 @@ import {RootState} from "../Store/store";
 import {CardType} from "../Store/cardsReducer";
 import backArrowIcon from './../Common/Assets/images/arrowBack.svg'
 import {Link} from "react-router-dom";
+import {BottomMenu} from "../BottomMenu/BottomMenu";
 
 
 export const CurrentCard = () => {
@@ -27,7 +28,7 @@ export const CurrentCard = () => {
     const [greenBox, setGreenBox] = useState<boolean>(false)
     const [redBox, setRedBox] = useState<boolean>(false)
     const checkValue = (value: string)=>{
-        if (value.toLowerCase() === currentWord.answer.toLowerCase().trim()){
+        if (value.toLowerCase().trim() === currentWord.answer.toLowerCase().trim()){
             setGreenBox(true)
         }else{
             setRedBox(true)
@@ -77,7 +78,7 @@ export const CurrentCard = () => {
             {redBox && <div className={style.redBox}>
                 НЕВЕРНО (
             </div>}
-
+            <BottomMenu/>
         </div>
     );
 };

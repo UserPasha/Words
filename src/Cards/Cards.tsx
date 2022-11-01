@@ -9,6 +9,7 @@ import usaFlagIcon from './../Common/Assets/images/USAFlag.svg'
 import closeIcon from './../Common/Assets/images/close.svg'
 import {Link} from "react-router-dom";
 import backArrowIcon from "../Common/Assets/images/arrowBack.svg";
+import {BottomMenu} from "../BottomMenu/BottomMenu";
 
 export const Cards = () => {
     const cards = useSelector<RootState ,Array<CardType>>(state=>state.cards.card)
@@ -78,7 +79,7 @@ export const Cards = () => {
 
 
             </div>)}
-
+            <BottomMenu/>
         </div>
     );
 };

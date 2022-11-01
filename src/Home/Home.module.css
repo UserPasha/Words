@@ -1,14 +1,23 @@
 .wrapper{
     width: 100%;
-    min-height: 500px;
+    min-height: 800px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 20px;
     padding: 10px;
 }
+.mainMenu{
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .menuItem{
     margin-top: 20px;
     display: flex;
@@ -21,6 +30,8 @@
     -5px 5px 10px #e5e4e4;
     font-weight: bold;
     font-size: 24px;
+}
+.menuItem a{
     color: #0f0217;
     text-decoration: none;
 }
