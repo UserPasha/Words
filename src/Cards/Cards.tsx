@@ -7,6 +7,7 @@ import {CardType, saveWordsToRedux} from "../Store/cardsReducer";
 export const Cards = () => {
     const cards = useSelector<RootState ,Array<CardType>>(state=>state.cards.card)
     const dispatch = useDispatch<AppDispatch>();
+
     const [showWord, setShowWord] = useState<boolean>(false)
     const [showModal, setShowModal] = useState<boolean>(false)
     const [rusWord, setRusWord] = useState<string>('')
@@ -23,6 +24,7 @@ export const Cards = () => {
 
         dispatch(saveWordsToRedux(rusWord, engWord))
     }
+
     return (
         <div className={style.wrapper}>
             {showModal &&  <div className={style.modal}>
@@ -42,19 +44,16 @@ export const Cards = () => {
             <div className={style.addCard}
                  onClick={()=>setShowModal(true)}>+++</div>
             {cards.map(cards =>  <div className={style.cards} key={cards.id}>
-                <div className={style.cardsItem}>
+              <div className={style.cardsItem}>
                     {cards.question}
                 </div>
-                <div className={style.cardsItem}>
+                 <div className={style.cardsItem}>
                     {cards.answer}
                 </div>
 
 
             </div>)}
-            {/*<div className={style.cards}></div>*/}
-            {/*<div className={style.cards}></div>*/}
-            {/*<div className={style.cards}></div>*/}
-            {/*<div className={style.cards}></div>*/}
+
         </div>
     );
 };
