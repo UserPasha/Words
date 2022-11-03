@@ -10,25 +10,41 @@ import closeIcon from './../Common/Assets/images/close.svg'
 import {Link} from "react-router-dom";
 import backArrowIcon from "../Common/Assets/images/arrowBack.svg";
 import {BottomMenu} from "../BottomMenu/BottomMenu";
+import {Search} from "../Search/Search";
+import CardList from "../CardList/CardList";
+import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 
 export const Cards = () => {
-    const cards = useSelector<RootState ,Array<CardType>>(state=>state.cards.card)
+    const cards = useSelector<RootState, Array<CardType>>(state => state.cards.card)
     const dispatch = useDispatch<AppDispatch>();
+    const CARD_QUANTITY = 4
+    const showCardQuantity = (arr: Array<CardType>, count: number) => {
+        if (arr.length > count) {
+            let array = []
+            for (let i = 0; i < count; i++) {
+                array.push(arr[i])
+            }
+            return array
+        } else {
+            return arr
+        }
 
+    }
+    const firstFiveCards = showCardQuantity(cards, CARD_QUANTITY)
     const [showWord, setShowWord] = useState<boolean>(false)
     const [showModal, setShowModal] = useState<boolean>(false)
     const [rusWord, setRusWord] = useState<string>('')
-    const saveRusWord = (e:ChangeEvent<HTMLInputElement>) =>{
+    const saveRusWord = (e: ChangeEvent<HTMLInputElement>) => {
         setRusWord(e.currentTarget.value)
     }
     const [engWord, setEngWord] = useState<string>('')
-    const saveEngWord = (e:ChangeEvent<HTMLInputElement>) =>{
+    const saveEngWord = (e: ChangeEvent<HTMLInputElement>) => {
         setEngWord(e.currentTarget.value)
     }
-    const closeModal = () =>{
+    const closeModal = () => {
         setShowModal(false)
     }
-    const saveWords = (rusWord: string, engWord: string) =>{
+    const saveWords = (rusWord: string, engWord: string) => {
         setShowWord(true)
         setShowModal(false)
 
@@ -37,14 +53,12 @@ export const Cards = () => {
 
     return (
         <div className={style.wrapper}>
-            <Link to={"/"}><img src={backArrowIcon}
-                                className={style.backArrow}
-                                alt='back'/></Link>
-            {showModal &&  <div className={style.modal}>
+            <BackArrow/>
+            {showModal && <div className={style.modal}>
                 <div className={style.closeModal}>
                     <img src={closeIcon}
                          alt='close'
-                    onClick={closeModal}/>
+                         onClick={closeModal}/>
                 </div>
                 <div className={style.greeting}>
                     ВВЕДИТЕ НОВОЕ СЛОВО
@@ -63,22 +77,19 @@ export const Cards = () => {
                 </div>
                 <input value={engWord}
                        onChange={saveEngWord}/>
-                <button onClick={()=>saveWords(rusWord, engWord)}
-                className={style.saveButton}>Сохранить</button>
+                <button onClick={() => saveWords(rusWord, engWord)}
+                        className={style.saveButton}>Сохранить
+                </button>
             </div>}
             <div className={style.addCard}><img src={plusIcon}
                                                 alt='add card'
-                                                onClick={()=>setShowModal(true)}/></div>
-            {cards.map(cards =>  <div className={style.cards} key={cards.id}>
-              <div className={style.cardsItem}>
-                    {cards.question}
-                </div>
-                 <div className={style.cardsItem}>
-                    {cards.answer}
-                </div>
+                                                onClick={() => setShowModal(true)}/></div>
+            <div className={style.cardsWrapper}>
+                {firstFiveCards.map(cards => <CardList key={cards.id}
+                                                       answer={cards.answer}
+                                                       question={cards.question}/>)}
+            </div>
 
-
-            </div>)}
             <BottomMenu/>
         </div>
     );

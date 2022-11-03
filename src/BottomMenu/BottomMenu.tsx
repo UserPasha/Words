@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import homeIcon from "../Common/Assets/images/home.svg";
 import plusIcon from "../Common/Assets/images/plus.svg";
 import learnIcon from "../Common/Assets/images/Learn.svg";
+import searchIcon from './../Common/Assets/images/search.svg'
 
 export const BottomMenu = () => {
     return (
@@ -16,6 +17,9 @@ export const BottomMenu = () => {
             </div>
             <div className={style.bottomMenuItem}>
                 <Link to={"/word"}><img src={learnIcon} alt='Learn words'/></Link>
+            </div>
+            <div className={style.bottomMenuItem}>
+                <Link to={"/search"}><img src={searchIcon} alt='search'/></Link>
             </div>
         </div>
     );

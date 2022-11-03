@@ -6,6 +6,7 @@ import {CardType} from "../Store/cardsReducer";
 import backArrowIcon from './../Common/Assets/images/arrowBack.svg'
 import {Link} from "react-router-dom";
 import {BottomMenu} from "../BottomMenu/BottomMenu";
+import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 
 
 export const CurrentCard = () => {
@@ -42,12 +43,10 @@ export const CurrentCard = () => {
         setShowWord(false)
         setShowInput(false)
     }
-//useEffect()
+
     return (
         <div className={style.wrapper}>
-            <Link to={"/"}><img src={backArrowIcon}
-                                className={style.backArrow}
-                                alt='back'/></Link>
+            <BackArrow/>
 
             <div className={style.currentCard}>
                 <div className={style.currentWord}>

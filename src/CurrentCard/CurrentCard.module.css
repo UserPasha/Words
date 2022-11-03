@@ -4,18 +4,12 @@
     justify-content: space-evenly;
     flex-direction: column;
     width: 90%;
-    min-height: 800px;
+    min-height: 100vh;
     border: 1px solid black;
     border-radius: 20px;
     padding: 10px;
     margin: 0 auto;
     position: relative;
-}
-.backArrow{
-    width: 30px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
 }
 .currentCard{
     display: flex;
