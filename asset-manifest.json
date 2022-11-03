@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.8e8e1043.css",
+    "main.css": "/Words/static/css/main.1bc987c6.css",
     "main.js": "/Words/static/js/main.e3ede712.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/USAFlag.svg": "/Words/static/media/USAFlag.109d20d02b2ee192bae1625a64826ada.svg",
@@ -12,12 +12,12 @@
     "static/media/home.svg": "/Words/static/media/home.98e6be9ef5a7cad5611a1cb9725e686f.svg",
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
-    "main.8e8e1043.css.map": "/Words/static/css/main.8e8e1043.css.map",
+    "main.1bc987c6.css.map": "/Words/static/css/main.1bc987c6.css.map",
     "main.e3ede712.js.map": "/Words/static/js/main.e3ede712.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e8e1043.css",
+    "static/css/main.1bc987c6.css",
     "static/js/main.e3ede712.js"
   ]
 }
