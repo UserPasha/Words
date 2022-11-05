@@ -24,10 +24,3 @@ export const cardsReducer = (state: InitialStateType = initialState, action: Car
     }
 }
 export const saveWordsToRedux = (rusWord: string, engWord: string)=>({type: SAVE_WORDS, rusWord, engWord} as const)
-// export const saveWords = (rusWord: string, engWord: string): {type: 'SAVE_WORDS',rusWord: string, engWord: string}=>{
-//     return {
-//         type: "SAVE_WORDS",
-//         engWord: engWord,
-//         rusWord: rusWord
-//     } as const
-// }
