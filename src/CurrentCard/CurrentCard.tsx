@@ -1,17 +1,15 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import style from './CurrentCard.module.css'
 import {useSelector} from "react-redux";
 import {RootState} from "../Store/store";
 import {CardType} from "../Store/cardsReducer";
-import backArrowIcon from './../Common/Assets/images/arrowBack.svg'
-import {Link} from "react-router-dom";
 import {BottomMenu} from "../BottomMenu/BottomMenu";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 
 
 export const CurrentCard = () => {
     const currentCardsFromRedux = useSelector<RootState, CardType[]>(state=>state.cards.card)
-    //let currentCard = currentCardsFromRedux[0]
+
     let [currentWord, setCurrentWord] = useState<CardType>(currentCardsFromRedux[0])
 
     const [showWord, setShowWord] = useState<boolean>(false)
@@ -42,6 +40,9 @@ export const CurrentCard = () => {
         setRedBox(false)
         setShowWord(false)
         setShowInput(false)
+    }
+    if(currentCardsFromRedux.length<1){
+        currentWord.question = 'У вас ещё нет сохранённых слов'
     }
 
     return (

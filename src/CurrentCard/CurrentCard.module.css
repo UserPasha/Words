@@ -17,10 +17,19 @@
     justify-content: center;
     flex-direction: column;
     width: 80%;
-    min-height: 120px;
+    min-height: 200px;
     box-shadow:  5px -5px 10px #cfcece,
     -5px 5px 10px #e5e4e4;
     border-radius: 20px;
+}
+.currentCard input{
+    margin-top: 20px;
+    width: 75%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 .currentWord{
     display: flex;
@@ -35,12 +44,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin: 20px 0;
     width: 50%;
-    height: 20px;
+    height: 30px;
     box-shadow:  5px -5px 10px #cfcece,
     -5px 5px 10px #e5e4e4;
     border-radius: 20px;
+    font-weight: bold;
 }
 .buttons{
     display: flex;
@@ -55,8 +65,9 @@
     border-radius: 20px;
 }
 .button{
-    width: 70px;
+    width: 80px;
     height: 50px;
+    border-radius: 20px;
     box-shadow:  5px -5px 10px #cfcece,
     -5px 5px 10px #e5e4e4;
     display: flex;

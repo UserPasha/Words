@@ -7,10 +7,7 @@ import plusIcon from './../Common/Assets/images/plus.svg'
 import rusFlacIcon from './../Common/Assets/images/russianFlag.svg'
 import usaFlagIcon from './../Common/Assets/images/USAFlag.svg'
 import closeIcon from './../Common/Assets/images/close.svg'
-import {Link} from "react-router-dom";
-import backArrowIcon from "../Common/Assets/images/arrowBack.svg";
 import {BottomMenu} from "../BottomMenu/BottomMenu";
-import {Search} from "../Search/Search";
 import CardList from "../CardList/CardList";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 
@@ -47,6 +44,8 @@ export const Cards = () => {
     const saveWords = (rusWord: string, engWord: string) => {
         setShowWord(true)
         setShowModal(false)
+        setRusWord('')
+        setEngWord('')
 
         dispatch(saveWordsToRedux(rusWord, engWord))
     }
