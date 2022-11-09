@@ -4,12 +4,14 @@ import {Cards} from "../Cards/Cards";
 import {CurrentCard} from "../CurrentCard/CurrentCard";
 import {Home} from "../Home/Home";
 import {Search} from "../Search/Search";
+import {TestComponent} from "../TestComponent/TestComponent";
 
 export const PATH = {
     HOME: '/',
     CARDS: '/cards',
     WORD: '/word',
-    SEARCH: '/search'
+    SEARCH: '/search',
+    TEST: '/secret'
 }
 const AppRoutes = () => {
     return (
@@ -19,6 +21,7 @@ const AppRoutes = () => {
                 <Route path={PATH.CARDS} element={<Cards/>}/>
                 <Route path={PATH.WORD} element={<CurrentCard/>}/>
                 <Route path={PATH.SEARCH} element={<Search/>}/>
+                <Route path={PATH.TEST} element={<TestComponent/>}/>
             </Routes>
             
         </>

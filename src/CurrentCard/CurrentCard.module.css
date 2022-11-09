@@ -11,14 +11,7 @@
     margin: 0 auto;
     position: relative;
 }
-/*.hide{*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*    !*border: 1px solid black;*!*/
-/*}*/
+
 .currentCard{
     display: flex;
     align-items: center;

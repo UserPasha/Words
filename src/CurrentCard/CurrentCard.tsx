@@ -1,16 +1,16 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import style from './CurrentCard.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../Store/store";
 import {CardType} from "../Store/cardsReducer";
 import {BottomMenu} from "../BottomMenu/BottomMenu";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
-import {getTranslate} from "../Store/lingvoReducer";
+import {getImageThunk, getTranslate} from "../Store/lingvoReducer";
 
 
 export const CurrentCard = () => {
     const currentCardsFromRedux = useSelector<RootState, CardType[]>(state=>state.cards.card)
-    const dispatch = useDispatch<any>()
+
 
     let [currentWord, setCurrentWord] = useState<CardType>(currentCardsFromRedux[0])
 
@@ -47,14 +47,10 @@ export const CurrentCard = () => {
         currentWord.question = 'У вас ещё нет сохранённых слов'
         currentWord.answer = 'Добавьте новое слово, нажав +'
     }
-    // const req = ()=>{
-    //     dispatch(getTranslate('сахар', 1049, 1033))
-    // }
+
     return (
         <div className={style.wrapper}>
             <BackArrow/>
-            {/*<div className={style.hide}*/}
-            {/*onClick={req}></div>*/}
 
             <div className={style.currentCard}>
                 <div className={style.currentWord}>
