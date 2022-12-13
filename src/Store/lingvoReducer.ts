@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {FakeApi, LingvoApi} from "../api/Lingvo";
-import {AppThunkDispatch} from "./store";
+import {AppThunk, AppThunkDispatch} from "./store";
 import {useDispatch} from "react-redux";
 
 //const SAVE_TRANSLATED_WORD = 'SAVE_TRANSLATED_WORD'
@@ -45,8 +45,8 @@ export const getTranslate = (word: string, currentLang: number, requiredLang: nu
         //dispatch(saveTranslatedWordToRedux())
     }
 }
-export const getImageThunk = (_type: string, _height: number): AppThunkDispatch => {
-    return async (dispatch: any) => {
+export const getImageThunk = (_type: string, _height: number): AppThunk => {
+    return async (dispatch) => {
         const data = await FakeApi.getImage(_type, _height)
         dispatch(saveImageToRedux(data.data.data[0].title, data.data.data[0].description, data.data.data[0].url))
 

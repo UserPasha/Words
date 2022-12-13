@@ -2,7 +2,7 @@ import {applyMiddleware, combineReducers, createStore} from "redux";
 import {cardsReducer} from "./cardsReducer";
 import {loadState, saveState} from "../Utils/localStorageUtils";
 import {DictionaryAction, lingvoReducer} from "./lingvoReducer";
-import thunk, {ThunkDispatch} from "redux-thunk";
+import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
 
 const reducers = combineReducers({
     cards: cardsReducer,
@@ -17,6 +17,7 @@ store.subscribe(()=>{
         lingvo: store.getState().lingvo
     })
 })
+export type AppThunk<ReturnType = void > = ThunkAction<ReturnType, RootState, unknown, ActionsType>
 export type ActionsType = DictionaryAction
 export type AppThunkDispatch = ThunkDispatch<RootState, unknown, ActionsType>
 export type AppStateType = ReturnType<typeof reducers>

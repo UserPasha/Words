@@ -5,13 +5,15 @@ import {CurrentCard} from "../CurrentCard/CurrentCard";
 import {Home} from "../Home/Home";
 import {Search} from "../Search/Search";
 import {TestComponent} from "../TestComponent/TestComponent";
+import {Game} from "../Game/Game";
 
 export const PATH = {
     HOME: '/',
     CARDS: '/cards',
     WORD: '/word',
     SEARCH: '/search',
-    TEST: '/secret'
+    TEST: '/secret',
+    GAME: '/game'
 }
 const AppRoutes = () => {
     return (
@@ -22,6 +24,7 @@ const AppRoutes = () => {
                 <Route path={PATH.WORD} element={<CurrentCard/>}/>
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
+                <Route path={PATH.GAME} element={<Game/>}/>
             </Routes>
             
         </>
