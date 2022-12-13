@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.1ddfa55b.css",
-    "main.js": "/Words/static/js/main.5c004448.js",
+    "main.css": "/Words/static/css/main.d595114f.css",
+    "main.js": "/Words/static/js/main.56c3a0ee.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
+    "static/media/a.mp3": "/Words/static/media/a.b31d91a859b87ac9d981.mp3",
+    "static/media/vinylM.png": "/Words/static/media/vinylM.88f00eefc2efca396f7b.png",
     "static/media/USAFlag.svg": "/Words/static/media/USAFlag.109d20d02b2ee192bae1625a64826ada.svg",
     "static/media/close.svg": "/Words/static/media/close.38fc312b5ac5f7e94a2b8a99ef7f4094.svg",
     "static/media/russianFlag.svg": "/Words/static/media/russianFlag.c89ed68ac8ea8879ad533f54957875b8.svg",
@@ -12,12 +14,12 @@
     "static/media/home.svg": "/Words/static/media/home.98e6be9ef5a7cad5611a1cb9725e686f.svg",
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
-    "main.1ddfa55b.css.map": "/Words/static/css/main.1ddfa55b.css.map",
-    "main.5c004448.js.map": "/Words/static/js/main.5c004448.js.map",
+    "main.d595114f.css.map": "/Words/static/css/main.d595114f.css.map",
+    "main.56c3a0ee.js.map": "/Words/static/js/main.56c3a0ee.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ddfa55b.css",
-    "static/js/main.5c004448.js"
+    "static/css/main.d595114f.css",
+    "static/js/main.56c3a0ee.js"
   ]
 }
