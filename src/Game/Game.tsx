@@ -107,8 +107,8 @@ export const Game = () => {
                     <div className={style.category}>
                         ЛЕТО
                     </div>
-                    <Song track={testSong} original={testSong}/>
-                    {/*<Song track={demoSun} original={demoSunOr}/>*/}
+                    {/*<Song track={testSong} original={testSong}/>*/}
+                    <Song track={demoSun} original={demoSunOr}/>
                     <Song track={monacoSun} original={monacoSunOr}/>
                     <Song track={ivanushki} original={ivanushkiOr}/>
                     <Song track={fabrika} original={fabrikaOr}/>
@@ -146,9 +146,9 @@ export const Game = () => {
                     <Song track={survivorRocky} original={survivorRockyOr}/>
                     <Song track={prettyWoman} original={prettyWomanOr}/>
 
-                    {/*<Song track={killBill} original={killBill}/>*/}
-                    {/*<Song track={eminemLose} original={eminemLoseOr}/>*/}
-                    {/*<Song track={matrix} original={matrix}/>*/}
+                    <Song track={killBill} original={killBill}/>
+                    <Song track={eminemLose} original={eminemLoseOr}/>
+                    <Song track={matrix} original={matrix}/>
 
 
                 </div>
