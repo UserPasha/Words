@@ -36,3 +36,79 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shapes {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90vw;
+  margin-bottom: 2rem;
+}
+
+.shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  font-size: 3rem;
+  color: white;
+  background-color: #2980b9;
+  border-radius: 50%;
+  cursor: grab;
+}
+
+.cells {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90vw;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  font-size: 3rem;
+  color: white;
+  background-color: #34495e;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.cell.empty {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.cell.occupied {
+  border: 0.5rem solid #3498db;
+}
+
+.cell > .shape {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 50%;
+}
