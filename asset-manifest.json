@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.09bc683d.css",
-    "main.js": "/Words/static/js/main.ab03d6af.js",
+    "main.css": "/Words/static/css/main.24242965.css",
+    "main.js": "/Words/static/js/main.8e3e0030.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -58,6 +58,11 @@
     "static/media/Sector-lyr2.mp3": "/Words/static/media/Sector-lyr2.baf9399115ed742d9d84.mp3",
     "static/media/Rotaru-Zima2.mp3": "/Words/static/media/Rotaru-Zima2.c99b4d74eb84812d9156.mp3",
     "static/media/ddt-plus.mp3": "/Words/static/media/ddt-plus.46e87314e684407a8274.mp3",
+    "static/media/mann-filter.jpg": "/Words/static/media/mann-filter.9893230aad15754e1ff8.jpg",
+    "static/media/Blue Print.png": "/Words/static/media/Blue Print.d126941436c9d34cb8bd.png",
+    "static/media/asmetal.png": "/Words/static/media/asmetal.b8c80b1d366287ca2b40.png",
+    "static/media/total.png": "/Words/static/media/total.7816af99ab2ee58a62e5.png",
+    "static/media/2.png": "/Words/static/media/2.4f6d501b7b0af3eef7e2.png",
     "static/media/USAFlag.svg": "/Words/static/media/USAFlag.109d20d02b2ee192bae1625a64826ada.svg",
     "static/media/play.svg": "/Words/static/media/play.d0d510cd27ac0f67f6ae69ad31cdfa0c.svg",
     "static/media/pause.svg": "/Words/static/media/pause.7f9bd2709efaf78e1b1e99c863a835ce.svg",
@@ -72,12 +77,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.09bc683d.css.map": "/Words/static/css/main.09bc683d.css.map",
-    "main.ab03d6af.js.map": "/Words/static/js/main.ab03d6af.js.map",
+    "main.24242965.css.map": "/Words/static/css/main.24242965.css.map",
+    "main.8e3e0030.js.map": "/Words/static/js/main.8e3e0030.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09bc683d.css",
-    "static/js/main.ab03d6af.js"
+    "static/css/main.24242965.css",
+    "static/js/main.8e3e0030.js"
   ]
 }
