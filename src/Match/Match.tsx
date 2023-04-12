@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import style from './Match.module.css'
-import cover from '../assets/images/2.png'
+import cover from '../assets/images/match/logo.png'
 import totalOil from '../assets/images/match/total.png'
 import mannFilter from '../assets/images/match/mann-filter.jpg'
 import bluePrint from '../assets/images/match/Blue Print.png'
@@ -9,8 +9,10 @@ import {DragMatch} from "../DragMatch/DragMatch";
 
 
 
-
-interface ICardMatch {
+interface IMatch {
+    cardsToPlay: ICardMatch[]
+}
+export interface ICardMatch {
     id: number,
     name: string,
     image: string,
@@ -18,7 +20,7 @@ interface ICardMatch {
     isMatched: boolean
 }
 
-export const Match: FC = () => {
+export const Match: FC<IMatch> = ({cardsToPlay}) => {
     function shuffleArray(array: ICardMatch[]): ICardMatch[] {
         const shuffledArray = [...array];
         for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -28,64 +30,7 @@ export const Match: FC = () => {
         return shuffledArray;
     }
 
-    const [cards, setCards] = useState<ICardMatch[]>(shuffleArray([
-            {
-                id: 1,
-                image: totalOil,
-                isFlipped: false,
-                name: 'a',
-                isMatched: false
-            },
-            {
-                id: 2,
-                image: mannFilter,
-                isFlipped: false,
-                name: 'b',
-                isMatched: false
-            },
-            {
-                id: 3,
-                image: totalOil,
-                isFlipped: false,
-                name: 'a',
-                isMatched: false
-            },
-            {
-                id: 4,
-                image: mannFilter,
-                isFlipped: false,
-                name: 'b',
-                isMatched: false
-            },
-        {
-            id: 5,
-            image: bluePrint,
-            isFlipped: false,
-            name: 'c',
-            isMatched: false
-        },
-        {
-            id: 6,
-            image: asMetal,
-            isFlipped: false,
-            name: 'd',
-            isMatched: false
-        },
-        {
-            id: 7,
-            image: bluePrint,
-            isFlipped: false,
-            name: 'c',
-            isMatched: false
-        },
-        {
-            id: 8,
-            image: asMetal,
-            isFlipped: false,
-            name: 'd',
-            isMatched: false
-        }
-        ])
+    const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay)
     )
     const [isLockBoard, setIsLockBoard] = useState<boolean>(false)
     const [firstCared, setFirstCard] = useState<ICardMatch | null>(null)
@@ -171,7 +116,7 @@ export const Match: FC = () => {
                                                     onClick={() => {
                                                         addValueToState(card)
                                                     }} disabled={isLockBoard || card.isMatched}>
-                    <div  className={style.front}>
+                    <div className={style.front}>
                         <img src={card.isMatched ? card.image : card.isFlipped ? card.image  : cover}
                             />
                     </div>
@@ -180,7 +125,8 @@ export const Match: FC = () => {
                 )}
             </div>
         </section>
-            <DragMatch/>
+            <button className={style.restartButton} onClick={()=>setCards(shuffleArray(cardsToPlay))}>Restart</button>
+            {/*<DragMatch/>*/}
         </>
 
     );

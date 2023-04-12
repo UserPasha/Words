@@ -7,6 +7,7 @@ import {Search} from "../Search/Search";
 import {TestComponent} from "../TestComponent/TestComponent";
 import {Game} from "../Game/Game";
 import {Match} from "../Match/Match";
+import {firstLevel, secondLevel} from "../Match/Levels";
 
 export const PATH = {
     HOME: '/',
@@ -27,7 +28,7 @@ const AppRoutes = () => {
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
-                <Route path={PATH.MATCH} element={<Match/>}/>
+                <Route path={PATH.MATCH} element={<Match cardsToPlay={secondLevel}/>}/>
             </Routes>
             
         </>
