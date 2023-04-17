@@ -40,7 +40,7 @@ export const Search = () => {
     console.log(wordsResult)
     return (
         <div className={style.wrapper}>
-            <BackArrow/>
+            <BackArrow  path={'/'}/>
             <input className={style.input}
                    placeholder={'введите слово...'}
                    value={value}

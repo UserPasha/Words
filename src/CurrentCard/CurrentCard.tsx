@@ -50,7 +50,7 @@ export const CurrentCard = () => {
 
     return (
         <div className={style.wrapper}>
-            <BackArrow/>
+            <BackArrow path={'/'}/>
 
             <div className={style.currentCard}>
                 <div className={style.currentWord}>

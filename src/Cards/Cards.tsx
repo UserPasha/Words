@@ -52,7 +52,7 @@ export const Cards = () => {
 
     return (
         <div className={style.wrapper}>
-            <BackArrow/>
+            <BackArrow  path={'/'}/>
             {showModal && <div className={style.modal}>
                 <div className={style.closeModal}>
                     <img src={closeIcon}

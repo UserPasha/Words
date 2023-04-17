@@ -1,36 +1,26 @@
 import React, {FC, useEffect, useState} from 'react';
-import style from './Match.module.css'
-import cover from '../assets/images/match/logo.png'
+import style from '../Match/Match.module.css'
+import {ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
-import {Modal} from "./Modal";
-import {ICardMatch, IMatch} from "../hooks/useMatch";
-import {useMatchHook} from "../hooks/useMatch";
+import cover from "../assets/images/match/logo.png";
+import {Modal} from "../Match/Modal";
+import {shuffleArray} from "../Match/Match";
 
-
-
-export const shuffleArray = (array: ICardMatch[]): ICardMatch[] =>{
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-    }
-    return shuffledArray;
-}
-
-export const Match: FC<IMatch> = ({cardsToPlay}) => {
-
-  const {isLockBoard, setIsLockBoard, firstCared, setFirstCard, secondCared, setSecondCard,attempts, setAttempts,
-      showModal, setShowModal, pairCounter, setPairCounter} = useMatchHook()
+export const TripleMatch: FC<IMatch> = ({cardsToPlay}) => {
+    const {
+        isLockBoard, setIsLockBoard, firstCared, setFirstCard, secondCared, setSecondCard, attempts, setAttempts,
+        showModal, setShowModal, pairCounter, setPairCounter
+    } = useMatchHook()
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
-
+    const [thirdCard, setThirdCard] = useState<ICardMatch | null>(null)
     useEffect(() => {
-        if (firstCared && secondCared) {
+        if (firstCared && secondCared && thirdCard) {
             checkMates();
         }
-    }, [secondCared, firstCared]);
+    }, [secondCared, firstCared, thirdCard]);
 
-    useEffect(()=>{
-        if(pairCounter === cardsToPlay.length/2){
+    useEffect(() => {
+        if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
         }
     }, [pairCounter, cardsToPlay])
@@ -40,13 +30,20 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
     }, [secondCared])
 
     useEffect(() => {
+        setThirdCard(thirdCard)
+    }, [thirdCard])
+    // useEffect(() => {
+    //     setFirstCard(firstCared)
+    // }, [firstCared])
+
+    useEffect(() => {
             setCards(cards.map((card) => {
-                if (card.name === firstCared?.name && card.name === secondCared?.name) {
+                if (card.name === firstCared?.name && card.name === secondCared?.name && card.name === thirdCard?.name) {
                     return {
                         ...card,
                         isMatched: true
                     }
-                } else if (card.id === firstCared?.id || card.id === secondCared?.id) {
+                } else if (card.id === firstCared?.id || card.id === secondCared?.id || card.id === thirdCard?.id) {
                     return {
                         ...card,
                         isFlipped: true
@@ -56,23 +53,53 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
                 }
             }))
         }
-        , [firstCared?.name, secondCared?.name])
+        , [firstCared?.name, secondCared?.name, thirdCard?.name])
 
+    console.log(firstCared, secondCared, thirdCard)
+    const addValueToState = (cardId: ICardMatch) => {
+
+
+        if (firstCared !== null && secondCared === null  && firstCared.id !== cardId.id
+
+            ) {
+            setSecondCard(cardId)
+            setCards(cards.map(card => card.id === secondCared!.id ? {...card, isFlipped: true} : card))
+        }
+        else if(firstCared !== null && secondCared!==null && firstCared.id !== cardId.id && secondCared.id !== cardId.id
+
+    ){
+            setThirdCard(cardId)
+            setCards(cards.map(card => card.id === thirdCard?.id ? {...card, isFlipped: true} : card))
+            setAttempts(attempts + 1)
+        }
+        else {
+            setFirstCard(cardId)
+            setCards(cards.map(card => card.id === firstCared?.id ? {...card, isFlipped: true} : card))
+        }
+
+    }
+    const restartGame = () => {
+        setCards(shuffleArray(cardsToPlay))
+        setAttempts(0)
+        setPairCounter(0)
+    }
     const resetBoard = () => {
         setFirstCard(null)
         setSecondCard(null)
+        setThirdCard(null)
         setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
     }
     const checkMates = () => {
-        if (firstCared?.name === secondCared?.name) {
+        if (firstCared?.name === secondCared?.name && firstCared?.name === thirdCard?.name) {
             setIsLockBoard(true)
             setTimeout(() => {
-                setCards(cards.map(card => card.name === firstCared?.name && card.name === secondCared?.name ? {
+                setCards(cards.map(card => card.name === firstCared?.name && card.name === secondCared?.name && firstCared?.name === thirdCard?.name ? {
                     ...card,
                     isMatched: true
                 } : card))
                 setFirstCard(null)
                 setSecondCard(null)
+                setThirdCard(null)
                 setIsLockBoard(false)
                 setPairCounter(pairCounter +1)
             }, 500)
@@ -86,34 +113,6 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
             }, 1000)
 
         }
-    }
-
-
-     //useEffect + modal
-    //loading imitation + quotes
-    // 8 cards - 12 att = perf, 14 - good, 14>bad 20> worst 1000pts + (perf =>bonus (att) 20%, good=< bonus 5%, bad -5%, worst - 20% )
-    // 12 cards - 22 att = perf, 28 - good, 14>bad 1300pts + bonus (att)
-    // 16 cards - 28 att = perf, 42 - good, 14>bad 1900pts + bonus (att)
-    // progressBar?
-    //rewrite triple logic without null
-
-
-    const addValueToState = (cardId: ICardMatch) => {
-
-        if (firstCared !== null && firstCared.id !== cardId.id) {
-            setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCared?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts +1)
-        } else {
-            setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCared?.id ? {...card, isFlipped: true} : card))
-        }
-
-    }
-    const restartGame = () => {
-        setCards(shuffleArray(cardsToPlay))
-        setAttempts(0)
-        setPairCounter(0)
     }
 
     return (
@@ -136,7 +135,7 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
                         </button>
                     )}
                 </div>
-                {showModal &&  <Modal closeModal={setShowModal} attempts={attempts}/>}
+                {showModal && <Modal closeModal={setShowModal} attempts={attempts}/>}
                 <button className={style.restartButton} onClick={restartGame}>Restart</button>
             </section>
 
@@ -145,6 +144,4 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
 
     );
 };
-
-
 

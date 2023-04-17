@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import style from './BackArrow.module.css'
 import backArrowIcon from "../../Assets/images/arrowBack.svg";
 import {Link} from "react-router-dom";
-export const BackArrow = () => {
+
+interface IBackArrow{
+    path: string
+}
+export const BackArrow:FC<IBackArrow> = ({path}) => {
     return (
         <>
-            <Link to={"/"}><img src={backArrowIcon}
+            <Link to={path}><img src={backArrowIcon}
                                 className={style.backArrow}
                                 alt='back'/></Link>
         </>
