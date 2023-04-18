@@ -22,7 +22,7 @@
     position: relative;
     width: calc(23% - 15px);
     margin: 10px;
-    height: 120px;
+    height: 100px;
     cursor: pointer;
     /*perspective: 600px;*/
     transition: transform 0.6s;
@@ -31,12 +31,13 @@
     box-shadow:  3px 3px 6px #bababa,
     -2px -2px 4px #ffffff;
 
+
 }
 .flipped{
     position: relative;
     width: calc(23% - 15px);
     margin: 10px;
-    height: 120px;
+    height: 100px;
     cursor: pointer;
     /*perspective: 600px;*/
     transition: transform 0.6s;
@@ -64,7 +65,7 @@ button:disabled{
 }
 
 .front img{
-    max-width: 60px;
+    max-width: 65px;
     border-radius: 10px;
 }
 .restartButton{

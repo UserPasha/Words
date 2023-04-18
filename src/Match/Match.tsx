@@ -5,6 +5,7 @@ import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
 import {ICardMatch, IMatch} from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
+import {Timer} from "../Timer/Timer";
 
 
 
@@ -17,17 +18,17 @@ export const shuffleArray = (array: ICardMatch[]): ICardMatch[] =>{
     return shuffledArray;
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay}) => {
+export const Match: FC<IMatch> = ({cardsToPlay, duration, path}) => {
 
-  const {isLockBoard, setIsLockBoard, firstCared, setFirstCard, secondCared, setSecondCard,attempts, setAttempts,
-      showModal, setShowModal, pairCounter, setPairCounter} = useMatchHook()
+  const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
+      showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
-
+    const [timer, setTimer] = useState(duration);
     useEffect(() => {
-        if (firstCared && secondCared) {
+        if (firstCard && secondCard) {
             checkMates();
         }
-    }, [secondCared, firstCared]);
+    }, [secondCard, firstCard]);
 
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
@@ -36,17 +37,20 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
     }, [pairCounter, cardsToPlay])
 
     useEffect(() => {
-        setSecondCard(secondCared)
-    }, [secondCared])
+        setSecondCard(secondCard)
+    }, [secondCard])
+    useEffect(() => {
+        setCards(shuffleArray(cardsToPlay))
+    }, [cardsToPlay])
 
     useEffect(() => {
             setCards(cards.map((card) => {
-                if (card.name === firstCared?.name && card.name === secondCared?.name) {
+                if (card.name === firstCard?.name && card.name === secondCard?.name) {
                     return {
                         ...card,
                         isMatched: true
                     }
-                } else if (card.id === firstCared?.id || card.id === secondCared?.id) {
+                } else if (card.id === firstCard?.id || card.id === secondCard?.id) {
                     return {
                         ...card,
                         isFlipped: true
@@ -56,7 +60,7 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
                 }
             }))
         }
-        , [firstCared?.name, secondCared?.name])
+        , [firstCard?.name, secondCard?.name])
 
     const resetBoard = () => {
         setFirstCard(null)
@@ -64,10 +68,10 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
         setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
     }
     const checkMates = () => {
-        if (firstCared?.name === secondCared?.name) {
+        if (firstCard?.name === secondCard?.name) {
             setIsLockBoard(true)
             setTimeout(() => {
-                setCards(cards.map(card => card.name === firstCared?.name && card.name === secondCared?.name ? {
+                setCards(cards.map(card => card.name === firstCard?.name && card.name === secondCard?.name ? {
                     ...card,
                     isMatched: true
                 } : card))
@@ -100,13 +104,13 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
 
     const addValueToState = (cardId: ICardMatch) => {
 
-        if (firstCared !== null && firstCared.id !== cardId.id) {
+        if (firstCard !== null && firstCard.id !== cardId.id) {
             setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCared?.id ? {...card, isFlipped: true} : card))
+            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
             setAttempts(attempts +1)
         } else {
             setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCared?.id ? {...card, isFlipped: true} : card))
+            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
         }
 
     }
@@ -119,6 +123,9 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
     return (
         <>
             <BackArrow path={'/match'}/>
+            <Timer
+                timer={timer} setTimer={setTimer}
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
             <section className={style.wrapper}>
                 <span>Попытки: {attempts}</span>
                 <span>Пары: {pairCounter}</span>
@@ -136,7 +143,26 @@ export const Match: FC<IMatch> = ({cardsToPlay}) => {
                         </button>
                     )}
                 </div>
-                {showModal &&  <Modal closeModal={setShowModal} attempts={attempts}/>}
+                {showModal &&  <Modal setShowModal={setShowModal}
+                                      attempts={attempts}
+                                      isEndOfTime={isEndOfTime}
+                                      setIsEndOfTime={setIsEndOfTime}
+                                      setRunning={setRunning}
+                                      duration={duration}
+                                      setTimer={setTimer}
+                                      restartGame={restartGame}
+                                      path={path}
+                />}
+                {isEndOfTime && <Modal setShowModal={setShowModal}
+                                       attempts={attempts}
+                                       isEndOfTime={isEndOfTime}
+                                       setIsEndOfTime={setIsEndOfTime}
+                                       setRunning={setRunning}
+                                       duration={duration}
+                                       setTimer={setTimer}
+                                       restartGame={restartGame}
+                                       path={path}
+                />}
                 <button className={style.restartButton} onClick={restartGame}>Restart</button>
             </section>
 

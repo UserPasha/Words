@@ -12,6 +12,18 @@ import FBlue from '../assets/images/match/Filtron/filBlue.jpeg'
 import FRed from '../assets/images/match/Filtron/filRed.jpg'
 import FYellow from '../assets/images/match/Filtron/filYell.jpeg'
 import FGreen from '../assets/images/match/Filtron/filGreen.jpg'
+import CargoFirst from '../assets/images/match/half/cargoFirst.jpg'
+import CargoSecond from '../assets/images/match/half/cargoSecond.jpg'
+import CortecoFirst from '../assets/images/match/half/CortecoFirst.jpg'
+import CortecoSecond from '../assets/images/match/half/CortecoSecond.jpg'
+import DaycoFirst from '../assets/images/match/half/DaycoFirst.jpg'
+import DaycoSecond from '../assets/images/match/half/DaycoSecond.jpg'
+import LemferderFirst from '../assets/images/match/half/lemferderFirst.jpg'
+import LemferderSecond from '../assets/images/match/half/lemferderSecond.jpg'
+import MandoFirst from '../assets/images/match/half/mandoFirst.jpg'
+import MandoSecond from '../assets/images/match/half/mandoSecond.jpg'
+import MetelliFirst from '../assets/images/match/half/metelliFirst.jpg'
+import MetelliSecond from '../assets/images/match/half/metelliSecond.jpg'
 import {ICardMatch} from "../hooks/useMatch";
 
 
@@ -311,4 +323,177 @@ export const tripleFirstLevel: ICardMatch[] = [
         name: 'd',
         isMatched: false
     }
+]
+
+export const tripleSecondLevel: ICardMatch[] = [...tripleFirstLevel,
+    {
+        id: 113,
+        image: glaser,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+},
+    {
+        id: 114,
+        image: glaser,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+    },
+    {
+        id: 115,
+        image: glaser,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+    },
+    {
+        id: 116,
+        image: febi,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false
+    },
+    {
+        id: 117,
+        image: febi,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false
+    },
+    {
+        id: 118,
+        image: febi,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false
+    },{
+        id: 119,
+        image: victorReinz,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false
+    },
+    {
+        id: 120,
+        image: victorReinz,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false
+    },
+    {
+        id: 121,
+        image: victorReinz,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false
+    },
+    {
+        id: 122,
+        image: metelli,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false
+    },
+    {
+        id: 123,
+        image: metelli,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false
+    },
+    {
+        id: 124,
+        image: metelli,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false
+    },
+]
+
+export const halfFirstLevel: ICardMatch[] = [
+    {
+        id: 201,
+        image: CargoFirst,
+        isFlipped: false,
+        name: 'aa',
+        isMatched: false
+    },
+    {
+        id: 202,
+        image: CargoSecond,
+        isFlipped: false,
+        name: 'aa',
+        isMatched: false
+    },
+    {
+        id: 203,
+        image: CortecoFirst,
+        isFlipped: false,
+        name: 'ab',
+        isMatched: false
+    },
+    {
+        id: 204,
+        image: CortecoSecond,
+        isFlipped: false,
+        name: 'ab',
+        isMatched: false
+    },
+    {
+        id: 205,
+        image: DaycoFirst,
+        isFlipped: false,
+        name: 'ac',
+        isMatched: false
+    },
+    {
+        id: 206,
+        image: DaycoSecond,
+        isFlipped: false,
+        name: 'ac',
+        isMatched: false
+    },
+    {
+        id: 207,
+        image: LemferderFirst,
+        isFlipped: false,
+        name: 'ad',
+        isMatched: false
+    },
+    {
+        id: 208,
+        image: LemferderSecond,
+        isFlipped: false,
+        name: 'ad',
+        isMatched: false
+    },
+    {
+        id: 209,
+        image: MandoFirst,
+        isFlipped: false,
+        name: 'ae',
+        isMatched: false
+    },
+    {
+        id: 210,
+        image: MandoSecond,
+        isFlipped: false,
+        name: 'ae',
+        isMatched: false
+    },
+    {
+        id: 211,
+        image: MetelliFirst,
+        isFlipped: false,
+        name: 'af',
+        isMatched: false
+    },
+    {
+        id: 212,
+        image: MetelliSecond,
+        isFlipped: false,
+        name: 'af',
+        isMatched: false
+    },
 ]
