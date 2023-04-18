@@ -128,7 +128,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path}) => {
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
             <section className={style.wrapper}>
                 <span>Попытки: {attempts}</span>
-                <span>Пары: {pairCounter}</span>
+                {/*<span>Пары: {pairCounter}</span>*/}
                 <div className={style.cardsContainer}>
                     {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
                                                         key={index}
@@ -163,7 +163,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path}) => {
                                        restartGame={restartGame}
                                        path={path}
                 />}
-                <button className={style.restartButton} onClick={restartGame}>Restart</button>
+                {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
             </section>
 
             {/*<DragMatch/>*/}

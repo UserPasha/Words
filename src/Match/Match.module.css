@@ -46,6 +46,7 @@
     box-shadow:  3px 3px 6px #bababa,
     -2px -2px 4px #ffffff;
 }
+
 button:disabled{
     background-color: #fff;
     box-shadow:  3px 3px 6px #bababa,
@@ -67,6 +68,7 @@ button:disabled{
 .front img{
     max-width: 65px;
     border-radius: 10px;
+    max-height: 95px;
 }
 .restartButton{
     margin-top: 30px;

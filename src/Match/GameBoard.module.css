@@ -1,13 +1,42 @@
-.wrapper{
+.wrapper {
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #d5dad3;
+    background-color: #51bb46;
     height: 100vh;
 }
-.levelContainer{
+
+.rowContainer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #61dafb;
+}
+
+.number {
+    width: 14%;
+    border: 1px solid black;
+}
+
+.name {
+    width: 33%;
+    border: 1px solid black;
+}
+
+.difficult {
+    width: 28%;
+    border: 1px solid black;
+}
+
+.play {
+    width: 24%;
+    border: 1px solid black;
+}
+
+.levelContainer {
     width: 50vh;
     display: flex;
     align-items: center;

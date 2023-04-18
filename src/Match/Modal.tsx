@@ -41,28 +41,28 @@ export const Modal: FC<IModal> = ({
         setIsEndOfTime(false)
     }
     const restartTimer = () => {
-        setTimer(duration)
         closeModal()
+        setTimer(duration)
         restartGame()
     }
     return (
         <div className={style.wrapper}>
             <div className={style.modal}>
-                <div className={style.closeModal}>
-                    <img src={closeIcon}
-                         alt='close'
-                         onClick={closeModal}/>
-                </div>
-                <div>{isEndOfTime ? `к сожалению вы не успели restart add time` : createEndingOfWord(attempts)}
-                    <button onClick={restartTimer}>
-                        ещё раз
-                    </button>
-                    <Link to={path}>
-                        <button onClick={restartTimer}>
-                            Далее
+                {/*<div className={style.closeModal}>*/}
+                {/*    <img src={closeIcon}*/}
+                {/*         alt='close'*/}
+                {/*         onClick={closeModal}/>*/}
+                {/*</div>*/}
+                {isEndOfTime ?
+                    <div className={style.message} > к сожалению вы не успели
+                        <button onClick={restartTimer}  className={style.button}>
+                          Начать заново
                         </button>
-                    </Link>
-                </div>
+                    </div> : <>
+                        <div className={style.message}>  {createEndingOfWord(attempts)}</div>
+                        <Link to={path}>
+                            <button onClick={restartTimer} className={style.button}> Далее</button>
+                        </Link></>}
             </div>
         </div>
     );

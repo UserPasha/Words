@@ -7,7 +7,7 @@ import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Timer/Timer";
 
-export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path}) => {
+export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
@@ -140,14 +140,19 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path}) => {
     // };
 
     ////////////ROTATE CARDS///////////////
-    // const [cardRotationAngle, setCardRotationAngle] = useState(0);
-    // useEffect(() => {
-    //     const intervalId = setInterval(() => {
-    //         setCardRotationAngle(cardRotationAngle + 10);
-    //     }, 1000);
-    //
-    //     return () => clearInterval(intervalId);
-    // }, [cardRotationAngle]);
+    const [cardRotationAngle, setCardRotationAngle] = useState(0);
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCardRotationAngle(cardRotationAngle + 10);
+        }, 500);
+
+        return () => clearInterval(intervalId);
+    }, [cardRotationAngle]);
+
+    const rotateStyle = {
+        transform: `rotate(${cardRotationAngle}deg)`
+    }
+    const chooseStyle =  rotate ? rotateStyle : {}
     return (
         <>
             <BackArrow path={'/match'}/>
@@ -158,11 +163,11 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path}) => {
                     // style={fieldStyle}
             >
                 <span>Попытки: {attempts}</span>
-                <span>Пары: {pairCounter}</span>
+                {/*<span>Пары: {pairCounter}</span>*/}
                 <div className={style.cardsContainer}>
                     {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
                                                         key={index}
-                                                       // style={{ transform: `rotate(${cardRotationAngle}deg)` }}
+                                                        style={chooseStyle}
                                                         onClick={() => {
                                                             addValueToState(card)
                                                         }} disabled={isLockBoard || card.isMatched}>
@@ -194,7 +199,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path}) => {
                                        restartGame={restartGame}
                                        path={path}
                 />}
-                <button className={style.restartButton} onClick={restartGame}>Restart</button>
+                {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
             </section>
 
             {/*<DragMatch/>*/}

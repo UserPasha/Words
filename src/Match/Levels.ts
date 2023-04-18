@@ -24,6 +24,12 @@ import MandoFirst from '../assets/images/match/half/mandoFirst.jpg'
 import MandoSecond from '../assets/images/match/half/mandoSecond.jpg'
 import MetelliFirst from '../assets/images/match/half/metelliFirst.jpg'
 import MetelliSecond from '../assets/images/match/half/metelliSecond.jpg'
+import PolmoOne from '../assets/images/match/Polmo/polmaOne.jpg'
+import PolmoTwo from '../assets/images/match/Polmo/polmaTwo.jpeg'
+import PolmoThree from '../assets/images/match/Polmo/polmaThree.jpg'
+import PolmoFour from '../assets/images/match/Polmo/polmaFour.jpeg'
+import PolmoFive from '../assets/images/match/Polmo/PolmoFive.jpeg'
+import PolmoSix from '../assets/images/match/Polmo/polmoSix.jpeg'
 import {ICardMatch} from "../hooks/useMatch";
 
 
@@ -496,4 +502,92 @@ export const halfFirstLevel: ICardMatch[] = [
         name: 'af',
         isMatched: false
     },
+]
+
+export const polmoFirstLevel : ICardMatch[] = [
+    {
+        id: 301,
+        name: 'ba',
+        image: PolmoOne,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 302,
+        name: 'ba',
+        image: PolmoOne,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 303,
+        name: 'bb',
+        image: PolmoTwo,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 304,
+        name: 'bb',
+        image: PolmoTwo,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 305,
+        name: 'bc',
+        image: PolmoThree,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 306,
+        name: 'bc',
+        image: PolmoThree,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 307,
+        name: 'bd',
+        image: PolmoFour,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 308,
+        name: 'bd',
+        image: PolmoFour,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 309,
+        name: 'be',
+        image: PolmoFive,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 310,
+        name: 'be',
+        image: PolmoFive,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 311,
+        name: 'bf',
+        image: PolmoSix,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 312,
+        name: 'bf',
+        image: PolmoSix,
+        isFlipped: false,
+        isMatched: false
+    },
+
 ]

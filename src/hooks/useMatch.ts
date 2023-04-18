@@ -5,6 +5,7 @@ export interface IMatch {
     cardsToPlay: ICardMatch[]
     duration: number
     path: string
+    rotate: boolean
 }
 
 export interface ICardMatch {
