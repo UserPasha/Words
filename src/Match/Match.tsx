@@ -18,7 +18,7 @@ export const shuffleArray = (array: ICardMatch[]): ICardMatch[] =>{
     return shuffledArray;
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay, duration, path}) => {
+export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) => {
 
   const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
       showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
@@ -119,15 +119,17 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path}) => {
         setAttempts(0)
         setPairCounter(0)
     }
-
+   // console.log('yo')
     return (
         <>
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+
             <section className={style.wrapper}>
-                <span>Попытки: {attempts}</span>
+                <div className={style.mode}>{description}</div>
+                {/*<span>Попытки: {attempts}</span>*/}
                 {/*<span>Пары: {pairCounter}</span>*/}
                 <div className={style.cardsContainer}>
                     {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}

@@ -1,4 +1,4 @@
-import React, { useEffect, Dispatch, SetStateAction} from "react";
+import React, {useEffect, Dispatch, SetStateAction, useState} from "react";
 import style from './Timer.module.css'
 
 

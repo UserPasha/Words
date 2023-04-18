@@ -2,10 +2,11 @@ import {useState} from "react";
 
 
 export interface IMatch {
-    cardsToPlay: ICardMatch[]
+    cardsToPlay: ICardMatch[] | IPattern []
     duration: number
     path: string
     rotate: boolean
+    description: string
 }
 
 export interface ICardMatch {
@@ -16,10 +17,14 @@ export interface ICardMatch {
     isMatched: boolean
 }
 
+export interface IPattern extends ICardMatch{
+    isColorful?: boolean
+}
+
 export const useMatchHook = () => {
     const [isLockBoard, setIsLockBoard] = useState<boolean>(false)
-    const [firstCard, setFirstCard] = useState<ICardMatch | null>(null)
-    const [secondCard, setSecondCard] = useState<ICardMatch | null>(null)
+    const [firstCard, setFirstCard] = useState<ICardMatch | null | IPattern>(null)
+    const [secondCard, setSecondCard] = useState<ICardMatch | null | IPattern>(null)
     const [attempts, setAttempts] = useState<number>(0)
 
     const [showModal, setShowModal] = useState<boolean>(false)

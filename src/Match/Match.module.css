@@ -19,6 +19,9 @@
     /*background-color: #06c9fa;*/
 }
 .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: calc(23% - 15px);
     margin: 10px;
@@ -34,6 +37,9 @@
 
 }
 .flipped{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: calc(23% - 15px);
     margin: 10px;
@@ -45,13 +51,27 @@
     border-radius: 10px;
     box-shadow:  3px 3px 6px #bababa,
     -2px -2px 4px #ffffff;
+    /*box-shadow:  3px 3px 6px #279f0b,*/
+    /*-2px -2px 4px #0d6c11;*/
 }
-
+.flipped.green{
+    box-shadow:  3px 3px 6px #279f0b,
+    -2px -2px 4px #0d6c11;
+}
+.flipped.red{
+    box-shadow:  3px 3px 6px #e50f0f,
+    -2px -2px 4px #7c0606;
+}
 button:disabled{
     background-color: #fff;
     box-shadow:  3px 3px 6px #bababa,
     -2px -2px 4px #ffffff;
     border: 1px solid black;
+}
+.mode{
+
+    font-weight: bolder;
+    color: #0d6c11;;
 }
 .front{
 

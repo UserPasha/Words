@@ -30,7 +30,12 @@ import PolmoThree from '../assets/images/match/Polmo/polmaThree.jpg'
 import PolmoFour from '../assets/images/match/Polmo/polmaFour.jpeg'
 import PolmoFive from '../assets/images/match/Polmo/PolmoFive.jpeg'
 import PolmoSix from '../assets/images/match/Polmo/polmoSix.jpeg'
-import {ICardMatch} from "../hooks/useMatch";
+import TRW from '../assets/images/match/TRW.jpg'
+import Brembo from '../assets/images/match/brembo.jpg'
+import Gates from '../assets/images/match/Gates.png'
+import Elring from '../assets/images/match/elring.svg'
+
+import {ICardMatch, IPattern} from "../hooks/useMatch";
 
 
 export const filtronMix: ICardMatch[] = [
@@ -94,12 +99,12 @@ export const filtronMix: ICardMatch[] = [
 
 export const firstLevel: ICardMatch[] = [
     {
-    id: 1,
-    image: totalOil,
-    isFlipped: false,
-    name: 'a',
-    isMatched: false
-},
+        id: 1,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
     {
         id: 2,
         image: mannFilter,
@@ -153,12 +158,12 @@ export const firstLevel: ICardMatch[] = [
 
 export const secondLevel: ICardMatch[] = [...firstLevel,
     {
-    id: 9,
-    image: glaser,
-    isFlipped: false,
-    name: 'e',
-    isMatched: false
-},
+        id: 9,
+        image: glaser,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+    },
     {
         id: 10,
         image: glaser,
@@ -338,7 +343,7 @@ export const tripleSecondLevel: ICardMatch[] = [...tripleFirstLevel,
         isFlipped: false,
         name: 'e',
         isMatched: false
-},
+    },
     {
         id: 114,
         image: glaser,
@@ -373,7 +378,7 @@ export const tripleSecondLevel: ICardMatch[] = [...tripleFirstLevel,
         isFlipped: false,
         name: 'f',
         isMatched: false
-    },{
+    }, {
         id: 119,
         image: victorReinz,
         isFlipped: false,
@@ -504,7 +509,7 @@ export const halfFirstLevel: ICardMatch[] = [
     },
 ]
 
-export const polmoFirstLevel : ICardMatch[] = [
+export const polmoFirstLevel: ICardMatch[] = [
     {
         id: 301,
         name: 'ba',
@@ -588,6 +593,141 @@ export const polmoFirstLevel : ICardMatch[] = [
         image: PolmoSix,
         isFlipped: false,
         isMatched: false
+    },
+
+]
+
+export const patternFirstLevel: IPattern[] = [
+    {
+        id: 101,
+        image: Elring,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 104,
+        image: TRW,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 107,
+        image: Brembo,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 111,
+        image: Gates,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false,
+        isColorful: false
+    },
+
+]
+export const patternFirstLevelCards: IPattern[] = [
+    {
+        id: 401,
+        image: Elring,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 402,
+        image: Elring,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 403,
+        image: Elring,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 404,
+        image: TRW,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 405,
+        image: TRW,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 406,
+        image: TRW,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 407,
+        image: Brembo,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 408,
+        image: Brembo,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 409,
+        image: Brembo,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 410,
+        image: Gates,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 411,
+        image: Gates,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 412,
+        image: Gates,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false,
+        isColorful: false
     },
 
 ]
