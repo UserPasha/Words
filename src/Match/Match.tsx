@@ -3,22 +3,27 @@ import style from './Match.module.css'
 import cover from '../assets/images/match/logo.png'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
-import {ICardMatch, IMatch} from "../hooks/useMatch";
+import {ICardMatch, IMatch, IPattern} from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
 import {Timer} from "../Timer/Timer";
 
 
 
-export const shuffleArray = (array: ICardMatch[]): ICardMatch[] =>{
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[]| IPattern[] =>{
+    if(array){
+        const shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray;
+    } else {
+        return []
     }
-    return shuffledArray;
+
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) => {
+export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, isMuffler}) => {
 
   const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
       showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
@@ -120,6 +125,8 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
         setPairCounter(0)
     }
    // console.log('yo')
+    const isModal = isEndOfTime || showModal
+   // const muffleredStyle = isMuffler ? `${style.card} ${style.flipped} ${style.muffler}`: `${style.card} ${style.muffler}`
     return (
         <>
             <BackArrow path={'/match'}/>
@@ -132,7 +139,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
                 {/*<span>Попытки: {attempts}</span>*/}
                 {/*<span>Пары: {pairCounter}</span>*/}
                 <div className={style.cardsContainer}>
-                    {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
+                    {cards.map((card, index) => <button className={ card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
                                                         key={index}
                                                         onClick={() => {
                                                             addValueToState(card)
@@ -145,7 +152,8 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
                         </button>
                     )}
                 </div>
-                {showModal &&  <Modal setShowModal={setShowModal}
+
+                {isModal &&  <Modal setShowModal={setShowModal}
                                       attempts={attempts}
                                       isEndOfTime={isEndOfTime}
                                       setIsEndOfTime={setIsEndOfTime}
@@ -155,16 +163,16 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
                                       restartGame={restartGame}
                                       path={path}
                 />}
-                {isEndOfTime && <Modal setShowModal={setShowModal}
-                                       attempts={attempts}
-                                       isEndOfTime={isEndOfTime}
-                                       setIsEndOfTime={setIsEndOfTime}
-                                       setRunning={setRunning}
-                                       duration={duration}
-                                       setTimer={setTimer}
-                                       restartGame={restartGame}
-                                       path={path}
-                />}
+                {/*{isEndOfTime && <Modal setShowModal={setShowModal}*/}
+                {/*                       attempts={attempts}*/}
+                {/*                       isEndOfTime={isEndOfTime}*/}
+                {/*                       setIsEndOfTime={setIsEndOfTime}*/}
+                {/*                       setRunning={setRunning}*/}
+                {/*                       duration={duration}*/}
+                {/*                       setTimer={setTimer}*/}
+                {/*                       restartGame={restartGame}*/}
+                {/*                       path={path}*/}
+                {/*/>}*/}
                 {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
             </section>
 

@@ -14,7 +14,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
     } = useMatchHook()
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
     //console.log(cardsToPlay)
-    const [thirdCard, setThirdCard] = useState<ICardMatch | null>(null)
+    const [thirdCard, setThirdCard] = useState<ICardMatch | null>({id: 0, name: '', isMatched: false, isFlipped: false, image: ''})
     const [timer, setTimer] = useState(duration);
 
     useEffect(() => {
@@ -61,38 +61,20 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
         }
         , [firstCard?.name, secondCard?.name, thirdCard?.name])
 
+
     const addValueToState = (cardId: ICardMatch) => {
-
-        if (firstCard !== null && !secondCard && firstCard.id !== cardId.id
-
-        ) {
-            setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCard!.id ? {...card, isFlipped: true} : card))
-        } else if (firstCard !== null && secondCard !== null && firstCard.id !== cardId.id && secondCard.id !== cardId.id
-
-        ) {
-            setThirdCard(cardId)
-            setCards(cards.map(card => card.id === thirdCard?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts + 1)
+        if (thirdCard?.id !== 0 && secondCard !== null && thirdCard?.id !== cardId.id  && secondCard.id !== cardId.id ) {
+            setFirstCard(cardId);
+            setCards(cards.map((card) => (card.id === firstCard?.id ? { ...card, isFlipped: true } : card)));
+        } else if (thirdCard?.id !== 0 && thirdCard?.id !== cardId.id ) {
+            setSecondCard(cardId);
+            setCards(cards.map((card) => (card.id === secondCard?.id ? { ...card, isFlipped: true } : card)));
+            setAttempts(attempts + 1);
         } else {
-            setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
+            setThirdCard(cardId);
+            setCards(cards.map((card) => (card.id === thirdCard?.id ? { ...card, isFlipped: true } : card)));
         }
-
-    }
-    // const addValueToState = (cardId: ICardMatch) => {
-    //     if (firstCard && !secondCard && firstCard?.id !== cardId?.id) {
-    //         setSecondCard(cardId);
-    //         setCards(cards.map((card) => (card.id === secondCard!.id ? { ...card, isFlipped: true } : card)));
-    //     } else if (firstCard && secondCard && firstCard?.id !== cardId?.id && secondCard?.id !== cardId?.id) {
-    //         setThirdCard(cardId);
-    //         setCards(cards.map((card) => (card.id === thirdCard?.id ? { ...card, isFlipped: true } : card)));
-    //         setAttempts(attempts + 1);
-    //     } else {
-    //         setFirstCard(cardId);
-    //         setCards(cards.map((card) => (card.id === firstCard?.id ? { ...card, isFlipped: true } : card)));
-    //     }
-    // };
+    };
       const restartGame = () => {
         setCards(shuffleArray(cardsToPlay))
         setAttempts(0)
@@ -101,7 +83,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
     const resetBoard = () => {
         setFirstCard(null)
         setSecondCard(null)
-        setThirdCard(null)
+        setThirdCard({id: 0, name: '', isMatched: false, isFlipped: false, image: ''})
         setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
     }
     const checkMates = () => {
@@ -114,7 +96,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                 } : card))
                 setFirstCard(null)
                 setSecondCard(null)
-                setThirdCard(null)
+                setThirdCard({id: 0, name: '', isMatched: false, isFlipped: false, image: ''})
                 setIsLockBoard(false)
                 setPairCounter(pairCounter + 1)
             }, 500)
@@ -153,6 +135,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
         transform: `rotate(${cardRotationAngle}deg)`
     }
     const chooseStyle =  rotate ? rotateStyle : {}
+    const isModal = isEndOfTime || showModal
     //console.log('yo')
     return (
         <>
@@ -161,16 +144,12 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                 timer={timer} setTimer={setTimer}
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
 
-            <section className={style.wrapper}
-                    // style={fieldStyle}
-            >
+            <section className={style.wrapper}>
+
                 <div className={style.mode}>{description}</div>
-                {/*<span>Попытки: {attempts}</span>*/}
-                {/*<span>Пары: {pairCounter}</span>*/}
-                <div className={style.cardsContainer}
-                     //style={chooseStyle}
-                >
-                    {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
+
+                <div className={style.cardsContainer}>
+                    {cards.map((card, index) => <button className={card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
                                                         key={index}
                                                         style={chooseStyle}
                                                         onClick={() => {
@@ -184,7 +163,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                         </button>
                     )}
                 </div>
-                { showModal && <Modal setShowModal={setShowModal}
+                { isModal && <Modal setShowModal={setShowModal}
                                       attempts={attempts}
                                       isEndOfTime={isEndOfTime}
                                       setIsEndOfTime={setIsEndOfTime}
@@ -194,17 +173,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                                       restartGame={restartGame}
                                       path={path}
                 />}
-                {isEndOfTime && <Modal setShowModal={setShowModal}
-                                       attempts={attempts}
-                                       isEndOfTime={isEndOfTime}
-                                       setIsEndOfTime={setIsEndOfTime}
-                                       setRunning={setRunning}
-                                       duration={duration}
-                                       setTimer={setTimer}
-                                       restartGame={restartGame}
-                                       path={path}
-                />}
-                {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
+
             </section>
 
             {/*<DragMatch/>*/}

@@ -27,18 +27,22 @@ export const GameBoard = () => {
             <Row number={2} name={'Сборка'} difficult={"1"} play={PATH.TWO} description={'Найти пару'}/>
             <Row number={3} name={'Сборка'} difficult={"2"} play={PATH.THREE} description={'Найти пару'}/>
             <Row number={4} name={'Сборка'} difficult={"3"} play={PATH.FOUR} description={'Найти пару'}/>
-            <Row number={5} name={'Сборка'} difficult={"1"} play={PATH.HALFONE} description={'Найти вторую половину'}/>
+            <Row number={5} name={'Сборка'} difficult={"3"} play={PATH.FIVE} description={'Найти пару'}/>
+            <Row number={6} name={'Сборка'} difficult={"1"} play={PATH.HALFONE} description={'Найти вторую половину'}/>
+            <Row number={7} name={'Сборка'} difficult={"2"} play={PATH.HALFTWO} description={'Найти вторую половину'}/>
 
-            <Row number={6} name={'Polmostrow'} difficult={"2"} play={PATH.POLMOONE} description={'Найти пару'}/>
+            <Row number={8} name={'Polmostrow'} difficult={"2"} play={PATH.POLMOONE} description={'Найти пару'}/>
+            <Row number={9} name={'Polmostrow'} difficult={"2"} play={PATH.POLMOTWO} description={'Найти пару'}/>
+            <Row number={10} name={'Polmostrow'} difficult={"3"} play={PATH.POLMOTHREE} description={'Найти пару'}/>
 
-            <Row number={7} name={'Сборка'} difficult={"2"} play={PATH.TRIPLEMATCHONE} description={'Масовка'}/>
-            <Row number={8} name={'Сборка'} difficult={"3"} play={PATH.THREEMATCHESTWO} description={'Масовка'}/>
+            <Row number={11} name={'Сборка'} difficult={"2"} play={PATH.TRIPLEMATCHONE} description={'Массовка'}/>
+            <Row number={12} name={'Сборка'} difficult={"3"} play={PATH.THREEMATCHESTWO} description={'Массовка'}/>
 
-            <Row number={9} name={'Сборка'} difficult={"2"} play={PATH.PATTERNONE} description={'Массовка по документу'}/>
+            <Row number={13} name={'Сборка'} difficult={"2"} play={PATH.PATTERNONE} description={'Массовка по документу'}/>
+            <Row number={14} name={'Сборка'} difficult={"4"} play={PATH.PATTERNTWO} description={'Массовка по документу'}/>
 
-
-            <Row number={10} name={'Сборка'} difficult={"2"} play={PATH.THREEMATCHESTWOROTATEONE} description={'Пьяная масовка'}/>
-            <Row number={11} name={'Сборка'} difficult={"4"} play={PATH.THREEMATCHESTWOROTATETWO} description={'Пьяная масовка'}/>
+            <Row number={15} name={'Сборка'} difficult={"2"} play={PATH.THREEMATCHESTWOROTATEONE} description={'Пьяная масовка'}/>
+            <Row number={16} name={'Сборка'} difficult={"3"} play={PATH.THREEMATCHESTWOROTATETWO} description={'Пьяная масовка'}/>
 
             {/*<Row number={11} name={'Tect'} difficult={"x"} play={PATH.TRIPLETSET} description={'Найти три'}/>*/}
 

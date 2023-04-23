@@ -1,30 +1,29 @@
 import React, {FC, useEffect, useState} from 'react';
 import style from '../Match/Match.module.css'
-import {ICardMatch, IMatch, IPattern, useMatchHook} from "../hooks/useMatch";
+import {ICardMatch, IMatch, IPattern, IPatternCards, useMatchHook} from "../hooks/useMatch";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Timer/Timer";
-import {patternFirstLevel} from "../Match/Levels";
 
-export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description}) => {
+
+export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
     } = useMatchHook()
-    const [cards, setCards] = useState<IPattern[] | IPattern []>(shuffleArray(cardsToPlay))
-    //console.log(cardsToPlay)
+    const [cards, setCards] = useState< IPattern []>(shuffleArray(cardsToPlay))
+
     const [thirdCard, setThirdCard] = useState<IPattern | null>({id: 0, name: '', isMatched: false, isFlipped: false, image: '', isColorful: false})
     const [timer, setTimer] = useState(duration);
 
-    const [pattern, setPattern] = useState<IPattern[]>(shuffleArray(patternFirstLevel))
-    const [patternIndex, setPatternindex] = useState<number>(0)
+    const [pattern, setPattern] = useState<IPattern[]>(shuffleArray(patternCards))
+    const [patternIndex, setPatternIndex] = useState<number>(0)
 
     useEffect(() => {
         if (firstCard && secondCard && thirdCard) {
             checkMates();
-            //handleRotateClick()
         }
     }, [secondCard, firstCard, thirdCard]);
 
@@ -44,6 +43,11 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
     useEffect(() => {
         setCards(shuffleArray(cardsToPlay))
     }, [cardsToPlay])
+
+    useEffect(() => {
+        setPattern(shuffleArray(patternCards))
+    }, [patternCards])
+
     // useEffect(()=>{
     //     setPattern(pattern.map(patt=> patt.name === firstCard?.name && patt.name === secondCard?.name && patt.name === thirdCard?.name
     //         ?
@@ -71,10 +75,10 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
         , [firstCard?.name, secondCard?.name, thirdCard?.name])
 
     const addValueToState = (cardId: ICardMatch) => {
-    if (thirdCard?.id !== 0 && secondCard !== null ) {
+    if (thirdCard?.id !== 0 && secondCard !== null && thirdCard?.id !== cardId.id  && secondCard.id !== cardId.id ) {
         setFirstCard(cardId);
         setCards(cards.map((card) => (card.id === firstCard?.id ? { ...card, isFlipped: true } : card)));
-    } else if (thirdCard?.id !== 0 ) {
+    } else if (thirdCard?.id !== 0 && thirdCard?.id !== cardId.id ) {
         setSecondCard(cardId);
         setCards(cards.map((card) => (card.id === secondCard?.id ? { ...card, isFlipped: true } : card)));
         setAttempts(attempts + 1);
@@ -84,11 +88,16 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
     }
 };
 
+
+
+
     //console.log('yo')
     const restartGame = () => {
         setCards(shuffleArray(cardsToPlay))
         setAttempts(0)
         setPairCounter(0)
+        setPatternIndex(0)
+        setPattern(shuffleArray(patternCards))
     }
     const resetBoard = () => {
         setFirstCard(null)
@@ -99,6 +108,10 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
     const checkMates = () => {
 
         let patternName = pattern[patternIndex]
+if(patternIndex === patternCards.length) {
+    setPatternIndex(0)
+}
+
         if (firstCard?.name === secondCard?.name && firstCard?.name === thirdCard?.name && firstCard?.name === patternName.name) {
             setIsLockBoard(true)
             setTimeout(() => {
@@ -110,7 +123,7 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
                 setPattern(pattern.map(patt=> patt.name === firstCard.name
                     ?
                     {...patt, isColorful: true} : patt))
-             setPatternindex(patternIndex+1)
+             setPatternIndex(patternIndex+1)
                 setFirstCard(null)
                 setSecondCard(null)
                 setThirdCard({id: 0, name: '', isMatched: false, isFlipped: false, image: '', isColorful: false})
@@ -142,6 +155,8 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
         transform: `rotate(${cardRotationAngle}deg)`
     }
     const chooseStyle =  rotate ? rotateStyle : {}
+    const isModal = isEndOfTime || showModal
+
     return (
         <>
             <BackArrow path={'/match'}/>
@@ -149,24 +164,24 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
                 timer={timer} setTimer={setTimer}
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
 
+
             <section className={style.wrapper}
                 // style={fieldStyle}
             >
                 <div className={style.mode}>{description}</div>
                 <div  className={style.cardsContainer}>{pattern.map((card, index)=>
-                        <button className={card.isColorful ?  `${style.flipped} ${style.green}` : `${style.flipped} ${style.red}`}
+                        <button className={card.isColorful ?  `${style.card} ${style.flipped} ${style.smaller} ${style.green}` : `${style.card} ${style.flipped} ${style.smaller} ${style.red}`}
                                                                                             key={index}>   <div className={style.front}> <img src={card.image}/>
                 </div>
 
                 </button>
                 )}</div>
 
-                {/*<span>Попытки: {attempts}</span>*/}
-                {/*<span>Пары: {pairCounter}</span>*/}
+
                 <div className={style.cardsContainer}
                     //style={chooseStyle}
                 >
-                    {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
+                    {cards.map((card, index) => <button className={card.isFlipped ? `${style.card} ${style.flipped} ${style.smaller}` : `${style.card} ${style.smaller} `}
                                                         key={index}
                                                         style={chooseStyle}
                                                         onClick={() => {
@@ -180,7 +195,7 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
                         </button>
                     )}
                 </div>
-                { showModal && <Modal setShowModal={setShowModal}
+                { isModal && <Modal setShowModal={setShowModal}
                                       attempts={attempts}
                                       isEndOfTime={isEndOfTime}
                                       setIsEndOfTime={setIsEndOfTime}
@@ -190,17 +205,7 @@ export const TripleMatchCopy: FC<IMatch> = ({cardsToPlay, duration, path, rotate
                                       restartGame={restartGame}
                                       path={path}
                 />}
-                {isEndOfTime && <Modal setShowModal={setShowModal}
-                                       attempts={attempts}
-                                       isEndOfTime={isEndOfTime}
-                                       setIsEndOfTime={setIsEndOfTime}
-                                       setRunning={setRunning}
-                                       duration={duration}
-                                       setTimer={setTimer}
-                                       restartGame={restartGame}
-                                       path={path}
-                />}
-                {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
+
             </section>
 
             {/*<DragMatch/>*/}

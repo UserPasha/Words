@@ -15,7 +15,7 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 300px;
+    min-height: 200px;
     /*background-color: #06c9fa;*/
 }
 .card {
@@ -23,9 +23,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: calc(23% - 15px);
+    /*width: calc(23% - 15px);*/
+    width: 70px;
     margin: 10px;
-    height: 100px;
+    /*height: 100px;*/
+    height: 90px;
     cursor: pointer;
     /*perspective: 600px;*/
     transition: transform 0.6s;
@@ -33,32 +35,27 @@
     border-radius: 10px;
     box-shadow:  3px 3px 6px #bababa,
     -2px -2px 4px #ffffff;
-
-
 }
-.flipped{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: calc(23% - 15px);
-    margin: 10px;
-    height: 100px;
-    cursor: pointer;
-    /*perspective: 600px;*/
+.card.flipped{
     transition: transform 0.6s;
     transform: rotateY(360deg);
-    border-radius: 10px;
-    box-shadow:  3px 3px 6px #bababa,
-    -2px -2px 4px #ffffff;
-    /*box-shadow:  3px 3px 6px #279f0b,*/
-    /*-2px -2px 4px #0d6c11;*/
 }
-.flipped.green{
+.card.smaller,
+.card.flipped.smaller{
+    height: 75px;
+    margin: 5px;
+}
+/*.card.muffler,*/
+/*.card.flipped.muffler{*/
+/*    height: 95px;*/
+/*}*/
+
+
+.card.flipped.smaller.green{
     box-shadow:  3px 3px 6px #279f0b,
     -2px -2px 4px #0d6c11;
 }
-.flipped.red{
+.card.flipped.smaller.red{
     box-shadow:  3px 3px 6px #e50f0f,
     -2px -2px 4px #7c0606;
 }
@@ -86,9 +83,10 @@ button:disabled{
 }
 
 .front img{
-    max-width: 65px;
+    /*max-width: 65px;*/
+    max-width: 50px;
     border-radius: 10px;
-    max-height: 95px;
+    max-height: 82px;
 }
 .restartButton{
     margin-top: 30px;

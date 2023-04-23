@@ -7,6 +7,7 @@ export interface IMatch {
     path: string
     rotate: boolean
     description: string
+    isMuffler: boolean
 }
 
 export interface ICardMatch {
@@ -19,6 +20,12 @@ export interface ICardMatch {
 
 export interface IPattern extends ICardMatch{
     isColorful?: boolean
+}
+
+
+export interface IPatternCards extends IMatch{
+    patternCards: IPattern[]
+    isChangedSize: boolean
 }
 
 export const useMatchHook = () => {

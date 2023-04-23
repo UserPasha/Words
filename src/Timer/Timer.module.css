@@ -1,5 +1,4 @@
 .wrapper{
-    margin-top: 30px;
     position: relative;
     display: flex;
     align-items: center;
@@ -9,23 +8,35 @@
     height: 30px;
     font-weight: bold;
 }
-.wrapper.full{
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    margin-top: 80px;
+}
+.container.full{
     color: green;
 }
-.wrapper.middle{
+.container.middle{
     color: #e0a63b;
 }
-.wrapper.short{
+.container.short{
     color:red
 }
 .progressBar {
+    position: fixed;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     height: 10px;
     width: 100%;
     background-color: green;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .progressBar.full{
     background-color: green;

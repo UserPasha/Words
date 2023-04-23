@@ -56,7 +56,7 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
                 </div>
 
             </div>
-            <div className={short ? `${style.wrapper} ${style.short}` : middle ? `${style.wrapper} ${style.middle}` : `${style.wrapper} ${style.full}`}>
+            <div className={short ? `${style.container} ${style.short}` : middle ? `${style.container} ${style.middle}` : `${style.container} ${style.full}`}>
                 {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
             </div>
         </div>

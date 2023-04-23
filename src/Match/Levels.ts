@@ -24,16 +24,40 @@ import MandoFirst from '../assets/images/match/half/mandoFirst.jpg'
 import MandoSecond from '../assets/images/match/half/mandoSecond.jpg'
 import MetelliFirst from '../assets/images/match/half/metelliFirst.jpg'
 import MetelliSecond from '../assets/images/match/half/metelliSecond.jpg'
+import MobiletronFirst from '../assets/images/match/half/mobiletronFirst.jpg'
+import MobiletronSecond from '../assets/images/match/half/mobiletronSecond.jpg'
+import teknorotFirst from '../assets/images/match/half/teknorotFirst.jpg'
+import teknorotSecond from '../assets/images/match/half/teknorotSecond.jpg'
+import airtexFirst from '../assets/images/match/half/airteFirst.jpg'
+import airtexSecond from '../assets/images/match/half/airtexSecond.jpg'
+import KYBFirst from '../assets/images/match/half/kybFirst.jpg'
+import KYBSecond from '../assets/images/match/half/kybSecond.jpg'
+import FrenkitFirst from '../assets/images/match/half/frenkitFirst.jpg'
+import FrenkitSecond from '../assets/images/match/half/frenkitSecond.jpg'
+import boschFirst from '../assets/images/match/half/boschFirst.jpg'
+import boschSecond from '../assets/images/match/half/boschSecond.jpg'
 import PolmoOne from '../assets/images/match/Polmo/polmaOne.jpg'
 import PolmoTwo from '../assets/images/match/Polmo/polmaTwo.jpeg'
 import PolmoThree from '../assets/images/match/Polmo/polmaThree.jpg'
 import PolmoFour from '../assets/images/match/Polmo/polmaFour.jpeg'
 import PolmoFive from '../assets/images/match/Polmo/PolmoFive.jpeg'
 import PolmoSix from '../assets/images/match/Polmo/polmoSix.jpeg'
+import PolmoSeven from '../assets/images/match/Polmo/polmoSeven.jpeg'
+import PolmoEight from '../assets/images/match/Polmo/polmoEight.jpg'
+import PolmoNine from '../assets/images/match/Polmo/polmoNine.jpeg'
+import PolmoTen from '../assets/images/match/Polmo/polmoTeni.jpg'
+import PolmoEleven from '../assets/images/match/Polmo/polmoEleven.jpeg'
+import PolmoTwelve from '../assets/images/match/Polmo/polmoTwelve.jpeg'
 import TRW from '../assets/images/match/TRW.jpg'
 import Brembo from '../assets/images/match/brembo.jpg'
 import Gates from '../assets/images/match/Gates.png'
 import Elring from '../assets/images/match/elring.svg'
+import BSG from '../assets/images/match/bsg.png'
+import Denkermann from '../assets/images/match/denckermann.png'
+import birth from '../assets/images/match/BirthParts.jpg'
+import autofren from '../assets/images/match/autoFrenL.jpg'
+import ngk from '../assets/images/match/ngk.svg'
+import persea from '../assets/images/match/persea.jpg'
 
 import {ICardMatch, IPattern} from "../hooks/useMatch";
 
@@ -248,6 +272,37 @@ export const fourthLevel: ICardMatch[] = [...thirdLevel,
         isMatched: false
     },
 ]
+
+export const fifthLevel: ICardMatch[] = [...fourthLevel,
+    {
+        id: 21,
+        image: BSG,
+        isFlipped: false,
+        name: 'k',
+        isMatched: false
+    },
+    {
+        id: 22,
+        image: BSG,
+        isFlipped: false,
+        name: 'k',
+        isMatched: false
+    },
+    {
+        id: 23,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'l',
+        isMatched: false
+    },
+    {
+        id: 24,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'l',
+        isMatched: false
+    },
+    ]
 
 export const tripleFirstLevel: ICardMatch[] = [
     {
@@ -509,6 +564,93 @@ export const halfFirstLevel: ICardMatch[] = [
     },
 ]
 
+export const halfSecondLevel: ICardMatch[] = [...halfFirstLevel,
+    {
+        id: 213,
+        image: MobiletronFirst,
+        isFlipped: false,
+        name: 'ag',
+        isMatched: false
+    },
+    {
+        id: 214,
+        image: MobiletronSecond,
+        isFlipped: false,
+        name: 'ag',
+        isMatched: false
+    },
+    {
+        id: 215,
+        image: teknorotFirst,
+        isFlipped: false,
+        name: 'ah',
+        isMatched: false
+    },
+    {
+        id: 216,
+        image: teknorotSecond,
+        isFlipped: false,
+        name: 'ah',
+        isMatched: false
+    },
+    {
+        id: 217,
+        image: airtexFirst,
+        isFlipped: false,
+        name: 'ai',
+        isMatched: false
+    },
+    {
+        id: 218,
+        image: airtexSecond,
+        isFlipped: false,
+        name: 'ai',
+        isMatched: false
+    },
+    {
+        id: 219,
+        image: KYBFirst,
+        isFlipped: false,
+        name: 'aj',
+        isMatched: false
+    },
+    {
+        id: 220,
+        image: KYBSecond,
+        isFlipped: false,
+        name: 'aj',
+        isMatched: false
+    },
+    {
+        id: 221,
+        image: FrenkitFirst,
+        isFlipped: false,
+        name: 'ak',
+        isMatched: false
+    },
+    {
+        id: 222,
+        image: FrenkitSecond,
+        isFlipped: false,
+        name: 'ak',
+        isMatched: false
+    },
+    {
+        id: 223,
+        image: boschFirst,
+        isFlipped: false,
+        name: 'al',
+        isMatched: false
+    },
+    {
+        id: 224,
+        image: boschSecond,
+        isFlipped: false,
+        name: 'al',
+        isMatched: false
+    },
+]
+
 export const polmoFirstLevel: ICardMatch[] = [
     {
         id: 301,
@@ -597,6 +739,96 @@ export const polmoFirstLevel: ICardMatch[] = [
 
 ]
 
+export const polmoSecondLevel: ICardMatch[] = [ ...polmoFirstLevel,
+    {
+        id: 313,
+        name: 'bg',
+        image: PolmoSeven,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 314,
+        name: 'bg',
+        image: PolmoSeven,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 315,
+        name: 'bh',
+        image: PolmoEight,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 316,
+        name: 'bh',
+        image: PolmoEight,
+        isFlipped: false,
+        isMatched: false
+    },
+
+]
+
+export const polmoThirdLevel: ICardMatch[] = [ ...polmoSecondLevel,
+    {
+        id: 317,
+        name: 'bi',
+        image: PolmoNine,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 318,
+        name: 'bi',
+        image: PolmoNine,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 319,
+        name: 'bj',
+        image: PolmoTen,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 320,
+        name: 'bj',
+        image: PolmoTen,
+        isFlipped: false,
+        isMatched: false
+    }, {
+        id: 321,
+        name: 'bk',
+        image: PolmoEleven,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 322,
+        name: 'bk',
+        image: PolmoEleven,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 323,
+        name: 'bl',
+        image: PolmoTwelve,
+        isFlipped: false,
+        isMatched: false
+    },
+    {
+        id: 324,
+        name: 'bl',
+        image: PolmoTwelve,
+        isFlipped: false,
+        isMatched: false
+    },
+]
+
 export const patternFirstLevel: IPattern[] = [
     {
         id: 101,
@@ -632,6 +864,42 @@ export const patternFirstLevel: IPattern[] = [
     },
 
 ]
+
+export const patternSecondLevel: IPattern[] = [ ...patternFirstLevel,
+    {
+        id: 114,
+        image: birth,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 117,
+        image: autofren,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 121,
+        image: ngk,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 124,
+        image: persea,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false,
+        isColorful: false
+    },
+]
+
 export const patternFirstLevelCards: IPattern[] = [
     {
         id: 401,
@@ -726,6 +994,106 @@ export const patternFirstLevelCards: IPattern[] = [
         image: Gates,
         isFlipped: false,
         name: 'd',
+        isMatched: false,
+        isColorful: false
+    },
+
+]
+
+export const patternSecondLevelCards: IPattern[] = [...patternFirstLevelCards,
+    {
+        id: 413,
+        image: birth,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 414,
+        image: birth,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 415,
+        image: birth,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 416,
+        image: autofren,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 417,
+        image: autofren,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 418,
+        image: autofren,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 419,
+        image: ngk,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 420,
+        image: ngk,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 421,
+        image: ngk,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 422,
+        image: persea,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 423,
+        image: persea,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 424,
+        image: persea,
+        isFlipped: false,
+        name: 'h',
         isMatched: false,
         isColorful: false
     },

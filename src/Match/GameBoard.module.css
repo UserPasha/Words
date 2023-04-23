@@ -1,11 +1,12 @@
 .wrapper {
     width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #51bb46;
-    height: 100vh;
+    margin-top: 200px;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*flex-direction: column;*/
+    /*background-color: #51bb46;*/
+    /*height: 100vh;*/
 }
 
 .rowContainer {
@@ -13,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #61dafb;
+    background-color: #bdc0bc;
 }
 
 .number {
