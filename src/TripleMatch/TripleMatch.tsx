@@ -112,14 +112,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
         }
     }
 
-    //////////////ROTATE BOARD 90//////////////
-    // const [rotationAngle, setRotationAngle] = useState(0);
-    // const fieldStyle = {
-    //     transform: `rotate(${rotationAngle}deg)`,
-    // };
-    // const handleRotateClick = () => {
-    //     setRotationAngle(rotationAngle + 90);
-    // };
+
 
     ////////////ROTATE CARDS///////////////
     const [cardRotationAngle, setCardRotationAngle] = useState(0);

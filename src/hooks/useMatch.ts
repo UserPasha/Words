@@ -7,7 +7,6 @@ export interface IMatch {
     path: string
     rotate: boolean
     description: string
-    isMuffler: boolean
 }
 
 export interface ICardMatch {

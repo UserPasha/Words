@@ -2,6 +2,9 @@ import React, {FC} from 'react';
 import style from './Modal.module.css'
 import closeIcon from "../Common/Assets/images/close.svg";
 import {Link} from "react-router-dom";
+import smile from '../assets/images/match/smile.svg'
+import sad from '../assets/images/match/sad.svg'
+
 
 interface IModal {
     setShowModal: (value: boolean) => void
@@ -54,15 +57,23 @@ export const Modal: FC<IModal> = ({
                 {/*         onClick={closeModal}/>*/}
                 {/*</div>*/}
                 {isEndOfTime ?
-                    <div className={style.message} > к сожалению вы не успели
+                    <div className={style.message} >
+                        <img src={sad} alt={'fun smile'}/>
+                        K сожалению вы не успели
+
                         <button onClick={restartTimer}  className={style.button}>
                           Начать заново
                         </button>
                     </div> : <>
-                        <div className={style.message}>  {createEndingOfWord(attempts)}</div>
+                        <div className={style.message}>
+                            <img src={smile} alt={'fun smile'}/>
+                            {createEndingOfWord(attempts)}
                         <Link to={path}>
                             <button onClick={restartTimer} className={style.button}> Далее</button>
-                        </Link></>}
+                        </Link>
+                        </div>
+                    </>
+                        }
             </div>
         </div>
     );

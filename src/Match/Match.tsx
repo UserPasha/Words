@@ -23,7 +23,7 @@ export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[]| IP
 
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, isMuffler}) => {
+export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) => {
 
   const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
       showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
@@ -126,7 +126,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, isM
     }
    // console.log('yo')
     const isModal = isEndOfTime || showModal
-   // const muffleredStyle = isMuffler ? `${style.card} ${style.flipped} ${style.muffler}`: `${style.card} ${style.muffler}`
+
     return (
         <>
             <BackArrow path={'/match'}/>
@@ -136,8 +136,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, isM
 
             <section className={style.wrapper}>
                 <div className={style.mode}>{description}</div>
-                {/*<span>Попытки: {attempts}</span>*/}
-                {/*<span>Пары: {pairCounter}</span>*/}
+
                 <div className={style.cardsContainer}>
                     {cards.map((card, index) => <button className={ card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
                                                         key={index}
@@ -163,17 +162,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, isM
                                       restartGame={restartGame}
                                       path={path}
                 />}
-                {/*{isEndOfTime && <Modal setShowModal={setShowModal}*/}
-                {/*                       attempts={attempts}*/}
-                {/*                       isEndOfTime={isEndOfTime}*/}
-                {/*                       setIsEndOfTime={setIsEndOfTime}*/}
-                {/*                       setRunning={setRunning}*/}
-                {/*                       duration={duration}*/}
-                {/*                       setTimer={setTimer}*/}
-                {/*                       restartGame={restartGame}*/}
-                {/*                       path={path}*/}
-                {/*/>}*/}
-                {/*<button className={style.restartButton} onClick={restartGame}>Restart</button>*/}
+
             </section>
 
             {/*<DragMatch/>*/}

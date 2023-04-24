@@ -1,50 +1,50 @@
 .wrapper {
     width: 100vw;
-    margin-top: 200px;
+    /*margin-top: 200px;*/
     /*display: flex;*/
     /*align-items: center;*/
     /*justify-content: center;*/
     /*flex-direction: column;*/
     /*background-color: #51bb46;*/
-    /*height: 100vh;*/
+    height: 100vh;
 }
 
 .rowContainer {
-    width: 100vw;
+    /*width: 100vw;*/
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #bdc0bc;
 }
 
-.number {
-    width: 14%;
-    border: 1px solid black;
-}
+/*.number {*/
+/*    width: 14%;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.name {
-    width: 33%;
-    border: 1px solid black;
-}
+/*.name {*/
+/*    width: 33%;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.difficult {
-    width: 28%;
-    border: 1px solid black;
-}
+/*.difficult {*/
+/*    width: 28%;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.play {
-    width: 24%;
-    border: 1px solid black;
-}
+/*.play {*/
+/*    width: 24%;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.levelContainer {
-    width: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #17380a;
-    height: 100px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
+/*.levelContainer {*/
+/*    width: 50vh;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    background-color: #17380a;*/
+/*    height: 100px;*/
+/*    margin-bottom: 10px;*/
+/*    color: #ffffff;*/
+/*}*/

@@ -3,6 +3,8 @@ import style from './GameBoard.module.css'
 import {Link} from "react-router-dom";
 import {PATH} from "../AppRoutes/AppRoutes";
 import {Row} from "./Row";
+import {Circle} from "./Circle";
+import {circleLevel, thirdLevel} from "./Levels";
 
 export const GameBoard = () => {
 
@@ -44,7 +46,12 @@ export const GameBoard = () => {
             <Row number={15} name={'Сборка'} difficult={"2"} play={PATH.THREEMATCHESTWOROTATEONE} description={'Пьяная масовка'}/>
             <Row number={16} name={'Сборка'} difficult={"3"} play={PATH.THREEMATCHESTWOROTATETWO} description={'Пьяная масовка'}/>
 
+            <Row number={17} name={'Сборка'} difficult={"4"} play={PATH.CRAZYONE} description={'Массовка по документу'}/>
+            <Row number={18} name={'Сборка'} difficult={"4"} play={PATH.CIRCLE} description={'Крутящий момент'}/>
+
             {/*<Row number={11} name={'Tect'} difficult={"x"} play={PATH.TRIPLETSET} description={'Найти три'}/>*/}
+
+
 
 
         </section>

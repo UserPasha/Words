@@ -143,12 +143,12 @@ body {
   border-radius: 50%;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+/*.container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  height: 100vh;*/
+/*}*/
 
 .circle {
   position: relative;
@@ -167,4 +167,76 @@ body {
   background-color: #333;
   transform-origin: 0 50%;
   margin-left: 20px;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+
+
+}
+.container1{
+  transform: rotate(15deg) translate(108px) rotate(108deg);
+}
+.container2{
+  transform: rotate(58deg) translate(103px) rotate(78deg);
+}
+.container3{
+  transform: rotate(101deg) translate(114px) rotate(79deg);
+}
+.container4{
+  transform: rotate(135deg) translate(136px) rotate(60deg);
+}
+.container5{
+  transform: rotate(165deg) translate(160px) rotate(72deg);
+}
+.container6{
+  transform: rotate(195deg) translate(175px) rotate(82deg);
+}
+.container7{
+  transform: rotate(225deg) translate(180px) rotate(86deg);
+}
+.container8{
+  transform: rotate(251deg) translate(173px) rotate(-255deg);
+}
+.container9{
+  transform: rotate(278deg) translate(162px) rotate(106deg);
+}
+.container10{
+  transform: rotate(308deg) translate(145px) rotate(99deg);
+}
+.container11{
+  transform: rotate(340deg) translate(123px) rotate(102deg);
+}
+.container12{
+  transform: rotate(352deg) translate(36px) rotate(138deg);
+}
+.container13{
+  transform: rotate(104deg) translate(47px) rotate(58deg);
+}
+.container14{
+  transform: rotate(163deg) translate(85px) rotate(51deg);
+}
+.container15{
+  transform: rotate(206deg) translate(107px) rotate(71deg);
+}
+.container16{
+  transform: rotate(246deg) translate(102px) rotate(-247.5deg);
+}
+.container17{
+  transform: rotate(294deg) translate(83px) rotate(-292.5deg);
+}
+.container18{
+  transform: rotate(227deg) translate(40px) rotate(-315deg);
+}
+.container19{
+  transform: rotate(256deg) translate(39px) rotate(-315deg);
+}
+.container20{
+  transform: rotate(246deg) translate(38px) rotate(123deg);
 }

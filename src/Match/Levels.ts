@@ -302,7 +302,7 @@ export const fifthLevel: ICardMatch[] = [...fourthLevel,
         name: 'l',
         isMatched: false
     },
-    ]
+]
 
 export const tripleFirstLevel: ICardMatch[] = [
     {
@@ -739,7 +739,7 @@ export const polmoFirstLevel: ICardMatch[] = [
 
 ]
 
-export const polmoSecondLevel: ICardMatch[] = [ ...polmoFirstLevel,
+export const polmoSecondLevel: ICardMatch[] = [...polmoFirstLevel,
     {
         id: 313,
         name: 'bg',
@@ -771,7 +771,7 @@ export const polmoSecondLevel: ICardMatch[] = [ ...polmoFirstLevel,
 
 ]
 
-export const polmoThirdLevel: ICardMatch[] = [ ...polmoSecondLevel,
+export const polmoThirdLevel: ICardMatch[] = [...polmoSecondLevel,
     {
         id: 317,
         name: 'bi',
@@ -865,7 +865,7 @@ export const patternFirstLevel: IPattern[] = [
 
 ]
 
-export const patternSecondLevel: IPattern[] = [ ...patternFirstLevel,
+export const patternSecondLevel: IPattern[] = [...patternFirstLevel,
     {
         id: 114,
         image: birth,
@@ -1098,4 +1098,192 @@ export const patternSecondLevelCards: IPattern[] = [...patternFirstLevelCards,
         isColorful: false
     },
 
+]
+
+export const patrickFirstLevel: ICardMatch[] = [
+    {
+        id: 1,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 2,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 3,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 4,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 5,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    },
+    {
+        id: 6,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    },
+    {
+        id: 7,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    },
+    {
+        id: 8,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    }
+]
+
+export const circleLevel: ICardMatch[] = [
+    {
+        id: 1,
+        image: Brembo,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 2,
+        image: Brembo,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false
+    },
+    {
+        id: 3,
+        image: autofren,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    },
+    {
+        id: 4,
+        image: autofren,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false
+    },
+    {
+        id: 5,
+        image: birth,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false
+    },
+    {
+        id: 6,
+        image: birth,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false
+    },
+    {
+        id: 7,
+        image: totalOil,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false
+    },
+    {
+        id: 8,
+        image: totalOil,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false
+    },
+    {
+        id: 9,
+        image: KroonOil,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+    },
+    {
+        id: 10,
+        image: KroonOil,
+        isFlipped: false,
+        name: 'e',
+        isMatched: false
+    },
+    {
+        id: 11,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false
+    },
+    {
+        id: 12,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'f',
+        isMatched: false
+    },
+    {
+        id: 13,
+        image: persea,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false
+    },
+    {
+        id: 14,
+        image: persea,
+        isFlipped: false,
+        name: 'g',
+        isMatched: false
+    },
+    {
+        id: 15,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false
+    },
+    {
+        id: 16,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'h',
+        isMatched: false
+    },
+    {
+        id: 17,
+        image: ngk,
+        isFlipped: false,
+        name: 'i',
+        isMatched: false
+    },
+    {
+        id: 18,
+        image: ngk,
+        isFlipped: false,
+        name: 'i',
+        isMatched: false
+    }
 ]

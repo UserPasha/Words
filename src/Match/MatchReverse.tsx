@@ -1,19 +1,19 @@
  import React, {FC, useEffect, useState} from 'react';
  import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
  import {Timer} from "../Timer/Timer";
- import {ICardMatch, useMatchHook} from "../hooks/useMatch";
+ import {ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
  import style from "./Match.module.css";
  import cover from "../assets/images/match/logo.png";
  import {Modal} from "./Modal";
  import {shuffleArray} from "./Match";
 
- interface IMatchComponent {
-     duration: number
-     description: string
-     cardsToPlay: ICardMatch[]
-     path: string
- }
-export const MatchComponent:FC<IMatchComponent> = (
+ // interface IMatchComponent {
+ //     duration: number
+ //     description: string
+ //     cardsToPlay: ICardMatch[]
+ //     path: string
+ // }
+export const MatchReverse:FC<IMatch> = (
     {duration,
         description,
         cardsToPlay,
@@ -85,10 +85,14 @@ export const MatchComponent:FC<IMatchComponent> = (
     }
 
     const checkMates = () => {
-        if (firstCard?.name === secondCard?.name) {
+        if (firstCard?.name !== secondCard?.name) {
             setIsLockBoard(true)
             setTimeout(() => {
-                setCards(cards.map(card => card.name === firstCard?.name && card.name === secondCard?.name ? {
+                setCards(cards.map(card => card.id === firstCard?.id  ? {
+                    ...card,
+                    isMatched: true
+                } : card))
+                setCards(cards.map(card => card.id === secondCard?.id  ? {
                     ...card,
                     isMatched: true
                 } : card))
@@ -126,7 +130,7 @@ export const MatchComponent:FC<IMatchComponent> = (
             <section className={style.wrapper}>
                 <div className={style.mode}>{description}</div>
                 <div className={style.cardsContainer}>
-                    {cards.map((card, index) => <button className={card.isFlipped ? style.flipped : style.card}
+                    {cards.map((card, index) => <button className={ card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
                                                         key={index}
                                                         onClick={() => {
                                                             addValueToState(card)

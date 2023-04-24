@@ -7,6 +7,7 @@
     height: 100vh;
     background-color:#282c34;
     opacity: 0.9;
+    z-index: 2;
 }
 .modal{
     position: absolute;
@@ -33,8 +34,14 @@
     height: 50px;
     margin-top: 80px;
 }
+.message img{
+    display: block;
+    max-width: 70px;
+    margin: 50px auto;
+
+}
 .button{
-    margin-top: 20px;
+    margin-top: 50px;
     width: 120px;
     height: 25px;
     border-radius: 10px;
