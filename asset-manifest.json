@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.7c07fedc.css",
-    "main.js": "/Words/static/js/main.425987b7.js",
+    "main.css": "/Words/static/css/main.56d8706b.css",
+    "main.js": "/Words/static/js/main.9ce3d131.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -97,6 +97,8 @@
     "static/media/DaycoFirst.jpg": "/Words/static/media/DaycoFirst.819349aa0d4d179ad16f.jpg",
     "static/media/DaycoSecond.jpg": "/Words/static/media/DaycoSecond.5cd3461dbff8812483ff.jpg",
     "static/media/metelliSecond.jpg": "/Words/static/media/metelliSecond.bc7e2682f1117490ac40.jpg",
+    "static/media/sad.svg": "/Words/static/media/sad.3511cda2e6ac71e6a2781ca19de65981.svg",
+    "static/media/smile.svg": "/Words/static/media/smile.15cf8369c439036243f80ffd5599a8d5.svg",
     "static/media/elring.svg": "/Words/static/media/elring.7b5e7d86a0c26aa74afc109aff0aa9ae.svg",
     "static/media/febi-bilstein.svg": "/Words/static/media/febi-bilstein.17fb3f470d40420e217f4188d7381eb6.svg",
     "static/media/USAFlag.svg": "/Words/static/media/USAFlag.109d20d02b2ee192bae1625a64826ada.svg",
@@ -114,12 +116,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.7c07fedc.css.map": "/Words/static/css/main.7c07fedc.css.map",
-    "main.425987b7.js.map": "/Words/static/js/main.425987b7.js.map",
+    "main.56d8706b.css.map": "/Words/static/css/main.56d8706b.css.map",
+    "main.9ce3d131.js.map": "/Words/static/js/main.9ce3d131.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c07fedc.css",
-    "static/js/main.425987b7.js"
+    "static/css/main.56d8706b.css",
+    "static/js/main.9ce3d131.js"
   ]
 }
