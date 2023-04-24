@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.56d8706b.css",
-    "main.js": "/Words/static/js/main.9ce3d131.js",
+    "main.css": "/Words/static/css/main.b0fb0667.css",
+    "main.js": "/Words/static/js/main.7f1348d3.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -116,12 +116,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.56d8706b.css.map": "/Words/static/css/main.56d8706b.css.map",
-    "main.9ce3d131.js.map": "/Words/static/js/main.9ce3d131.js.map",
+    "main.b0fb0667.css.map": "/Words/static/css/main.b0fb0667.css.map",
+    "main.7f1348d3.js.map": "/Words/static/js/main.7f1348d3.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.56d8706b.css",
-    "static/js/main.9ce3d131.js"
+    "static/css/main.b0fb0667.css",
+    "static/js/main.7f1348d3.js"
   ]
 }
