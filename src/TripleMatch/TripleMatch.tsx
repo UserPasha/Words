@@ -5,7 +5,7 @@ import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
-import {Timer} from "../Timer/Timer";
+import {Timer} from "../Match/Timer/Timer";
 
 export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description}) => {
     const {
@@ -135,7 +135,8 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
-                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
+                cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
 
             <section className={style.wrapper}>
 

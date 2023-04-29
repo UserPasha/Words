@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
 import style from '../Match/Match.module.css'
-import {ICardMatch, IMatch, IPattern, IPatternCards, useMatchHook} from "../hooks/useMatch";
+import {ICardMatch, IPattern, IPatternCards, useMatchHook} from "../hooks/useMatch";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
-import {Timer} from "../Timer/Timer";
+import {Timer} from "../Match/Timer/Timer";
 
 
 export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize}) => {
@@ -157,12 +157,14 @@ if(patternIndex === patternCards.length) {
     const chooseStyle =  rotate ? rotateStyle : {}
     const isModal = isEndOfTime || showModal
 
+
     return (
         <>
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
-                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
+                cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
 
 
             <section className={style.wrapper}
@@ -170,7 +172,7 @@ if(patternIndex === patternCards.length) {
             >
                 <div className={style.mode}>{description}</div>
                 <div  className={style.cardsContainer}>{pattern.map((card, index)=>
-                        <button className={card.isColorful ?  `${style.card} ${style.flipped} ${style.smaller} ${style.green}` : `${style.card} ${style.flipped} ${style.smaller} ${style.red}`}
+                        <button className={patternIndex === index ? `${style.card} ${style.flipped} ${style.smaller} ${style.red} ${style.scale}` : card.isColorful ?  `${style.card} ${style.flipped} ${style.smaller} ${style.green}` : `${style.card} ${style.flipped} ${style.smaller} ${style.red}`}
                                                                                             key={index}>   <div className={style.front}> <img src={card.image}/>
                 </div>
 

@@ -1,4 +1,6 @@
 import {useState} from "react";
+import ngk from "../assets/images/match/ngk.svg";
+import persea from "../assets/images/match/persea.jpg";
 
 
 export interface IMatch {
@@ -9,6 +11,13 @@ export interface IMatch {
     description: string
 }
 
+export interface IReFlipMatch {
+    cardsToPlay: IReFlip[]
+    duration: number
+    path: string
+    rotate: boolean
+    description: string
+}
 export interface ICardMatch {
     id: number,
     name: string,
@@ -25,6 +34,17 @@ export interface IPattern extends ICardMatch{
 export interface IPatternCards extends IMatch{
     patternCards: IPattern[]
     isChangedSize: boolean
+}
+
+export interface IReFlip {
+    id: number
+    image: string[]
+    isFlipped: boolean
+    isMatched: boolean
+    name: string
+    secondName: string
+    isReFlipped: boolean
+    isTotallyMatched: boolean
 }
 
 export const useMatchHook = () => {

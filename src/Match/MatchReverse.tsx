@@ -1,6 +1,6 @@
  import React, {FC, useEffect, useState} from 'react';
  import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
- import {Timer} from "../Timer/Timer";
+ import {Timer} from "./Timer/Timer";
  import {ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
  import style from "./Match.module.css";
  import cover from "../assets/images/match/logo.png";
@@ -126,7 +126,7 @@ export const MatchReverse:FC<IMatch> = (
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
-                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter} />
             <section className={style.wrapper}>
                 <div className={style.mode}>{description}</div>
                 <div className={style.cardsContainer}>

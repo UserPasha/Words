@@ -18,7 +18,7 @@ import {
     patternFirstLevelCards,
     patternSecondLevel,
     patternSecondLevelCards,
-    polmoFirstLevel, polmoSecondLevel, polmoThirdLevel,
+    polmoFirstLevel, polmoSecondLevel, polmoThirdLevel, reFlipFirstLevel,
     secondLevel,
     thirdLevel,
     tripleFirstLevel,
@@ -29,6 +29,7 @@ import {TripleMatch} from "../TripleMatch/TripleMatch";
 import {TripleMatchCopy} from "../TripleMatch/TripleMatchCopy";
 import {MatchReverse} from "../Match/MatchReverse";
 import {Circle} from "../Match/Circle";
+import {MatchReFlip} from "../Match/MatchReFlip";
 
 
 export const PATH = {
@@ -247,6 +248,13 @@ const AppRoutes = () => {
                                                  path={'/match'}
                                                  rotate={false}
                                                  description={'Крутящий момент'}
+                       />}/>
+                <Route path={PATH.TRIPLETSET}
+                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
+                                        duration={180}
+                                        path={'/match'}
+                                        rotate={false}
+                                        description={'Крутящий момент'}
                        />}/>
 
             </Routes>

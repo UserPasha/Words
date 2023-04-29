@@ -3,7 +3,7 @@ import circleStyle from './Circle.module.css'
 import {ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
 import {shuffleArray} from "./Match";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
-import {Timer} from "../Timer/Timer";
+import {Timer} from "./Timer/Timer";
 import style from "./Match.module.css";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "./Modal";
@@ -116,7 +116,8 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description})  
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
-                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
+                cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
             <div className={circleStyle.mode}>{description}</div>
             {isModal &&  <Modal setShowModal={setShowModal}
                                 attempts={attempts}
@@ -128,40 +129,32 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description})  
                                 restartGame={restartGame}
                                 path={path}
             />}
-        <section className={circleStyle.wrapper} style={fieldStyle}>
+            <section className={circleStyle.wrapper} style={fieldStyle}>
 
-            <div
-                 className={style.cardsContainer}
+                <div
+                    className={style.cardsContainer}
 
-            >
-                {cards.map((card, index) =>  (<div className={`container container${index + 1}`} key={index}>
-                    <button className={ card.isFlipped ? `${circleStyle.card} ${circleStyle.flipped}` : circleStyle.card}
-                                                    key={index}
-                                                    onClick={() => {
-                                                        addValueToState(card)
-                                                    }} disabled={isLockBoard || card.isMatched}>
-                        <div className={circleStyle.front}>
-                            <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}
-                            />
-                        </div>
+                >
+                    {cards.map((card, index) =>  (<div className={`container container${index + 1}`} key={index}>
+                        <button className={ card.isFlipped ? `${circleStyle.card} ${circleStyle.flipped}` : circleStyle.card}
+                                key={index}
+                                onClick={() => {
+                                    addValueToState(card)
+                                }} disabled={isLockBoard || card.isMatched}>
+                            <div className={circleStyle.front}>
+                                <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}
+                                />
+                            </div>
 
-                    </button></div>)
-                )}
-            </div>
-
-
+                        </button></div>)
+                    )}
+                </div>
 
 
 
-        </section>
+
+
+            </section>
         </>
     )
 }
-
-
-
-
-
-
-
-

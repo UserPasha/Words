@@ -9,11 +9,13 @@ interface TimerProps {
     setRunning: (value: boolean) => void
     timer: number
     setTimer: Dispatch<SetStateAction<number>>
+    pairCounter: number
+    cardsToPlayLengths: number
 }
 
 
 
-export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer}) => {
+export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter}) => {
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
@@ -22,7 +24,7 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
             interval = setInterval(() => {
                 setTimer((prevTimer) => prevTimer - 1);
             }, 1000);
-            if (timer === 0) {
+            if (timer === 0 || pairCounter === cardsToPlayLengths/2) {
                 setIsEndOfTime(true)
                 clearInterval(interval);
             }

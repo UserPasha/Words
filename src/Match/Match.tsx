@@ -3,9 +3,9 @@ import style from './Match.module.css'
 import cover from '../assets/images/match/logo.png'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
-import {ICardMatch, IMatch, IPattern} from "../hooks/useMatch";
+import {ICardMatch, IMatch, IPattern, IReFlip} from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
-import {Timer} from "../Timer/Timer";
+import {Timer} from "./Timer/Timer";
 
 
 
@@ -64,8 +64,10 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
                     return card
                 }
             }))
+
         }
-        , [firstCard?.name, secondCard?.name])
+        , [firstCard, secondCard])
+
 
     const resetBoard = () => {
         setFirstCard(null)
@@ -132,7 +134,8 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
-                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning} />
+                duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
+            cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
 
             <section className={style.wrapper}>
                 <div className={style.mode}>{description}</div>

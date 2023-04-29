@@ -45,10 +45,6 @@
     height: 75px;
     margin: 5px;
 }
-/*.card.muffler,*/
-/*.card.flipped.muffler{*/
-/*    height: 95px;*/
-/*}*/
 
 
 .card.flipped.smaller.green{
@@ -69,6 +65,9 @@ button:disabled{
     font-weight: bolder;
     color: #0d6c11;
 }
+.card.flipped.smaller.red.scale{
+    transform: scale(1.11);
+}
 .front{
 
     /*position: relative;*/
@@ -81,7 +80,7 @@ button:disabled{
     /*align-items: center;*/
 }
 
-.front img{
+.front img, .scale img{
     /*max-width: 65px;*/
     max-width: 50px;
     border-radius: 10px;

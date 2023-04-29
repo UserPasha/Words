@@ -59,7 +59,7 @@ import autofren from '../assets/images/match/autoFrenL.jpg'
 import ngk from '../assets/images/match/ngk.svg'
 import persea from '../assets/images/match/persea.jpg'
 
-import {ICardMatch, IPattern} from "../hooks/useMatch";
+import {ICardMatch, IPattern, IReFlip} from "../hooks/useMatch";
 
 
 export const filtronMix: ICardMatch[] = [
@@ -1286,4 +1286,88 @@ export const circleLevel: ICardMatch[] = [
         name: 'i',
         isMatched: false
     }
+]
+
+export const reFlipFirstLevel: IReFlip[] = [
+    {
+        id: 11,
+        image: [ngk, persea],
+        isFlipped: false,
+        name: 'a',
+        secondName: 'aa',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 12,
+        image: [ngk, Gates],
+        isFlipped: false,
+        name: 'a',
+        secondName: 'ab',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 13,
+        image: [Elring ,Gates ],
+        isFlipped: false,
+        name: 'b',
+        secondName: 'ab',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 14,
+        image: [Elring, persea],
+        isFlipped: false,
+        name: 'b',
+        secondName: 'aa',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    // {
+    //     id: 15,
+    //     image: [febi, bluePrint],
+    //     isFlipped: false,
+    //     name: 'c',
+    //     secondName: 'ac',
+    //     isMatched: false,
+    //     isReFlipped: false,
+    //     isTotallyMatched: false
+    // },
+    // {
+    //     id: 16,
+    //     image: [febi, Denkermann],
+    //     isFlipped: false,
+    //     name: 'c',
+    //     secondName: 'ad',
+    //     isMatched: false,
+    //     isReFlipped: false,
+    //     isTotallyMatched: false
+    // },
+    // {
+    //     id: 17,
+    //     image: [autofren ,Denkermann ],
+    //     isFlipped: false,
+    //     name: 'd',
+    //     secondName: 'ad',
+    //     isMatched: false,
+    //     isReFlipped: false,
+    //     isTotallyMatched: false
+    // },
+    // {
+    //     id: 18,
+    //     image: [autofren, bluePrint],
+    //     isFlipped: false,
+    //     name: 'd',
+    //     secondName: 'ac',
+    //     isMatched: false,
+    //     isReFlipped: false,
+    //     isTotallyMatched: false
+    // },
+
 ]
