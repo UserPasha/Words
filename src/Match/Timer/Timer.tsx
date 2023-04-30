@@ -19,7 +19,6 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
-
         if (running) {
             interval = setInterval(() => {
                 setTimer((prevTimer) => prevTimer - 1);

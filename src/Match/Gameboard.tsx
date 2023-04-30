@@ -47,7 +47,9 @@ export const GameBoard = () => {
             <Row number={16} name={'Сборка'} difficult={"3"} play={PATH.THREEMATCHESTWOROTATETWO} description={'Пьяная масовка'}/>
 
             <Row number={17} name={'Сборка'} difficult={"4"} play={PATH.CRAZYONE} description={'Массовка по документу'}/>
-            <Row number={18} name={'Сборка'} difficult={"4"} play={PATH.CIRCLE} description={'Крутящий момент'}/>
+            <Row number={18} name={'Сборка'} difficult={"2"} play={PATH.REFLIPONE} description={'Два документа'}/>
+            <Row number={19} name={'Сборка'} difficult={"3"} play={PATH.REFLIPTWO} description={'Два документа'}/>
+            <Row number={20} name={'Сборка'} difficult={"4"} play={PATH.CIRCLE} description={'Крутящий момент'}/>
 
             {/*<Row number={11} name={'Tect'} difficult={"x"} play={PATH.TRIPLETSET} description={'Найти три'}/>*/}
 

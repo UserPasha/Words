@@ -18,7 +18,7 @@ import {
     patternFirstLevelCards,
     patternSecondLevel,
     patternSecondLevelCards,
-    polmoFirstLevel, polmoSecondLevel, polmoThirdLevel, reFlipFirstLevel,
+    polmoFirstLevel, polmoSecondLevel, polmoThirdLevel, reFlipFirstLevel, reFlipSecondLevel,
     secondLevel,
     thirdLevel,
     tripleFirstLevel,
@@ -57,6 +57,8 @@ export const PATH = {
     POLMOTHREE: '/polmoThree',
     PATTERNONE: '/patternOne',
     PATTERNTWO: '/patternTwo',
+    REFLIPONE: '/reflipOne',
+    REFLIPTWO: '/reflipTwo',
 
     CRAZYONE: '/crazyOne',
 
@@ -238,24 +240,39 @@ const AppRoutes = () => {
                                                  patternCards={patternSecondLevel}
                                                  isChangedSize={true}
                                                  duration={180}
-                                                 path={PATH.CIRCLE}
+                                                 path={PATH.REFLIPONE}
                                                  rotate={true}
                                                  description={'Пьяная масовка'}
                        />}/>
+                <Route path={PATH.REFLIPONE}
+                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
+                                             duration={40}
+                                             path={PATH.REFLIPTWO}
+                                             description={'Два документа'} rotate={false}
+
+                       />}/>
+                <Route path={PATH.REFLIPTWO}
+                       element={<MatchReFlip cardsToPlay={reFlipSecondLevel}
+                                             duration={90}
+                                             path={PATH.CIRCLE}
+                                             description={'Два документа'} rotate={false}
+
+                       />}/>
                 <Route path={PATH.CIRCLE}
                        element={<Circle cardsToPlay={circleLevel}
-                                                 duration={180}
+                                                 duration={160}
                                                  path={'/match'}
                                                  rotate={false}
                                                  description={'Крутящий момент'}
                        />}/>
-                <Route path={PATH.TRIPLETSET}
-                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
-                                        duration={180}
-                                        path={'/match'}
-                                        rotate={false}
-                                        description={'Крутящий момент'}
-                       />}/>
+
+                {/*<Route path={PATH.TRIPLETSET}*/}
+                {/*       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}*/}
+                {/*                        duration={180}*/}
+                {/*                        path={'/match'}*/}
+                {/*                        rotate={false}*/}
+                {/*                        description={'Крутящий момент'}*/}
+                {/*       />}/>*/}
 
             </Routes>
 

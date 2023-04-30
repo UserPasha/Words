@@ -58,6 +58,12 @@ import birth from '../assets/images/match/BirthParts.jpg'
 import autofren from '../assets/images/match/autoFrenL.jpg'
 import ngk from '../assets/images/match/ngk.svg'
 import persea from '../assets/images/match/persea.jpg'
+import JPGroup from '../assets/images/match/jp-group.jpg'
+import lavr from '../assets/images/match/lavr.png'
+import lynx from  '../assets/images/match/lynxAuto.png'
+import mahle from '../assets/images/match/mahle.png'
+import SKF from '../assets/images/match/SKF-Logo.svg.png'
+import vernet from '../assets/images/match/vernet.jpg'
 
 import {ICardMatch, IPattern, IReFlip} from "../hooks/useMatch";
 
@@ -1329,45 +1335,129 @@ export const reFlipFirstLevel: IReFlip[] = [
         isReFlipped: false,
         isTotallyMatched: false
     },
-    // {
-    //     id: 15,
-    //     image: [febi, bluePrint],
-    //     isFlipped: false,
-    //     name: 'c',
-    //     secondName: 'ac',
-    //     isMatched: false,
-    //     isReFlipped: false,
-    //     isTotallyMatched: false
-    // },
-    // {
-    //     id: 16,
-    //     image: [febi, Denkermann],
-    //     isFlipped: false,
-    //     name: 'c',
-    //     secondName: 'ad',
-    //     isMatched: false,
-    //     isReFlipped: false,
-    //     isTotallyMatched: false
-    // },
-    // {
-    //     id: 17,
-    //     image: [autofren ,Denkermann ],
-    //     isFlipped: false,
-    //     name: 'd',
-    //     secondName: 'ad',
-    //     isMatched: false,
-    //     isReFlipped: false,
-    //     isTotallyMatched: false
-    // },
-    // {
-    //     id: 18,
-    //     image: [autofren, bluePrint],
-    //     isFlipped: false,
-    //     name: 'd',
-    //     secondName: 'ac',
-    //     isMatched: false,
-    //     isReFlipped: false,
-    //     isTotallyMatched: false
-    // },
+    {
+        id: 15,
+        image: [febi, bluePrint],
+        isFlipped: false,
+        name: 'c',
+        secondName: 'ac',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 16,
+        image: [febi, Denkermann],
+        isFlipped: false,
+        name: 'c',
+        secondName: 'ad',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 17,
+        image: [autofren ,Denkermann ],
+        isFlipped: false,
+        name: 'd',
+        secondName: 'ad',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 18,
+        image: [autofren, bluePrint],
+        isFlipped: false,
+        name: 'd',
+        secondName: 'ac',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
 
+]
+
+
+export const reFlipSecondLevel: IReFlip[] = [ ...reFlipFirstLevel,
+    {
+        id: 19,
+        image: [Brembo, vernet],
+        isFlipped: false,
+        name: 'e',
+        secondName: 'ae',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 20,
+        image: [Brembo, SKF],
+        isFlipped: false,
+        name: 'e',
+        secondName: 'af',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 21,
+        image: [TRW ,SKF ],
+        isFlipped: false,
+        name: 'f',
+        secondName: 'af',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 22,
+        image: [TRW, vernet],
+        isFlipped: false,
+        name: 'f',
+        secondName: 'ae',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 23,
+        image: [JPGroup, lynx],
+        isFlipped: false,
+        name: 'g',
+        secondName: 'ag',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 24,
+        image: [JPGroup, mahle],
+        isFlipped: false,
+        name: 'g',
+        secondName: 'ah',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 25,
+        image: [lavr ,mahle ],
+        isFlipped: false,
+        name: 'h',
+        secondName: 'ah',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
+    {
+        id: 26,
+        image: [lavr, lynx],
+        isFlipped: false,
+        name: 'h',
+        secondName: 'ag',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false
+    },
 ]
