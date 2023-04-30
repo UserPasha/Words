@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.f46e2008.css",
-    "main.js": "/Words/static/js/main.8b4aa163.js",
+    "main.css": "/Words/static/css/main.663160d3.css",
+    "main.js": "/Words/static/js/main.aab795cc.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -89,13 +89,16 @@
     "static/media/filRed.jpg": "/Words/static/media/filRed.a4378ebb5e9572e071b7.jpg",
     "static/media/filBlue.jpeg": "/Words/static/media/filBlue.b0da2c8a48704737ac12.jpeg",
     "static/media/Gates.png": "/Words/static/media/Gates.df622ebf190e3a8bcf07.png",
+    "static/media/jp-group.jpg": "/Words/static/media/jp-group.1e552a96232b8425decd.jpg",
     "static/media/CortecoFirst.jpg": "/Words/static/media/CortecoFirst.e84ab039470a8869b1f3.jpg",
     "static/media/brembo.jpg": "/Words/static/media/brembo.1685fd05e19e3b6ffeba.jpg",
     "static/media/CortecoSecond.jpg": "/Words/static/media/CortecoSecond.2d927f0cd2ccab500ab4.jpg",
+    "static/media/vernet.jpg": "/Words/static/media/vernet.d50cb1a9d661eb446713.jpg",
     "static/media/kroon-oil.png": "/Words/static/media/kroon-oil.e6f0672ace728f096666.png",
     "static/media/logo.png": "/Words/static/media/logo.1498efa1f171166bef3a.png",
     "static/media/DaycoFirst.jpg": "/Words/static/media/DaycoFirst.819349aa0d4d179ad16f.jpg",
     "static/media/DaycoSecond.jpg": "/Words/static/media/DaycoSecond.5cd3461dbff8812483ff.jpg",
+    "static/media/lynxAuto.png": "/Words/static/media/lynxAuto.f3ed3846347e10fc606e.png",
     "static/media/metelliSecond.jpg": "/Words/static/media/metelliSecond.bc7e2682f1117490ac40.jpg",
     "static/media/sad.svg": "/Words/static/media/sad.3511cda2e6ac71e6a2781ca19de65981.svg",
     "static/media/smile.svg": "/Words/static/media/smile.15cf8369c439036243f80ffd5599a8d5.svg",
@@ -116,12 +119,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.f46e2008.css.map": "/Words/static/css/main.f46e2008.css.map",
-    "main.8b4aa163.js.map": "/Words/static/js/main.8b4aa163.js.map",
+    "main.663160d3.css.map": "/Words/static/css/main.663160d3.css.map",
+    "main.aab795cc.js.map": "/Words/static/js/main.aab795cc.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f46e2008.css",
-    "static/js/main.8b4aa163.js"
+    "static/css/main.663160d3.css",
+    "static/js/main.aab795cc.js"
   ]
 }
