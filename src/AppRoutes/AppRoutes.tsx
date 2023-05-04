@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import {Cards} from "../Cards/Cards";
 import {CurrentCard} from "../CurrentCard/CurrentCard";
@@ -67,6 +67,15 @@ export const PATH = {
     TRIPLETSET: '/tripletest'
 }
 const AppRoutes = () => {
+    const [bestLevel, setBestLevel] = useState<number>(1)
+
+    useEffect(() => {
+        let bestLevelAsString = localStorage.getItem("bestLevel")
+        if (bestLevelAsString) {
+            let newValue = JSON.parse(bestLevelAsString)
+            setBestLevel(newValue);
+        }
+    }, [])
     return (
         <>
             <Routes>
@@ -84,6 +93,9 @@ const AppRoutes = () => {
                                                            duration={20}
                                                            rotate={false}
                                                            description={'Найти пару'}
+                                                           bestLevel={bestLevel}
+                                                           setBestLevel={setBestLevel}
+                                                           levelNumber={1}
                 />}/>
                 {/*<Route path={PATH.FILTRON} element={<MatchReverse path={PATH.ONE} description={'Найти пару'} duration={20} cardsToPlay={patrickFirstLevel} rotate={false}/>}/>*/}
                 <Route path={PATH.ONE} element={<Match cardsToPlay={firstLevel}
@@ -91,6 +103,9 @@ const AppRoutes = () => {
                                                        duration={30}
                                                        rotate={false}
                                                        description={'Найти пару'}
+                                                       bestLevel={bestLevel}
+                                                       setBestLevel={setBestLevel}
+                                                       levelNumber={2}
 
                 />}/>
                 <Route path={PATH.TWO} element={<Match
@@ -99,6 +114,9 @@ const AppRoutes = () => {
                     duration={40}
                     rotate={false}
                     description={'Найти пару'}
+                    bestLevel={bestLevel}
+                    setBestLevel={setBestLevel}
+                    levelNumber={3}
 
                 />}/>
                 <Route path={PATH.THREE}
@@ -108,6 +126,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={4}
                        />}/>
                 <Route path={PATH.FOUR}
                        element={<Match cardsToPlay={fourthLevel}
@@ -116,6 +137,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={5}
                        />}/>
                 <Route path={PATH.FIVE}
                        element={<Match cardsToPlay={fifthLevel}
@@ -124,6 +148,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={6}
                        />}/>
                 <Route path={PATH.HALFONE}
                        element={<Match cardsToPlay={halfFirstLevel}
@@ -132,6 +159,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти вторую половину'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={7}
                        />}/>
                 <Route path={PATH.HALFTWO}
                        element={<Match cardsToPlay={halfSecondLevel}
@@ -140,6 +170,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти вторую половину'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={8}
                        />}/>
                 <Route path={PATH.POLMOONE}
                        element={<Match cardsToPlay={polmoFirstLevel}
@@ -152,6 +185,9 @@ const AppRoutes = () => {
 
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={9}
 
                        />}/>
                 <Route path={PATH.POLMOTWO}
@@ -165,6 +201,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={10}
 
                        />}/>
                 <Route path={PATH.POLMOTHREE}
@@ -178,6 +217,9 @@ const AppRoutes = () => {
                                        rotate={false}
 
                                        description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={11}
 
                        />}/>
                 <Route path={PATH.TRIPLEMATCHONE}
@@ -187,6 +229,9 @@ const AppRoutes = () => {
 
                                              rotate={false}
                                              description={'Масовка'}
+                                             bestLevel={bestLevel}
+                                             setBestLevel={setBestLevel}
+                                             levelNumber={12}
                        />}/>
                 {/*<Route path={PATH.TRIPLEMATCHONE} element={<MatchReverse cardsToPlay={tripleFirstLevel} duration={60} path={PATH.THREEMATCHESTWO} rotate={false} description={'Масовка'} isPattern={false}/> }/>*/}
                 // send level name, number + rewrite modal
@@ -198,6 +243,9 @@ const AppRoutes = () => {
 
                                              rotate={false}
                                              description={'Масовка'}
+                                             bestLevel={bestLevel}
+                                             setBestLevel={setBestLevel}
+                                             levelNumber={13}
                        />}/>
                 <Route path={PATH.PATTERNONE}
                        element={<TripleMatchCopy cardsToPlay={patternFirstLevelCards}
@@ -208,7 +256,10 @@ const AppRoutes = () => {
                                                  rotate={false}
 
                                                  description={'Массовка по документу'}
+                                                 bestLevel={bestLevel}
                                                  isChangedSize={true}
+                                                 setBestLevel={setBestLevel}
+                                                 levelNumber={14}
                        />}/>
                 <Route path={PATH.PATTERNTWO}
                        element={<TripleMatchCopy cardsToPlay={patternSecondLevelCards}
@@ -219,14 +270,21 @@ const AppRoutes = () => {
                                                  rotate={false}
 
                                                  description={'Массовка по документу'}
+                                                 bestLevel={bestLevel}
                                                  isChangedSize={true}
+                                                 setBestLevel={setBestLevel}
+                                                 levelNumber={15}
                        />}/>
                 <Route path={PATH.THREEMATCHESTWOROTATEONE}
                        element={<TripleMatch cardsToPlay={tripleFirstLevel}
                                              duration={50}
                                              path={PATH.THREEMATCHESTWOROTATETWO}
                                              rotate={true}
-                                             description={'Пьяная масовка'}/>
+                                             description={'Пьяная масовка'}
+                                             setBestLevel={setBestLevel}
+                                             levelNumber={16}
+                       bestLevel={bestLevel}/>
+
                        }/>
                 <Route path={PATH.THREEMATCHESTWOROTATETWO}
                        element={<TripleMatch cardsToPlay={tripleSecondLevel}
@@ -234,6 +292,9 @@ const AppRoutes = () => {
                                              path={PATH.CRAZYONE}
                                              rotate={true}
                                              description={'Пьяная масовка'}
+                                             bestLevel={bestLevel}
+                                             setBestLevel={setBestLevel}
+                                             levelNumber={17}
                        />}/>
                 <Route path={PATH.CRAZYONE}
                        element={<TripleMatchCopy cardsToPlay={patternSecondLevelCards}
@@ -243,6 +304,9 @@ const AppRoutes = () => {
                                                  path={PATH.REFLIPONE}
                                                  rotate={true}
                                                  description={'Пьяная масовка'}
+                                                 bestLevel={bestLevel}
+                                                 setBestLevel={setBestLevel}
+                                                 levelNumber={18}
                        />}/>
                 <Route path={PATH.REFLIPONE}
                        element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
@@ -264,6 +328,9 @@ const AppRoutes = () => {
                                                  path={'/match'}
                                                  rotate={false}
                                                  description={'Крутящий момент'}
+                                        bestLevel={bestLevel}
+                                        setBestLevel={setBestLevel}
+                                        levelNumber={19}
                        />}/>
 
                 {/*<Route path={PATH.TRIPLETSET}*/}

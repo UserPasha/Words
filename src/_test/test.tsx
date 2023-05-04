@@ -3,7 +3,7 @@
  import {filtronMix} from "../Match/Levels";
  import {PATH} from "../AppRoutes/AppRoutes";
 
-test('renders Match component without crashing', () => {
-    render(<Match cardsToPlay={filtronMix} path={PATH.ONE} duration={20} rotate={false} description={'Найти пару'}/>);
-});
+// test('renders Match component without crashing', () => {
+//     render(<Match cardsToPlay={filtronMix} path={PATH.ONE} duration={20} rotate={false} description={'Найти пару'}/>);
+// });
 

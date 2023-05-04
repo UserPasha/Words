@@ -23,7 +23,7 @@ export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[]| IP
 
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) => {
+export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel,setBestLevel, levelNumber}) => {
 
   const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
       showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
@@ -38,6 +38,8 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description}) =>
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
+           setBestLevel(levelNumber)
+            localStorage.setItem("bestLevel", JSON.stringify(bestLevel));
         }
     }, [pairCounter, cardsToPlay])
 

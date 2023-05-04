@@ -1,6 +1,4 @@
-import {useState} from "react";
-import ngk from "../assets/images/match/ngk.svg";
-import persea from "../assets/images/match/persea.jpg";
+import {Dispatch, SetStateAction, useState} from "react";
 
 
 export interface IMatch {
@@ -9,6 +7,9 @@ export interface IMatch {
     path: string
     rotate: boolean
     description: string
+    bestLevel: number
+    setBestLevel: Dispatch<SetStateAction<number>>
+    levelNumber: number
 }
 
 export interface IReFlipMatch {
