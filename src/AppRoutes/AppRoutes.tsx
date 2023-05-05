@@ -8,6 +8,7 @@ import {TestComponent} from "../TestComponent/TestComponent";
 import {Game} from "../Game/Game";
 import {Match} from "../Match/Match";
 import {
+    carsByModelsFirstLevel, carsByModelsSecondLevel,
     circleLevel,
     fifthLevel,
     filtronMix,
@@ -27,7 +28,6 @@ import {
 import {GameBoard} from "../Match/Gameboard";
 import {TripleMatch} from "../TripleMatch/TripleMatch";
 import {TripleMatchCopy} from "../TripleMatch/TripleMatchCopy";
-import {MatchReverse} from "../Match/MatchReverse";
 import {Circle} from "../Match/Circle";
 import {MatchReFlip} from "../Match/MatchReFlip";
 
@@ -60,6 +60,10 @@ export const PATH = {
     REFLIPONE: '/reflipOne',
     REFLIPTWO: '/reflipTwo',
 
+    CARSBYMODELSONE: '/carsByModelsOne',
+    CARSBYMODELSTWO: '/carsByModelsTwo',
+
+
     CRAZYONE: '/crazyOne',
 
     CIRCLE: '/circle',
@@ -67,7 +71,13 @@ export const PATH = {
     TRIPLETSET: '/tripletest'
 }
 const AppRoutes = () => {
-    const [bestLevel, setBestLevel] = useState<number>(1)
+     const [bestLevel, setBestLevel] = useState<number>(
+         ()=>{
+         const storedValue = localStorage.getItem('bestLevel');
+         return storedValue ? JSON.parse(storedValue) : 1;
+     }
+
+     )
 
     useEffect(() => {
         let bestLevelAsString = localStorage.getItem("bestLevel")
@@ -76,6 +86,20 @@ const AppRoutes = () => {
             setBestLevel(newValue);
         }
     }, [])
+    useEffect(() => {
+        localStorage.setItem('bestLevel', JSON.stringify(bestLevel));
+    }, [bestLevel]);
+
+    useEffect(() => {
+        let bestLevelAsString = localStorage.getItem("bestLevel")
+        if (bestLevelAsString) {
+            let newValue = JSON.parse(bestLevelAsString)
+            setBestLevel(newValue);
+        }
+    }, [])
+
+
+
     return (
         <>
             <Routes>
@@ -86,195 +110,238 @@ const AppRoutes = () => {
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
 
-                <Route path={PATH.MATCH} element={<GameBoard/>}/>
+                <Route path={PATH.MATCH} element={<GameBoard bestLevel={bestLevel}/>}/>
 
-                <Route path={PATH.FILTRON} element={<Match cardsToPlay={filtronMix}
-                                                           path={PATH.ONE}
-                                                           duration={20}
-                                                           rotate={false}
-                                                           description={'Найти пару'}
-                                                           bestLevel={bestLevel}
-                                                           setBestLevel={setBestLevel}
-                                                           levelNumber={1}
-                />}/>
-                {/*<Route path={PATH.FILTRON} element={<MatchReverse path={PATH.ONE} description={'Найти пару'} duration={20} cardsToPlay={patrickFirstLevel} rotate={false}/>}/>*/}
-                <Route path={PATH.ONE} element={<Match cardsToPlay={firstLevel}
-                                                       path={PATH.TWO}
-                                                       duration={30}
-                                                       rotate={false}
-                                                       description={'Найти пару'}
-                                                       bestLevel={bestLevel}
-                                                       setBestLevel={setBestLevel}
-                                                       levelNumber={2}
-
-                />}/>
-                <Route path={PATH.TWO} element={<Match
-                    cardsToPlay={secondLevel}
-                    path={PATH.THREE}
-                    duration={40}
-                    rotate={false}
-                    description={'Найти пару'}
-                    bestLevel={bestLevel}
-                    setBestLevel={setBestLevel}
-                    levelNumber={3}
-
-                />}/>
-                <Route path={PATH.THREE}
-                       element={<Match cardsToPlay={thirdLevel}
-                                       path={PATH.FOUR}
-                                       duration={50}
+                <Route path={PATH.ONE}
+                       element={<Match cardsToPlay={firstLevel}
+                                       path={PATH.TWO}
+                                       duration={30}
                                        rotate={false}
+                                       description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={0}
+                       />}/>
 
+                <Route path={PATH.TWO}
+                       element={<Match
+                           cardsToPlay={secondLevel}
+                           path={PATH.THREE}
+                           duration={40}
+                           rotate={false}
+                           description={'Найти пару'}
+                           bestLevel={bestLevel}
+                           setBestLevel={setBestLevel}
+                           levelNumber={1}
+
+                       />}/>
+
+                <Route path={PATH.THREE}
+                       element={<Match
+                           cardsToPlay={thirdLevel}
+                           path={PATH.FILTRON}
+                           duration={50}
+                           rotate={false}
+                           description={'Найти пару'}
+                           bestLevel={bestLevel}
+                           setBestLevel={setBestLevel}
+                           levelNumber={2}
+
+                       />}/>
+
+                <Route path={PATH.FILTRON}
+                       element={<Match
+                           cardsToPlay={filtronMix}
+                           path={PATH.POLMOONE}
+                           duration={20}
+                           rotate={false}
+                           description={'Найти пару'}
+                           bestLevel={bestLevel}
+                           setBestLevel={setBestLevel}
+                           levelNumber={3}
+                       />}/>
+
+                <Route path={PATH.POLMOONE}
+                       element={<Match cardsToPlay={polmoFirstLevel}
+                                       duration={45}
+                                       path={PATH.POLMOTWO}
+                                       rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={4}
                        />}/>
-                <Route path={PATH.FOUR}
-                       element={<Match cardsToPlay={fourthLevel}
-                                       path={PATH.FIVE}
-                                       duration={60}
-                                       rotate={false}
 
+                <Route path={PATH.POLMOTWO}
+                       element={<Match cardsToPlay={polmoSecondLevel}
+                                       duration={60}
+                                       path={PATH.POLMOTHREE}
+                                       rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={5}
                        />}/>
-                <Route path={PATH.FIVE}
-                       element={<Match cardsToPlay={fifthLevel}
-                                       path={PATH.HALFONE}
-                                       duration={70}
-                                       rotate={false}
 
+                <Route path={PATH.POLMOTHREE}
+                       element={<Match cardsToPlay={polmoThirdLevel}
+                                       duration={90}
+                                       path={PATH.HALFONE}
+                                       rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={6}
                        />}/>
+
                 <Route path={PATH.HALFONE}
                        element={<Match cardsToPlay={halfFirstLevel}
                                        duration={30}
-                                       path={PATH.HALFTWO}
+                                       path={PATH.FOUR}
                                        rotate={false}
-
                                        description={'Найти вторую половину'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={7}
                        />}/>
-                <Route path={PATH.HALFTWO}
-                       element={<Match cardsToPlay={halfSecondLevel}
-                                       duration={70}
-                                       path={PATH.POLMOONE}
-                                       rotate={false}
 
-                                       description={'Найти вторую половину'}
+                <Route path={PATH.FOUR}
+                       element={<Match cardsToPlay={fourthLevel}
+                                       path={PATH.FIVE}
+                                       duration={60}
+                                       rotate={false}
+                                       description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={8}
                        />}/>
-                <Route path={PATH.POLMOONE}
-                       element={<Match cardsToPlay={polmoFirstLevel}
-
-                                       duration={45}
-
-                                       path={PATH.POLMOTWO}
-
+                <Route path={PATH.FIVE}
+                       element={<Match cardsToPlay={fifthLevel}
+                                       path={PATH.REFLIPONE}
+                                       duration={70}
                                        rotate={false}
-
-
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={9}
-
                        />}/>
-                <Route path={PATH.POLMOTWO}
-                       element={<Match cardsToPlay={polmoSecondLevel}
-
-                                       duration={60}
-
-                                       path={PATH.POLMOTHREE}
-
-
-                                       rotate={false}
-
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={10}
-
+                <Route path={PATH.REFLIPONE}
+                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
+                                             duration={40}
+                                             path={PATH.HALFTWO}
+                                             description={'Два документа'} rotate={false}
+                                             levelNumber={10}
+                                             bestLevel={bestLevel}
+                                             setBestLevel={setBestLevel}
                        />}/>
-                <Route path={PATH.POLMOTHREE}
-                       element={<Match cardsToPlay={polmoThirdLevel}
 
-                                       duration={90}
-
-                                       path={PATH.TRIPLEMATCHONE}
-
-
+                <Route path={PATH.HALFTWO}
+                       element={<Match cardsToPlay={halfSecondLevel}
+                                       duration={70}
+                                       path={PATH.REFLIPTWO}
                                        rotate={false}
-
-                                       description={'Найти пару'}
+                                       description={'Найти вторую половину'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={11}
-
                        />}/>
+
+                <Route path={PATH.REFLIPTWO}
+                       element={<MatchReFlip cardsToPlay={reFlipSecondLevel}
+                                             duration={90}
+                                             path={PATH.CIRCLE}
+                                             description={'Два документа'} rotate={false}
+                                             levelNumber={12}
+                                             bestLevel={bestLevel}
+                                             setBestLevel={setBestLevel}
+                       />}/>
+
+                <Route path={PATH.CIRCLE}
+                       element={<Circle cardsToPlay={circleLevel}
+                                        duration={160}
+                                        path={PATH.TRIPLEMATCHONE}
+                                        rotate={false}
+                                        description={'Крутящий момент'}
+                                        bestLevel={bestLevel}
+                                        setBestLevel={setBestLevel}
+                                        levelNumber={13}
+                       />}/>
+
                 <Route path={PATH.TRIPLEMATCHONE}
                        element={<TripleMatch cardsToPlay={tripleFirstLevel}
                                              duration={50}
-                                             path={PATH.THREEMATCHESTWO}
+                                             path={PATH.CARSBYMODELSONE}
 
                                              rotate={false}
                                              description={'Масовка'}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             levelNumber={12}
+                                             levelNumber={14}
                        />}/>
-                {/*<Route path={PATH.TRIPLEMATCHONE} element={<MatchReverse cardsToPlay={tripleFirstLevel} duration={60} path={PATH.THREEMATCHESTWO} rotate={false} description={'Масовка'} isPattern={false}/> }/>*/}
-                // send level name, number + rewrite modal
-                {/*<Route path={PATH.MATCH} element={<Circle width={400} height={400} holeRadius={20} drumRadius={180}/> }/>*/}
+
+                <Route path={PATH.CARSBYMODELSONE}
+                       element={<Match cardsToPlay={carsByModelsFirstLevel}
+                                       duration={30}
+                                       path={PATH.THREEMATCHESTWO}
+                                       rotate={false}
+                                       description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={15}
+
+                       />}/>
+
                 <Route path={PATH.THREEMATCHESTWO}
                        element={<TripleMatch cardsToPlay={tripleSecondLevel}
                                              duration={70}
                                              path={PATH.PATTERNONE}
-
                                              rotate={false}
                                              description={'Масовка'}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             levelNumber={13}
+                                             levelNumber={16}
                        />}/>
+
                 <Route path={PATH.PATTERNONE}
                        element={<TripleMatchCopy cardsToPlay={patternFirstLevelCards}
                                                  patternCards={patternFirstLevel}
-
                                                  duration={60}
                                                  path={PATH.PATTERNTWO}
                                                  rotate={false}
-
                                                  description={'Массовка по документу'}
                                                  bestLevel={bestLevel}
                                                  isChangedSize={true}
                                                  setBestLevel={setBestLevel}
-                                                 levelNumber={14}
+                                                 levelNumber={17}
                        />}/>
+
                 <Route path={PATH.PATTERNTWO}
                        element={<TripleMatchCopy cardsToPlay={patternSecondLevelCards}
                                                  patternCards={patternSecondLevel}
 
                                                  duration={150}
-                                                 path={PATH.THREEMATCHESTWOROTATEONE}
+                                                 path={PATH.CARSBYMODELSTWO}
                                                  rotate={false}
 
                                                  description={'Массовка по документу'}
                                                  bestLevel={bestLevel}
                                                  isChangedSize={true}
                                                  setBestLevel={setBestLevel}
-                                                 levelNumber={15}
+                                                 levelNumber={18}
                        />}/>
+
+                <Route path={PATH.CARSBYMODELSTWO}
+                       element={<Match cardsToPlay={carsByModelsSecondLevel}
+                                       duration={55}
+                                       path={PATH.THREEMATCHESTWOROTATEONE}
+                                       rotate={false}
+                                       description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={19}
+
+                       />}/>
+
                 <Route path={PATH.THREEMATCHESTWOROTATEONE}
                        element={<TripleMatch cardsToPlay={tripleFirstLevel}
                                              duration={50}
@@ -282,10 +349,11 @@ const AppRoutes = () => {
                                              rotate={true}
                                              description={'Пьяная масовка'}
                                              setBestLevel={setBestLevel}
-                                             levelNumber={16}
-                       bestLevel={bestLevel}/>
+                                             levelNumber={20}
+                                             bestLevel={bestLevel}/>
 
                        }/>
+
                 <Route path={PATH.THREEMATCHESTWOROTATETWO}
                        element={<TripleMatch cardsToPlay={tripleSecondLevel}
                                              duration={120}
@@ -294,52 +362,21 @@ const AppRoutes = () => {
                                              description={'Пьяная масовка'}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             levelNumber={17}
+                                             levelNumber={21}
                        />}/>
+
                 <Route path={PATH.CRAZYONE}
                        element={<TripleMatchCopy cardsToPlay={patternSecondLevelCards}
                                                  patternCards={patternSecondLevel}
                                                  isChangedSize={true}
                                                  duration={180}
-                                                 path={PATH.REFLIPONE}
+                                                 path={PATH.MATCH}
                                                  rotate={true}
-                                                 description={'Пьяная масовка'}
+                                                 description={'Пьяная масовка по документу'}
                                                  bestLevel={bestLevel}
                                                  setBestLevel={setBestLevel}
-                                                 levelNumber={18}
+                                                 levelNumber={22}
                        />}/>
-                <Route path={PATH.REFLIPONE}
-                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
-                                             duration={40}
-                                             path={PATH.REFLIPTWO}
-                                             description={'Два документа'} rotate={false}
-
-                       />}/>
-                <Route path={PATH.REFLIPTWO}
-                       element={<MatchReFlip cardsToPlay={reFlipSecondLevel}
-                                             duration={90}
-                                             path={PATH.CIRCLE}
-                                             description={'Два документа'} rotate={false}
-
-                       />}/>
-                <Route path={PATH.CIRCLE}
-                       element={<Circle cardsToPlay={circleLevel}
-                                                 duration={160}
-                                                 path={'/match'}
-                                                 rotate={false}
-                                                 description={'Крутящий момент'}
-                                        bestLevel={bestLevel}
-                                        setBestLevel={setBestLevel}
-                                        levelNumber={19}
-                       />}/>
-
-                {/*<Route path={PATH.TRIPLETSET}*/}
-                {/*       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}*/}
-                {/*                        duration={180}*/}
-                {/*                        path={'/match'}*/}
-                {/*                        rotate={false}*/}
-                {/*                        description={'Крутящий момент'}*/}
-                {/*       />}/>*/}
 
             </Routes>
 

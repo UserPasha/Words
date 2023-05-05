@@ -65,6 +65,24 @@ import mahle from '../assets/images/match/mahle.png'
 import SKF from '../assets/images/match/SKF-Logo.svg.png'
 import vernet from '../assets/images/match/vernet.jpg'
 
+import audi from '../assets/images/match/cars/Audi.png'
+import QSeven from '../assets/images/match/cars/q7.jpg'
+import BMW from '../assets/images/match/cars/bmw.png'
+import XFive from '../assets/images/match/cars/x5.jpg'
+import nissan from '../assets/images/match/cars/nissan.jpg'
+import micra from '../assets/images/match/cars/micra.png'
+import mazda from '../assets/images/match/cars/mazda.png'
+import sixTwoSix from '../assets/images/match/cars/626.jpg'
+import scoda from '../assets/images/match/cars/scoda.jpg'
+import rapid from '../assets/images/match/cars/rapid.jpg'
+import peugeot from '../assets/images/match/cars/peugeot.png'
+import threeZeroSeven from '../assets/images/match/cars/307.jpg'
+import opel from '../assets/images/match/cars/opel.svg'
+import vectra from '../assets/images/match/cars/vectra.jpg'
+import lada from '../assets/images/match/cars/lada.png'
+import vesta from '../assets/images/match/cars/vesta.jpg'
+
+
 import {ICardMatch, IPattern, IReFlip} from "../hooks/useMatch";
 
 
@@ -1459,5 +1477,124 @@ export const reFlipSecondLevel: IReFlip[] = [ ...reFlipFirstLevel,
         isMatched: false,
         isReFlipped: false,
         isTotallyMatched: false
+    },
+]
+
+export const carsByModelsFirstLevel: ICardMatch[] = [
+    {
+        id: 300,
+        image: audi,
+        name: 'ba',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 301,
+        image: QSeven,
+        name: 'ba',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 302,
+        image: BMW,
+        name: 'bb',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 303,
+        image: XFive,
+        name: 'bb',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 304,
+        image: nissan,
+        name: 'bc',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 305,
+        image: micra,
+        name: 'bc',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 306,
+        image: mazda,
+        name: 'bd',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 307,
+        image: sixTwoSix,
+        name: 'bd',
+        isMatched: false,
+        isFlipped: false
+    },
+
+]
+
+export const carsByModelsSecondLevel: ICardMatch[] = [ ...carsByModelsFirstLevel,
+    {
+        id: 308,
+        image: scoda,
+        name: 'bf',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 309,
+        image: rapid,
+        name: 'bf',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 310,
+        image: opel,
+        name: 'be',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 311,
+        image: vectra,
+        name: 'be',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 312,
+        image: lada,
+        name: 'bg',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 313,
+        image: vesta,
+        name: 'bg',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 314,
+        image: peugeot,
+        name: 'bh',
+        isMatched: false,
+        isFlipped: false
+    },
+    {
+        id: 315,
+        image: threeZeroSeven,
+        name: 'bh',
+        isMatched: false,
+        isFlipped: false
     },
 ]

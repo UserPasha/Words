@@ -8,7 +8,7 @@ import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Match/Timer/Timer";
 
 
-export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize}) => {
+export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize, setBestLevel, levelNumber, bestLevel}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
@@ -30,6 +30,8 @@ export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path,
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
+            setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
     }, [pairCounter, cardsToPlay])
 

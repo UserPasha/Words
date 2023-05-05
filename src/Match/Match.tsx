@@ -38,8 +38,8 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
-           setBestLevel(levelNumber)
-            localStorage.setItem("bestLevel", JSON.stringify(bestLevel));
+           setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
     }, [pairCounter, cardsToPlay])
 

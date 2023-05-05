@@ -4,6 +4,7 @@ import closeIcon from "../Common/Assets/images/close.svg";
 import {Link} from "react-router-dom";
 import smile from '../assets/images/match/smile.svg'
 import sad from '../assets/images/match/sad.svg'
+import {PATH} from "../AppRoutes/AppRoutes";
 
 
 interface IModal {
@@ -51,11 +52,7 @@ export const Modal: FC<IModal> = ({
     return (
         <div className={style.wrapper}>
             <div className={style.modal}>
-                {/*<div className={style.closeModal}>*/}
-                {/*    <img src={closeIcon}*/}
-                {/*         alt='close'*/}
-                {/*         onClick={closeModal}/>*/}
-                {/*</div>*/}
+
                 {isEndOfTime ?
                     <div className={style.message} >
                         <img src={sad} alt={'fun smile'}/>
@@ -64,6 +61,9 @@ export const Modal: FC<IModal> = ({
                         <button onClick={restartTimer}  className={style.button}>
                           Начать заново
                         </button>
+                        <Link to={PATH.MATCH}>
+                            <button onClick={restartTimer} className={style.button}> Выйти</button>
+                        </Link>
                     </div> : <>
                         <div className={style.message}>
                             <img src={smile} alt={'fun smile'}/>
@@ -71,6 +71,9 @@ export const Modal: FC<IModal> = ({
                         <Link to={path}>
                             <button onClick={restartTimer} className={style.button}> Далее</button>
                         </Link>
+                            <Link to={PATH.MATCH}>
+                                <button onClick={restartTimer} className={style.button}> Выйти</button>
+                            </Link>
                         </div>
                     </>
                         }

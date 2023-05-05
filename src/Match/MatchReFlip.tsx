@@ -10,7 +10,7 @@ import {Timer} from "./Timer/Timer";
 import {Modal} from "./Modal";
 
 
-export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, description}) => {
+export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber}) => {
 
     const shuffleCards = (array: IReFlip[]): IReFlip[] => {
         if (array) {
@@ -38,6 +38,8 @@ export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, des
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length){
             setShowModal(true)
+            setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
     }, [pairCounter, cardsToPlay])
     useEffect(() => {

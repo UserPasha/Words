@@ -7,7 +7,7 @@ import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Match/Timer/Timer";
 
-export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description}) => {
+export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description, bestLevel, setBestLevel, levelNumber}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
@@ -27,6 +27,8 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
+            setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
     }, [pairCounter, cardsToPlay])
 

@@ -18,6 +18,9 @@ export interface IReFlipMatch {
     path: string
     rotate: boolean
     description: string
+    levelNumber: number
+    bestLevel: number
+    setBestLevel: Dispatch<SetStateAction<number>>
 }
 export interface ICardMatch {
     id: number,
