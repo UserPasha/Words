@@ -8,7 +8,7 @@ import style from "./Match.module.css";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "./Modal";
 
-export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description})  => {
+export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber})  => {
     const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
@@ -22,6 +22,8 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description})  
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
+            setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
     }, [pairCounter, cardsToPlay])
 

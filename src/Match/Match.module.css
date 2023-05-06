@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #d5dad3;
+    /*background-color: #d5dad3;*/
+    background-image: url("../assets/images/match/bg/greenBG3.jpg");
     height: 100vh;
 }
 

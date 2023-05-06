@@ -37,7 +37,6 @@ export const Search = () => {
         setWordsResult(searchResults)
     }, [value])
 
-    console.log(wordsResult)
     return (
         <div className={style.wrapper}>
             <BackArrow  path={'/'}/>

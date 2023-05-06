@@ -6,6 +6,7 @@ import cover from "../assets/images/match/logo.png";
 import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Match/Timer/Timer";
+import patternGameBackGround from '../assets/images/match/bg/yellowBG.jpg'
 
 
 export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize, setBestLevel, levelNumber, bestLevel}) => {
@@ -170,6 +171,7 @@ if(patternIndex === patternCards.length) {
 
 
             <section className={style.wrapper}
+                     style={{backgroundImage: `url(${patternGameBackGround})`}}
                 // style={fieldStyle}
             >
                 <div className={style.mode}>{description}</div>

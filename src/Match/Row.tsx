@@ -17,7 +17,7 @@ interface IRow {
 export const Row: FC<IRow> = ({number, name, difficult, play, description, day, bestLevel}) => {
    const isAvailable = bestLevel>number
     const [isShown, setIsShown] = useState(false);
-   const unAvailable = {name: 'Уроаень недоступен', description: "Пройдите предыдущий уровень", play: ''}
+
     return (
 
         <div className={style.wrapper}>
@@ -33,7 +33,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         :
                             <button className={day === 'monday' ? ` ${style.day} ${style.monday}` : `${style.day} ${style.hidden}`}
-                            >
+                                    onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
                         }
@@ -50,7 +50,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                             :
                             <button className={day === 'wednesday' ? `${style.day} ${style.wednesday}` : `${style.day} ${style.hidden}`}
-                                    >
+                                    onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
                         }
@@ -67,7 +67,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                             :
                             <button className={day === 'friday' ? `${style.day} ${style.friday}` : `${style.day} ${style.hidden}`}
-                               >
+                                    onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
                         }
@@ -83,7 +83,8 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
                             </button>
 
                             :
-                            <button className={day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}>
+                            <button className={day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}
+                                    onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
                         }
@@ -91,8 +92,13 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                     </div>
 
+            {isAvailable
+                ?
+                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={name} description={description} path={play}/>
+                :
+                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={'Уровень недоступен'} description={"Пройдите предыдущий уровень"} path={'/match'}/>
+            }
 
-            <ModalMenu isShown={isShown} setIsShown={setIsShown} name={name} description={description} path={play}/>
         </div>
     );
 };
