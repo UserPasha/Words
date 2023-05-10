@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.26577e50.css",
-    "main.js": "/Words/static/js/main.fc610a49.js",
+    "main.css": "/Words/static/css/main.83502c2e.css",
+    "main.js": "/Words/static/js/main.f3ff539a.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -43,6 +43,7 @@
     "static/media/Glyukoza_YuraM.mp3": "/Words/static/media/Glyukoza_YuraM.572d879ec4e54a9c7832.mp3",
     "static/media/LyusyaChebotina-monako.mp3": "/Words/static/media/LyusyaChebotina-monako.3b8f536db0f222ee4805.mp3",
     "static/media/Chicherina-tula2.mp3": "/Words/static/media/Chicherina-tula2.41fee753e8dcbebe218e.mp3",
+    "static/media/brake-disk-clipart.png": "/Words/static/media/brake-disk-clipart.c6c1ea982865c2e31d02.png",
     "static/media/rukiAleshakaM.mp3": "/Words/static/media/rukiAleshakaM.058edc7fa7e65734834f.mp3",
     "static/media/Fabrika-plus.mp3": "/Words/static/media/Fabrika-plus.6b563742882504e75df4.mp3",
     "static/media/OlegMityaev-leto.mp3": "/Words/static/media/OlegMityaev-leto.3008f2ad76ce44a9ef53.mp3",
@@ -136,12 +137,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.26577e50.css.map": "/Words/static/css/main.26577e50.css.map",
-    "main.fc610a49.js.map": "/Words/static/js/main.fc610a49.js.map",
+    "main.83502c2e.css.map": "/Words/static/css/main.83502c2e.css.map",
+    "main.f3ff539a.js.map": "/Words/static/js/main.f3ff539a.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26577e50.css",
-    "static/js/main.fc610a49.js"
+    "static/css/main.83502c2e.css",
+    "static/js/main.f3ff539a.js"
   ]
 }
