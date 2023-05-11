@@ -9,9 +9,10 @@ interface IModalMenu {
     name: string
     description: string
     path: string
+    bestPoints: number
 }
 
-export const ModalMenu: FC<IModalMenu> = ({isShown, setIsShown, name, description, path}) => {
+export const ModalMenu: FC<IModalMenu> = ({isShown, setIsShown, name, description, path, bestPoints}) => {
 
 
     const modalRef = useRef<HTMLDivElement>(null);
@@ -44,6 +45,9 @@ export const ModalMenu: FC<IModalMenu> = ({isShown, setIsShown, name, descriptio
                             </div>
                             <div className={style.description}>
                                 {description}
+                            </div>
+                            <div className={style.bestScore}>
+                                Лучший результат: {bestPoints} единиц
                             </div>
 
                         </div>

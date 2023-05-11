@@ -10,6 +10,7 @@ export interface IMatch {
     bestLevel: number
     setBestLevel: Dispatch<SetStateAction<number>>
     levelNumber: number
+    defaultPoints: number
 }
 
 export interface IReFlipMatch {
@@ -21,6 +22,7 @@ export interface IReFlipMatch {
     levelNumber: number
     bestLevel: number
     setBestLevel: Dispatch<SetStateAction<number>>
+    defaultPoints: number
 }
 export interface ICardMatch {
     id: number,
@@ -64,9 +66,8 @@ export const useMatchHook = () => {
 
 
 
-
     return {
         isLockBoard, setIsLockBoard, firstCard: firstCard, setFirstCard, secondCard: secondCard, setSecondCard, attempts, setAttempts,
-        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
+        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning
     }
 }

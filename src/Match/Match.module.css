@@ -40,6 +40,10 @@
 .card.flipped{
     transition: transform 0.6s;
     transform: rotateY(360deg);
+
+}
+.card.matched{
+    transform: scale(1.15);
 }
 .card.smaller,
 .card.flipped.smaller{

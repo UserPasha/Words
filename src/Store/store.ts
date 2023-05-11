@@ -3,10 +3,12 @@ import {cardsReducer} from "./cardsReducer";
 import {loadState, saveState} from "../Utils/localStorageUtils";
 import {DictionaryAction, lingvoReducer} from "./lingvoReducer";
 import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
+import {pointsReducer} from "./pointsReducer";
 
 const reducers = combineReducers({
     cards: cardsReducer,
-    lingvo: lingvoReducer
+    lingvo: lingvoReducer,
+    points: pointsReducer
 })
 
 const store = createStore(reducers, loadState(), applyMiddleware(thunk))
@@ -14,7 +16,8 @@ const store = createStore(reducers, loadState(), applyMiddleware(thunk))
 store.subscribe(()=>{
     saveState({
         cards: store.getState().cards,
-        lingvo: store.getState().lingvo
+        lingvo: store.getState().lingvo,
+        points: store.getState().points
     })
 })
 export type AppThunk<ReturnType = void > = ThunkAction<ReturnType, RootState, unknown, ActionsType>

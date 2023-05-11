@@ -1,6 +1,5 @@
 import React, {FC, useState} from 'react';
 import style from './Row.module.css'
-import {Link} from "react-router-dom";
 import lockImage from '../Common/Assets/images/lock.png'
 import {ModalMenu} from "./ModalMenu/ModalMenu";
 
@@ -12,9 +11,10 @@ interface IRow {
     description: string
     day: string
     bestLevel: number
+    bestPoints: number
 }
 
-export const Row: FC<IRow> = ({number, name, difficult, play, description, day, bestLevel}) => {
+export const Row: FC<IRow> = ({number, name, difficult, play, description, day, bestLevel, bestPoints}) => {
    const isAvailable = bestLevel>number
     const [isShown, setIsShown] = useState(false);
 
@@ -26,7 +26,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={day === 'monday' ? ` ${style.day} ${style.monday}` : `${style.day} ${style.hidden}`}
+                                className={ isShown &&  day === 'monday' ? ` ${style.day}  ${style.active}` : day === 'monday' ? ` ${style.day} ${style.monday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
                                                      {number} / ПН
                             </button>
@@ -40,7 +40,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={day === 'wednesday' ? `${style.day} ${style.wednesday}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'wednesday' ? ` ${style.day}  ${style.active}` :day === 'wednesday' ? `${style.day} ${style.wednesday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / СР
@@ -57,7 +57,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={day === 'friday' ? `${style.day} ${style.friday}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'friday' ? ` ${style.day}  ${style.active}` :day === 'friday' ? `${style.day} ${style.friday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / ПТ
@@ -74,7 +74,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'additional' ? ` ${style.day}  ${style.active}` :day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / Доп
@@ -94,9 +94,9 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
             {isAvailable
                 ?
-                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={name} description={description} path={play}/>
+                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={name} description={description} path={play} bestPoints={bestPoints}/>
                 :
-                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={'Уровень недоступен'} description={"Пройдите предыдущий уровень"} path={'/match'}/>
+                <ModalMenu isShown={isShown} setIsShown={setIsShown} name={'Уровень недоступен'} description={"Пройдите предыдущий уровень"} path={'/match'} bestPoints={0}/>
             }
 
         </div>

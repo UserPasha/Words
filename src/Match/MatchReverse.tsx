@@ -17,7 +17,7 @@ export const MatchReverse:FC<IMatch> = (
     {duration,
         description,
         cardsToPlay,
-        path}) => {
+        path, defaultPoints}) => {
 
 
     const [timer, setTimer] = useState(duration);
@@ -25,6 +25,7 @@ export const MatchReverse:FC<IMatch> = (
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
 
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
+    const [timeLeft, setTimeLeft] = useState(timer)
 
     useEffect(() => {
         if (firstCard && secondCard) {
@@ -35,6 +36,7 @@ export const MatchReverse:FC<IMatch> = (
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
+            setTimeLeft(timer)
         }
     }, [pairCounter, cardsToPlay])
 
@@ -153,6 +155,8 @@ export const MatchReverse:FC<IMatch> = (
                                     setTimer={setTimer}
                                     restartGame={restartGame}
                                     path={path}
+                                    timeLeft={timeLeft}
+                                    defaultPoints={defaultPoints}
                 />}
 
             </section>

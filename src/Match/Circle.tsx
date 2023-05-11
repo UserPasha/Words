@@ -8,11 +8,12 @@ import style from "./Match.module.css";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "./Modal";
 
-export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber})  => {
+export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber, defaultPoints})  => {
     const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
-        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
+        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning } = useMatchHook()
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
     const [timer, setTimer] = useState(duration);
+    const [timeLeft, setTimeLeft] = useState(timer)
     useEffect(() => {
         if (firstCard && secondCard) {
             checkMates();
@@ -22,6 +23,7 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
+            setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
@@ -130,6 +132,8 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
                                 setTimer={setTimer}
                                 restartGame={restartGame}
                                 path={path}
+                                timeLeft={timeLeft}
+                                defaultPoints={defaultPoints}
             />}
             <section className={circleStyle.wrapper} style={fieldStyle}>
 

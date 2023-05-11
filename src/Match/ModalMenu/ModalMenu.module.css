@@ -3,7 +3,7 @@
     bottom: 10px;
     left: 4px;
     width: 98vw;
-    height: 160px;
+    height: 205px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
 }
 .modal{
     width: 100%;
-    height: 140px;
+    height: 180px;
     border-radius: 20px;
     border: 2px solid rgba(255, 255, 255, 0.6);
     display: flex;
@@ -37,6 +37,13 @@
     margin-top: 30px;
     color: #FFFFFF;
     height: 55px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.bestScore{
+    margin-top: 10px;
+    color: #d5b00a;
+    height: 25px;
     font-size: 16px;
     line-height: 30px;
 }

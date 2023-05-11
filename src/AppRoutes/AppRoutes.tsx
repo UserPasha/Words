@@ -30,6 +30,9 @@ import {TripleMatch} from "../TripleMatch/TripleMatch";
 import {TripleMatchCopy} from "../TripleMatch/TripleMatchCopy";
 import {Circle} from "../Match/Circle";
 import {MatchReFlip} from "../Match/MatchReFlip";
+import {useSelector} from "react-redux";
+import {InitialStatePointsType} from "../Store/pointsReducer";
+import {RootState} from "../Store/store";
 
 
 export const PATH = {
@@ -78,6 +81,7 @@ const AppRoutes = () => {
         }
     )
 
+
     useEffect(() => {
         let bestLevelAsString = localStorage.getItem("bestLevel")
         if (bestLevelAsString) {
@@ -119,6 +123,8 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={0}
+                                       defaultPoints={100}
+
                        />}/>
 
                 <Route path={PATH.TWO}
@@ -131,6 +137,7 @@ const AppRoutes = () => {
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={1}
+                           defaultPoints={120}
 
                        />}/>
                 <Route path={PATH.POLMOONE}
@@ -142,6 +149,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={2}
+                                       defaultPoints={150}
                        />}/>
 
 
@@ -155,6 +163,7 @@ const AppRoutes = () => {
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={3}
+                           defaultPoints={200}
                        />}/>
 
                 <Route path={PATH.THREE}
@@ -167,6 +176,7 @@ const AppRoutes = () => {
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={4}
+                           defaultPoints={150}
 
                        />}/>
 
@@ -179,6 +189,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={5}
+                                       defaultPoints={180}
                        />}/>
 
                 <Route path={PATH.POLMOTWO}
@@ -190,6 +201,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={6}
+                                       defaultPoints={210}
                        />}/>
 
 
@@ -202,6 +214,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={7}
+                                       defaultPoints={200}
                        />}/>
 
 
@@ -214,6 +227,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={8}
+                                       defaultPoints={200}
                        />}/>
                 <Route path={PATH.REFLIPONE}
                        element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
@@ -223,6 +237,7 @@ const AppRoutes = () => {
                                              levelNumber={9}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
+                                             defaultPoints={160}
                        />}/>
                 <Route path={PATH.POLMOTHREE}
                        element={<Match cardsToPlay={polmoThirdLevel}
@@ -233,6 +248,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={10}
+                                       defaultPoints={300}
                        />}/>
                 <Route path={PATH.HALFTWO}
                        element={<Match cardsToPlay={halfSecondLevel}
@@ -243,6 +259,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={11}
+                                       defaultPoints={200}
                        />}/>
 
                 <Route path={PATH.REFLIPTWO}
@@ -253,6 +270,7 @@ const AppRoutes = () => {
                                              levelNumber={12}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
+                                             defaultPoints={200}
                        />}/>
 
                 <Route path={PATH.CIRCLE}
@@ -264,6 +282,7 @@ const AppRoutes = () => {
                                         bestLevel={bestLevel}
                                         setBestLevel={setBestLevel}
                                         levelNumber={13}
+                                        defaultPoints={200}
                        />}/>
 
                 <Route path={PATH.TRIPLEMATCHONE}
@@ -276,6 +295,7 @@ const AppRoutes = () => {
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
                                              levelNumber={14}
+                                             defaultPoints={160}
                        />}/>
 
                 <Route path={PATH.CARSBYMODELSONE}
@@ -287,6 +307,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={15}
+                                       defaultPoints={200}
 
                        />}/>
 
@@ -299,6 +320,7 @@ const AppRoutes = () => {
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
                                              levelNumber={16}
+                                             defaultPoints={180}
                        />}/>
 
                 <Route path={PATH.PATTERNONE}
@@ -312,6 +334,7 @@ const AppRoutes = () => {
                                                  isChangedSize={true}
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={17}
+                                                 defaultPoints={180}
                        />}/>
 
                 <Route path={PATH.PATTERNTWO}
@@ -327,6 +350,7 @@ const AppRoutes = () => {
                                                  isChangedSize={true}
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={18}
+                                                 defaultPoints={220}
                        />}/>
 
                 <Route path={PATH.CARSBYMODELSTWO}
@@ -338,6 +362,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={19}
+                                       defaultPoints={200}
 
                        />}/>
 
@@ -349,6 +374,7 @@ const AppRoutes = () => {
                                              description={'Пьяная масовка'}
                                              setBestLevel={setBestLevel}
                                              levelNumber={20}
+                                             defaultPoints={200}
                                              bestLevel={bestLevel}/>
 
                        }/>
@@ -362,6 +388,7 @@ const AppRoutes = () => {
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
                                              levelNumber={21}
+                                             defaultPoints={240}
                        />}/>
 
                 <Route path={PATH.CRAZYONE}
@@ -375,6 +402,7 @@ const AppRoutes = () => {
                                                  bestLevel={bestLevel}
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={22}
+                                                 defaultPoints={260}
                        />}/>
 
             </Routes>

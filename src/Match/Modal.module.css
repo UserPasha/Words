@@ -33,6 +33,7 @@
     width: 100%;
     height: 50px;
     margin-top: 80px;
+    padding: 0 15px;
 }
 .message img{
     display: block;
@@ -42,7 +43,7 @@
 }
 .button{
     margin-top: 50px;
-    width: 120px;
+    width: 100px;
     height: 30px;
     border-radius: 10px;
     color: #044904;

@@ -15,7 +15,12 @@ interface TimerProps {
 
 
 
-export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter}) => {
+export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter
+
+}) => {
+
+    const progress = ((duration - timer + 1) / duration) * 100;
+
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
@@ -36,13 +41,13 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
         setRunning(true);
     }, [duration]);
 
-   const middleValue = 20
-    const criticalValue = 10
+   const middleValue = duration*0.7
+    const criticalValue = duration*0.3
     const minutes = Math.floor(timer / 60);
     const seconds = timer % 60;
     const middle = timer <= middleValue && timer >= criticalValue
     const short = timer < criticalValue
-    const progress = ((duration - timer + 1) / duration) * 100;
+
 
 
     return (

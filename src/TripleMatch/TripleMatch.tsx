@@ -7,7 +7,7 @@ import {Modal} from "../Match/Modal";
 import {shuffleArray} from "../Match/Match";
 import {Timer} from "../Match/Timer/Timer";
 
-export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description, bestLevel, setBestLevel, levelNumber}) => {
+export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, description, bestLevel, setBestLevel, levelNumber, defaultPoints}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
@@ -16,6 +16,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
     //console.log(cardsToPlay)
     const [thirdCard, setThirdCard] = useState<ICardMatch | null>({id: 0, name: '', isMatched: false, isFlipped: false, image: ''})
     const [timer, setTimer] = useState(duration);
+    const [timeLeft, setTimeLeft] = useState(timer)
 
     useEffect(() => {
         if (firstCard && secondCard && thirdCard) {
@@ -27,6 +28,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
+            setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
@@ -145,7 +147,7 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                 <div className={style.mode}>{description}</div>
 
                 <div className={style.cardsContainer}>
-                    {cards.map((card, index) => <button className={card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
+                    {cards.map((card, index) => <button className={card.isMatched ? `${style.card} ${style.matched}`: card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
                                                         key={index}
                                                         style={chooseStyle}
                                                         onClick={() => {
@@ -168,6 +170,8 @@ export const TripleMatch: FC<IMatch> = ({cardsToPlay, duration, path, rotate, de
                                       setTimer={setTimer}
                                       restartGame={restartGame}
                                       path={path}
+                                    timeLeft={timeLeft}
+                                    defaultPoints={defaultPoints}
                 />}
 
             </section>

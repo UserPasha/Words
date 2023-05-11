@@ -10,7 +10,7 @@ import {Timer} from "./Timer/Timer";
 import {Modal} from "./Modal";
 
 
-export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber}) => {
+export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber, defaultPoints}) => {
 
     const shuffleCards = (array: IReFlip[]): IReFlip[] => {
         if (array) {
@@ -31,6 +31,7 @@ export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, des
     const [secondCard, setSecondCard] = useState<IReFlip | null >(null)
     const [cards, setCards] = useState<IReFlip[]>(shuffleCards(cardsToPlay))
     const [timer, setTimer] = useState(duration);
+    const [timeLeft, setTimeLeft] = useState(timer)
     useEffect(() => {
         setCards(shuffleCards(cardsToPlay))
     }, [cardsToPlay])
@@ -38,6 +39,7 @@ export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, des
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length){
             setShowModal(true)
+            setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
@@ -232,6 +234,8 @@ export const MatchReFlip: FC<IReFlipMatch>  = ({cardsToPlay, duration, path, des
                                     setTimer={setTimer}
                                     restartGame={restartGame}
                                     path={path}
+                                    timeLeft={timeLeft}
+                                    defaultPoints={defaultPoints}
                 />}
             </section>
         </>

@@ -9,7 +9,7 @@ import {Timer} from "../Match/Timer/Timer";
 import patternGameBackGround from '../assets/images/match/bg/yellowBG.jpg'
 
 
-export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize, setBestLevel, levelNumber, bestLevel}) => {
+export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path, rotate, description,patternCards, isChangedSize, setBestLevel, levelNumber, bestLevel, defaultPoints}) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
@@ -22,6 +22,8 @@ export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path,
     const [pattern, setPattern] = useState<IPattern[]>(shuffleArray(patternCards))
     const [patternIndex, setPatternIndex] = useState<number>(0)
 
+    const [timeLeft, setTimeLeft] = useState(timer)
+
     useEffect(() => {
         if (firstCard && secondCard && thirdCard) {
             checkMates();
@@ -31,6 +33,7 @@ export const TripleMatchCopy: FC<IPatternCards> = ({cardsToPlay, duration, path,
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
+            setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
         }
@@ -210,6 +213,8 @@ if(patternIndex === patternCards.length) {
                                       setTimer={setTimer}
                                       restartGame={restartGame}
                                       path={path}
+                                    timeLeft={timeLeft}
+                                    defaultPoints={defaultPoints}
                 />}
 
             </section>

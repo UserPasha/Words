@@ -6,11 +6,13 @@ import {Modal} from "./Modal";
 import {ICardMatch, IMatch, IPattern, IReFlip} from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
 import {Timer} from "./Timer/Timer";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../Store/store";
+import {saveBestLevel} from "../Store/pointsReducer";
 
 
-
-export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[]| IPattern[] =>{
-    if(array){
+export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[] | IPattern[] => {
+    if (array) {
         const shuffledArray = [...array];
         for (let i = shuffledArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -23,26 +25,55 @@ export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[]| IP
 
 }
 
-export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel,setBestLevel, levelNumber}) => {
+export const Match: FC<IMatch> = ({
+                                      cardsToPlay,
+                                      duration,
+                                      path,
+                                      description,
+                                      bestLevel,
+                                      setBestLevel,
+                                      levelNumber,
+                                      defaultPoints,
 
-  const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
-      showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning} = useMatchHook()
+                                  }) => {
+
+    const {
+        isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
+        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning
+    } = useMatchHook()
+
+    const dispatch = useDispatch<AppDispatch>();
+
     const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
     const [timer, setTimer] = useState(duration);
+    const [timeLeft, setTimeLeft] = useState(timer)
+
+    const createPoints = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
+        let pointsForAttempts = 60 - realAttempts
+        const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
+        console.log(defaultPoints + timeLeft * 2 + pointsForAttempts, timeLeft)
+        return totalPoints
+    }
+
     useEffect(() => {
         if (firstCard && secondCard) {
             checkMates();
         }
     }, [secondCard, firstCard]);
 
-    useEffect(()=>{
-        if(pairCounter === cardsToPlay.length/2){
+    useEffect(() => {
+        if (pairCounter === cardsToPlay.length / 2) {
             setShowModal(true)
-           setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
-            localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
+            //setTimeLeft(timer)
+            dispatch(saveBestLevel(levelNumber, createPoints(defaultPoints, timeLeft, attempts)))
+            setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
+            localStorage.setItem("bestLevel", JSON.stringify(levelNumber + 2));
         }
     }, [pairCounter, cardsToPlay])
 
+    useEffect(() => {
+        setTimeLeft(timer)
+    }, [timer])
     useEffect(() => {
         setSecondCard(secondCard)
     }, [secondCard])
@@ -87,7 +118,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
                 setFirstCard(null)
                 setSecondCard(null)
                 setIsLockBoard(false)
-                setPairCounter(pairCounter +1)
+                setPairCounter(pairCounter + 1)
             }, 500)
 
 
@@ -102,7 +133,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
     }
 
 
-     //useEffect + modal
+    //useEffect + modal
     //loading imitation + quotes
     // 8 cards - 12 att = perf, 14 - good, 14>bad 20> worst 1000pts + (perf =>bonus (att) 20%, good=< bonus 5%, bad -5%, worst - 20% )
     // 12 cards - 22 att = perf, 28 - good, 14>bad 1300pts + bonus (att)
@@ -116,7 +147,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
         if (firstCard !== null && firstCard.id !== cardId.id) {
             setSecondCard(cardId)
             setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts +1)
+            setAttempts(attempts + 1)
         } else {
             setFirstCard(cardId)
             setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
@@ -128,7 +159,7 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
         setAttempts(0)
         setPairCounter(0)
     }
-   // console.log('yo')
+    // console.log('yo')
     const isModal = isEndOfTime || showModal
 
     return (
@@ -137,17 +168,19 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
             <Timer
                 timer={timer} setTimer={setTimer}
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
-            cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
+                cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}
+            />
 
             <section className={style.wrapper}>
                 <div className={style.mode}>{description}</div>
 
                 <div className={style.cardsContainer}>
-                    {cards.map((card, index) => <button className={ card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
-                                                        key={index}
-                                                        onClick={() => {
-                                                            addValueToState(card)
-                                                        }} disabled={isLockBoard || card.isMatched}>
+                    {cards.map((card, index) => <button
+                            className={card.isMatched ? `${style.card} ${style.matched}` : card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
+                            key={index}
+                            onClick={() => {
+                                addValueToState(card)
+                            }} disabled={isLockBoard || card.isMatched}>
                             <div className={style.front}>
                                 <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}
                                 />
@@ -157,15 +190,17 @@ export const Match: FC<IMatch> = ({cardsToPlay, duration, path, description, bes
                     )}
                 </div>
 
-                {isModal &&  <Modal setShowModal={setShowModal}
-                                      attempts={attempts}
-                                      isEndOfTime={isEndOfTime}
-                                      setIsEndOfTime={setIsEndOfTime}
-                                      setRunning={setRunning}
-                                      duration={duration}
-                                      setTimer={setTimer}
-                                      restartGame={restartGame}
-                                      path={path}
+                {isModal && <Modal setShowModal={setShowModal}
+                                   attempts={attempts}
+                                   isEndOfTime={isEndOfTime}
+                                   setIsEndOfTime={setIsEndOfTime}
+                                   setRunning={setRunning}
+                                   duration={duration}
+                                   setTimer={setTimer}
+                                   restartGame={restartGame}
+                                   path={path}
+                                   timeLeft={timeLeft}
+                                   defaultPoints={defaultPoints}
                 />}
 
             </section>
