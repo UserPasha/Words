@@ -1,4 +1,4 @@
-import React, {useEffect, Dispatch, SetStateAction, useState} from "react";
+import React, {useEffect, Dispatch, SetStateAction} from "react";
 import style from './Timer.module.css'
 
 
@@ -58,9 +58,7 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
                     className={style.progress}
                     style={{width: `${progress}%`, height: "10px"}}
                 >
-
                 </div>
-
             </div>
             <div className={short ? `${style.container} ${style.short}` : middle ? `${style.container} ${style.middle}` : `${style.container} ${style.full}`}>
                 {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}

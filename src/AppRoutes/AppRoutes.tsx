@@ -33,6 +33,8 @@ import {MatchReFlip} from "../Match/MatchReFlip";
 import {useSelector} from "react-redux";
 import {InitialStatePointsType} from "../Store/pointsReducer";
 import {RootState} from "../Store/store";
+import {Modal} from "../Match/Modal";
+import {useMatchHook} from "../hooks/useMatch";
 
 
 export const PATH = {
@@ -73,6 +75,268 @@ export const PATH = {
 
     TRIPLETSET: '/tripletest'
 }
+
+const levels = [
+    {
+        path: PATH.ONE,
+        component: Match,
+        cardsToPlay: firstLevel,
+        duration: 30,
+        nextPath: PATH.TWO,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 0,
+        defaultPoints: 100,
+    },
+    {
+        path: PATH.TWO,
+        component: Match,
+        cardsToPlay: secondLevel,
+        duration: 40,
+        nextPath: PATH.POLMOONE,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 1,
+        defaultPoints: 120,
+    },
+    {
+        path: PATH.POLMOONE,
+        component: Match,
+        cardsToPlay: polmoFirstLevel,
+        duration: 45,
+        nextPath: PATH.FILTRON,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 2,
+        defaultPoints: 150,
+    },
+    {
+        path: PATH.FILTRON,
+        component: Match,
+        cardsToPlay: filtronMix,
+        duration: 20,
+        nextPath: PATH.THREE,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 3,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.THREE,
+        component: Match,
+        cardsToPlay: thirdLevel,
+        duration: 50,
+        nextPath: PATH.FOUR,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 4,
+        defaultPoints: 150,
+    },
+    {
+        path: PATH.FOUR,
+        component: Match,
+        cardsToPlay: fourthLevel,
+        duration: 60,
+        nextPath: PATH.POLMOTWO,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 5,
+        defaultPoints: 180,
+    },
+    {
+        path: PATH.POLMOTWO,
+        component: Match,
+        cardsToPlay: polmoSecondLevel,
+        duration: 65,
+        nextPath: PATH.HALFONE,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 6,
+        defaultPoints: 210,
+    },
+    {
+        path: PATH.HALFONE,
+        component: Match,
+        cardsToPlay: halfFirstLevel,
+        duration: 30,
+        nextPath: PATH.FIVE,
+        rotate: false,
+        description: 'Найти вторую половину',
+        levelNumber: 7,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.FIVE,
+        component: Match,
+        cardsToPlay: fifthLevel,
+        duration: 70,
+        nextPath: PATH.REFLIPONE,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 8,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.REFLIPONE,
+        component: Match,
+        cardsToPlay: reFlipFirstLevel,
+        duration: 40,
+        nextPath: PATH.POLMOTHREE,
+        rotate: false,
+        description: 'Два документа',
+        levelNumber: 9,
+        defaultPoints: 160,
+    },
+    {
+        path: PATH.POLMOTHREE,
+        component: Match,
+        cardsToPlay: polmoThirdLevel,
+        duration: 100,
+        nextPath: PATH.HALFTWO,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 10,
+        defaultPoints: 300,
+    },
+    {
+        path: PATH.HALFTWO,
+        component: Match,
+        cardsToPlay: halfSecondLevel,
+        duration: 70,
+        nextPath: PATH.REFLIPTWO,
+        rotate: false,
+        description: 'Найти вторую половину',
+        levelNumber: 11,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.REFLIPTWO,
+        component: MatchReFlip,
+        cardsToPlay: reFlipSecondLevel,
+        duration: 90,
+        nextPath: PATH.CIRCLE,
+        rotate: false,
+        description: 'Два документа',
+        levelNumber: 12,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.CIRCLE,
+        component: Circle,
+        cardsToPlay: circleLevel,
+        duration: 110,
+        nextPath: PATH.TRIPLEMATCHONE,
+        rotate: false,
+        description: 'Крутящий момент',
+        levelNumber: 13,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.TRIPLEMATCHONE,
+        component: TripleMatch,
+        cardsToPlay: tripleFirstLevel,
+        duration: 50,
+        nextPath: PATH.CARSBYMODELSONE,
+        rotate: false,
+        description: 'Масовка',
+        levelNumber: 14,
+        defaultPoints: 160,
+    },
+    {
+        path: PATH.CARSBYMODELSONE,
+        component: Match,
+        cardsToPlay: carsByModelsFirstLevel,
+        duration: 30,
+        nextPath: PATH.THREEMATCHESTWO,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 15,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.THREEMATCHESTWO,
+        component: TripleMatch,
+        cardsToPlay: tripleSecondLevel,
+        duration: 90,
+        nextPath: PATH.PATTERNONE,
+        rotate: false,
+        description: 'Масовка',
+        levelNumber: 16,
+        defaultPoints: 180,
+    },
+    {
+        path: PATH.PATTERNONE,
+        component: TripleMatchCopy,
+        cardsToPlay: patternFirstLevelCards,
+        patternCards: patternFirstLevel,
+        duration: 60,
+        nextPath: PATH.PATTERNTWO,
+        rotate: false,
+        isChangedSize: true,
+        description: 'Массовка по документу',
+        levelNumber: 17,
+        defaultPoints: 180,
+    },
+    {
+        path: PATH.PATTERNTWO,
+        component: TripleMatchCopy,
+        cardsToPlay: patternSecondLevelCards,
+        patternCards: patternSecondLevel,
+        duration: 150,
+        nextPath: PATH.CARSBYMODELSTWO,
+        rotate: false,
+        isChangedSize: true,
+        description: 'Массовка по документу',
+        levelNumber: 18,
+        defaultPoints: 220,
+    },
+    {
+        path: PATH.CARSBYMODELSTWO,
+        component: Match,
+        cardsToPlay: carsByModelsSecondLevel,
+        duration: 45,
+        nextPath: PATH.THREEMATCHESTWOROTATEONE,
+        rotate: false,
+        description: 'Найти пару',
+        levelNumber: 19,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.THREEMATCHESTWOROTATEONE,
+        component: TripleMatch,
+        cardsToPlay: tripleFirstLevel,
+        duration: 40,
+        nextPath: PATH.THREEMATCHESTWOROTATETWO,
+        rotate: true,
+        description: 'Пьяная масовка',
+        levelNumber: 20,
+        defaultPoints: 200,
+    },
+    {
+        path: PATH.THREEMATCHESTWOROTATETWO,
+        component: TripleMatch,
+        cardsToPlay: tripleSecondLevel,
+        duration: 120,
+        nextPath: PATH.CRAZYONE,
+        rotate: true,
+        description: 'Пьяная масовка',
+        levelNumber: 21,
+        defaultPoints: 240,
+    },
+    {
+        path: PATH.CRAZYONE,
+        component: TripleMatchCopy,
+        cardsToPlay: patternSecondLevel,
+        patternCards: true,
+        duration: 180,
+        nextPath: PATH.MATCH,
+        rotate: true,
+        isChangedSize: true,
+        description: 'Пьяная масовка по документу',
+        levelNumber: 22,
+        defaultPoints: 260,
+    },
+];
 const AppRoutes = () => {
     const [bestLevel, setBestLevel] = useState<number>(
         () => {
@@ -111,6 +375,28 @@ const AppRoutes = () => {
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
+
+                {/*{levels.map((level, index) => (*/}
+                {/*<Route*/}
+                {/*    key={index}*/}
+                {/*    path={level.path}*/}
+                {/*    element={*/}
+                {/*        <level.component*/}
+                {/*            cardsToPlay={level.cardsToPlay}*/}
+                {/*            duration={level.duration}*/}
+                {/*            path={level.nextPath}*/}
+                {/*            rotate={level.rotate}*/}
+                {/*            description={level.description}*/}
+                {/*            bestLevel={bestLevel}*/}
+                {/*            setBestLevel={setBestLevel}*/}
+                {/*            levelNumber={level.levelNumber}*/}
+                {/*            defaultPoints={level.defaultPoints}*/}
+                {/*            isChangedSize={level.isChangedSize}*/}
+                {/*            patternCards={level.patternCards}*/}
+                {/*        />*/}
+                {/*    }*/}
+                {/*/>*/}
+                {/*))};*/}
 
                 <Route path={PATH.MATCH} element={<GameBoard bestLevel={bestLevel}/>}/>
 

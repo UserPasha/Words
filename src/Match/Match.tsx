@@ -3,27 +3,15 @@ import style from './Match.module.css'
 import cover from '../assets/images/match/logo.png'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
-import {ICardMatch, IMatch, IPattern, IReFlip} from "../hooks/useMatch";
+import {ICard, IMatch, } from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
 import {Timer} from "./Timer/Timer";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
+import {shuffleArray} from "../Utils/shuffle";
+import { createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
 
-
-export const shuffleArray = (array: ICardMatch[] | IPattern[]): ICardMatch[] | IPattern[] => {
-    if (array) {
-        const shuffledArray = [...array];
-        for (let i = shuffledArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-        }
-        return shuffledArray;
-    } else {
-        return []
-    }
-
-}
 
 export const Match: FC<IMatch> = ({
                                       cardsToPlay,
@@ -37,6 +25,7 @@ export const Match: FC<IMatch> = ({
 
                                   }) => {
 
+
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning
@@ -44,16 +33,13 @@ export const Match: FC<IMatch> = ({
 
     const dispatch = useDispatch<AppDispatch>();
 
-    const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
+    const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
+
     const [timer, setTimer] = useState(duration);
+
     const [timeLeft, setTimeLeft] = useState(timer)
 
-    const createPoints = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
-        let pointsForAttempts = 60 - realAttempts
-        const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
-        console.log(defaultPoints + timeLeft * 2 + pointsForAttempts, timeLeft)
-        return totalPoints
-    }
+
 
     useEffect(() => {
         if (firstCard && secondCard) {
@@ -64,8 +50,7 @@ export const Match: FC<IMatch> = ({
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 2) {
             setShowModal(true)
-            //setTimeLeft(timer)
-            dispatch(saveBestLevel(levelNumber, createPoints(defaultPoints, timeLeft, attempts)))
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
             setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber + 2));
         }
@@ -102,10 +87,17 @@ export const Match: FC<IMatch> = ({
         , [firstCard, secondCard])
 
 
-    const resetBoard = () => {
-        setFirstCard(null)
-        setSecondCard(null)
-        setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
+    const addValueToState = (cardId: ICard) => {
+
+        if (firstCard !== null && firstCard.id !== cardId.id) {
+            setSecondCard(cardId)
+            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
+            setAttempts(attempts + 1)
+        } else {
+            setFirstCard(cardId)
+            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
+        }
+
     }
     const checkMates = () => {
         if (firstCard?.name === secondCard?.name) {
@@ -126,40 +118,16 @@ export const Match: FC<IMatch> = ({
             setIsLockBoard(true)
             setTimeout(() => {
                 setIsLockBoard(false)
-                resetBoard()
+                resetBoard(setFirstCard, setSecondCard,  setCards )
             }, 1000)
 
         }
     }
 
 
-    //useEffect + modal
-    //loading imitation + quotes
-    // 8 cards - 12 att = perf, 14 - good, 14>bad 20> worst 1000pts + (perf =>bonus (att) 20%, good=< bonus 5%, bad -5%, worst - 20% )
-    // 12 cards - 22 att = perf, 28 - good, 14>bad 1300pts + bonus (att)
-    // 16 cards - 28 att = perf, 42 - good, 14>bad 1900pts + bonus (att)
-    // progressBar?
-    //rewrite triple logic without null
 
 
-    const addValueToState = (cardId: ICardMatch) => {
 
-        if (firstCard !== null && firstCard.id !== cardId.id) {
-            setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts + 1)
-        } else {
-            setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
-        }
-
-    }
-    const restartGame = () => {
-        setCards(shuffleArray(cardsToPlay))
-        setAttempts(0)
-        setPairCounter(0)
-    }
-    // console.log('yo')
     const isModal = isEndOfTime || showModal
 
     return (
@@ -182,7 +150,7 @@ export const Match: FC<IMatch> = ({
                                 addValueToState(card)
                             }} disabled={isLockBoard || card.isMatched}>
                             <div className={style.front}>
-                                <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}
+                                <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover }
                                 />
                             </div>
 
@@ -197,10 +165,14 @@ export const Match: FC<IMatch> = ({
                                    setRunning={setRunning}
                                    duration={duration}
                                    setTimer={setTimer}
-                                   restartGame={restartGame}
                                    path={path}
                                    timeLeft={timeLeft}
                                    defaultPoints={defaultPoints}
+
+                                   setCards={setCards}
+                                   setAttempts={setAttempts}
+                                   setPairCounter={setPairCounter}
+                                   cardsToPlay={cardsToPlay}
                 />}
 
             </section>

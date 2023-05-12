@@ -1,17 +1,34 @@
 import React, {useState, useEffect, FC} from 'react';
 import circleStyle from './Circle.module.css'
-import {ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
-import {shuffleArray} from "./Match";
+import {ICard, IMatch, useMatchHook} from "../hooks/useMatch";
+
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Timer} from "./Timer/Timer";
 import style from "./Match.module.css";
 import cover from "../assets/images/match/logo.png";
 import {Modal} from "./Modal";
+import {shuffleArray} from "../Utils/shuffle";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../Store/store";
+import {saveBestLevel} from "../Store/pointsReducer";
+import { createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
 
-export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, bestLevel, setBestLevel, levelNumber, defaultPoints})  => {
+export const Circle: FC<IMatch> = ({
+                                       cardsToPlay,
+                                       duration,
+                                       path,
+                                       description,
+                                       bestLevel,
+                                       setBestLevel,
+                                       levelNumber,
+                                       defaultPoints})  => {
+
     const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning } = useMatchHook()
-    const [cards, setCards] = useState<ICardMatch[]>(shuffleArray(cardsToPlay))
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
     const [timer, setTimer] = useState(duration);
     const [timeLeft, setTimeLeft] = useState(timer)
     useEffect(() => {
@@ -23,6 +40,7 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
     useEffect(()=>{
         if(pairCounter === cardsToPlay.length/2){
             setShowModal(true)
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
             setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));
@@ -55,10 +73,17 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
         }
         , [firstCard?.name, secondCard?.name])
 
-    const resetBoard = () => {
-        setFirstCard(null)
-        setSecondCard(null)
-        setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
+    const addValueToState = (cardId: ICard) => {
+
+        if (firstCard !== null && firstCard.id !== cardId.id) {
+            setSecondCard(cardId)
+            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
+            setAttempts(attempts +1)
+        } else {
+            setFirstCard(cardId)
+            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
+        }
+
     }
     const checkMates = () => {
         if (firstCard?.name === secondCard?.name) {
@@ -79,29 +104,12 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
             setIsLockBoard(true)
             setTimeout(() => {
                 setIsLockBoard(false)
-                resetBoard()
+                resetBoard(setFirstCard, setSecondCard,  setCards )
             }, 1000)
 
         }
     }
-    const addValueToState = (cardId: ICardMatch) => {
 
-        if (firstCard !== null && firstCard.id !== cardId.id) {
-            setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts +1)
-        } else {
-            setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
-        }
-
-    }
-    const restartGame = () => {
-        setCards(shuffleArray(cardsToPlay))
-        setAttempts(0)
-        setPairCounter(0)
-    }
-    // console.log('yo')
     const isModal = isEndOfTime || showModal
     ////////////ROTATE BOARD 90//////////////
     const [rotationAngle, setRotationAngle] = useState(0);
@@ -130,10 +138,13 @@ export const Circle: FC<IMatch> = ({cardsToPlay, duration, path, description, be
                                 setRunning={setRunning}
                                 duration={duration}
                                 setTimer={setTimer}
-                                restartGame={restartGame}
                                 path={path}
                                 timeLeft={timeLeft}
                                 defaultPoints={defaultPoints}
+                                setCards={setCards}
+                                setAttempts={setAttempts}
+                                setPairCounter={setPairCounter}
+                                cardsToPlay={cardsToPlay}
             />}
             <section className={circleStyle.wrapper} style={fieldStyle}>
 

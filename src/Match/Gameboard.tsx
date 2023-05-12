@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction} from 'react';
+import React, {FC} from 'react';
 import style from './GameBoard.module.css'
 import {PATH} from "../AppRoutes/AppRoutes";
 import {Row} from "./Row";
@@ -9,7 +9,6 @@ import {InitialStatePointsType} from "../Store/pointsReducer";
 
 interface IGameBoard {
     bestLevel: number
-    // setBestLevel: Dispatch<SetStateAction<number>>
 }
 
 export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
@@ -80,8 +79,7 @@ export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
                  bestPoints={bestPoints[21].bestPoints}/>
 
             {/*<Row number={11} name={'Tect'} difficult={"x"} play={PATH.TRIPLETSET} description={'Найти три'}/>*/}
-            {/*</div>*/}
-            {/*<ModalMenu isShown={isShown} setIsShown={setIsShown}/>*/}
+
 
         </section>
     );

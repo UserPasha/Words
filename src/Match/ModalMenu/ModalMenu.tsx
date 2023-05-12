@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useEffect, useRef} from 'react';
 import style from './ModalMenu.module.css'
 import startButton from '../../Common/Assets/images/start.png'
 import {Link} from "react-router-dom";
@@ -13,7 +13,6 @@ interface IModalMenu {
 }
 
 export const ModalMenu: FC<IModalMenu> = ({isShown, setIsShown, name, description, path, bestPoints}) => {
-
 
     const modalRef = useRef<HTMLDivElement>(null);
 
@@ -47,7 +46,7 @@ export const ModalMenu: FC<IModalMenu> = ({isShown, setIsShown, name, descriptio
                                 {description}
                             </div>
                             <div className={style.bestScore}>
-                                Лучший результат: {bestPoints} единиц
+                                Лучший результат: {bestPoints}
                             </div>
 
                         </div>

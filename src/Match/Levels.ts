@@ -83,10 +83,10 @@ import lada from '../assets/images/match/cars/lada.png'
 import vesta from '../assets/images/match/cars/vesta.jpg'
 
 
-import {ICardMatch, IPattern, IReFlip} from "../hooks/useMatch";
+import {ICard} from "../hooks/useMatch";
 
 
-export const filtronMix: ICardMatch[] = [
+export const filtronMix: ICard[] = [
     {
         id: 101,
         image: FBlue,
@@ -145,7 +145,7 @@ export const filtronMix: ICardMatch[] = [
     },
 ]
 
-export const firstLevel: ICardMatch[] = [
+export const firstLevel: ICard[] = [
     {
         id: 1,
         image: totalOil,
@@ -204,7 +204,7 @@ export const firstLevel: ICardMatch[] = [
     }
 ]
 
-export const secondLevel: ICardMatch[] = [...firstLevel,
+export const secondLevel: ICard[] = [...firstLevel,
     {
         id: 9,
         image: glaser,
@@ -235,7 +235,7 @@ export const secondLevel: ICardMatch[] = [...firstLevel,
     },
 ]
 
-export const thirdLevel: ICardMatch[] = [...secondLevel,
+export const thirdLevel: ICard[] = [...secondLevel,
     {
         id: 13,
         image: metelli,
@@ -266,7 +266,7 @@ export const thirdLevel: ICardMatch[] = [...secondLevel,
     },
 ]
 
-export const fourthLevel: ICardMatch[] = [...thirdLevel,
+export const fourthLevel: ICard[] = [...thirdLevel,
     {
         id: 17,
         image: victorReinz,
@@ -297,7 +297,7 @@ export const fourthLevel: ICardMatch[] = [...thirdLevel,
     },
 ]
 
-export const fifthLevel: ICardMatch[] = [...fourthLevel,
+export const fifthLevel: ICard[] = [...fourthLevel,
     {
         id: 21,
         image: BSG,
@@ -328,7 +328,7 @@ export const fifthLevel: ICardMatch[] = [...fourthLevel,
     },
 ]
 
-export const tripleFirstLevel: ICardMatch[] = [
+export const tripleFirstLevel: ICard[] = [
     {
         id: 101,
         image: totalOil,
@@ -415,7 +415,7 @@ export const tripleFirstLevel: ICardMatch[] = [
     }
 ]
 
-export const tripleSecondLevel: ICardMatch[] = [...tripleFirstLevel,
+export const tripleSecondLevel: ICard[] = [...tripleFirstLevel,
     {
         id: 113,
         image: glaser,
@@ -501,7 +501,7 @@ export const tripleSecondLevel: ICardMatch[] = [...tripleFirstLevel,
     },
 ]
 
-export const halfFirstLevel: ICardMatch[] = [
+export const halfFirstLevel: ICard[] = [
     {
         id: 201,
         image: CargoFirst,
@@ -588,7 +588,7 @@ export const halfFirstLevel: ICardMatch[] = [
     },
 ]
 
-export const halfSecondLevel: ICardMatch[] = [...halfFirstLevel,
+export const halfSecondLevel: ICard[] = [...halfFirstLevel,
     {
         id: 213,
         image: MobiletronFirst,
@@ -675,7 +675,7 @@ export const halfSecondLevel: ICardMatch[] = [...halfFirstLevel,
     },
 ]
 
-export const polmoFirstLevel: ICardMatch[] = [
+export const polmoFirstLevel: ICard[] = [
     {
         id: 301,
         name: 'ba',
@@ -763,7 +763,7 @@ export const polmoFirstLevel: ICardMatch[] = [
 
 ]
 
-export const polmoSecondLevel: ICardMatch[] = [...polmoFirstLevel,
+export const polmoSecondLevel: ICard[] = [...polmoFirstLevel,
     {
         id: 313,
         name: 'bg',
@@ -795,7 +795,7 @@ export const polmoSecondLevel: ICardMatch[] = [...polmoFirstLevel,
 
 ]
 
-export const polmoThirdLevel: ICardMatch[] = [...polmoSecondLevel,
+export const polmoThirdLevel: ICard[] = [...polmoSecondLevel,
     {
         id: 317,
         name: 'bi',
@@ -853,7 +853,7 @@ export const polmoThirdLevel: ICardMatch[] = [...polmoSecondLevel,
     },
 ]
 
-export const patternFirstLevel: IPattern[] = [
+export const patternFirstLevel: ICard[] = [
     {
         id: 101,
         image: Elring,
@@ -889,7 +889,7 @@ export const patternFirstLevel: IPattern[] = [
 
 ]
 
-export const patternSecondLevel: IPattern[] = [...patternFirstLevel,
+export const patternSecondLevel: ICard[] = [...patternFirstLevel,
     {
         id: 114,
         image: birth,
@@ -924,7 +924,7 @@ export const patternSecondLevel: IPattern[] = [...patternFirstLevel,
     },
 ]
 
-export const patternFirstLevelCards: IPattern[] = [
+export const patternFirstLevelCards: ICard[] = [
     {
         id: 401,
         image: Elring,
@@ -1024,7 +1024,7 @@ export const patternFirstLevelCards: IPattern[] = [
 
 ]
 
-export const patternSecondLevelCards: IPattern[] = [...patternFirstLevelCards,
+export const patternSecondLevelCards: ICard[] = [...patternFirstLevelCards,
     {
         id: 413,
         image: birth,
@@ -1124,7 +1124,7 @@ export const patternSecondLevelCards: IPattern[] = [...patternFirstLevelCards,
 
 ]
 
-export const patrickFirstLevel: ICardMatch[] = [
+export const patrickFirstLevel: ICard[] = [
     {
         id: 1,
         image: totalOil,
@@ -1183,7 +1183,7 @@ export const patrickFirstLevel: ICardMatch[] = [
     }
 ]
 
-export const circleLevel: ICardMatch[] = [
+export const circleLevel: ICard[] = [
     {
         id: 1,
         image: Brembo,
@@ -1312,175 +1312,191 @@ export const circleLevel: ICardMatch[] = [
     }
 ]
 
-export const reFlipFirstLevel: IReFlip[] = [
+export const reFlipFirstLevel: ICard[] = [
     {
         id: 11,
-        image: [ngk, persea],
+        image: '',
         isFlipped: false,
         name: 'a',
         secondName: 'aa',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [ngk, persea],
     },
     {
         id: 12,
-        image: [ngk, Gates],
+        image: '',
         isFlipped: false,
         name: 'a',
         secondName: 'ab',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [ngk, Gates],
     },
     {
         id: 13,
-        image: [Elring ,Gates ],
+        image: '',
         isFlipped: false,
         name: 'b',
         secondName: 'ab',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [Elring ,Gates ],
     },
     {
         id: 14,
-        image: [Elring, persea],
+        image: '',
         isFlipped: false,
         name: 'b',
         secondName: 'aa',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [Elring, persea],
     },
     {
         id: 15,
-        image: [febi, bluePrint],
+        image: '',
         isFlipped: false,
         name: 'c',
         secondName: 'ac',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [febi, bluePrint],
     },
     {
         id: 16,
-        image: [febi, Denkermann],
+        image: '',
         isFlipped: false,
         name: 'c',
         secondName: 'ad',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [febi, Denkermann],
     },
     {
         id: 17,
-        image: [autofren ,Denkermann ],
+        image: '',
         isFlipped: false,
         name: 'd',
         secondName: 'ad',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [autofren ,Denkermann ],
     },
     {
         id: 18,
-        image: [autofren, bluePrint],
+        image: '',
         isFlipped: false,
         name: 'd',
         secondName: 'ac',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [autofren, bluePrint],
     },
 
 ]
 
 
-export const reFlipSecondLevel: IReFlip[] = [ ...reFlipFirstLevel,
+export const reFlipSecondLevel: ICard[] = [ ...reFlipFirstLevel,
     {
         id: 19,
-        image: [Brembo, vernet],
+        image: '',
         isFlipped: false,
         name: 'e',
         secondName: 'ae',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [Brembo, vernet],
     },
     {
         id: 20,
-        image: [Brembo, SKF],
+        image: '',
         isFlipped: false,
         name: 'e',
         secondName: 'af',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [Brembo, SKF],
     },
     {
         id: 21,
-        image: [TRW ,SKF ],
+        image:'',
         isFlipped: false,
         name: 'f',
         secondName: 'af',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [TRW ,SKF ],
     },
     {
         id: 22,
-        image: [TRW, vernet],
+        image: '',
         isFlipped: false,
         name: 'f',
         secondName: 'ae',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [TRW, vernet],
     },
     {
         id: 23,
-        image: [JPGroup, lynx],
+        image: '',
         isFlipped: false,
         name: 'g',
         secondName: 'ag',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [JPGroup, lynx],
     },
     {
         id: 24,
-        image: [JPGroup, mahle],
+        image: '',
         isFlipped: false,
         name: 'g',
         secondName: 'ah',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [JPGroup, mahle],
     },
     {
         id: 25,
-        image: [lavr ,mahle ],
+        image: '',
         isFlipped: false,
         name: 'h',
         secondName: 'ah',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [lavr ,mahle ],
     },
     {
         id: 26,
-        image: [lavr, lynx],
+        image: '',
         isFlipped: false,
         name: 'h',
         secondName: 'ag',
         isMatched: false,
         isReFlipped: false,
-        isTotallyMatched: false
+        isTotallyMatched: false,
+        images: [lavr, lynx],
     },
 ]
 
-export const carsByModelsFirstLevel: ICardMatch[] = [
+export const carsByModelsFirstLevel: ICard[] = [
     {
         id: 300,
         image: audi,
@@ -1540,7 +1556,7 @@ export const carsByModelsFirstLevel: ICardMatch[] = [
 
 ]
 
-export const carsByModelsSecondLevel: ICardMatch[] = [ ...carsByModelsFirstLevel,
+export const carsByModelsSecondLevel: ICard[] = [ ...carsByModelsFirstLevel,
     {
         id: 308,
         image: scoda,

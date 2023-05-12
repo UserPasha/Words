@@ -1,8 +1,20 @@
 import {Dispatch, SetStateAction, useState} from "react";
 
+export interface ICard {
+    id: number;
+    image: string
+    isFlipped: boolean;
+    isMatched: boolean;
+    name: string;
+    secondName?: string;
+    isReFlipped?: boolean;
+    isTotallyMatched?: boolean;
+    isColorful?: boolean;
+    images?:  string[];
+}
 
 export interface IMatch {
-    cardsToPlay: ICardMatch[] | IPattern []
+    cardsToPlay: ICard[]
     duration: number
     path: string
     rotate: boolean
@@ -13,23 +25,13 @@ export interface IMatch {
     defaultPoints: number
 }
 
-export interface IReFlipMatch {
-    cardsToPlay: IReFlip[]
-    duration: number
-    path: string
-    rotate: boolean
-    description: string
-    levelNumber: number
-    bestLevel: number
-    setBestLevel: Dispatch<SetStateAction<number>>
-    defaultPoints: number
-}
 export interface ICardMatch {
     id: number,
     name: string,
     image: string,
     isFlipped: boolean,
     isMatched: boolean
+    isTotallyMatched?: boolean
 }
 
 export interface IPattern extends ICardMatch{
@@ -42,21 +44,11 @@ export interface IPatternCards extends IMatch{
     isChangedSize: boolean
 }
 
-export interface IReFlip {
-    id: number
-    image: string[]
-    isFlipped: boolean
-    isMatched: boolean
-    name: string
-    secondName: string
-    isReFlipped: boolean
-    isTotallyMatched: boolean
-}
 
 export const useMatchHook = () => {
     const [isLockBoard, setIsLockBoard] = useState<boolean>(false)
-    const [firstCard, setFirstCard] = useState<ICardMatch | null | IPattern>(null)
-    const [secondCard, setSecondCard] = useState<ICardMatch | null | IPattern>(null)
+    const [firstCard, setFirstCard] = useState<null | ICard>(null)
+    const [secondCard, setSecondCard] = useState< null | ICard>(null)
     const [attempts, setAttempts] = useState<number>(0)
 
     const [showModal, setShowModal] = useState<boolean>(false)

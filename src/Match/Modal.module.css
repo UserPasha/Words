@@ -1,25 +1,35 @@
-.wrapper{
+.wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color:#282c34;
+    background-color: #282c34;
     opacity: 0.9;
     z-index: 2;
 }
-.modal{
+
+.modal {
     position: absolute;
     top: 200px;
     left: 75px;
     width: 250px;
-    height: 400px;
+    height: 460px;
     border-radius: 20px;
     background-color: #51bb46;
 
 }
-.closeModal{
+.failed{
+    position: absolute;
+    top: 200px;
+    left: 75px;
+    width: 250px;
+    height: 260px;
+    border-radius: 20px;
+    background-color: #e6ff80;
+}
+.closeModal {
     position: absolute;
     left: 10px;
     top: 10px;
@@ -28,21 +38,52 @@
     border-radius: 50%;
     border: 1px solid black;
 }
-.message{
+
+.message {
     font-weight: bold;
     width: 100%;
     height: 50px;
-    margin-top: 80px;
+    /*margin-top: 80px;*/
     padding: 0 15px;
 }
-.message img{
+
+.awards {
+    width: 92%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.awardsItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 40px;
+    /*border: 1px solid black;*/
+}
+.infoItem{
+    width: 70%;
+}
+.score{
+    width: 25%;
+}
+.congratulation{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+.message img {
     display: block;
     max-width: 70px;
     margin: 50px auto;
 
 }
-.button{
-    margin-top: 50px;
+
+.button {
+    margin-top: 20px;
     width: 100px;
     height: 30px;
     border-radius: 10px;
