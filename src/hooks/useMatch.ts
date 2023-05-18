@@ -23,6 +23,7 @@ export interface IMatch {
     setBestLevel: Dispatch<SetStateAction<number>>
     levelNumber: number
     defaultPoints: number
+    isPatrickMode: boolean
 }
 
 export interface ICardMatch {

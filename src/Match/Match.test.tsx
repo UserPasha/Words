@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { render } from '@testing-library/react';
-import { Match } from './Match';
+import {render} from '@testing-library/react';
+import {Match} from './Match';
 import {filtronMix} from "./Levels";
 import {PATH} from "../AppRoutes/AppRoutes";
 
@@ -20,5 +20,6 @@ test('renders Match component', () => {
                   bestLevel={bestLevel}
                   setBestLevel={setBestLevel}
                   levelNumber={3}
-                  defaultPoints={200}/>);
+                  defaultPoints={200}
+                  isPatrickMode={false}/>);
 });

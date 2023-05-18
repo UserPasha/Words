@@ -81,6 +81,8 @@ import opel from '../assets/images/match/cars/opel.svg'
 import vectra from '../assets/images/match/cars/vectra.jpg'
 import lada from '../assets/images/match/cars/lada.png'
 import vesta from '../assets/images/match/cars/vesta.jpg'
+import patrick from '../assets/images/match/patrick.jpg'
+import manager from'../assets/images/match/manager.jpg'
 
 
 import {ICard} from "../hooks/useMatch";
@@ -129,6 +131,7 @@ export const filtronMix: ICard[] = [
         name: 'ac',
         isMatched: false
     },
+
     {
         id: 107,
         image: FGreen,
@@ -143,7 +146,7 @@ export const filtronMix: ICard[] = [
         name: 'ad',
         isMatched: false
     },
-]
+        ]
 
 export const firstLevel: ICard[] = [
     {
@@ -326,6 +329,69 @@ export const fifthLevel: ICard[] = [...fourthLevel,
         name: 'l',
         isMatched: false
     },
+]
+
+export const firstPatrickLevel: ICard[] = [ ...thirdLevel,
+    {
+        id: 113,
+        image: patrick,
+        isFlipped: false,
+        name: 'patrick',
+        isMatched: false
+    },
+    {
+        id: 213,
+        image: manager,
+        isFlipped: false,
+        name: 'manager',
+        isMatched: false
+    },
+    {
+        id: 19,
+        image: febi,
+        isFlipped: false,
+        name: 'j',
+        isMatched: false
+    },
+    {
+        id: 20,
+        image: febi,
+        isFlipped: false,
+        name: 'j',
+        isMatched: false
+    },
+]
+
+export const secondPatrickLevel: ICard[] = [...firstPatrickLevel,
+    {
+        id: 21,
+        image: BSG,
+        isFlipped: false,
+        name: 'k',
+        isMatched: false
+    },
+    {
+        id: 22,
+        image: BSG,
+        isFlipped: false,
+        name: 'k',
+        isMatched: false
+    },
+    {
+        id: 23,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'l',
+        isMatched: false
+    },
+    {
+        id: 24,
+        image: Denkermann,
+        isFlipped: false,
+        name: 'l',
+        isMatched: false
+    },
+
 ]
 
 export const tripleFirstLevel: ICard[] = [
