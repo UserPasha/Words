@@ -67,12 +67,17 @@ export const PATH = {
 
     CARSBYMODELSONE: '/carsByModelsOne',
     CARSBYMODELSTWO: '/carsByModelsTwo',
-
+// useEffect(()=>{
+//     if(firstCard?.name === 'aa' || secondCard?.name === 'aa'){
+//         setCards(shuffleArray(cards))
+//     }
+//
+// }, [firstCard?.name, secondCard?.name])
 
     CRAZYONE: '/crazyOne',
 
     CIRCLE: '/circle',
-
+    MODAL: '/modal',
     TRIPLETSET: '/tripletest'
 }
 
@@ -337,14 +342,15 @@ const levels = [
         defaultPoints: 260,
     },
 ];
+
 const AppRoutes = () => {
+
     const [bestLevel, setBestLevel] = useState<number>(
         () => {
             const storedValue = localStorage.getItem('bestLevel');
             return storedValue ? JSON.parse(storedValue) : 1;
         }
     )
-
 
     useEffect(() => {
         let bestLevelAsString = localStorage.getItem("bestLevel")
@@ -375,6 +381,7 @@ const AppRoutes = () => {
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
+                {/*<Route path={PATH.MODAL} element={<Modal/>}/>*/}
 
                 {/*{levels.map((level, index) => (*/}
                 {/*<Route*/}

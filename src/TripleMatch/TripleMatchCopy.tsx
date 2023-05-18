@@ -81,9 +81,10 @@ export const TripleMatchCopy: FC<IPatternCards> = ({
 
     useEffect(() => {
         setPattern(shuffleArray(patternCards))
+        setPatternIndex(0)
     }, [patternCards])
 
-
+    console.log(patternIndex)
     useEffect(() => {
             setCards(cards.map((card) => {
                 if (card.name === firstCard?.name && card.name === secondCard?.name && card.name === thirdCard?.name) {

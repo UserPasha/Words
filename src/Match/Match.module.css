@@ -19,6 +19,10 @@
     min-height: 200px;
     /*background-color: #06c9fa;*/
 }
+
+
+
+
 .card {
     display: flex;
     align-items: center;
@@ -45,6 +49,9 @@
 .card.matched{
     transform: scale(1.1);
 }
+
+
+
 .card.smaller,
 .card.flipped.smaller{
     height: 75px;
@@ -85,12 +92,17 @@ button:disabled{
     /*align-items: center;*/
 }
 
+
+
 .front img, .scale img{
     /*max-width: 65px;*/
     max-width: 50px;
     border-radius: 10px;
     max-height: 82px;
 }
+
+
+
 .restartButton{
     margin-top: 30px;
 }

@@ -48,6 +48,17 @@ export const resetBoard = <T extends ICard>(
     );
 };
 
+export const  isArraysEqual = (a: ICard[], b: ICard[]) => {
+    if (a.length !== b.length) {
+        return false;
+    }
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
+            return false;
+        }
+    }
+    return true;
+}
 
 // export const addValueToState = (
 //     cardId: ICard,

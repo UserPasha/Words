@@ -1,4 +1,4 @@
-import React, {useState, useEffect, FC} from 'react';
+import React, {useState, useEffect, FC, useCallback} from 'react';
 import circleStyle from './Circle.module.css'
 import {ICard, IMatch, useMatchHook} from "../hooks/useMatch";
 
@@ -11,7 +11,7 @@ import {shuffleArray} from "../Utils/shuffle";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
-import { createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
+import {createPointsToRedux, isArraysEqual, resetBoard} from "../Utils/matchFunctions";
 
 export const Circle: FC<IMatch> = ({
                                        cardsToPlay,
@@ -73,19 +73,27 @@ export const Circle: FC<IMatch> = ({
         }
         , [firstCard?.name, secondCard?.name])
 
-    const addValueToState = (cardId: ICard) => {
-
+    const addValueToState = useCallback((cardId: ICard) => {
         if (firstCard !== null && firstCard.id !== cardId.id) {
-            setSecondCard(cardId)
-            setCards(cards.map(card => card.id === secondCard?.id ? {...card, isFlipped: true} : card))
-            setAttempts(attempts +1)
+            setSecondCard(cardId);
+            setAttempts(prevAttempts => prevAttempts + 1);
+            setCards(prevCards => {
+                const newCards = prevCards.map(card =>
+                    card.id === secondCard?.id ? {...card, isFlipped: true} : card
+                );
+                return isArraysEqual(prevCards, newCards) ? prevCards : newCards;
+            });
         } else {
-            setFirstCard(cardId)
-            setCards(cards.map(card => card.id === firstCard?.id ? {...card, isFlipped: true} : card))
+            setFirstCard(cardId);
+            setCards(prevCards => {
+                const newCards = prevCards.map(card =>
+                    card.id === firstCard?.id ? {...card, isFlipped: true} : card
+                );
+                return isArraysEqual(prevCards, newCards) ? prevCards : newCards;
+            });
         }
-
-    }
-    const checkMates = () => {
+    }, [firstCard, secondCard]);
+    const checkMates = useCallback(() => {
         if (firstCard?.name === secondCard?.name) {
             setIsLockBoard(true)
             setTimeout(() => {
@@ -96,19 +104,18 @@ export const Circle: FC<IMatch> = ({
                 setFirstCard(null)
                 setSecondCard(null)
                 setIsLockBoard(false)
-                setPairCounter(pairCounter +1)
+                setPairCounter(prevPairCounter => prevPairCounter + 1);
             }, 500)
-
 
         } else {
             setIsLockBoard(true)
             setTimeout(() => {
                 setIsLockBoard(false)
-                resetBoard(setFirstCard, setSecondCard,  setCards )
+                resetBoard(setFirstCard, setSecondCard, setCards)
             }, 1000)
 
         }
-    }
+    }, [firstCard, secondCard])
 
     const isModal = isEndOfTime || showModal
     ////////////ROTATE BOARD 90//////////////

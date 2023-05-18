@@ -4,7 +4,7 @@
   "homepage": "https://UserPasha.github.io/Words",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.0",
     "@types/uuid": "^8.3.4",
     "axios": "^1.1.3",
+    "babel-preset-jest": "^29.5.0",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",

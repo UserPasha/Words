@@ -173,7 +173,6 @@ export const TripleMatch: FC<IMatch> = ({
                                       setRunning={setRunning}
                                       duration={duration}
                                       setTimer={setTimer}
-
                                       path={path}
                                     timeLeft={timeLeft}
                                     defaultPoints={defaultPoints}

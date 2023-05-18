@@ -3,75 +3,14 @@
     position: relative;
     width: 100vw;
     margin-top: 1830px;
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-    /*flex-direction: column;*/
-    /*background-color: #51bb46;*/
-    /*height: 100vh;*/
-    /*background: linear-gradient(to bottom, #07a119 0%, #d7f231 50%, #eb3b14 100%);*/
-    /*background-image: url("../assets/images/match/bg/small.jpg");*/
-    background-image: url("../assets/images/match/bg/bg.png");
-
-
-
-
-    /*overflow-x: hidden;*/
-    /*overflow-y: auto;*/
-    /*perspective: 100px;*/
-
-
-
-
-
+    background-image: url("../assets/images/match/bg/mainBackGround.png");
 
 
 }
-/*.test{*/
-/*    margin-top: 180px;*/
-/*    z-index: -2;*/
-/*    width: 100%;*/
-/*    !*height: 200px;*!*/
-/*  background-image: url("../assets/images/match/bg/6.png");*/
-/*    background-repeat: no-repeat;*/
 
-/*}*/
 .rowContainer {
-    /*width: 100vw;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
 }
-
-/*.number {*/
-/*    width: 14%;*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.name {*/
-/*    width: 33%;*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.difficult {*/
-/*    width: 28%;*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.play {*/
-/*    width: 24%;*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.levelContainer {*/
-/*    width: 50vh;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*    background-color: #17380a;*/
-/*    height: 100px;*/
-/*    margin-bottom: 10px;*/
-/*    color: #ffffff;*/
-/*}*/
