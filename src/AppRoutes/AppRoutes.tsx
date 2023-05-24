@@ -35,6 +35,8 @@ import {InitialStatePointsType} from "../Store/pointsReducer";
 import {RootState} from "../Store/store";
 import {Modal} from "../Match/Modal";
 import {useMatchHook} from "../hooks/useMatch";
+import {Pack} from "../Pack/Pack";
+import {Profile} from "../Profile/Profile";
 
 
 export const PATH = {
@@ -75,7 +77,9 @@ export const PATH = {
 
     CIRCLE: '/circle',
     MODAL: '/modal',
-    TRIPLETSET: '/tripletest'
+    TRIPLETSET: '/tripletest',
+    PROFILE: '/profile',
+    PACK: '/pack'
 }
 
 const levels = [
@@ -378,6 +382,8 @@ const AppRoutes = () => {
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
+                <Route path={PATH.PACK} element={<Pack/>}/>
+                <Route path={PATH.PROFILE} element={<Profile/>}/>
                 {/*<Route path={PATH.MODAL} element={<Modal/>}/>*/}
 
                 {/*{levels.map((level, index) => (*/}

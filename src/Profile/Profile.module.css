@@ -1,0 +1,64 @@
+.wrapper{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    height: 100vh;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 15%;
+    border: 1px solid white;
+    background-color: #7f8c8d;
+}
+
+.pointsContainer{
+    width: 20%;
+    height: 100px;
+    background-color: green;
+}
+.settings{
+    width: 10%;
+    height: 100px;
+    background-color: green;
+}
+.infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 35%;
+    background-color: greenyellow;
+}
+.avatarContainer,
+.nameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.avatarContainer{
+    height: 75%;
+    background-color: #61dafb;
+}
+
+.nameContainer{
+    height: 25%;
+    background-color: #0099f0;
+}
+
+.bonusWrapper{
+    width: 100%;
+    min-height: 50%;
+    background-color: #7c0606;
+}
