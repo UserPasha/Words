@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from 'react';
 import style from './Modal.module.css'
 import {Link} from "react-router-dom";
 import smile from '../assets/images/match/smile.svg'
@@ -7,6 +7,9 @@ import {PATH} from "../AppRoutes/AppRoutes";
 import {Score} from "./Score/Score";
 import {restartGame} from "../Utils/matchFunctions";
 import {ICard} from "../hooks/useMatch";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../Store/store";
+import {saveCurrentPoints} from "../Store/currentPointsReducer";
 
 
 
@@ -42,16 +45,19 @@ export const Modal: FC<IModal> = ({
                                       defaultPoints,
     setCards, setAttempts, setPairCounter , cardsToPlay
                                   }) => {
+
+    const dispatch = useDispatch<AppDispatch>();
+
     const createPoints2 = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
         let pointsForAttempts = 60 - realAttempts
         const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
         return totalPoints
     }
     const totalPoints = createPoints2(defaultPoints, timeLeft, attempts)
+
     const [score, setScore] = useState(0);
-    const [baseScore, setBaseScore] = useState(0);
-    const [StringScore, setStringScore] = useState(0);
-    const [TimeScore, setTimeScore] = useState(0);
+    const [lastScore, setLastScore] = useState(0)
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -59,50 +65,25 @@ export const Modal: FC<IModal> = ({
         }, 10);
         if (score === totalPoints) {
             clearInterval(interval);
+            setLastScore(score)
         }
+
         return () => {
             clearInterval(interval);
+
         };
-    }, [score]);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setBaseScore((prevScore) => prevScore + 1);
-        }, 10);
-        if (baseScore === defaultPoints) {
-            clearInterval(interval);
-        }
-        return () => {
-            clearInterval(interval);
-        };
-    }, [baseScore]);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setStringScore((prevScore) => prevScore + 1);
-        }, 10);
-        if (StringScore === 60 - attempts) {
-            clearInterval(interval);
-        }
-        return () => {
-            clearInterval(interval);
-        };
-    }, [StringScore]);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTimeScore((prevScore) => prevScore + 1);
-        }, 10);
-        if (TimeScore === timeLeft * 2) {
-            clearInterval(interval);
-        }
-        return () => {
-            clearInterval(interval);
-        };
-    }, [TimeScore]);
+
+    }, [score, lastScore]);
+
 
 
     const createPoints = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
         let pointsForAttempts = 60 - realAttempts
         const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
         setRunning(false)
+////////////FIX THIS////////////////////////
+         dispatch(saveCurrentPoints(lastScore/4))
+
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`
         } else if (totalPoints % 10 === 1) {
@@ -149,7 +130,7 @@ export const Modal: FC<IModal> = ({
                                         Количество единиц в приходе:
                                     </div>
                                     <div className={style.score}>
-                                        <Score score={defaultPoints}/>
+                                        {defaultPoints}
                                     </div>
 
                                 </div>
@@ -158,7 +139,7 @@ export const Modal: FC<IModal> = ({
                                         Бонус за строки:
                                     </div>
                                     <div className={style.score}>
-                                        <Score score={60 - attempts}/>
+                                        {60 - attempts}
                                     </div>
 
                                 </div>
@@ -167,7 +148,7 @@ export const Modal: FC<IModal> = ({
                                         Бонус за время:
                                     </div>
                                     <div className={style.score}>
-                                        <Score score={timeLeft * 2}/>
+                                        {timeLeft * 2}
                                     </div>
                                 </div>
 

@@ -1,0 +1,94 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: #f6f2f2;
+    z-index: 3;
+}
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.name{
+    width: 30%;
+    height: 15px;
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 10px;
+/*font-family: ;*/
+}
+
+.currentPoints{
+    width: 15%;
+    height: 15px;
+
+    /*font-family: ;*/
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 9px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+
+.stripe{
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    transform: rotate(135deg);
+}
+
+.stripe:before,
+.stripe:after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    background-color: black;
+}
+
+.stripe:before{
+    left: 5px;
+    top: 10px;
+}
+.stripe:after{
+    left: 5px;
+    top: -10px;
+}
+
+/*.stripe:nth-child(2) {*/
+/*    margin: 0 10px;*/
+/*}*/
+
+/*.stripe:before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: black;*/
+/*    transform: rotate(-90deg);*/
+/*}*/
+
+/*.stripe:nth-child(1):before {*/
+/*    transform-origin: bottom left;*/
+/*}*/
+
+/*.stripe:nth-child(3):before {*/
+/*    transform-origin: top left;*/
+/*}*/

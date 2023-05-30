@@ -5,6 +5,7 @@ import {Row} from "./Row";
 import {useSelector} from "react-redux";
 import {RootState} from "../Store/store";
 import {InitialStatePointsType} from "../Store/pointsReducer";
+import {ProfileBoard} from "./ProfileBoard/ProfileBoard";
 
 
 interface IGameBoard {
@@ -12,24 +13,24 @@ interface IGameBoard {
 }
 
 export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
-        const bestPoints = useSelector<RootState, InitialStatePointsType[]>(state=>state.points)
+    const bestPoints = useSelector<RootState, InitialStatePointsType[]>(state => state.points)
 
     return (
         <section className={style.wrapper}>
-
+            <ProfileBoard/>
             <Row number={0} name={'Сборка'} difficult={"1"} play={PATH.ONE} description={'Найти пару'} day={'monday'}
                  bestLevel={bestLevel} bestPoints={bestPoints[0].bestPoints}/>
             <Row number={1} name={'Сборка'} difficult={"1"} play={PATH.TWO} description={'Найти пару'} day={'wednesday'}
-                 bestLevel={bestLevel}  bestPoints={bestPoints[1].bestPoints}/>
+                 bestLevel={bestLevel} bestPoints={bestPoints[1].bestPoints}/>
             <Row number={2} name={'Polmostrow'} difficult={"3"} play={PATH.POLMOONE} description={'Найти пару'}
-                 day={'friday'} bestLevel={bestLevel}  bestPoints={bestPoints[2].bestPoints}/>
+                 day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[2].bestPoints}/>
 
             <Row number={3} name={'Filtron'} difficult={"2"} play={PATH.FILTRON} description={'Найти пару'}
-                 day={'additional'} bestLevel={bestLevel}  bestPoints={bestPoints[3].bestPoints}/>
+                 day={'additional'} bestLevel={bestLevel} bestPoints={bestPoints[3].bestPoints}/>
             <Row number={4} name={'Сборка'} difficult={"1"} play={PATH.THREE} description={'Найти пару'} day={'monday'}
-                 bestLevel={bestLevel}  bestPoints={bestPoints[4].bestPoints}/>
+                 bestLevel={bestLevel} bestPoints={bestPoints[4].bestPoints}/>
             <Row number={5} name={'Сборка'} difficult={"2"} play={PATH.FOUR} description={'Найти пару'}
-                 day={'wednesday'} bestLevel={bestLevel}  bestPoints={bestPoints[5].bestPoints}/>
+                 day={'wednesday'} bestLevel={bestLevel} bestPoints={bestPoints[5].bestPoints}/>
 
             <Row number={6} name={'Polmostrow'} difficult={"3"} play={PATH.POLMOTWO} description={'Найти пару'}
                  day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[6].bestPoints}/>
@@ -58,24 +59,30 @@ export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
                  day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[14].bestPoints}/>
 
             <Row number={15} name={'Сборка'} difficult={"2"} play={PATH.CARSBYMODELSONE}
-                 description={'Найти марку и модель автомобиля'} day={'additional'} bestLevel={bestLevel} bestPoints={bestPoints[15].bestPoints}/>
+                 description={'Найти марку и модель автомобиля'} day={'additional'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[15].bestPoints}/>
             <Row number={16} name={'Массовка'} difficult={"3"} play={PATH.THREEMATCHESTWO}
                  description={'Найти три одинаковых'}
                  day={'monday'} bestLevel={bestLevel} bestPoints={bestPoints[16].bestPoints}/>
 
             <Row number={17} name={'Массовка по документу'} difficult={"4"} play={PATH.PATTERNONE}
-                 description={'Найти три одинаковых в определенном порядке'} day={'wednesday'} bestLevel={bestLevel} bestPoints={bestPoints[17].bestPoints}/>
+                 description={'Найти три одинаковых в определенном порядке'} day={'wednesday'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[17].bestPoints}/>
             <Row number={18} name={'Массовка по документу'} difficult={"2"} play={PATH.PATTERNTWO}
-                 description={'Найти три одинаковых в определенном порядке'} day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[18].bestPoints}/>
+                 description={'Найти три одинаковых в определенном порядке'} day={'friday'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[18].bestPoints}/>
             <Row number={19} name={'Сборка'} difficult={"3"} play={PATH.CARSBYMODELSTWO}
-                 description={'Найти марку и модель автомобиля'} day={'additional'} bestLevel={bestLevel} bestPoints={bestPoints[19].bestPoints}/>
+                 description={'Найти марку и модель автомобиля'} day={'additional'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[19].bestPoints}/>
             <Row number={20} name={'Пьяная масовка'} difficult={"4"} play={PATH.THREEMATCHESTWOROTATEONE}
-                 description={'Найти три одинаковых'} day={'monday'} bestLevel={bestLevel} bestPoints={bestPoints[20].bestPoints}/>
+                 description={'Найти три одинаковых'} day={'monday'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[20].bestPoints}/>
             <Row number={21} name={'Пьяная масовка'} difficult={"4"} play={PATH.THREEMATCHESTWOROTATETWO}
-                 description={'Найти три одинаковых'} day={'wednesday'} bestLevel={bestLevel} bestPoints={bestPoints[21].bestPoints}/>
+                 description={'Найти три одинаковых'} day={'wednesday'} bestLevel={bestLevel}
+                 bestPoints={bestPoints[21].bestPoints}/>
             <Row number={22} name={'Пьяная масовка по документу'} difficult={"4"} play={PATH.CRAZYONE}
                  description={'Найти три одинаковых в определенном порядке'} day={'friday'} bestLevel={bestLevel}
-                 //FIX
+                //FIX
                  bestPoints={bestPoints[21].bestPoints}/>
 
             {/*<Row number={11} name={'Tect'} difficult={"x"} play={PATH.TRIPLETSET} description={'Найти три'}/>*/}
