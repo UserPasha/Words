@@ -4,13 +4,17 @@ import {loadState, saveState} from "../Utils/localStorageUtils";
 import {DictionaryAction, lingvoReducer} from "./lingvoReducer";
 import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {pointsReducer} from "./pointsReducer";
-import {currentPointsReducer} from "./currentPointsReducer";
+import {profileReducer} from "./profileReducer";
+import {playerNameReducer} from "./PlayerNameReducer";
+import {playerAvatarReducer} from "./PlayerAvatarReducer";
 
 const reducers = combineReducers({
     cards: cardsReducer,
     lingvo: lingvoReducer,
     points: pointsReducer,
-    currentPoints: currentPointsReducer
+    profile: profileReducer,
+    playerName: playerNameReducer,
+    playerAvatar: playerAvatarReducer
 })
 
 const store = createStore(reducers, loadState(), applyMiddleware(thunk))
@@ -20,7 +24,9 @@ store.subscribe(()=>{
         cards: store.getState().cards,
         lingvo: store.getState().lingvo,
         points: store.getState().points,
-        currentPoints: store.getState().currentPoints
+        profile: store.getState().profile,
+        playerName: store.getState().playerName,
+        playerAvatar: store.getState().playerAvatar
     })
 })
 export type AppThunk<ReturnType = void > = ThunkAction<ReturnType, RootState, unknown, ActionsType>

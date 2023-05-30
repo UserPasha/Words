@@ -44,7 +44,7 @@
 .nameContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
 }
 .avatarContainer{
@@ -52,13 +52,31 @@
     background-color: #61dafb;
 }
 
+.avatarItem{
+    max-width: 50px;
+    margin-left: 5px;
+}
 .nameContainer{
     height: 25%;
-    background-color: #0099f0;
+    background-color: #fff;
+}
+.avatarContainer img{
+    max-width: 150px;
 }
 
+.edit{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.pencil img,
+.edit img{
+    max-width: 30px;
+}
 .bonusWrapper{
     width: 100%;
     min-height: 50%;
     background-color: #7c0606;
 }
+

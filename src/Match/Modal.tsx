@@ -9,7 +9,7 @@ import {restartGame} from "../Utils/matchFunctions";
 import {ICard} from "../hooks/useMatch";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
-import {saveCurrentPoints} from "../Store/currentPointsReducer";
+import {saveCurrentPoints} from "../Store/profileReducer";
 
 
 
