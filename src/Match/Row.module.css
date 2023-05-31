@@ -31,8 +31,7 @@
     margin: 8px;
     line-height: 80px;
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow:  5px 5px 5px #666666,
-    -1px -1px 1px #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     font-size: 14px;
     font-weight: bolder;
 }
@@ -45,8 +44,12 @@
     background-size: cover;
     color: #969d97;
     animation: spin 30s linear infinite;
-    box-shadow: none;
+    /*box-shadow: none;*/
     font-weight: lighter;
+    /*transform: translateY(-10px);*/
+
+    box-shadow:  5px 5px 5px #666666,
+    -1px -1px 1px #ffffff;
 }
 @keyframes spin {
     from {

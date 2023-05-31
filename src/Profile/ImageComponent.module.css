@@ -1,0 +1,21 @@
+.avatarItem{
+    max-width: 80px;
+    margin-left: 5px;
+}
+
+.selectedItem{
+    border: 2px solid green;
+    /*box-shadow:  3px 3px 6px #279f0b,*/
+    /*-2px -2px 4px #0d6c11;*/
+    padding: 2px;
+    margin-left: 5px;
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+    max-width: 100px;
+}
+
+@keyframes pulse {
+    0%{
+        box-shadow: 0 0 0 0 greenyellow;
+    }
+}

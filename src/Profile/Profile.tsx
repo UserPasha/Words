@@ -1,7 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 import style from './Profile.module.css'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
-import settingsIcon from '../assets/images/match/settings.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import editIcon from '../assets/images/match/edit.svg'
@@ -10,6 +9,8 @@ import cancelIcon from '../assets/images/match/cancel.svg'
 import {saveNewName} from "../Store/PlayerNameReducer";
 import {ImagesData} from "./images.data";
 import {saveNewAvatar} from "../Store/PlayerAvatarReducer";
+import {ImageComponent} from "./ImageComponenet";
+import {Accordion} from "../Match/BonusMachine/BonusMachine";
 
 export const Profile = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -32,10 +33,19 @@ export const Profile = () => {
     }
 
     const [isEditAvatar, setIsEditAvatar] = useState<boolean>(false)
-    // const [newAvatar, setNewAvatar] = useState<string>('')
-    const saveAvatarToRedux = (avatar: string) => {
-        dispatch(saveNewAvatar(avatar))
+    const [newAvatar, setNewAvatar] = useState<string>('')
+    const [selectedImage, setSelectedImage] = useState<string>('')
+
+    const saveTemporaryAvatar = (image: string) => {
+        setNewAvatar(image)
+        setSelectedImage(image);
+    };
+
+    const saveAvatarToRedux = () => {
+        dispatch(saveNewAvatar(newAvatar))
+        setIsEditAvatar(false)
     }
+
 
     return (
         <div className={style.wrapper}>
@@ -44,14 +54,36 @@ export const Profile = () => {
                 <div className={style.pointsContainer}>
                     {currentPoints}
                 </div>
-                <button className={style.settings}>
-                    <img src={settingsIcon} alt={'settings'}/>
-                </button>
             </header>
             <div className={style.infoContainer}>
-                <div className={style.avatarContainer}>
-                  <img src={playerAvatar} alt={'avatar'}/>
-                </div>
+                {isEditAvatar
+                    ?
+                    <div className={style.avatarsWrapper}>
+                        {ImagesData.map(image => <ImageComponent key={image.image}
+                                                                 image={image.image}
+                                                                 onClick={() => saveTemporaryAvatar(image.image)}
+                                                                 isSelected={selectedImage === image.image}
+
+                        />)}
+                        <div className={style.buttons}>
+                            <img src={okIcon} alt={'ok'}
+                                 onClick={saveAvatarToRedux}/>
+                            <img src={cancelIcon} alt={'cancel'}
+                                 onClick={() => setIsEditAvatar(false)}/>
+                        </div>
+
+                    </div>
+                    :
+                    <div className={style.avatarContainer}>
+                        <img src={playerAvatar} alt={'avatar'}/>
+                        <div className={style.pencil}>
+                            <img src={editIcon}
+                                 alt={'edit name'}
+                                 onClick={() => setIsEditAvatar(true)}/>
+                        </div>
+                    </div>
+                }
+
 
                 <div className={style.nameContainer}>
                     {isEditName
@@ -79,14 +111,7 @@ export const Profile = () => {
 
                 </div>
             </div>
-            <div className={style.bonusWrapper}>
-                {ImagesData.map(image => <img className={style.avatarItem}
-                                              src={image.image}
-                                              key={image.image}
-                                              alt={image.image}
-                                              onClick={() => saveAvatarToRedux(image.image)}/>)}
-                Bonus Machine
-            </div>
+           <Accordion/>
         </div>
     );
 };
