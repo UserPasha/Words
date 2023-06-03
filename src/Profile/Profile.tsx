@@ -11,6 +11,10 @@ import {ImagesData} from "./images.data";
 import {saveNewAvatar} from "../Store/PlayerAvatarReducer";
 import {ImageComponent} from "./ImageComponenet";
 import {Accordion} from "../Match/BonusMachine/BonusMachine";
+import shopIcon from '../assets/images/match/shop.svg'
+import {showProductPicture} from "../Store/machineReducer";
+import {Link} from "react-router-dom";
+import {PATH} from "../AppRoutes/AppRoutes";
 
 export const Profile = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -43,6 +47,7 @@ export const Profile = () => {
 
     const saveAvatarToRedux = () => {
         dispatch(saveNewAvatar(newAvatar))
+       // dispatch(showProductPicture({'Categoty1' : {name: 'p1', showPicture: false, pictureUrl: ''}}, 'p1'))
         setIsEditAvatar(false)
     }
 
@@ -54,6 +59,13 @@ export const Profile = () => {
                 <div className={style.pointsContainer}>
                     {currentPoints}
                 </div>
+                <Link to={PATH.SHOP}>
+                    <div className={style.shop}>
+                        <img src={shopIcon} alt={'shop'}/>
+                    </div>
+            </Link>
+
+
             </header>
             <div className={style.infoContainer}>
                 {isEditAvatar

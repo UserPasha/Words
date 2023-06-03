@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './BonusMachine.module.css';
-import {bonusMachineData} from "./bomusMachine.data";
+import {machineData} from "./bomusMachine.data";
 import {ImageComponent} from "../../Profile/ImageComponenet";
 import okIcon from "../../assets/images/match/ok.svg";
 import cancelIcon from "../../assets/images/match/cancel.svg";
@@ -21,35 +21,36 @@ export const Accordion = () => {
     };
 
     return (
+
         <div className={style.bonusWrapper}>
-            {bonusMachineData.map((item, index) => (
+            {machineData.map((item, index) => (
                 <div key={index} className={style.bonusItem}>
                     <div className={style.bonusItemTitle} onClick={() => handleClick(index)}>
-                        {item.title}
+                        {item.name}
                         <span className={style.arrowIcon}>{activeIndex === index ? '-' : '+'}</span>
                     </div>
                     {activeIndex === index && (
-                        <div className={style.bonusItemContent} style={{backgroundImage: `url(${item.background})`}}>
+                        <div className={style.bonusItemContent} style={{backgroundImage: `url(${item.bgImage})`}}>
                             <div className={style.bonusItemContentDark}>
-                            {item.brands.map((brand, index) =>
+                                {item.brands.map((brand, index) =>
                                     <ImageComponent key={index}
-                                                    onClick={() => saveTemporaryBrand(brand)}
-                                                    isSelected={selectedImage === brand}
-                                                    image={brand}
+                                                    onClick={() => saveTemporaryBrand(brand.pictureUrl)}
+                                                    isSelected={selectedImage === brand.pictureUrl}
+                                                    image={ brand.showPicture ? brand.pictureUrl : ''}
                                     />
 
-                            )}
+                                )}
 
-                            <div className={style.buttons}>
-                                <img src={okIcon} alt={'ok'}
-                                     onClick={() => {
-                                     }}/>
-                                <img src={cancelIcon} alt={'cancel'}
-                                     onClick={() => {
-                                     }}/>
-                            </div>
+                                <div className={style.buttons}>
+                                    <img src={okIcon} alt={'ok'}
+                                         onClick={() => {
+                                         }}/>
+                                    <img src={cancelIcon} alt={'cancel'}
+                                         onClick={() => {
+                                         }}/>
+                                </div>
 
-                            <div>!!!!!!!!!!!!!!!!!!!!!!!DESCRIRT</div>
+                                <div>!!!!!!!!!!!!!!!!!!!!!!!DESCRIRT</div>
                             </div>
                         </div>
                     )}

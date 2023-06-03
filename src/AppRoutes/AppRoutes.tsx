@@ -37,6 +37,7 @@ import {Modal} from "../Match/Modal";
 import {useMatchHook} from "../hooks/useMatch";
 import {Pack} from "../Pack/Pack";
 import {Profile} from "../Profile/Profile";
+import {Shop} from "../Match/Shop/Shop";
 
 
 export const PATH = {
@@ -79,7 +80,8 @@ export const PATH = {
     MODAL: '/modal',
     TRIPLETSET: '/tripletest',
     PROFILE: '/profile',
-    PACK: '/pack'
+    // PACK: '/pack',
+    SHOP: '/shop'
 }
 
 const levels = [
@@ -382,8 +384,9 @@ const AppRoutes = () => {
                 <Route path={PATH.SEARCH} element={<Search/>}/>
                 <Route path={PATH.TEST} element={<TestComponent/>}/>
                 <Route path={PATH.GAME} element={<Game/>}/>
-                <Route path={PATH.PACK} element={<Pack/>}/>
+                {/*<Route path={PATH.PACK} element={<Pack/>}/>*/}
                 <Route path={PATH.PROFILE} element={<Profile/>}/>
+                <Route path={PATH.SHOP} element={<Shop/>}/>
                 {/*<Route path={PATH.MODAL} element={<Modal/>}/>*/}
 
                 {/*{levels.map((level, index) => (*/}
