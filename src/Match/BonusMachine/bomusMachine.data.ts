@@ -67,7 +67,7 @@ export const machineData: CategoryType[] = [
             },]
     },
     {
-        name: 'Oil',
+        name: 'Масло',
         bgImage: oilBG,
         brands: [{
             name: '',
@@ -91,7 +91,7 @@ export const machineData: CategoryType[] = [
             },]
     },
     {
-        name: 'Filter',
+        name: 'Фильтр',
         bgImage: filterBG,
         brands: [{
             name: '',
@@ -115,7 +115,7 @@ export const machineData: CategoryType[] = [
             },]
     },
     {
-        name: 'Disc',
+        name: 'Диски',
         bgImage: discBG,
         brands: [{
             name: '',
@@ -139,7 +139,7 @@ export const machineData: CategoryType[] = [
             },]
     },
     {
-        name: 'Pads',
+        name: 'Прокладки',
         bgImage: kitBG,
         brands: [{
             name: '',

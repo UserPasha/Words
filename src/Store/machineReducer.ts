@@ -8,7 +8,7 @@ export type ShowPointsPictureType = ReturnType<typeof showProductPicture>
 const SHOW_PRODUCT_PICTURE = 'SHOW_PRODUCT_PICTURE';
 
 
-export const MachineReducer = (state: CategoryType[] = machineData, action: ShowPointsPictureType) => {
+export const MachineReducer = (state: CategoryType[] = InitialState, action: ShowPointsPictureType) => {
     switch (action.type) {
         case SHOW_PRODUCT_PICTURE: {
             return state.map((stateItem)=> stateItem.name === action.categoryName ?

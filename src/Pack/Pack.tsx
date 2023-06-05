@@ -5,28 +5,28 @@ import cancelIcon from "../assets/images/match/cancel.svg";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {PointsAfterShop} from "../Store/profileReducer";
+import { useNavigate } from 'react-router-dom';
+import {PATH} from "../AppRoutes/AppRoutes";
 
 export const Pack = () => {
 
     const dispatch = useDispatch<AppDispatch>();
+    const navigate = useNavigate();
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [isConfirmed, setConfirmed] = useState<boolean>(false)
 
     const handleOpenPack = () => {
         setConfirmed(true)
-        //setIsOpen(true);
         setLoot(GeneratePackDrop())
-        // Simulate an API call or delay to fetch pack contents
-        setTimeout(() => {
-            // TODO: Handle pack contents logic
-        }, 2000); // Change the delay as needed
+
     };
 
     const openPack = () => {
         setConfirmed(false)
         dispatch(PointsAfterShop(1))
         setIsOpen(true);
+        navigate(PATH.PACKOPENER)
     }
     const cancelPack = () =>{
         setConfirmed(false)

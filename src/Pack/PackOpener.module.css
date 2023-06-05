@@ -1,0 +1,99 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+}
+.container{
+    position: relative;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    width: 320px;
+    height: 420px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 50px;
+    transition: transform 1.9s;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #DF777D, #DF777D);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #DF777D, #DF777D);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.pack{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 2px;
+    background-color: #28292d;
+    z-index: 10;
+    border-radius: 8px;
+    padding: 50px 40px;
+    /*transition: transform 0.9s;*/
+}
+.container.opened,
+.pack .opened{
+    transition: transform 0.6s;
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px 10px rgba(66, 135, 245, 0.5);
+    animation: glow 2s infinite ease-in-out;
+    /*animation: rotate 3s linear, ease-in;*/
+}
+
+.saveButton{
+    position: relative;
+    top: 100px ;
+    left: 100px;
+    color: red;
+    width: 100px;
+    height: 30px;
+    background-color: greenyellow;
+    z-index: 20;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 200px 100px rgba(66, 135, 245, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 200px 300px rgba(66, 135, 245, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 200px 100px rgba(66, 135, 245, 0.5);
+    }
+}
+
