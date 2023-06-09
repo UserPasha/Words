@@ -1,5 +1,5 @@
 import {CategoryType} from "../Match/BonusMachine/bomusMachine.data";
-import {MachineReducer, showProductPicture} from "./machineReducer";
+import {machineReducer, showProductPicture} from "./machineReducer";
 
 const startState: CategoryType[] = [
     {
@@ -53,7 +53,7 @@ const startState: CategoryType[] = [
 ]
 
 test('correct picture should be show', ()=>{
-    const endState = MachineReducer(startState, showProductPicture('oil', 'first' ))
+    const endState = machineReducer(startState, showProductPicture('oil', 'first' ))
     //expect(endState[0].name).toBe('Battery')
     //expect(endState[1].brands[1].showPicture).toBeTruthy()
 

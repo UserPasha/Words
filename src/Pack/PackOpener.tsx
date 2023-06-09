@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './PackOpener.module.css'
 import cover from '../assets/images/match/logo.png'
-import image from '../assets/images/match/ok.svg'
+import image from '../assets/images/match/bg/batteryRemBG.png'
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {showProductPicture} from "../Store/machineReducer";
@@ -46,7 +46,7 @@ const loot = [
     };
 
     const savePrizeToRedux = () => {
-//dispatch(showProductPicture(category, product))
+dispatch(showProductPicture('Прокладки', 'Elring'))
 
          navigate(PATH.SHOP)
     }
@@ -54,7 +54,12 @@ const loot = [
         <div className={style.wrapper}>
             <div className={isOpen ? `${style.container}` : `${style.container} ${style.opened}`}>
                 <button className={style.pack} onClick={handleOpenPack} disabled={isClicked}>
-                    <img src={isOpen  ? image : cover} alt="Card" />
+                    {/*<div className={style.imageWrapper}>*/}
+                        <img
+                            // className={style.image}
+                            src={isOpen  ? image : cover} alt="Card" />
+                    {/*</div>*/}
+
                     <div>{category}</div>
                     <div>{product}</div>
                     frontSide-backSide animation close icon, save to reducer

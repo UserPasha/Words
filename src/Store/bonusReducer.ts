@@ -26,6 +26,8 @@ export const bonusReducer = (state:BonusReducerType = InitialState, action: Bonu
                 ...state, pointsBonus: state.pointsBonus = action.bonus
             }
         }
+        default:
+            return state;
     }
 }
 

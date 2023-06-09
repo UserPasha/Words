@@ -1,12 +1,16 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import {cardsReducer} from "./cardsReducer";
+import {cardsReducer, CardType, InitialStateType} from "./cardsReducer";
 import {loadState, saveState} from "../Utils/localStorageUtils";
-import {DictionaryAction, lingvoReducer} from "./lingvoReducer";
+import {DictionaryAction, DictionaryType, lingvoReducer} from "./lingvoReducer";
 import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
-import {pointsReducer} from "./pointsReducer";
-import {profileReducer} from "./profileReducer";
-import {playerNameReducer} from "./PlayerNameReducer";
-import {playerAvatarReducer} from "./PlayerAvatarReducer";
+import {InitialStatePointsType, pointsReducer} from "./pointsReducer";
+import {InitialStatePlayerType, profileReducer} from "./profileReducer";
+import {InitialStateNameType, playerNameReducer} from "./PlayerNameReducer";
+import {InitialStateAvatarType, playerAvatarReducer} from "./PlayerAvatarReducer";
+import {machineReducer} from "./machineReducer";
+import {bonusReducer, BonusReducerType} from "./bonusReducer";
+import localStorageMiddleware from "./localStorageMiddleware";
+import {CategoryType, machineData} from "../Match/BonusMachine/bomusMachine.data";
 
 const reducers = combineReducers({
     cards: cardsReducer,
@@ -14,22 +18,68 @@ const reducers = combineReducers({
     points: pointsReducer,
     profile: profileReducer,
     playerName: playerNameReducer,
-    playerAvatar: playerAvatarReducer
+    playerAvatar: playerAvatarReducer,
+    machine: machineReducer,
+    bonus: bonusReducer
 })
+// const InitialState: {
+//     cardsReducer: InitialStateType,
+//     lingvoReducer: DictionaryType,
+//     pointsReducer: InitialStatePointsType[],
+//     profileReducer: InitialStatePlayerType,
+//     playerNameReducer: InitialStateNameType,
+//     playerAvatarReducer: InitialStateAvatarType,
+//     machineReducer: CategoryType[],
+//     bonusReducer: BonusReducerType
+// } = {
+//     cardsReducer: {
+//         card: []
+//     },
+//     lingvoReducer: {
+//         title: '',
+//         description: '',
+//         url: ''
+//
+//     },
+//     pointsReducer:Array.from({ length: 24 }, (_, index) => ({
+//         level: index,
+//         bestPoints: 0,
+//         currentPoints: 0
+//     })),
+//     profileReducer: {
+//         currentPoints: 0
+//     },
+//     playerNameReducer: {
+//         name: "Мотехсовчанин"
+//     },
+//     playerAvatarReducer:{
+//         avatar: ""
+//     },
+//     machineReducer: machineData,
+//     bonusReducer: {
+//         timeBonus: 0,
+//         pointsBonus: 1,
+//     },
+// }
+const store = createStore(reducers, loadState(), applyMiddleware
+(
+    thunk
+//localStorageMiddleware
+))
 
-const store = createStore(reducers, loadState(), applyMiddleware(thunk))
-
-store.subscribe(()=>{
+store.subscribe(() => {
     saveState({
         cards: store.getState().cards,
         lingvo: store.getState().lingvo,
         points: store.getState().points,
         profile: store.getState().profile,
         playerName: store.getState().playerName,
-        playerAvatar: store.getState().playerAvatar
+        playerAvatar: store.getState().playerAvatar,
+        machine: store.getState().machine,
+        bonus: store.getState().bonus
     })
 })
-export type AppThunk<ReturnType = void > = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
 export type ActionsType = DictionaryAction
 export type AppThunkDispatch = ThunkDispatch<RootState, unknown, ActionsType>
 export type AppStateType = ReturnType<typeof reducers>

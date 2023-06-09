@@ -21,7 +21,8 @@ export const Profile = () => {
     const currentPoints = useSelector<RootState, number>(state => state.profile.currentPoints)
     const playerName = useSelector<RootState, string>(state => state.playerName.name)
     const playerAvatar = useSelector<RootState, string>(state => state.playerAvatar.avatar)
-
+    const timeBonus = useSelector<RootState, number>(state => state.bonus.timeBonus)
+    const pointBonus = useSelector<RootState, number>(state => state.bonus.pointsBonus)
     const [isEditName, setIsEditName] = useState<boolean>(false)
     const [newName, setNewName] = useState<string>('')
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +48,7 @@ export const Profile = () => {
 
     const saveAvatarToRedux = () => {
         dispatch(saveNewAvatar(newAvatar))
-       // dispatch(showProductPicture({'Categoty1' : {name: 'p1', showPicture: false, pictureUrl: ''}}, 'p1'))
+        // dispatch(showProductPicture({'Categoty1' : {name: 'p1', showPicture: false, pictureUrl: ''}}, 'p1'))
         setIsEditAvatar(false)
     }
 
@@ -63,7 +64,7 @@ export const Profile = () => {
                     <div className={style.shop}>
                         <img src={shopIcon} alt={'shop'}/>
                     </div>
-            </Link>
+                </Link>
 
 
             </header>
@@ -123,7 +124,15 @@ export const Profile = () => {
 
                 </div>
             </div>
-           <Accordion/>
+            <div className={style.bonuses}>
+                <div className={style.bonusItem}>
+                    Бонус времени: {timeBonus} секунд
+                </div>
+                <div className={style.bonusItem}>
+                    Бонус множителя очков: Х {pointBonus}
+                </div>
+            </div>
+            <Accordion/>
         </div>
     );
 };

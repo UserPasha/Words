@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import style from './BonusMachine.module.css';
-import {machineData} from "./bomusMachine.data";
+//import {machineData} from "./bomusMachine.data";
 import {ImageComponent} from "../../Profile/ImageComponenet";
 import okIcon from "../../assets/images/match/ok.svg";
 import cancelIcon from "../../assets/images/match/cancel.svg";
+import {useSelector} from "react-redux";
+import {RootState} from "../../Store/store";
+import {CategoryType} from "./bomusMachine.data";
 
 
 export const Accordion = () => {
@@ -14,7 +17,7 @@ export const Accordion = () => {
         // setNewAvatar(image)
         setSelectedImage(image);
     };
-
+const machineData = useSelector<RootState, CategoryType[]>(state=>state.machine)
 
     const handleClick = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -32,13 +35,24 @@ export const Accordion = () => {
                     {activeIndex === index && (
                         <div className={style.bonusItemContent} style={{backgroundImage: `url(${item.bgImage})`}}>
                             <div className={style.bonusItemContentDark}>
-                                {item.brands.map((brand, index) =>
-                                    <ImageComponent key={index}
-                                                    onClick={() => saveTemporaryBrand(brand.pictureUrl)}
-                                                    isSelected={selectedImage === brand.pictureUrl}
-                                                    image={ brand.showPicture ? brand.pictureUrl : ''}
-                                    />
+                                {/*{item.brands.map((brand, index) =>*/}
 
+                                {/*    <ImageComponent key={index}*/}
+                                {/*                    onClick={() => saveTemporaryBrand(brand.pictureUrl)}*/}
+                                {/*                    isSelected={selectedImage === brand.pictureUrl}*/}
+                                {/*                    image={ brand.showPicture ? brand.pictureUrl : ''}*/}
+                                {/*    />*/}
+
+                                {/*)}*/}
+                                {item.brands.map((brand, index) =>
+                                        brand.showPicture && ( // display image only if showPicture is true
+                                            <ImageComponent
+                                                key={index}
+                                                onClick={() => saveTemporaryBrand(brand.pictureUrl)}
+                                                isSelected={selectedImage === brand.pictureUrl}
+                                                image={brand.pictureUrl}
+                                            />
+                                        )
                                 )}
 
                                 <div className={style.buttons}>

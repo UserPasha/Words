@@ -102,6 +102,19 @@
 .avatarContainer img{
     max-width: 150px;
 }
+.bonuses{
+    width: 100%;
+    min-height: 100px;
+    background-color: greenyellow;
+}
+.bonusItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background-color: #7c0606;
+}
 .buttons{
     margin-top: 10px;
     display: flex;

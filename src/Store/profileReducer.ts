@@ -1,4 +1,4 @@
-export type InitialStatePointsType = {
+export type InitialStatePlayerType = {
     currentPoints: number
 }
 
@@ -8,11 +8,11 @@ const POINTS_AFTER_SHOP = 'POINTS_AFTER_SHOP'
 export type CurrentPointsType = ReturnType<typeof saveCurrentPoints>
 export type PointsAfterShopType = ReturnType<typeof PointsAfterShop>
 
-const InitialState: InitialStatePointsType = {
+const InitialState: InitialStatePlayerType = {
     currentPoints: 0,
 }
 
-export const profileReducer = (state: InitialStatePointsType = InitialState, action: CurrentPointsType | PointsAfterShopType): InitialStatePointsType => {
+export const profileReducer = (state: InitialStatePlayerType = InitialState, action: CurrentPointsType | PointsAfterShopType): InitialStatePlayerType => {
     switch (action.type) {
         case 'SAVE_CURRENT_POINTS': {
             return {

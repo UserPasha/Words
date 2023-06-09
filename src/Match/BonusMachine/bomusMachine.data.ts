@@ -8,6 +8,11 @@ import oilBG from '../../assets/images/match/bg/oilBG.jpg'
 import filterBG from '../../assets/images/match/bg/filterBG.jpg'
 import discBG from '../../assets/images/match/bg/discBG.jpg'
 import kitBG from '../../assets/images/match/bg/kitBG.jpg'
+import BremboLogo from '../../assets/images/match/brembo.jpg'
+import GlaserLogo from '../../assets/images/match/glaser.jpg'
+import VictorReinzLogo from '../../assets/images/match/victor.jpg'
+import ElringLogo from '../../assets/images/match/elring.svg'
+import MTexLogo from '../../assets/images/match/MTex.jpg'
 
 interface IBonusMachineData {
     title: string;
@@ -41,13 +46,14 @@ export type CategoryType = {
     brands: BrandType[]
 
 }
-export const machineData: CategoryType[] = [
+export const machineData: CategoryType[] =
+    [
     {
         name: 'Battery',
         bgImage: BatteryBG,
         brands: [{
-            name: '',
-            pictureUrl: DenkermannLogo,
+            name: 'M-Tex',
+            pictureUrl: MTexLogo,
             showPicture: true
         },
             {
@@ -70,96 +76,96 @@ export const machineData: CategoryType[] = [
         name: 'Масло',
         bgImage: oilBG,
         brands: [{
-            name: '',
-            pictureUrl: '',
+            name: 'M-Tex',
+            pictureUrl: MTexLogo,
             showPicture: true
         },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },]
     },
     {
         name: 'Фильтр',
         bgImage: filterBG,
         brands: [{
-            name: '',
-            pictureUrl: '',
+            name: 'M-Tex',
+            pictureUrl: MTexLogo,
             showPicture: true
         },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },]
     },
     {
         name: 'Диски',
         bgImage: discBG,
         brands: [{
-            name: '',
-            pictureUrl: '',
+            name: 'M-Tex',
+            pictureUrl: MTexLogo,
             showPicture: true
         },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
                 name: '',
                 pictureUrl: '',
-                showPicture: true
+                showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
-                showPicture: true
+                name: 'Brembo',
+                pictureUrl: BremboLogo,
+                showPicture: false
             },]
     },
     {
         name: 'Прокладки',
         bgImage: kitBG,
         brands: [{
-            name: '',
-            pictureUrl: '',
+            name: 'M-Tex',
+            pictureUrl: MTexLogo,
             showPicture: true
         },
             {
-                name: '',
-                pictureUrl: '',
-                showPicture: true
+                name: 'Glaser',
+                pictureUrl: GlaserLogo,
+                showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
-                showPicture: true
+                name: 'Victor Reinz',
+                pictureUrl: VictorReinzLogo,
+                showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
-                showPicture: true
+                name: 'Elring',
+                pictureUrl: ElringLogo,
+                showPicture: false
             },]
     }
 

@@ -6,7 +6,7 @@ export type CardType = {
     question: string
     answer: string
 }
-type InitialStateType = {
+export type InitialStateType = {
     card: Array<CardType>
 }
 
