@@ -90,12 +90,12 @@
 }
 
 .glowEffect {
-    position: absolute;
-    z-index: -1;
+    /*position: absolute;*/
+    /*z-index: -1;*/
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1px;
+    width: 100px;
     height: 1px;
     top: 400px;
     left: 190px;

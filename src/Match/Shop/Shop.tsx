@@ -15,9 +15,9 @@ export const Shop = () => {
                 {currentPoints}
             </div>
            <div className={style.packsContainer}>
-               <Pack/>
-               <Pack/>
-               <Pack/>
+               <Pack lowPercent={0.6} highPercent={0.9}/>
+               <Pack lowPercent={0.5} highPercent={0.85}/>
+               <Pack lowPercent={0.4} highPercent={0.8}/>
 
 
            </div>

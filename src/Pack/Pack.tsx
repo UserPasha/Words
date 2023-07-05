@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import style from './Pack.module.css'
 import okIcon from "../assets/images/match/ok.svg";
 import cancelIcon from "../assets/images/match/cancel.svg";
@@ -7,8 +7,11 @@ import {AppDispatch} from "../Store/store";
 import {PointsAfterShop} from "../Store/profileReducer";
 import { useNavigate } from 'react-router-dom';
 import {PATH} from "../AppRoutes/AppRoutes";
-
-export const Pack = () => {
+interface IPack {
+    lowPercent: number
+    highPercent: number
+}
+export const Pack:FC<IPack> = ({lowPercent, highPercent}) => {
 
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
@@ -18,31 +21,100 @@ export const Pack = () => {
 
     const handleOpenPack = () => {
         setConfirmed(true)
-        setLoot(GeneratePackDrop())
-
+        GeneratePackDrop()
     };
 
     const openPack = () => {
         setConfirmed(false)
-        dispatch(PointsAfterShop(1))
+      //  dispatch(PointsAfterShop(1))
         setIsOpen(true);
-        navigate(PATH.PACKOPENER)
+       // navigate(PATH.PACKOPENER)
     }
     const cancelPack = () =>{
         setConfirmed(false)
     }
-    const [loot, setLoot] = useState<string>('')
-    const GeneratePackDrop = (): string => {
-        const randomNum = Math.random();
-        if (randomNum < 0.5) {
-            return '1';
-        } else if (randomNum < 0.85) {
-            return '2';
-        } else {
-            return '3';
-        }
-    }
+    const rewardsData = [
 
+        {
+            title: "Аккумулятор",
+            brands: ['AutoPart', 'Exide', 'Bosch']
+        },
+        {
+            title: "Масло",
+            brands: ['Rosneft', 'Total', 'KroonOil']
+        },
+        {
+            title: "Фильтр",
+            brands: ['MeatDoria', 'Filtron', 'Mahle']
+        },
+        {
+            title: "Диски",
+            brands: ['LYNX', 'Metelli', 'Brembo']
+        },
+        {
+            title: "Прокладки",
+            brands: ['Glaser', 'VictorReinz', 'Elring']
+        },
+    ]
+    const [categoryLoot, setCategoryLoot] = useState<string>("")
+    const [brandLoot, setBrandLoot] = useState<string>("")
+
+    // const GeneratePackDrop = () => {
+    //     const randomNum = Math.random();
+    //     const categoryRanges = [
+    //         [0, 0.2],
+    //         [0.2, 0.4],
+    //         [0.4, 0.6],
+    //         [0.6, 0.8],
+    //         [0.8, 1],
+    //     ];
+    //     for (let i = 0; i < categoryRanges.length; i++) {
+    //         const [rangeStart, rangeEnd] = categoryRanges[i];
+    //         if (randomNum >= rangeStart && randomNum < rangeEnd) {
+    //             const secondRandomNum = Math.random();
+    //             const selectedCategory = rewardsData[i];
+    //             let selectedBrandIndex;
+    //             if (secondRandomNum < lowPercent) {
+    //                 selectedBrandIndex = 0;
+    //             } else if (secondRandomNum < highPercent) {
+    //                 selectedBrandIndex = 1;
+    //             } else if (secondRandomNum < newPercent) {
+    //                 selectedBrandIndex = 2;
+    //             } else {
+    //                 selectedBrandIndex = 3;
+    //             }
+    //             setCategoryLoot(selectedCategory.title);
+    //             setBrandLoot(selectedCategory.brands[selectedBrandIndex]);
+    //             break;
+    //         }
+    //     }
+    // };
+    const GeneratePackDrop = () => {
+        const randomNum = Math.random();
+        const categoryRanges = [
+            [0, 0.2],
+            [0.2, 0.4],
+            [0.4, 0.6],
+            [0.6, 0.8],
+            [0.8, 1],
+        ];
+        for (let i = 0; i < categoryRanges.length; i++) {
+            const [rangeStart, rangeEnd] = categoryRanges[i];
+            if (randomNum >= rangeStart && randomNum < rangeEnd) {
+                const secondRandomNum = Math.random();
+                const selectedCategory = rewardsData[i];
+                const selectedBrandIndex =
+                    secondRandomNum < lowPercent
+                        ? 0
+                        : secondRandomNum < highPercent
+                            ? 1
+                            : 2;
+                setCategoryLoot(selectedCategory.title);
+                setBrandLoot(selectedCategory.brands[selectedBrandIndex]);
+                break;
+            }
+        }
+    };
     return (
         <div className={style.wrapper}>
 
@@ -53,7 +125,8 @@ export const Pack = () => {
 
             {/*</div>}*/}
             {isOpen && <div className={style.glowEffect}>
-                {loot}
+                {categoryLoot}
+                {brandLoot}
             </div>}
             {isConfirmed && <div className={style.confirmModal}>
                 <div className={style.modalWindow}>

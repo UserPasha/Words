@@ -1,8 +1,5 @@
 import FiltronLogo from '../../assets/images/match/FILTRON.png'
-import DenkermannLogo from '../../assets/images/match/denckermann.png'
 import MahleLogo from '../../assets/images/match/mahle.png'
-import MannLogo from '../../assets/images/match/mann_filter.jpg'
-import BluePrintLogo from '../../assets/images/match/Blue_Print.jpg'
 import BatteryBG from '../../assets/images/match/bg/BatteryBG.jpg'
 import oilBG from '../../assets/images/match/bg/oilBG.jpg'
 import filterBG from '../../assets/images/match/bg/filterBG.jpg'
@@ -13,6 +10,15 @@ import GlaserLogo from '../../assets/images/match/glaser.jpg'
 import VictorReinzLogo from '../../assets/images/match/victor.jpg'
 import ElringLogo from '../../assets/images/match/elring.svg'
 import MTexLogo from '../../assets/images/match/MTex.jpg'
+import AutoPartsLogo from '../../assets/images/match/Autopart.jpg'
+import ExideLogo from '../../assets/images/match/exide.jpg'
+import BoshLogo from '../../assets/images/match/bosch.jpg'
+import RosneftLogo from '../../assets/images/match/rosneft.jpg'
+import TotalLogo from '../../assets/images/match/total.png'
+import KroonOilLogo from '../../assets/images/match/kroon-oil.png'
+import MeatDoriaLogo from '../../assets/images/match/meat-and-doria.png'
+import LynxLogo from '../../assets/images/match/lynxAuto.png'
+import MetelliLogo from '../../assets/images/match/metelli.png'
 
 interface IBonusMachineData {
     title: string;
@@ -49,7 +55,7 @@ export type CategoryType = {
 export const machineData: CategoryType[] =
     [
     {
-        name: 'Battery',
+        name: 'Аккумулятор',
         bgImage: BatteryBG,
         brands: [{
             name: 'M-Tex',
@@ -57,18 +63,18 @@ export const machineData: CategoryType[] =
             showPicture: true
         },
             {
-                name: '',
-                pictureUrl: FiltronLogo,
+                name: 'AutoPart',
+                pictureUrl: AutoPartsLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: MahleLogo,
+                name: 'Exide',
+                pictureUrl: ExideLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: MannLogo,
+                name: 'Bosch',
+                pictureUrl: BoshLogo,
                 showPicture: false
             },]
     },
@@ -81,18 +87,18 @@ export const machineData: CategoryType[] =
             showPicture: true
         },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'Rosneft',
+                pictureUrl: RosneftLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'Total',
+                pictureUrl: TotalLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'KroonOil',
+                pictureUrl: KroonOilLogo,
                 showPicture: false
             },]
     },
@@ -105,18 +111,18 @@ export const machineData: CategoryType[] =
             showPicture: true
         },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'MeatDoria',
+                pictureUrl: MeatDoriaLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'Filtron',
+                pictureUrl: FiltronLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'Mahle',
+                pictureUrl: MahleLogo,
                 showPicture: false
             },]
     },
@@ -129,13 +135,13 @@ export const machineData: CategoryType[] =
             showPicture: true
         },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'LYNX',
+                pictureUrl: LynxLogo,
                 showPicture: false
             },
             {
-                name: '',
-                pictureUrl: '',
+                name: 'Metelli',
+                pictureUrl: MetelliLogo,
                 showPicture: false
             },
             {
@@ -158,7 +164,7 @@ export const machineData: CategoryType[] =
                 showPicture: false
             },
             {
-                name: 'Victor Reinz',
+                name: 'VictorReinz',
                 pictureUrl: VictorReinzLogo,
                 showPicture: false
             },

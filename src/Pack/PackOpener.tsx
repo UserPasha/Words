@@ -46,7 +46,7 @@ const loot = [
     };
 
     const savePrizeToRedux = () => {
-dispatch(showProductPicture('Прокладки', 'Elring'))
+dispatch(showProductPicture('Прокладки', 'Glaser'))
 
          navigate(PATH.SHOP)
     }

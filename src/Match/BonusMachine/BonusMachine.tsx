@@ -18,7 +18,7 @@ export const Accordion = () => {
         setSelectedImage(image);
     };
 const machineData = useSelector<RootState, CategoryType[]>(state=>state.machine)
-
+    //console.log(machineData) localhost 3002
     const handleClick = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
