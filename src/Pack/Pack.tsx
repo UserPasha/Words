@@ -7,6 +7,7 @@ import {AppDispatch} from "../Store/store";
 import {PointsAfterShop} from "../Store/profileReducer";
 import { useNavigate } from 'react-router-dom';
 import {PATH} from "../AppRoutes/AppRoutes";
+import {saveCurrentReward} from "../Store/RewardsReducer";
 interface IPack {
     lowPercent: number
     highPercent: number
@@ -27,8 +28,9 @@ export const Pack:FC<IPack> = ({lowPercent, highPercent}) => {
     const openPack = () => {
         setConfirmed(false)
       //  dispatch(PointsAfterShop(1))
+        dispatch(saveCurrentReward(categoryLoot, brandLoot))
         setIsOpen(true);
-       // navigate(PATH.PACKOPENER)
+        navigate(PATH.PACKOPENER)
     }
     const cancelPack = () =>{
         setConfirmed(false)

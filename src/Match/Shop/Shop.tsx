@@ -22,9 +22,9 @@ export const Shop = () => {
 
            </div>
 
-            link to Pack (60 - 30 - 10)
-            link to Pack (50 - 35 - 15)
-            link to Pack (40 - 40 - 20)
+            link to Pack (60 - 30 - 10) 500
+            link to Pack (50 - 35 - 15) 750
+            link to Pack (40 - 40 - 20) 1000
         </div>
     );
 };
