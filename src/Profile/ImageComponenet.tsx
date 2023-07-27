@@ -19,5 +19,6 @@ export const ImageComponent = ({ image, onClick, isSelected }: ImageProps) => {
             alt={image}
             onClick={onClick}
         />
+
     );
 };

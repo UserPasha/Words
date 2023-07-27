@@ -1,3 +1,4 @@
+import defaultAvatar from '../assets/images/match/MTex.jpg'
 export type InitialStateAvatarType = {
     avatar: string
 }
@@ -7,7 +8,7 @@ const SAVE_PLAYER_AVATAR = 'SAVE_PLAYER_AVATAR'
 export type PlayerAvatarType = ReturnType<typeof saveNewAvatar>
 
 const InitialState: InitialStateAvatarType = {
-    avatar: ""
+    avatar: defaultAvatar
 }
 
 export const playerAvatarReducer = (state: InitialStateAvatarType = InitialState, action: PlayerAvatarType) =>{

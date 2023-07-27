@@ -64,12 +64,41 @@
 }
 
 .buttons{
-    margin-top: 10px;
+    margin: 10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 100%;
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 .buttons img{
     max-width: 30px;
+}
+.title{
+    width: 100%;
+    height: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+
+}
+.selectedImage{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 97%;
+    margin: 10px 5px;
+    border-radius: 10px;
+    background-color: #656363;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
 }

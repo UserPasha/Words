@@ -48,7 +48,7 @@ export const Profile = () => {
 
     const saveAvatarToRedux = () => {
         dispatch(saveNewAvatar(newAvatar))
-        // dispatch(showProductPicture({'Categoty1' : {name: 'p1', showPicture: false, pictureUrl: ''}}, 'p1'))
+
         setIsEditAvatar(false)
     }
 

@@ -1,5 +1,6 @@
+
 .avatarItem{
-    max-width: 80px;
+    max-width: 70px;
     margin-left: 5px;
 }
 
@@ -11,7 +12,7 @@
     margin-left: 5px;
     animation: pulse 1s;
     box-shadow: 0 0 0 2em transparent;
-    max-width: 100px;
+    max-width: 80px;
 }
 
 @keyframes pulse {
