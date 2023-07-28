@@ -20,9 +20,7 @@ interface ICategory {
 
 export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, selectedBrand, activeBrands, index}) => {
 
-    //localState (current brand)
-    //with save send to dispstch brand
-    //add descripyion to object
+
     //verstka current brand, description
     const machineData = useSelector<RootState, CategoryType[]>(state => state.machine)
 
@@ -55,6 +53,16 @@ export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, se
         return undefined;
     };
 
+    const findBrandShowPictureByPictureUrl = (pictureUrl: string): boolean | undefined => {
+        for (const category of machineData) {
+            const brand = category.brands.find((brand) => brand.pictureUrl === pictureUrl);
+            if (brand) {
+                return brand.showPicture;
+            }
+        }
+        return undefined;
+    };
+
     function getCategoryNameByPictureUrl(pictureUrl: string): string | undefined {
         for (const category of machineData) {
             for (const brand of category.brands) {
@@ -68,7 +76,7 @@ export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, se
 
 
     const saveBrandToRedux = () => {
-        dispatch(changeActiveBrand(getCategoryNameByPictureUrl(selectedBrand)!, findBrandNameByPictureUrl(selectedBrand)!, selectedBrand))
+        dispatch(changeActiveBrand(getCategoryNameByPictureUrl(selectedBrand)!, findBrandNameByPictureUrl(selectedBrand)!))
     }
 
     const selectDescription = findBrandDescriptionByPictureUrl(selectedBrand)
@@ -90,25 +98,36 @@ export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, se
                         <div className={style.description}>{selectDescription}</div>
                         )
 
-
-                        {brands.map((brand, index) =>
-                                brand.showPicture && (
+                        <div className={style.imageWrapper}>
+                            {brands.map((brand, index) =>
+                                // brand.showPicture &&
+                                (
                                     <ImageComponent
                                         key={index}
                                         onClick={() => onClickBrand(brand.pictureUrl)}
                                         isSelected={selectedBrand === brand.pictureUrl}
-                                        image={brand.pictureUrl}
+                                        image={brand.showPicture ? brand.pictureUrl : brand.draft}
                                     />
                                 )
-                        )}
+                            )}
+                        </div>
 
-                        <div className={style.buttons} onClick={() => {
+
+                        {findBrandShowPictureByPictureUrl(selectedBrand)
+                            ?
+                            <div className={style.buttons} onClick={() => {
                             saveBrandToRedux()
                         }}> Применить бонус
-                            <img src={okIcon} alt={'ok'} />
-                            {/*<img src={cancelIcon} alt={'cancel'} onClick={() => {*/}
-                            {/*}}/>*/}
+                            <img src={okIcon} alt={'ok'}/>
+
                         </div>
+                            :
+                            <div className={style.buttons} onClick={() => {
+                                saveBrandToRedux()
+                            }}> Этот бонус недоступен
+
+
+                            </div> }
 
 
                     </div>

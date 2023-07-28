@@ -49,9 +49,16 @@
     background-size: cover;
 }
 .bonusItemContentDark{
+
     width: 100%;
     background-color: black;
     opacity: 0.7;
+}
+.imageWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
 }
 .boxItem{
     width: 80px;
@@ -69,6 +76,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 90%;
+    height: 40px;
     color: white;
     font-weight: bold;
     border: 1px solid white;
@@ -85,8 +93,8 @@
 
 }
 .selectedImage{
-    max-width: 50px;
-    max-height: 50px;
+   width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 .description{

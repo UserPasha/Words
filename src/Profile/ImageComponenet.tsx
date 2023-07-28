@@ -12,13 +12,14 @@ export const ImageComponent = ({ image, onClick, isSelected }: ImageProps) => {
     const style = isSelected ? styles.selectedItem : styles.avatarItem;
 
     return (
-        <img
-            className={style}
-            src={image}
-            key={image}
-            alt={image}
-            onClick={onClick}
-        />
+        <div className={style} style={{backgroundImage: `url(${image})`}} onClick={onClick}></div>
+        // <img
+        //     className={style}
+        //     src={image}
+        //     key={image}
+        //     alt={image}
+        //     onClick={onClick}
+        // />
 
     );
 };

@@ -1,7 +1,14 @@
+.test{
 
+
+    border: 2px solid green;
+    background-size: cover;
+}
 .avatarItem{
-    max-width: 70px;
-    margin-left: 5px;
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border: 2px solid transparent;
 }
 
 .selectedItem{
@@ -12,7 +19,9 @@
     margin-left: 5px;
     animation: pulse 1s;
     box-shadow: 0 0 0 2em transparent;
-    max-width: 80px;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
 }
 
 @keyframes pulse {

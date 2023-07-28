@@ -29,24 +29,38 @@ export const machineReducer = (state: CategoryType[] = InitialState, action: Sho
             });
         }
         case CHANGE_ACTIVE_BRAND: {
-            return state.map((stateItem) => {
-                if (stateItem.name === action.categoryName) {
-                    const activeBrand = stateItem.brands.find(
-                        (brand) => brand.name === action.newBrandName
-                    );
-                    if (activeBrand) {
+            // return state.map((stateItem) => {
+            //     if (stateItem.name === action.categoryName) {
+            //         const activeBrand = stateItem.brands.find(
+            //             (brand) => brand.name === action.newBrandName
+            //         );
+            //         if (activeBrand) {
+            //             return {
+            //                 ...stateItem,
+            //                 active: {
+            //                     ...stateItem.active,
+            //                     name: action.newBrandName,
+            //                     pictureUrl: action.pictureUrl,
+            //                 },
+            //             };
+            //         }
+            //     }
+            //     return stateItem;
+            // });
+            //const { categoryName, brandName } = action.payload;
+            const newState = state.map((category) => {
+                if (category.name === action.categoryName) {
+                    const brand = category.brands.find((brand) => brand.name === action.newBrandName);
+                    if (brand) {
                         return {
-                            ...stateItem,
-                            active: {
-                                ...stateItem.active,
-                                name: action.newBrandName,
-                                pictureUrl: action.pictureUrl,
-                            },
+                            ...category,
+                            active: { ...brand },
                         };
                     }
                 }
-                return stateItem;
+                return category;
             });
+            return newState;
         }
         default:
             return state;
@@ -57,7 +71,7 @@ export const showProductPicture = (categoryName: string, brandName: string) => (
     type: SHOW_PRODUCT_PICTURE, categoryName, brandName
 }as const)
 
-export const changeActiveBrand = (categoryName: string, newBrandName: string, pictureUrl: string) => ({
-    type: CHANGE_ACTIVE_BRAND, categoryName, newBrandName, pictureUrl
+export const changeActiveBrand = (categoryName: string, newBrandName: string) => ({
+    type: CHANGE_ACTIVE_BRAND, categoryName, newBrandName
 }as const)
 

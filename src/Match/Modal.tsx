@@ -10,10 +10,10 @@ import {ICard} from "../hooks/useMatch";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveCurrentPoints} from "../Store/profileReducer";
+import {useBonus} from "../hooks/useBonus";
 
 
-
-interface IModal{
+interface IModal {
     setShowModal: (value: boolean) => void
     attempts: number
     isEndOfTime: boolean
@@ -43,22 +43,26 @@ export const Modal: FC<IModal> = ({
                                       path,
                                       timeLeft,
                                       defaultPoints,
-    setCards, setAttempts, setPairCounter , cardsToPlay
+                                      setCards, setAttempts, setPairCounter, cardsToPlay
                                   }) => {
 
     const dispatch = useDispatch<AppDispatch>();
+    const {multiplyBonus} = useBonus()
 
     const createPoints2 = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
-        let pointsForAttempts = 60 - realAttempts
-        const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
+        const pointsForAttempts = 60 - realAttempts;
+        const temporyPoints = defaultPoints + timeLeft * 2 + pointsForAttempts;
+
+        const totalPoints = Math.round(temporyPoints * multiplyBonus);
         return totalPoints
     }
     const totalPoints = createPoints2(defaultPoints, timeLeft, attempts)
 
+
     const [score, setScore] = useState(0);
     const [lastScore, setLastScore] = useState(0)
 
-
+    console.log(lastScore)
     useEffect(() => {
         const interval = setInterval(() => {
             setScore((prevScore) => prevScore + 1);
@@ -76,13 +80,17 @@ export const Modal: FC<IModal> = ({
     }, [score, lastScore]);
 
 
-
     const createPoints = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
-        let pointsForAttempts = 60 - realAttempts
-        const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
+
+
+        const pointsForAttempts = 60 - realAttempts;
+        const temporyPoints = defaultPoints + timeLeft * 2 + pointsForAttempts;
+
+        const totalPoints = Math.round(temporyPoints * multiplyBonus);
+
         setRunning(false)
 ////////////FIX THIS////////////////////////
-         dispatch(saveCurrentPoints(lastScore/4))
+        dispatch(saveCurrentPoints(lastScore / 8))
 
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`
@@ -92,6 +100,13 @@ export const Modal: FC<IModal> = ({
             return `Поздравляем! Вы приняли ${totalPoints} единицы`
         } else return `Поздравляем! приняли ${totalPoints} единиц`
 
+    }
+    const bonusScore = (defaultPoints: number, timeLeft: number, realAttempts: number): number => {
+        let pointsForAttempts = 60 - realAttempts
+        const temporyPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
+        const temporyPoints2 = temporyPoints * (+multiplyBonus.toFixed(2)) - temporyPoints
+        const bonus = Math.round(temporyPoints2)
+        return bonus
     }
 
     const closeModal = () => {
@@ -107,8 +122,8 @@ export const Modal: FC<IModal> = ({
         <div className={style.wrapper}>
 
 
-                {isEndOfTime ?
-                    <div className={style.failed}>
+            {isEndOfTime ?
+                <div className={style.failed}>
                     <div className={style.message}>
                         <img src={sad} alt={'fun smile'}/>
                         K сожалению вы не успели
@@ -119,10 +134,11 @@ export const Modal: FC<IModal> = ({
                         <Link to={PATH.MATCH}>
                             <button onClick={restartTimer} className={style.button}> Выйти</button>
                         </Link>
-                        </div>
-                    </div> : <>
-                        <div className={style.modal}>
+                    </div>
+                </div> : <>
+                    <div className={style.modal}>
                         <div className={style.message}>
+                            <h2>РАСЧЁТНИК</h2>
                             <img src={smile} alt={'fun smile'}/>
                             <div className={style.awards}>
                                 <div className={style.awardsItem}>
@@ -154,6 +170,15 @@ export const Modal: FC<IModal> = ({
 
                                 <div className={style.awardsItem}>
                                     <div className={style.infoItem}>
+                                        Мотекс Бонус: X {+multiplyBonus.toFixed(2)}
+                                    </div>
+                                    <div className={style.score}>
+                                        {bonusScore(defaultPoints, timeLeft, attempts)}
+                                    </div>
+                                </div>
+
+                                <div className={style.awardsItem}>
+                                    <div className={style.infoItem}>
                                         Итого:
                                     </div>
                                     <div className={style.score}>
@@ -164,6 +189,7 @@ export const Modal: FC<IModal> = ({
                             </div>
                             <div className={style.congratulation}>
                                 {createPoints(defaultPoints, timeLeft, attempts)}
+
                             </div>
 
                             <Link to={path}>
@@ -174,8 +200,8 @@ export const Modal: FC<IModal> = ({
                             </Link>
                         </div>
                     </div>
-                    </>
-                }
+                </>
+            }
 
         </div>
     );

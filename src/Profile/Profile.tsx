@@ -15,6 +15,9 @@ import shopIcon from '../assets/images/match/shop.svg'
 import {showProductPicture} from "../Store/machineReducer";
 import {Link} from "react-router-dom";
 import {PATH} from "../AppRoutes/AppRoutes";
+import {CategoryType} from "../Match/BonusMachine/bomusMachine.data";
+import {useBonus} from "../hooks/useBonus";
+
 
 export const Profile = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -51,6 +54,8 @@ export const Profile = () => {
 
         setIsEditAvatar(false)
     }
+
+    const {secondsBonus, multiplyBonus} = useBonus()
 
 
     return (
@@ -126,10 +131,10 @@ export const Profile = () => {
             </div>
             <div className={style.bonuses}>
                 <div className={style.bonusItem}>
-                    Бонус времени: {timeBonus} секунд
+                    Бонус времени: {secondsBonus} секунд
                 </div>
                 <div className={style.bonusItem}>
-                    Бонус множителя очков: Х {pointBonus}
+                    Бонус множителя очков: Х {multiplyBonus.toFixed(2)}
                 </div>
             </div>
             <Accordion/>

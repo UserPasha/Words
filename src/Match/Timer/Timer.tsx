@@ -1,5 +1,6 @@
 import React, {useEffect, Dispatch, SetStateAction} from "react";
 import style from './Timer.module.css'
+import {useBonus} from "../../hooks/useBonus";
 
 
 interface TimerProps {
@@ -18,8 +19,9 @@ interface TimerProps {
 export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter
 
 }) => {
-
-    const progress = ((duration - timer + 1) / duration) * 100;
+const {secondsBonus} = useBonus()
+    const totalTime = secondsBonus + duration
+    const progress = ((totalTime - timer + 1) / totalTime) * 100;
 
 
     useEffect(() => {
@@ -37,12 +39,12 @@ export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, 
     }, [timer, running]);
 
     useEffect(() => {
-        setTimer(duration);
+        setTimer(totalTime);
         setRunning(true);
-    }, [duration]);
+    }, [totalTime]);
 
-   const middleValue = duration*0.7
-    const criticalValue = duration*0.3
+   const middleValue = totalTime*0.7
+    const criticalValue = totalTime*0.3
     const minutes = Math.floor(timer / 60);
     const seconds = timer % 60;
     const middle = timer <= middleValue && timer >= criticalValue
