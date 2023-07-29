@@ -12,6 +12,7 @@ import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import { createPointsToRedux} from "../Utils/matchFunctions";
+import {useBonus} from "../hooks/useBonus";
 
 
 export const TripleMatchCopy: FC<IPatternCards> = ({
@@ -32,6 +33,8 @@ export const TripleMatchCopy: FC<IPatternCards> = ({
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
     } = useMatchHook()
+
+    const {multiplyBonus} = useBonus()
 
     const dispatch = useDispatch<AppDispatch>();
 
@@ -61,7 +64,7 @@ export const TripleMatchCopy: FC<IPatternCards> = ({
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
-            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))
             setTimeLeft(timer)
             setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber + 2));

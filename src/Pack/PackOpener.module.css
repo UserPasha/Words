@@ -1,22 +1,24 @@
-.wrapper{
+.wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: #0e0e0e;
     color: whitesmoke;
 }
-.container{
+
+.container {
     position: relative;
     /*display: flex;*/
     /*align-items: center;*/
     /*justify-content: center;*/
-    width: 320px;
-    height: 420px;
-    background-color: #1c1c1c;
+    width: 280px;
+    height: 380px;
+    background-color: black;
     border-radius: 8px;
     overflow: hidden;
     margin: 0 auto;
-    top: 50px;
+    top: 150px;
     transition: transform 1.9s;
+
 }
 
 .container::before {
@@ -24,12 +26,14 @@
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(0deg, transparent, #DF777D, #DF777D);
+    width: 340px;
+    height: 380px;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0,
+    #ff0, #f00, #fb0094, #00f, #0f0,
+    #ff0, #f00);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
-
+    filter: blur(20px);
 }
 
 .container::after {
@@ -37,62 +41,114 @@
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(0deg, transparent, #DF777D, #DF777D);
+    width: 340px;
+    height: 380px;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0,
+    #ff0, #f00, #fb0094, #00f, #0f0,
+    #ff0, #f00);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
+    filter: blur(20px);
 }
 
-.pack{
+.pack {
     display: flex;
     flex-direction: column;
     position: absolute;
-    inset: 2px;
-    background-color: #28292d;
+    inset: 10px;
+    background-color: black;
     z-index: 10;
     border-radius: 8px;
     padding: 50px 40px;
     /*transition: transform 0.9s;*/
 }
+
 .container.opened,
-.pack .opened{
+.pack .opened {
     transition: transform 0.6s;
     transform: rotateY(180deg);
     box-shadow: 0 0 20px 10px rgba(66, 135, 245, 0.5);
     animation: glow 2s infinite ease-in-out;
     /*animation: rotate 3s linear, ease-in;*/
 }
-/*.imageWrapper{*/
-/*    position: relative;*/
-/*    width: 340px;*/
-/*    height: 510px;*/
-/*    -webkit-transform-style: preserve-3d;*/
-/*    transform-style: preserve-3d;*/
-/*    perspective: 1000px;*/
-/*    margin-top: 90px;*/
-/*}*/
-/*.image{*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    -webkit-transform-style: preserve-3d;*/
-/*    transform-style: preserve-3d;*/
-/*    transition: transform 700ms 400ms ease-out;*/
-/*}*/
 
-.saveButton{
+
+.saveButton {
     position: relative;
-    top: 100px ;
-    left: 100px;
-    color: red;
-    width: 100px;
-    height: 30px;
-    background-color: greenyellow;
+    margin: 200px auto;
+    color: whitesmoke;
+    width: 160px;
+    height: 50px;
+    background-color: #174b0b;
     z-index: 20;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.darkContainer {
+    width: 100%;
+    height: 360px;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /*justify-content: space-evenly;*/
+    /*flex-direction: column;*/
+}
+
+.backgroundContainer {
+    position: absolute;
+    inset: 1px;
+    width: 255px;
+    height: 360px;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.categoryTitle {
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 2px 0 #292322,
+    0 3px 0 #c40
+    /*0 4x 0 #c40*/
+    /*0 5x 0 #c40,*/
+    /*0 6x 0 #c40*/
+    /*,*/
+    /*-2x -2x 15px #f06,*/
+    /*2x -2x 15px #f06,*/
+    /*-2x 2x 15px #f06,*/
+    /*2x 2x 15px #f06*/;
+}
+
+.brandTitle {
+    font-size: 40px;
+    color: white;
+    text-shadow: -2px 2px 0 #292322,
+    -4px 4px 0 #f60,
+    -6px 6px 0 #292322,
+    -8px 8px 0 #fc0;
+    margin-bottom: 50px;
+}
+
+.brandContainer {
+    width: 295px;
+    min-height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /*top: 255px;*/
+    /*left: 0;*/
+    /*z-index: 10;*/
+}
+
+.brandContainer img {
+    max-width: 100px;
+    border-radius: 10px;
 }
 
 @keyframes animate {
@@ -106,13 +162,13 @@
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 200px 100px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 100px 50px rgba(66, 135, 245, 0.5);
     }
     50% {
-        box-shadow: 0 0 200px 300px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 100px 150px rgba(66, 135, 245, 0.5);
     }
     100% {
-        box-shadow: 0 0 200px 100px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 100px 50px rgba(66, 135, 245, 0.5);
     }
 }
 

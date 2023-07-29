@@ -4,9 +4,13 @@ import MahleLogo from '../../assets/images/match/mahle.png'
 import MahleLogoDraft from '../../assets/images/match/MahleLogoDraft.svg'
 import BatteryBG from '../../assets/images/match/bg/BatteryBG.jpg'
 import oilBG from '../../assets/images/match/bg/oilBG.jpg'
+import OilNewBG from '../../assets/images/match/bg/oilNewBG.jpg'
 import filterBG from '../../assets/images/match/bg/filterBG.jpg'
+import filterNewBG from '../../assets/images/match/bg/filterNewBG.jpg'
 import discBG from '../../assets/images/match/bg/discBG.jpg'
+import diskNewBG from '../../assets/images/match/bg/discNewBD.jpg'
 import kitBG from '../../assets/images/match/bg/kitBG.jpg'
+import kitsNewBG from '../../assets/images/match/bg/KitsNewBG.jpg'
 import BremboLogo from '../../assets/images/match/brembo.jpg'
 import BremboLogoDraft from '../../assets/images/match/BremboDraft.svg'
 import GlaserLogo from '../../assets/images/match/glaser.jpg'
@@ -129,7 +133,7 @@ export const machineData: CategoryType[] =
     },
     {
         name: 'Масло',
-        bgImage: oilBG,
+        bgImage: OilNewBG,
         brands: [{
             name: 'M-Tex_MA',
             pictureUrl: MTexOil,
@@ -158,7 +162,7 @@ export const machineData: CategoryType[] =
                 bonus: 1.3
             },
             {
-                name: 'KroonOil',
+                name: 'Kroon Oil',
                 pictureUrl: KroonOilLogo,
                 draft: KroonOilBlack,
                 showPicture: false,
@@ -176,7 +180,7 @@ export const machineData: CategoryType[] =
     },
     {
         name: 'Фильтр',
-        bgImage: filterBG,
+        bgImage: filterNewBG,
         brands: [{
             name: 'M-Tex_Fi',
             pictureUrl: MTexFilter,
@@ -187,7 +191,7 @@ export const machineData: CategoryType[] =
             bonus: 0
         },
             {
-                name: 'MeatDoria',
+                name: 'Meat & Doria',
                 pictureUrl: MeatDoriaLogo,
                 draft: MeatAndDoriaLogoDraft,
                 showPicture: false,
@@ -223,7 +227,7 @@ export const machineData: CategoryType[] =
     },
     {
         name: 'Диски',
-        bgImage: discBG,
+        bgImage: diskNewBG,
         brands: [{
             name: 'M-Tex_Di',
             pictureUrl: MTexDiscs,
@@ -270,7 +274,7 @@ export const machineData: CategoryType[] =
     },
     {
         name: 'Прокладки',
-        bgImage: kitBG,
+        bgImage: kitsNewBG,
         brands: [{
             name: 'M-Tex_Pr',
             pictureUrl: MTexKits,
@@ -290,7 +294,7 @@ export const machineData: CategoryType[] =
                 bonus: 3
             },
             {
-                name: 'VictorReinz',
+                name: 'Victor Reinz',
                 pictureUrl: VictorReinzLogo,
                 draft: VictorReinzDraft,
                 showPicture: false,

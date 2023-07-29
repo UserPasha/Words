@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -11,19 +11,20 @@
     z-index: 3;
 }
 
-.avatar{
+.avatar {
     width: 50px;
     height: 50px;
 
     border-radius: 50%;
 }
 
-.avatar img{
+.avatar img {
     max-width: 50px;
     border-radius: 50%;
     margin-left: 5px;
 }
-.name{
+
+.name {
     width: 200px;
     height: 15px;
     font-size: 20px;
@@ -32,17 +33,21 @@
     font-family: 'Russo One', sans-serif;
 }
 
-.currentPoints{
-    width: 100px;
-    height: 15px;
-margin-left: 10px;
+.currentPoints {
+    width: 105px;
+    height: 40px;
+    margin-left: 10px;
     /*font-family: ;*/
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    line-height: 9px;
+    line-height: 40px;
+    color: white;
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 10px;
 }
 
-.menu{
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +56,7 @@ margin-left: 10px;
     border: none;
 }
 
-.stripe{
+.stripe {
     position: relative;
     width: 40px;
     height: 3px;
@@ -60,7 +65,7 @@ margin-left: 10px;
 }
 
 .stripe:before,
-.stripe:after{
+.stripe:after {
     content: "";
     position: absolute;
     width: 56%;
@@ -68,11 +73,12 @@ margin-left: 10px;
     background-color: black;
 }
 
-.stripe:before{
+.stripe:before {
     left: 8px;
     top: 10px;
 }
-.stripe:after{
+
+.stripe:after {
     left: 8px;
     top: -10px;
 }

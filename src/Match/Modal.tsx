@@ -62,11 +62,11 @@ export const Modal: FC<IModal> = ({
     const [score, setScore] = useState(0);
     const [lastScore, setLastScore] = useState(0)
 
-    console.log(lastScore)
+
     useEffect(() => {
         const interval = setInterval(() => {
             setScore((prevScore) => prevScore + 1);
-        }, 10);
+        }, 3);
         if (score === totalPoints) {
             clearInterval(interval);
             setLastScore(score)
@@ -90,7 +90,7 @@ export const Modal: FC<IModal> = ({
 
         setRunning(false)
 ////////////FIX THIS////////////////////////
-        dispatch(saveCurrentPoints(lastScore / 8))
+        dispatch(saveCurrentPoints(lastScore / 4))
 
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`

@@ -13,6 +13,7 @@ import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import {createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
+import {useBonus} from "../hooks/useBonus";
 
 
 export const MatchReFlip: FC<IMatch> = ({
@@ -35,6 +36,8 @@ export const MatchReFlip: FC<IMatch> = ({
 
     const dispatch = useDispatch<AppDispatch>()
 
+    const {multiplyBonus} = useBonus()
+
     const [firstCard, setFirstCard] = useState<ICard | null>(null)
     const [secondCard, setSecondCard] = useState<ICard | null>(null)
     const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
@@ -47,7 +50,7 @@ export const MatchReFlip: FC<IMatch> = ({
     useEffect(() => {
         if (pairCounter === cardsToPlay.length) {
             setShowModal(true)
-            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))
             setTimeLeft(timer)
             setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber + 2));

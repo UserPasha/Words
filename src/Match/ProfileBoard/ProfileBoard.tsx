@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "../../Store/store";
 import {Link} from "react-router-dom";
 import {PATH} from "../../AppRoutes/AppRoutes";
+import profileBonusBG from '../../assets/images/match/bg/ProfileCoinsBG.svg'
 export const ProfileBoard = () => {
 
     const currentPoints = useSelector<RootState, number>(state=> state.profile.currentPoints)
@@ -18,7 +19,7 @@ export const ProfileBoard = () => {
             <div className={style.name}>{playerName}</div>
             {/*<div>*/}
             {/*motex coin*/}
-            <div className={style.currentPoints}>{currentPoints}</div>
+            <div className={style.currentPoints} style={{backgroundImage: `url(${profileBonusBG})`}} >{currentPoints}</div>
             {/*</div>*/}
             <Link to={PATH.PROFILE}>
             <button className={isClicked? `${style.menu}`: `${style.menu} ${style.clicked}`} onClick={()=>setIsClicked(!isClicked)}>

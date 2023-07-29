@@ -11,6 +11,7 @@ import {useDispatch} from "react-redux";
 import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import {CardForThirdState, createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
+import {useBonus} from "../hooks/useBonus";
 
 export const TripleMatch: FC<IMatch> = ({
                                             cardsToPlay,
@@ -30,6 +31,9 @@ export const TripleMatch: FC<IMatch> = ({
 
     const dispatch = useDispatch<AppDispatch>();
 
+    const {multiplyBonus} = useBonus()
+
+
     const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
     const [thirdCard, setThirdCard] = useState<ICard | null>({id: 0, name: '', isMatched: false, isFlipped: false, image: ''})
     const [timer, setTimer] = useState(duration);
@@ -44,7 +48,7 @@ export const TripleMatch: FC<IMatch> = ({
     useEffect(() => {
         if (pairCounter === cardsToPlay.length / 3) {
             setShowModal(true)
-            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))
             setTimeLeft(timer)
             setBestLevel(bestLevel>levelNumber+2 ? bestLevel : levelNumber +2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber+2));

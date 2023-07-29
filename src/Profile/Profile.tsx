@@ -12,6 +12,9 @@ import {saveNewAvatar} from "../Store/PlayerAvatarReducer";
 import {ImageComponent} from "./ImageComponenet";
 import {Accordion} from "../Match/BonusMachine/BonusMachine";
 import shopIcon from '../assets/images/match/shop.svg'
+import multiplyBonusBG from '../assets/images/match/bg/multiplyBonusBG.svg'
+import profileBonusBG from '../assets/images/match/bg/ProfileCoinsBG.svg'
+import timeBonusBG from '../assets/images/match/bg/timeBonusBG.svg'
 import {showProductPicture} from "../Store/machineReducer";
 import {Link} from "react-router-dom";
 import {PATH} from "../AppRoutes/AppRoutes";
@@ -62,7 +65,7 @@ export const Profile = () => {
         <div className={style.wrapper}>
             <header className={style.header}>
                 <BackArrow path={'../../match'}/>
-                <div className={style.pointsContainer}>
+                <div className={style.pointsContainer} style={{backgroundImage: `url(${profileBonusBG})`}}>
                     {currentPoints}
                 </div>
                 <Link to={PATH.SHOP}>
@@ -130,10 +133,10 @@ export const Profile = () => {
                 </div>
             </div>
             <div className={style.bonuses}>
-                <div className={style.bonusItem}>
+                <div className={style.bonusItem} style={{backgroundImage: `url(${timeBonusBG})`}}>
                     Бонус времени: {secondsBonus} секунд
                 </div>
-                <div className={style.bonusItem}>
+                <div className={style.bonusItem}  style={{backgroundImage: `url(${multiplyBonusBG})`}}>
                     Бонус множителя очков: Х {multiplyBonus.toFixed(2)}
                 </div>
             </div>

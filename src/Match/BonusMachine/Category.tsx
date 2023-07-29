@@ -122,9 +122,7 @@ export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, se
 
                         </div>
                             :
-                            <div className={style.buttons} onClick={() => {
-                                saveBrandToRedux()
-                            }}> Этот бонус недоступен
+                            <div className={style.buttons}> Этот бонус недоступен
 
 
                             </div> }

@@ -11,6 +11,7 @@ import {saveBestLevel} from "../Store/pointsReducer";
 import {shuffleArray} from "../Utils/shuffle";
 import {createPointsToRedux, isArraysEqual, resetBoard} from "../Utils/matchFunctions";
 import {MatchBoard} from "./MatchBoard/MatchBoard";
+import {useBonus} from "../hooks/useBonus";
 
 
 export const Match: FC<IMatch> = ({
@@ -31,6 +32,9 @@ export const Match: FC<IMatch> = ({
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning
     } = useMatchHook()
 
+    const {multiplyBonus} = useBonus()
+
+
     const dispatch = useDispatch<AppDispatch>();
 
     const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
@@ -50,7 +54,7 @@ export const Match: FC<IMatch> = ({
 
         if (pairCounter === cardsToPlayLength/2) {
             setShowModal(true)
-            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts)))
+            dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))
             setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
             localStorage.setItem("bestLevel", JSON.stringify(levelNumber + 2));
         }

@@ -2,9 +2,13 @@ import {shuffleArray} from "./shuffle";
 import {Dispatch, SetStateAction} from "react";
 import {ICard} from "../hooks/useMatch";
 
-export const createPointsToRedux = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
-    let pointsForAttempts = 60 - realAttempts
-    const totalPoints = defaultPoints + timeLeft * 2 + pointsForAttempts
+
+
+export const createPointsToRedux = (defaultPoints: number, timeLeft: number, realAttempts: number, multiplyBonus:number) => {
+    const pointsForAttempts = 60 - realAttempts;
+    const temporyPoints = defaultPoints + timeLeft * 2 + pointsForAttempts;
+
+    const totalPoints = Math.round(temporyPoints * multiplyBonus);
     return totalPoints
 }
 

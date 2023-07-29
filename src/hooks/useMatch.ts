@@ -1,4 +1,5 @@
 import {Dispatch, SetStateAction, useState} from "react";
+import {useBonus} from "./useBonus";
 
 export interface ICard {
     id: number;
