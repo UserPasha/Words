@@ -2,15 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 300px;
+    width: 220px;
+    min-height: 300px;
     border: 1px solid black;
+    margin-top: 30px;
     /*background: #424141;*/
 }
 
 .pack {
-    width: 200px;
-    height: 300px;
+    width: 220px;
+    height: 310px;
     background-color: #f2f2f2;
     border-radius: 10px;
     display: flex;
@@ -27,21 +28,24 @@
 }
 
 .openPackButton {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #4287f5;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    width: 220px;
+    height: 310px;
+    background-size: cover;
+
     cursor: pointer;
+    border: double 10px black;
 }
 
+
+
 .confirmModal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 140vh;
     background-color: black;
     opacity: 0.9;
     color: #FFFFFF;
@@ -53,21 +57,45 @@
     position: relative;
     top: 100px;
     left: 18px;
-    border: 1px solid white;
+    border: 3px solid green;
     border-radius: 10px;
 }
-
+.packTitle{
+    margin: 20px auto;
+    width: 90%;
+    height: 50px;
+    border: 3px solid green;
+    border-radius: 15px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    line-height: 44px;
+}
+.packDescription{
+    margin: 20px auto;
+    width: 80%;
+    min-height: 70px;
+    border: 3px solid green;
+    border-radius: 15px;
+}
+.packDescription p{
+    display: block;
+    line-height: 10px;
+    font-weight: bold;
+}
 .message {
-    margin-top: 50px;
+    margin-top: 30px;
     font-weight: bold;
     width: 100%;
     height: 50px;
     /*margin-top: 80px;*/
     padding: 0 15px;
 }
+.message span{
+    color: gold;
+}
 
 .buttons {
-    margin-top: 100px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -78,6 +106,12 @@
     max-width: 50px;
 }
 
+.isNotEnoughCoins{
+    margin-top: 120px;
+    color: #cb2e2e;
+    font-size: 20px;
+    font-weight: bold;
+}
 .shimmerEffect {
     position: absolute;
     top: 0;
