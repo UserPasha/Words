@@ -2,7 +2,7 @@ import React, {FC, useCallback, useEffect, useState} from 'react';
 import style from './Match.module.css'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
-import {ICard, IMatch,} from "../hooks/useMatch";
+import {ICard, IMatch, IPattern,} from "../hooks/useMatch";
 import {useMatchHook} from "../hooks/useMatch";
 import {Timer} from "./Timer/Timer";
 import {useDispatch} from "react-redux";
@@ -12,6 +12,8 @@ import {shuffleArray} from "../Utils/shuffle";
 import {createPointsToRedux, isArraysEqual, resetBoard} from "../Utils/matchFunctions";
 import {MatchBoard} from "./MatchBoard/MatchBoard";
 import {useBonus} from "../hooks/useBonus";
+import {UseRotate} from "../hooks/useRotate";
+import patternGameBackGround from "../assets/images/match/bg/yellowBG.jpg";
 
 
 export const Match: FC<IMatch> = ({
@@ -23,7 +25,10 @@ export const Match: FC<IMatch> = ({
                                       setBestLevel,
                                       levelNumber,
                                       defaultPoints,
-                                      isPatrickMode
+                                      isPatrickMode,
+                                      rotate,
+                                      patternCards,
+                                      isPattern
                                   }) => {
 
 
@@ -34,7 +39,6 @@ export const Match: FC<IMatch> = ({
 
     const {multiplyBonus} = useBonus()
 
-
     const dispatch = useDispatch<AppDispatch>();
 
     const [cards, setCards] = useState<ICard[]>(shuffleArray(cardsToPlay))
@@ -42,17 +46,21 @@ export const Match: FC<IMatch> = ({
     const [timer, setTimer] = useState(duration);
 
     const [timeLeft, setTimeLeft] = useState(timer)
+    //////////PATTERN
+    const [pattern, setPattern] = useState<IPattern[]>(shuffleArray(patternCards))
 
+    const [patternIndex, setPatternIndex] = useState<number>(0)
+    //////////PATRICK
     const cardsToPlayLength = isPatrickMode ? cardsToPlay.length - 2 : cardsToPlay.length;
     useEffect(() => {
         if (firstCard && secondCard) {
-            checkMates();
+            isPattern? patternCheckMates() : checkMates();
         }
     }, [secondCard, firstCard]);
 
     useEffect(() => {
 
-        if (pairCounter === cardsToPlayLength/2) {
+        if (pairCounter === cardsToPlayLength / 2) {
             setShowModal(true)
             dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))
             setBestLevel(bestLevel > levelNumber + 2 ? bestLevel : levelNumber + 2)
@@ -69,6 +77,11 @@ export const Match: FC<IMatch> = ({
     useEffect(() => {
         setCards(shuffleArray(cardsToPlay))
     }, [cardsToPlay])
+
+    useEffect(() => {
+        setPattern(shuffleArray(patternCards))
+        setPatternIndex(0)
+    }, [patternCards])
 
     useEffect(() => {
         if (firstCard?.name === 'manager') {
@@ -154,8 +167,45 @@ export const Match: FC<IMatch> = ({
             });
         }
     }, [firstCard, secondCard]);
+    const patternCheckMates = useCallback(() => {
+
+        let patternName = pattern[patternIndex]
+        if (patternIndex === patternCards.length) {
+            setPatternIndex(0)
+        }
+
+        if (firstCard?.name === secondCard?.name &&  firstCard?.name === patternName.name) {
+            setIsLockBoard(true)
+            setTimeout(() => {
+                setCards(cards.map(card => card.name === firstCard?.name && card.name === secondCard?.name ? {
+                    ...card,
+                    isMatched: true
+                } : card))
+                setPattern(pattern.map(patt => patt.name === firstCard.name
+                    ?
+                    {...patt, isColorful: true} : patt))
+                setPatternIndex(patternIndex + 1)
+                setFirstCard(null)
+                setSecondCard(null)
+
+                setIsLockBoard(false)
+                setPairCounter(pairCounter + 1)
+            }, 500)
+
+
+        } else {
+            setIsLockBoard(true)
+            setTimeout(() => {
+                setIsLockBoard(false)
+                setFirstCard(null)
+                setSecondCard(null)
+                setCards(cards.map(card => card.isFlipped ? {...card, isFlipped: false} : card))
+            }, 1000)
+
+        }
+    },[firstCard, secondCard])
     const checkMates = useCallback(() => {
-        if (secondCard?.name === 'manager') {
+       if (secondCard?.name === 'manager') {
             setCards(cards.map(card => card.name === 'manager' ? {
                 ...card,
                 isMatched: true
@@ -203,7 +253,8 @@ export const Match: FC<IMatch> = ({
 
     const isModal = isEndOfTime || showModal
     //console.table(cards)
-
+const patternStyle = {backgroundImage: `url(${patternGameBackGround})`}
+    const additionalStyle = isPattern ? patternStyle : {}
     return (
         <>
             <BackArrow path={'/match'}/>
@@ -213,9 +264,18 @@ export const Match: FC<IMatch> = ({
                 cardsToPlayLengths={cardsToPlayLength} pairCounter={pairCounter}
             />
 
-            <section className={style.wrapper}>
+            <section className={style.wrapper} style={additionalStyle}>
                 <div className={style.mode}>{description}</div>
+                {isPattern &&  <div className={style.cardsContainer}>{pattern.map((card, index) =>
+                    <button
+                        className={patternIndex === index ? `${style.card} ${style.flipped} ${style.smaller} ${style.red} ${style.scale}` : card.isColorful ? `${style.card} ${style.flipped} ${style.smaller} ${style.green}` : `${style.card} ${style.flipped} ${style.smaller} ${style.red}`}
+                        key={index}>
+                        <div className={style.front}><img src={card.image}/>
+                        </div>
 
+                    </button>
+                )}</div>
+                }
                 <div className={style.cardsContainer}>
 
 
@@ -223,6 +283,8 @@ export const Match: FC<IMatch> = ({
                         cards={cards}
                         onClick={addValueToState}
                         isLockBoard={isLockBoard}
+                        isRotate={rotate}
+                        isPattern={isPattern}
                     />
 
                 </div>

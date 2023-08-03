@@ -21,7 +21,7 @@ export const Shop = () => {
                <Pack lowPercent={0.6}
                      highPercent={0.9}
                      cover={BronzeCoverPack}
-                     price={500}
+                     price={5}
                      title={'Бронзовый набор'}
                      bestLootInPercent={10}
                      goodLootInPercent={30}
@@ -30,7 +30,7 @@ export const Shop = () => {
                <Pack lowPercent={0.5}
                      highPercent={0.85}
                      cover={GoldPCoverPack}
-                     price={800}
+                     price={80}
                      title={'Золотой набор'}
                      bestLootInPercent={15}
                      goodLootInPercent={35}
@@ -39,7 +39,7 @@ export const Shop = () => {
                <Pack lowPercent={0.4}
                      highPercent={0.8}
                      cover={PlatinumCoverPack}
-                     price={1200}
+                     price={120}
                      title={'Платиновый набор'}
                      bestLootInPercent={20}
                      goodLootInPercent={40}

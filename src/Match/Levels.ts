@@ -154,57 +154,100 @@ export const firstLevel: ICard[] = [
         image: totalOil,
         isFlipped: false,
         name: 'a',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 2,
         image: mannFilter,
         isFlipped: false,
         name: 'b',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 3,
         image: totalOil,
         isFlipped: false,
         name: 'a',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 4,
         image: mannFilter,
         isFlipped: false,
         name: 'b',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 5,
         image: bluePrint,
         isFlipped: false,
         name: 'c',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 6,
         image: asMetal,
         isFlipped: false,
         name: 'd',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 7,
         image: bluePrint,
         isFlipped: false,
         name: 'c',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     },
     {
         id: 8,
         image: asMetal,
         isFlipped: false,
         name: 'd',
-        isMatched: false
+        isMatched: false,
+        isColorful: false
     }
+]
+export const testPatternFirstLevel: ICard[] = [
+    {
+        id: 101,
+        image: totalOil,
+        isFlipped: false,
+        name: 'a',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 104,
+        image: mannFilter,
+        isFlipped: false,
+        name: 'b',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 107,
+        image: bluePrint,
+        isFlipped: false,
+        name: 'c',
+        isMatched: false,
+        isColorful: false
+    },
+    {
+        id: 111,
+        image: asMetal,
+        isFlipped: false,
+        name: 'd',
+        isMatched: false,
+        isColorful: false
+    },
+
 ]
 
 export const secondLevel: ICard[] = [...firstLevel,

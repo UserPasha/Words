@@ -18,12 +18,18 @@ export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
     return (
         <section className={style.wrapper}>
             <ProfileBoard/>
+            <Row number={3} name={'Filtron'} difficult={"2"} play={PATH.FILTRON} description={'Найти пару'}
+                 day={'additional'} bestLevel={bestLevel} bestPoints={bestPoints[3].bestPoints}/>
+
+
+
             <Row number={0} name={'Сборка'} difficult={"1"} play={PATH.ONE} description={'Найти пару'} day={'monday'}
                  bestLevel={bestLevel} bestPoints={bestPoints[0].bestPoints}/>
             <Row number={1} name={'Сборка'} difficult={"1"} play={PATH.TWO} description={'Найти пару'} day={'wednesday'}
                  bestLevel={bestLevel} bestPoints={bestPoints[1].bestPoints}/>
             <Row number={2} name={'Polmostrow'} difficult={"3"} play={PATH.POLMOONE} description={'Найти пару'}
                  day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[2].bestPoints}/>
+
 
             <Row number={3} name={'Filtron'} difficult={"2"} play={PATH.FILTRON} description={'Найти пару'}
                  day={'additional'} bestLevel={bestLevel} bestPoints={bestPoints[3].bestPoints}/>

@@ -25,6 +25,8 @@ export interface IMatch {
     levelNumber: number
     defaultPoints: number
     isPatrickMode: boolean
+    isPattern: boolean
+    patternCards: IPattern[]
 }
 
 export interface ICardMatch {

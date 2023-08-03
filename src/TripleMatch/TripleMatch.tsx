@@ -12,6 +12,7 @@ import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import {CardForThirdState, createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
 import {useBonus} from "../hooks/useBonus";
+import {UseRotate} from "../hooks/useRotate";
 
 export const TripleMatch: FC<IMatch> = ({
                                             cardsToPlay,
@@ -126,20 +127,9 @@ export const TripleMatch: FC<IMatch> = ({
 
         }
     }
+     const {rotateStyle} = UseRotate()
 
-    ////////////ROTATE CARDS///////////////
-    const [cardRotationAngle, setCardRotationAngle] = useState(0);
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCardRotationAngle(cardRotationAngle + 1);
-        }, 50);
 
-        return () => clearInterval(intervalId);
-    }, [cardRotationAngle]);
-
-    const rotateStyle = {
-        transform: `rotate(${cardRotationAngle}deg)`
-    }
     const chooseStyle =  rotate ? rotateStyle : {}
     const isModal = isEndOfTime || showModal
 

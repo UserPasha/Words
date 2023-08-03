@@ -13,6 +13,7 @@ import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import { createPointsToRedux} from "../Utils/matchFunctions";
 import {useBonus} from "../hooks/useBonus";
+import {UseRotate} from "../hooks/useRotate";
 
 
 export const TripleMatchCopy: FC<IPatternCards> = ({
@@ -87,7 +88,7 @@ export const TripleMatchCopy: FC<IPatternCards> = ({
         setPatternIndex(0)
     }, [patternCards])
 
-    console.log(patternIndex)
+    //console.log(patternIndex)
     useEffect(() => {
             setCards(cards.map((card) => {
                 if (card.name === firstCard?.name && card.name === secondCard?.name && card.name === thirdCard?.name) {
@@ -163,19 +164,9 @@ export const TripleMatchCopy: FC<IPatternCards> = ({
         }
     }
 
-    const [cardRotationAngle, setCardRotationAngle] = useState(0);
+    const {rotateStyle} = UseRotate()
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCardRotationAngle(cardRotationAngle + 1);
-        }, 50);
 
-        return () => clearInterval(intervalId);
-    }, [cardRotationAngle]);
-
-    const rotateStyle = {
-        transform: `rotate(${cardRotationAngle}deg)`
-    }
     const chooseStyle = rotate ? rotateStyle : {}
     const isModal = isEndOfTime || showModal
 

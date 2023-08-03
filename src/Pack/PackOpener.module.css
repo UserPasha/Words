@@ -28,12 +28,15 @@
     left: -50%;
     width: 340px;
     height: 380px;
-    background: linear-gradient(45deg, #fb0094, #00f, #0f0,
-    #ff0, #f00, #fb0094, #00f, #0f0,
-    #ff0, #f00);
+    /*background: linear-gradient(45deg, #fb0094, #00f, #0f0,*/
+    /*#ff0, #f00, #fb0094, #00f, #0f0,*/
+    /*#ff0, #f00);*/
+    background: linear-gradient(45deg, #1E5945, #34C924, #ACB78E,
+    #00FF7F, #98FB98, #A8E4A0, #44944A, #00FF7F,
+    #34C924, #343B29);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
-    filter: blur(20px);
+    filter: blur(50px);
 }
 
 .container::after {
@@ -43,13 +46,13 @@
     left: -50%;
     width: 340px;
     height: 380px;
-    background: linear-gradient(45deg, #fb0094, #00f, #0f0,
-    #ff0, #f00, #fb0094, #00f, #0f0,
-    #ff0, #f00);
+    background: linear-gradient(45deg, #1E5945, #34C924, #ACB78E,
+    #00FF7F, #98FB98, #A8E4A0, #44944A, #00FF7F,
+    #34C924, #343B29);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
-    filter: blur(20px);
+    filter: blur(50px);
 }
 
 .pack {
@@ -57,7 +60,7 @@
     flex-direction: column;
     position: absolute;
     inset: 10px;
-    background-color: black;
+    background-size: cover;
     z-index: 10;
     border-radius: 8px;
     padding: 50px 40px;
@@ -162,13 +165,13 @@
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 100px 50px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 80px 40px rgba(0,155,119, 0.4);
     }
     50% {
-        box-shadow: 0 0 100px 150px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 80px 130px rgba( 0,155,119,0.7);
     }
     100% {
-        box-shadow: 0 0 100px 50px rgba(66, 135, 245, 0.5);
+        box-shadow: 0 0 80px 40px rgba( 0,155,119, 0.4);
     }
 }
 

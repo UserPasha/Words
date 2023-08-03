@@ -56,28 +56,28 @@ export const Modal: FC<IModal> = ({
         const totalPoints = Math.round(temporyPoints * multiplyBonus);
         return totalPoints
     }
-    const totalPoints = createPoints2(defaultPoints, timeLeft, attempts)
+   // const totalPoints = createPoints2(defaultPoints, timeLeft, attempts)
 
 
-    const [score, setScore] = useState(0);
-    const [lastScore, setLastScore] = useState(0)
+    //const [score, setScore] = useState(0);
+   // const [lastScore, setLastScore] = useState(0)
 
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setScore((prevScore) => prevScore + 1);
-        }, 3);
-        if (score === totalPoints) {
-            clearInterval(interval);
-            setLastScore(score)
-        }
-
-        return () => {
-            clearInterval(interval);
-
-        };
-
-    }, [score, lastScore]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setScore((prevScore) => prevScore + 1);
+    //     }, 3);
+    //     if (score === totalPoints) {
+    //         clearInterval(interval);
+    //         setLastScore(score)
+    //     }
+    //
+    //     return () => {
+    //         clearInterval(interval);
+    //
+    //     };
+    //
+    // }, [score, lastScore]);
 
 
     const createPoints = (defaultPoints: number, timeLeft: number, realAttempts: number) => {
@@ -90,7 +90,7 @@ export const Modal: FC<IModal> = ({
 
         setRunning(false)
 ////////////FIX THIS////////////////////////
-        dispatch(saveCurrentPoints(lastScore / 4))
+        dispatch(saveCurrentPoints(totalPoints/4))
 
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`
@@ -118,6 +118,8 @@ export const Modal: FC<IModal> = ({
         setTimer(duration)
         restartGame(setCards, setAttempts, setPairCounter, cardsToPlay,)
     }
+
+
     return (
         <div className={style.wrapper}>
 
@@ -177,14 +179,15 @@ export const Modal: FC<IModal> = ({
                                     </div>
                                 </div>
 
-                                <div className={style.awardsItem}>
-                                    <div className={style.infoItem}>
-                                        Итого:
-                                    </div>
-                                    <div className={style.score}>
-                                        <Score score={score}/>
-                                    </div>
-                                </div>
+                                {/*<div className={style.awardsItem}>*/}
+                                {/*    <div className={style.infoItem}>*/}
+                                {/*        Итого:*/}
+                                {/*    </div>*/}
+                                {/*    <div className={style.score}>*/}
+                                {/*        /!*<Score score={score}/>*!/*/}
+                                {/*        {createPoints(defaultPoints, timeLeft, attempts)}*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
 
                             </div>
                             <div className={style.congratulation}>

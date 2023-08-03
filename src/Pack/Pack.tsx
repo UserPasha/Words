@@ -8,6 +8,7 @@ import {PointsAfterShop} from "../Store/profileReducer";
 import {useNavigate} from 'react-router-dom';
 import {PATH} from "../AppRoutes/AppRoutes";
 import {saveCurrentReward} from "../Store/RewardsReducer";
+import {addToken} from "../Store/bonusReducer";
 
 
 interface IPack {
@@ -20,6 +21,7 @@ interface IPack {
     goodLootInPercent: number
     badLootInPercent: number
 }
+
 
 export const Pack: FC<IPack> = ({
                                     lowPercent,
@@ -43,6 +45,7 @@ export const Pack: FC<IPack> = ({
 
     const currentPoints = useSelector<RootState, number>(state => state.profile.currentPoints)
 
+
     const checkBalance = () => {
         setIsEnoughBalance(currentPoints < price);
     };
@@ -62,9 +65,10 @@ export const Pack: FC<IPack> = ({
         if (isEnoughBalance) {
             return;
         }
+
         setConfirmed(false)
         dispatch(PointsAfterShop(price))
-        dispatch(saveCurrentReward(categoryLoot, brandLoot))
+        dispatch(saveCurrentReward(categoryLoot, brandLoot, cover))
         setIsOpen(true);
         navigate(PATH.PACKOPENER)
     }
@@ -83,7 +87,7 @@ export const Pack: FC<IPack> = ({
         },
         {
             title: "Фильтр",
-            brands: ['MeatDoria', 'Filtron', 'Mahle']
+            brands: ['Meat & Doria', 'Filtron', 'Mahle']
         },
         {
             title: "Диски",

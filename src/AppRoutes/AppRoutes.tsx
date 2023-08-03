@@ -20,7 +20,7 @@ import {
     patternSecondLevel,
     patternSecondLevelCards,
     polmoFirstLevel, polmoSecondLevel, polmoThirdLevel, reFlipFirstLevel, reFlipSecondLevel,
-    secondLevel, secondPatrickLevel,
+    secondLevel, secondPatrickLevel, testPatternFirstLevel,
     thirdLevel,
     tripleFirstLevel,
     tripleSecondLevel
@@ -30,17 +30,19 @@ import {TripleMatch} from "../TripleMatch/TripleMatch";
 import {TripleMatchCopy} from "../TripleMatch/TripleMatchCopy";
 import {Circle} from "../Match/Circle";
 import {MatchReFlip} from "../Match/MatchReFlip";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {InitialStatePointsType} from "../Store/pointsReducer";
-import {RootState} from "../Store/store";
+import {AppDispatch, RootState} from "../Store/store";
 import {Modal} from "../Match/Modal";
 import {useMatchHook} from "../hooks/useMatch";
 import {Pack} from "../Pack/Pack";
 import {Profile} from "../Profile/Profile";
 import {Shop} from "../Match/Shop/Shop";
 import {PackOpener} from "../Pack/PackOpener";
+import {TokenCreator} from "../Match/Shop/TokenCreator";
+import {addToken} from "../Store/bonusReducer";
 
-
+let token = TokenCreator()
 export const PATH = {
     HOME: '/',
     CARDS: '/cards',
@@ -74,14 +76,14 @@ export const PATH = {
     PATRICKFIRST: '/patrickFirst',
     PATRICKSECOND: '/patrickSecond',
 
-
+    TESTPATTERN: '/testPatt',
     CRAZYONE: '/crazyOne',
 
     CIRCLE: '/circle',
     MODAL: '/modal',
     TRIPLETSET: '/tripletest',
     PROFILE: '/profile',
-     PACKOPENER: '/packOpener',
+    PACKOPENER: `/packOpener+${token}`,
     SHOP: '/shop'
 }
 
@@ -348,7 +350,8 @@ const levels = [
 ];
 
 const AppRoutes = () => {
-
+    const expiredToken = useSelector<RootState, string>(state => state.bonus.token)
+    const dispatch = useDispatch<AppDispatch>();
     const [bestLevel, setBestLevel] = useState<number>(
         () => {
             const storedValue = localStorage.getItem('bestLevel');
@@ -363,6 +366,7 @@ const AppRoutes = () => {
             setBestLevel(newValue);
         }
     }, [])
+
     useEffect(() => {
         localStorage.setItem('bestLevel', JSON.stringify(bestLevel));
     }, [bestLevel]);
@@ -425,6 +429,26 @@ const AppRoutes = () => {
                                        levelNumber={0}
                                        defaultPoints={100}
                                        isPatrickMode={true}
+                                       isPattern={false}
+                                       patternCards={[]}
+
+                       />}/>
+
+
+
+                <Route path={PATH.TESTPATTERN}
+                       element={<Match cardsToPlay={firstLevel}
+                                       path={PATH.TWO}
+                                       duration={41}
+                                       rotate={false}
+                                       description={'Найти пару'}
+                                       bestLevel={bestLevel}
+                                       setBestLevel={setBestLevel}
+                                       levelNumber={0}
+                                       defaultPoints={100}
+                                       isPatrickMode={false}
+                                       isPattern={true}
+                                       patternCards={testPatternFirstLevel}
 
                        />}/>
 
@@ -439,6 +463,8 @@ const AppRoutes = () => {
                                        levelNumber={0}
                                        defaultPoints={100}
                                        isPatrickMode={true}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
 
@@ -453,21 +479,27 @@ const AppRoutes = () => {
                                        levelNumber={0}
                                        defaultPoints={100}
                                        isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
 
                        />}/>
+
+
 
                 <Route path={PATH.TWO}
                        element={<Match
                            cardsToPlay={secondLevel}
                            path={PATH.POLMOONE}
                            duration={40}
-                           rotate={false}
+                           rotate={true}
                            description={'Найти пару'}
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={1}
                            defaultPoints={120}
-                            isPatrickMode={false}
+                           isPatrickMode={false}
+                           isPattern={false}
+                           patternCards={[]}
 
                        />}/>
                 <Route path={PATH.POLMOONE}
@@ -480,7 +512,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={2}
                                        defaultPoints={150}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
 
@@ -495,7 +529,9 @@ const AppRoutes = () => {
                            setBestLevel={setBestLevel}
                            levelNumber={3}
                            defaultPoints={200}
-                            isPatrickMode={false}
+                           isPatrickMode={false}
+                           isPattern={false}
+                           patternCards={[]}
                        />}/>
 
                 <Route path={PATH.THREE}
@@ -509,7 +545,9 @@ const AppRoutes = () => {
                            setBestLevel={setBestLevel}
                            levelNumber={4}
                            defaultPoints={150}
-                            isPatrickMode={false}
+                           isPatrickMode={false}
+                           isPattern={false}
+                           patternCards={[]}
 
                        />}/>
 
@@ -523,7 +561,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={5}
                                        defaultPoints={180}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
                 <Route path={PATH.POLMOTWO}
@@ -536,7 +576,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={6}
                                        defaultPoints={210}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
 
@@ -550,7 +592,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={7}
                                        defaultPoints={200}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
 
@@ -564,7 +608,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={8}
                                        defaultPoints={200}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
                 <Route path={PATH.REFLIPONE}
                        element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
@@ -575,7 +621,9 @@ const AppRoutes = () => {
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
                                              defaultPoints={160}
-                                              isPatrickMode={false}
+                                             isPatrickMode={false}
+                                             isPattern={false}
+                                             patternCards={[]}
                        />}/>
                 <Route path={PATH.POLMOTHREE}
                        element={<Match cardsToPlay={polmoThirdLevel}
@@ -587,7 +635,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={10}
                                        defaultPoints={300}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
                 <Route path={PATH.HALFTWO}
                        element={<Match cardsToPlay={halfSecondLevel}
@@ -599,7 +649,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={11}
                                        defaultPoints={200}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
                        />}/>
 
                 <Route path={PATH.REFLIPTWO}
@@ -611,7 +663,9 @@ const AppRoutes = () => {
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
                                              defaultPoints={200}
-                                              isPatrickMode={false}
+                                             isPatrickMode={false}
+                                             isPattern={false}
+                                             patternCards={[]}
                        />}/>
 
                 <Route path={PATH.CIRCLE}
@@ -624,7 +678,9 @@ const AppRoutes = () => {
                                         setBestLevel={setBestLevel}
                                         levelNumber={13}
                                         defaultPoints={200}
-                                         isPatrickMode={false}
+                                        isPatrickMode={false}
+                                        isPattern={false}
+                                        patternCards={[]}
                        />}/>
 
                 <Route path={PATH.TRIPLEMATCHONE}
@@ -638,7 +694,9 @@ const AppRoutes = () => {
                                              setBestLevel={setBestLevel}
                                              levelNumber={14}
                                              defaultPoints={160}
-                                              isPatrickMode={false}
+                                             isPatrickMode={false}
+                                             isPattern={false}
+                                             patternCards={[]}
                        />}/>
 
                 <Route path={PATH.CARSBYMODELSONE}
@@ -651,7 +709,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={15}
                                        defaultPoints={200}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
 
                        />}/>
 
@@ -665,7 +725,9 @@ const AppRoutes = () => {
                                              setBestLevel={setBestLevel}
                                              levelNumber={16}
                                              defaultPoints={180}
-                                              isPatrickMode={false}
+                                             isPatrickMode={false}
+                                             isPattern={false}
+                                             patternCards={[]}
                        />}/>
 
                 <Route path={PATH.PATTERNONE}
@@ -680,7 +742,8 @@ const AppRoutes = () => {
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={17}
                                                  defaultPoints={180}
-                                                  isPatrickMode={false}
+                                                 isPatrickMode={false}
+                                                 isPattern={true}
                        />}/>
 
                 <Route path={PATH.PATTERNTWO}
@@ -690,14 +753,14 @@ const AppRoutes = () => {
                                                  duration={150}
                                                  path={PATH.CARSBYMODELSTWO}
                                                  rotate={false}
-
+                                                 isPattern={true}
                                                  description={'Массовка по документу'}
                                                  bestLevel={bestLevel}
                                                  isChangedSize={true}
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={18}
                                                  defaultPoints={220}
-                                                  isPatrickMode={false}
+                                                 isPatrickMode={false}
                        />}/>
 
                 <Route path={PATH.CARSBYMODELSTWO}
@@ -710,7 +773,9 @@ const AppRoutes = () => {
                                        setBestLevel={setBestLevel}
                                        levelNumber={19}
                                        defaultPoints={200}
-                                        isPatrickMode={false}
+                                       isPatrickMode={false}
+                                       isPattern={false}
+                                       patternCards={[]}
 
                        />}/>
 
@@ -723,8 +788,10 @@ const AppRoutes = () => {
                                              setBestLevel={setBestLevel}
                                              levelNumber={20}
                                              defaultPoints={200}
-                                              isPatrickMode={false}
-                                             bestLevel={bestLevel}/>
+                                             isPatrickMode={false}
+                                             bestLevel={bestLevel}
+                                             isPattern={false}
+                                             patternCards={[]}/>
 
                        }/>
 
@@ -738,7 +805,9 @@ const AppRoutes = () => {
                                              setBestLevel={setBestLevel}
                                              levelNumber={21}
                                              defaultPoints={240}
-                                              isPatrickMode={false}
+                                             isPatrickMode={false}
+                                             isPattern={false}
+                                             patternCards={[]}
                        />}/>
 
                 <Route path={PATH.CRAZYONE}
@@ -753,7 +822,9 @@ const AppRoutes = () => {
                                                  setBestLevel={setBestLevel}
                                                  levelNumber={22}
                                                  defaultPoints={260}
-                                                  isPatrickMode={false}
+                                                 isPatrickMode={false}
+                                                 isPattern={true}
+
                        />}/>
 
             </Routes>

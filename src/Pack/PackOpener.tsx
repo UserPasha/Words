@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import style from './PackOpener.module.css'
-import cover from '../assets/images/match/logo.png'
-import image from '../assets/images/match/bg/batteryRemBG.png'
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {showProductPicture} from "../Store/machineReducer";
@@ -15,6 +13,7 @@ export const PackOpener = () => {
     const dispatch = useDispatch<AppDispatch>()
     const categoryReward = useSelector<RootState, string>(state => state.rewards.category)
     const brandReward = useSelector<RootState, string>(state => state.rewards.brand)
+    const packCover = useSelector<RootState, string>(state=> state.rewards.cover)
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [category, setCategory] = useState<string>('')
@@ -75,7 +74,9 @@ export const PackOpener = () => {
                 ?
                 <>
                     <div className={isOpen ? `${style.container}` : `${style.container} ${style.opened}`}>
-                        <button className={style.pack} onClick={handleOpenPack} disabled={isClicked}>
+                        <button className={style.pack}
+                                onClick={handleOpenPack}
+                                disabled={isClicked}>
 
 
                             <div style={{backgroundImage: `url(${categoryBG})`}} className={style.backgroundContainer}>
@@ -100,7 +101,12 @@ export const PackOpener = () => {
                 :
                 <>
                     <div className={isOpen ? `${style.container}` : `${style.container} ${style.opened}`}>
-                        <button className={style.pack} onClick={handleOpenPack} disabled={isClicked}>
+                        <button className={style.pack}
+                                onClick={handleOpenPack}
+                                disabled={isClicked}
+                                style={{backgroundImage: `url(${packCover})`}}
+                        >
+
 
 
                         </button>

@@ -34,6 +34,9 @@
 
     cursor: pointer;
     border: double 10px black;
+    box-shadow:  7px 7px 14px #656565,
+    -7px -7px 14px #ffffff;
+
 }
 
 
