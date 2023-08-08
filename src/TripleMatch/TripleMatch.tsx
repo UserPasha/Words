@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import React, {Dispatch, FC, memo, SetStateAction, useCallback, useEffect, useState} from 'react';
 import style from '../Match/Match.module.css'
 import {ICard, ICardMatch, IMatch, useMatchHook} from "../hooks/useMatch";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
@@ -13,8 +13,9 @@ import {saveBestLevel} from "../Store/pointsReducer";
 import {CardForThirdState, createPointsToRedux, resetBoard} from "../Utils/matchFunctions";
 import {useBonus} from "../hooks/useBonus";
 import {UseRotate} from "../hooks/useRotate";
+import {MatchBoard} from "../Match/MatchBoard/MatchBoard";
 
-export const TripleMatch: FC<IMatch> = ({
+export const TripleMatch: FC<IMatch> = memo(({
                                             cardsToPlay,
                                             duration,
                                             path,
@@ -23,11 +24,12 @@ export const TripleMatch: FC<IMatch> = ({
                                             bestLevel,
                                             setBestLevel,
                                             levelNumber,
-                                            defaultPoints
+                                            defaultPoints,
+                                            isPattern
 }) => {
     const {
         isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard, attempts, setAttempts,
-        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,
+        showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning
     } = useMatchHook()
 
     const dispatch = useDispatch<AppDispatch>();
@@ -88,7 +90,7 @@ export const TripleMatch: FC<IMatch> = ({
         , [firstCard?.name, secondCard?.name, thirdCard?.name])
 
 
-    const addValueToState = (cardId: ICard) => {
+    const addValueToState = useCallback((cardId: ICard) => {
         if (thirdCard?.id !== 0 && secondCard !== null && thirdCard?.id !== cardId.id  && secondCard.id !== cardId.id ) {
             setFirstCard(cardId);
             setCards(cards.map((card) => (card.id === firstCard?.id ? { ...card, isFlipped: true } : card)));
@@ -100,9 +102,9 @@ export const TripleMatch: FC<IMatch> = ({
             setThirdCard(cardId);
             setCards(cards.map((card) => (card.id === thirdCard?.id ? { ...card, isFlipped: true } : card)));
         }
-    };
+    }, [firstCard, secondCard, thirdCard]);
 
-    const checkMates = () => {
+    const checkMates = useCallback(() => {
         if (firstCard?.name === secondCard?.name && firstCard?.name === thirdCard?.name) {
             setIsLockBoard(true)
             setTimeout(() => {
@@ -126,7 +128,7 @@ export const TripleMatch: FC<IMatch> = ({
             }, 1000)
 
         }
-    }
+    }, [firstCard, secondCard, thirdCard])
      const {rotateStyle} = UseRotate()
 
 
@@ -146,19 +148,25 @@ export const TripleMatch: FC<IMatch> = ({
                 <div className={style.mode}>{description}</div>
 
                 <div className={style.cardsContainer}>
-                    {cards.map((card, index) => <button className={card.isMatched ? `${style.card} ${style.matched}`: card.isFlipped ? `${style.card} ${style.flipped}` : style.card}
-                                                        key={index}
-                                                        style={chooseStyle}
-                                                        onClick={() => {
-                                                            addValueToState(card)
-                                                        }} disabled={isLockBoard || card.isMatched}>
-                            <div className={style.front}>
-                                <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}
-                                />
-                            </div>
+                    {/*{cards.map((card, index) => <button className={card.isMatched ? `${style.card} ${style.matched}`: card.isFlipped ? `${style.card} ${style.flipped}` : style.card}*/}
+                    {/*                                    key={index}*/}
+                    {/*                                    style={chooseStyle}*/}
+                    {/*                                    onClick={() => {*/}
+                    {/*                                        addValueToState(card)*/}
+                    {/*                                    }} disabled={isLockBoard || card.isMatched}>*/}
+                    {/*        <div className={style.front}>*/}
+                    {/*            <img src={card.isMatched ? card.image : card.isFlipped ? card.image : cover}*/}
+                    {/*            />*/}
+                    {/*        </div>*/}
 
-                        </button>
-                    )}
+                    {/*    </button>*/}
+                    {/*)}*/}
+                    <MatchBoard cards={cards}
+                                onClick={addValueToState}
+                                isLockBoard={isLockBoard}
+                                isRotate={rotate}
+                                isPattern={isPattern}
+                    />
                 </div>
                 { isModal && <Modal setShowModal={setShowModal}
                                       attempts={attempts}
@@ -180,5 +188,5 @@ export const TripleMatch: FC<IMatch> = ({
         </>
 
     );
-};
+});
 

@@ -83,7 +83,7 @@ export const Pack: FC<IPack> = ({
         },
         {
             title: "Масло",
-            brands: ['Rosneft', 'Total', 'KroonOil']
+            brands: ['Rosneft', 'Total', 'Kroon Oil']
         },
         {
             title: "Фильтр",
@@ -95,7 +95,7 @@ export const Pack: FC<IPack> = ({
         },
         {
             title: "Прокладки",
-            brands: ['Glaser', 'VictorReinz', 'Elring']
+            brands: ['Glaser', 'Victor Reinz', 'Elring']
         },
     ]
     const [categoryLoot, setCategoryLoot] = useState<string>("")

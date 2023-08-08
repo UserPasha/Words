@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import style from './MatchBoard.module.css'
 import {ICard} from "../../hooks/useMatch";
 import {MatchCard} from "../MatchCard/MatchCard";
@@ -11,7 +11,7 @@ interface IMatchBoard {
     isPattern: boolean
 }
 
-export const MatchBoard: FC<IMatchBoard> = ({cards, isLockBoard, onClick, isRotate,isPattern}) => {
+export const MatchBoard: FC<IMatchBoard> = memo(({cards, isLockBoard, onClick, isRotate,isPattern}) => {
     return (
         <div className={style.cardsContainer}>
             {cards.map((card, index) => (
@@ -24,5 +24,5 @@ export const MatchBoard: FC<IMatchBoard> = ({cards, isLockBoard, onClick, isRota
             ))}
         </div>
     );
-};
+});
 

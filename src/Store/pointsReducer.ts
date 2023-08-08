@@ -9,7 +9,7 @@ export type PointsType = ReturnType<typeof saveBestLevel>
 const SAVE_BEST_POINTS = 'SAVE_BEST_POINTS'
 
 
-const InitialState: InitialStatePointsType[] = Array.from({ length: 24 }, (_, index) => ({
+const InitialState: InitialStatePointsType[] = Array.from({ length: 90 }, (_, index) => ({
     level: index,
     bestPoints: 0,
     currentPoints: 0

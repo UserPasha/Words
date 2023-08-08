@@ -13,6 +13,7 @@ import {AppDispatch} from "../Store/store";
 import {saveBestLevel} from "../Store/pointsReducer";
 import {createPointsToRedux, isArraysEqual, resetBoard} from "../Utils/matchFunctions";
 import {useBonus} from "../hooks/useBonus";
+import {UseRotate} from "../hooks/useRotate";
 
 export const Circle: FC<IMatch> = ({
                                        cardsToPlay,
@@ -120,6 +121,10 @@ export const Circle: FC<IMatch> = ({
         }
     }, [firstCard, secondCard])
 
+    const {rotateStyle} = UseRotate()
+    //const chooseStyle = isRotate ? rotateStyle : {}
+    const chooseStyle = rotateStyle
+
     const isModal = isEndOfTime || showModal
     ////////////ROTATE BOARD 90//////////////
     const [rotationAngle, setRotationAngle] = useState(0);
@@ -164,6 +169,7 @@ export const Circle: FC<IMatch> = ({
                 >
                     {cards.map((card, index) =>  (<div className={`container container${index + 1}`} key={index}>
                         <button className={ card.isFlipped ? `${circleStyle.card} ${circleStyle.flipped}` : circleStyle.card}
+                                style={chooseStyle}
                                 key={index}
                                 onClick={() => {
                                     addValueToState(card)

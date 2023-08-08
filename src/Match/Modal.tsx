@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from 'react';
+import React, {Dispatch, FC, memo, SetStateAction, useEffect, useRef, useState} from 'react';
 import style from './Modal.module.css'
 import {Link} from "react-router-dom";
 import smile from '../assets/images/match/smile.svg'
@@ -31,7 +31,7 @@ interface IModal {
     cardsToPlay: ICard[]
 }
 
-export const Modal: FC<IModal> = ({
+export const Modal: FC<IModal> = memo(({
                                       setShowModal,
                                       attempts,
                                       isEndOfTime,
@@ -87,10 +87,10 @@ export const Modal: FC<IModal> = ({
         const temporyPoints = defaultPoints + timeLeft * 2 + pointsForAttempts;
 
         const totalPoints = Math.round(temporyPoints * multiplyBonus);
-
+        console.log(totalPoints)
         setRunning(false)
 ////////////FIX THIS////////////////////////
-        dispatch(saveCurrentPoints(totalPoints/4))
+        dispatch(saveCurrentPoints(totalPoints/2))
 
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`
@@ -208,5 +208,5 @@ export const Modal: FC<IModal> = ({
 
         </div>
     );
-};
+});
 

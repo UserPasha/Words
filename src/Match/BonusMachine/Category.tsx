@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, memo, useState} from "react";
 import {ImageComponent} from "../../Profile/ImageComponenet";
 import style from './BonusMachine.module.css';
 import okIcon from "../../assets/images/match/ok.svg";
@@ -18,7 +18,7 @@ interface ICategory {
     activeBrands: BrandType
 }
 
-export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, selectedBrand, activeBrands, index}) => {
+export const Category: FC<ICategory> = memo( ({name, bgImage, brands, onClickBrand, selectedBrand, activeBrands, index}) => {
 
 
     //verstka current brand, description
@@ -134,4 +134,4 @@ export const Category: FC<ICategory> = ({name, bgImage, brands, onClickBrand, se
             )}
         </div>
     );
-}
+})

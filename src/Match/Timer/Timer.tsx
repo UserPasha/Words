@@ -1,4 +1,4 @@
-import React, {useEffect, Dispatch, SetStateAction} from "react";
+import React, {useEffect, Dispatch, SetStateAction, memo} from "react";
 import style from './Timer.module.css'
 import {useBonus} from "../../hooks/useBonus";
 
@@ -16,7 +16,7 @@ interface TimerProps {
 
 
 
-export const Timer: React.FC<TimerProps> = ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter
+export const Timer: React.FC<TimerProps> = memo ( ({duration, setIsEndOfTime, running, setRunning, timer, setTimer, cardsToPlayLengths, pairCounter
 
 }) => {
 const {secondsBonus} = useBonus()
@@ -67,6 +67,6 @@ const {secondsBonus} = useBonus()
             </div>
         </div>
     );
-};
+});
 
 

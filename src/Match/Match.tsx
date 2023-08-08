@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useEffect, useState} from 'react';
+import React, {FC, memo, useCallback, useEffect, useState} from 'react';
 import style from './Match.module.css'
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Modal} from "./Modal";
@@ -16,7 +16,7 @@ import {UseRotate} from "../hooks/useRotate";
 import patternGameBackGround from "../assets/images/match/bg/yellowBG.jpg";
 
 
-export const Match: FC<IMatch> = ({
+export const Match: FC<IMatch> = memo(({
                                       cardsToPlay,
                                       duration,
                                       path,
@@ -256,7 +256,9 @@ export const Match: FC<IMatch> = ({
 const patternStyle = {backgroundImage: `url(${patternGameBackGround})`}
     const additionalStyle = isPattern ? patternStyle : {}
     return (
+
         <>
+
             <BackArrow path={'/match'}/>
             <Timer
                 timer={timer} setTimer={setTimer}
@@ -314,5 +316,5 @@ const patternStyle = {backgroundImage: `url(${patternGameBackGround})`}
         </>
 
     );
-};
+});
 

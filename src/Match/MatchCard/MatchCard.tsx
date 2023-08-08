@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import style from './MatchCard.module.css'
 import {ICard} from "../../hooks/useMatch";
 import cover from '../../assets/images/match/logo.png'
@@ -12,7 +12,8 @@ interface IMatchCard {
     isPattern: boolean
 }
 
-export const MatchCard: FC<IMatchCard> = ({card, onClick, isLockBoard, isRotate,isPattern}) => {
+export const MatchCard: FC<IMatchCard> = memo (
+    ({card, onClick, isLockBoard, isRotate,isPattern}) => {
     const {isMatched, isFlipped, image} = card;
 
     const handleClick = () => {
@@ -39,5 +40,5 @@ export const MatchCard: FC<IMatchCard> = ({card, onClick, isLockBoard, isRotate,
             </div>
         </button>
     );
-};
+});
 
