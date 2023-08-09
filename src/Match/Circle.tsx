@@ -23,7 +23,8 @@ export const Circle: FC<IMatch> = ({
                                        bestLevel,
                                        setBestLevel,
                                        levelNumber,
-                                       defaultPoints})  => {
+                                       defaultPoints,
+                                       rotate})  => {
 
     const {isLockBoard, setIsLockBoard, firstCard, setFirstCard, secondCard, setSecondCard,attempts, setAttempts,
         showModal, setShowModal, pairCounter, setPairCounter, isEndOfTime, setIsEndOfTime, running, setRunning,} = useMatchHook()
@@ -122,8 +123,8 @@ export const Circle: FC<IMatch> = ({
     }, [firstCard, secondCard])
 
     const {rotateStyle} = UseRotate()
-    //const chooseStyle = isRotate ? rotateStyle : {}
-    const chooseStyle = rotateStyle
+    const chooseStyle = rotate ? rotateStyle : {}
+
 
     const isModal = isEndOfTime || showModal
     ////////////ROTATE BOARD 90//////////////

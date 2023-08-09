@@ -1317,6 +1317,36 @@ export const classicPatternThirdLevel: ICard[] = [...classicPatternSecondLevel,
 ]
 
 
+// export const patternPatrickRotateTest: ICard[] = [...classicPatternOneLevel,
+//     {
+//         id: 113,
+//         image: patrick,
+//         isFlipped: false,
+//         name: 'patrick',
+//         isMatched: false
+//     },
+//     {
+//         id: 213,
+//         image: manager,
+//         isFlipped: false,
+//         name: 'manager',
+//         isMatched: false
+//     },
+//     {
+//         id: 19,
+//         image: febi,
+//         isFlipped: false,
+//         name: 'j',
+//         isMatched: false
+//     },
+//     {
+//         id: 20,
+//         image: febi,
+//         isFlipped: false,
+//         name: 'j',
+//         isMatched: false
+//     },
+// ]
 // export const testPatternFirstLevel: ICard[] = [
 //     {
 //         id: 101,
@@ -1482,6 +1512,7 @@ export const fourthPatrickLevel: ICard[] = [...thirdPatrickLevel,
     },
 ]
 
+
 export const reFlipFirstLevel: ICard[] = [
     {
         id: 11,
@@ -1574,7 +1605,6 @@ export const reFlipFirstLevel: ICard[] = [
 
 ]
 
-
 export const reFlipSecondLevel: ICard[] = [ ...reFlipFirstLevel,
     {
         id: 19,
@@ -1620,6 +1650,10 @@ export const reFlipSecondLevel: ICard[] = [ ...reFlipFirstLevel,
         isTotallyMatched: false,
         images: [TRW, vernet],
     },
+
+]
+
+export const reFlipThirdLevel: ICard[] = [...reFlipSecondLevel,
     {
         id: 23,
         image: '',
@@ -1666,7 +1700,52 @@ export const reFlipSecondLevel: ICard[] = [ ...reFlipFirstLevel,
     },
 ]
 
-
+export const reFlipFourthLevel: ICard[] = [...reFlipThirdLevel,
+    {
+        id: 27,
+        image: '',
+        isFlipped: false,
+        name: 'i',
+        secondName: 'ai',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false,
+        images: [asam, victorReinz],
+    },
+    {
+        id: 28,
+        image: '',
+        isFlipped: false,
+        name: 'i',
+        secondName: 'aj',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false,
+        images: [asam, bCar],
+    },
+    {
+        id: 29,
+        image: '',
+        isFlipped: false,
+        name: 'j',
+        secondName: 'aj',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false,
+        images: [BSG ,bCar ],
+    },
+    {
+        id: 30,
+        image: '',
+        isFlipped: false,
+        name: 'j',
+        secondName: 'ai',
+        isMatched: false,
+        isReFlipped: false,
+        isTotallyMatched: false,
+        images: [BSG, victorReinz],
+    },
+]
 
 
 
