@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     margin-top: 305px;
-    background-color: #bebebe;
+    /*background-color: #bebebe;*/
 }
 
 .pointsContainer {
@@ -33,4 +33,22 @@
     min-height: 300px;
 
 }
+.default {
+    background-color: #bebebe;
+}
+.metelli {
+    background-color: #fecc00;
+}
+.lynx {
+    background-color: #929497;
+}
+.mann {
+    background-color: #fff001;
+}
+.asMetall{
+    background-color: #f15922;
+}
 
+.bluePrint{
+    background-color: #b3d5e9;
+}

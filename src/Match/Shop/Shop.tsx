@@ -9,10 +9,11 @@ import GoldPCoverPack from '../../assets/images/match/bg/GoldPackCover.jpg'
 import PlatinumCoverPack from '../../assets/images/match/bg/PlatinumPackCover.jpg'
 
 export const Shop = () => {
-    const dispatch = useDispatch<AppDispatch>();
+
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
     const currentPoints = useSelector<RootState, number>(state => state.profile.currentPoints)
     return (
-        <div className={style.wrapper}>
+        <div className={`${style.wrapper} ${style[colorScheme]}`}>
             <BackArrow path={'/profile'}/>
             <div className={style.pointsContainer}>
                 {currentPoints}

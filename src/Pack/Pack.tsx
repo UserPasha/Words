@@ -34,7 +34,7 @@ export const Pack: FC<IPack> = ({
                                     badLootInPercent
                                 }) => {
 
-
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
@@ -168,7 +168,7 @@ export const Pack: FC<IPack> = ({
 
 
             </div>}
-            {!isOpen && <button className={style.openPackButton}
+            {!isOpen && <button className={`${style.openPackButton} ${style[colorScheme]}`}
                                 onClick={handleOpenPack}
                                 style={{backgroundImage: `url(${cover})`}}>
 

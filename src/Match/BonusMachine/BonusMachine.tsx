@@ -11,6 +11,9 @@ import {Category} from "./Category";
 
 
 export const Accordion = () => {
+
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
+
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [selectedImage, setSelectedImage] = useState<string>('')
 
@@ -28,7 +31,7 @@ const machineData = useSelector<RootState, CategoryType[]>(state=>state.machine)
 
     return (
 
-        <div className={style.bonusWrapper}>
+        <div className={`${style.bonusWrapper} ${style[colorScheme]}`}>
 
 
             {/*{machineData.map((item, index) => (*/}

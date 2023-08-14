@@ -20,6 +20,7 @@ import {Link} from "react-router-dom";
 import {PATH} from "../AppRoutes/AppRoutes";
 import {CategoryType} from "../Match/BonusMachine/bomusMachine.data";
 import {useBonus} from "../hooks/useBonus";
+import {changeColorScheme} from "../Store/colorSchemeReducer";
 
 
 export const Profile = () => {
@@ -27,8 +28,12 @@ export const Profile = () => {
     const currentPoints = useSelector<RootState, number>(state => state.profile.currentPoints)
     const playerName = useSelector<RootState, string>(state => state.playerName.name)
     const playerAvatar = useSelector<RootState, string>(state => state.playerAvatar.avatar)
-    const timeBonus = useSelector<RootState, number>(state => state.bonus.timeBonus)
-    const pointBonus = useSelector<RootState, number>(state => state.bonus.pointsBonus)
+
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
+    const handleSchemeChange = (newScheme: string) => {
+        dispatch(changeColorScheme(newScheme));
+    };
+
     const [isEditName, setIsEditName] = useState<boolean>(false)
     const [newName, setNewName] = useState<string>('')
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -59,12 +64,22 @@ export const Profile = () => {
     }
 
     const {secondsBonus, multiplyBonus} = useBonus()
+const metelli = true
+    const brandStyle = metelli ? `${style.wrapper} ${style.metelli} `:` ${style.wrapper}`
 
 
     return (
-        <div className={style.wrapper}>
-            <header className={style.header}>
+        <div className={`${style.wrapper} ${style[colorScheme]}`}>
+            <header className={`${style.header} ${style[colorScheme]}`}>
                 <BackArrow path={'../../match'}/>
+                <div className={style.changeScheme}>
+                    <button onClick={() => handleSchemeChange('default')}>Default Scheme</button>
+                    <button onClick={() => handleSchemeChange('metelli')}>Metelli Scheme</button>
+                    <button onClick={() => handleSchemeChange('lynx')}>Lynx Scheme</button>
+                    <button onClick={() => handleSchemeChange('mann')}>Mann Scheme</button>
+                    <button onClick={() => handleSchemeChange('asMetall')}>As Metall Scheme</button>
+                    <button onClick={() => handleSchemeChange('bluePrint')}>Blue Print Scheme</button>
+                </div>
                 <div className={style.pointsContainer} style={{backgroundImage: `url(${profileBonusBG})`}}>
                     {currentPoints}
                 </div>
@@ -76,10 +91,10 @@ export const Profile = () => {
 
 
             </header>
-            <div className={style.infoContainer}>
+            <div className={`${style.infoContainer} ${style[colorScheme]}`}>
                 {isEditAvatar
                     ?
-                    <div className={style.avatarsWrapper}>
+                    <div className={`${style.avatarsWrapper} ${style[colorScheme]}`}>
                         {ImagesData.map(image => <ImageComponent key={image.image}
                                                                  image={image.image}
                                                                  onClick={() => saveTemporaryAvatar(image.image)}
@@ -95,7 +110,7 @@ export const Profile = () => {
 
                     </div>
                     :
-                    <div className={style.avatarContainer}>
+                    <div className={`${style.avatarContainer} ${style[colorScheme]}`}>
                         <img src={playerAvatar} alt={'avatar'}/>
                         <div className={style.pencil}>
                             <img src={editIcon}
@@ -106,7 +121,7 @@ export const Profile = () => {
                 }
 
 
-                <div className={style.nameContainer}>
+                <div className={`${style.nameContainer} ${style[colorScheme]}`}>
                     {isEditName
                         ?
                         <div className={style.edit}>

@@ -23,9 +23,9 @@
 
 .bonusItem {
     width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    margin-bottom: 16px;
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 15px;*/
+    margin-bottom: 10px;
 }
 
 .bonusItemTitle {
@@ -36,7 +36,7 @@
     cursor: pointer;
     font-weight: 600;
     background-color: #f5f5f5;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .bonusItemContent {
@@ -123,4 +123,44 @@
     color: white;
     font-weight: bolder;
     font-size: 20px;
+}
+.metelli {
+    background-color: #fecc00;
+    border: 3px solid #00498d;
+    /*border-top: 3px solid #00498d;*/
+    /*border-bottom: 3px solid #00498d;*/
+    /*border-top-left-radius: 8px;*/
+    /*border-top-right-radius: 8px;*/
+}
+
+.default {
+    background-color: #bebebe;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.lynx {
+    background-color: #929497;
+    border: 2px solid #ed1c23;
+    border-radius: 10px;
+    /*border-top: 3px solid #ed1c23;*/
+    /*border-bottom: 3px solid #ed1c23;*/
+    /*border-top-left-radius: 8px;*/
+    /*border-top-right-radius: 8px;*/
+}
+.mann {
+    background-color: #fff001;
+    border: 3px solid #017c51;
+}
+.asMetall{
+    background-color: #f15922;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.bluePrint{
+    background-color: #b3d5e9;
+    border: 1px solid #031c97;
+    border-radius: 15px;
+
+
 }

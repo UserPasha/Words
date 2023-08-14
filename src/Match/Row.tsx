@@ -2,6 +2,8 @@ import React, {FC, useState} from 'react';
 import style from './Row.module.css'
 import lockImage from '../Common/Assets/images/lock.png'
 import {ModalMenu} from "./ModalMenu/ModalMenu";
+import {useSelector} from "react-redux";
+import {RootState} from "../Store/store";
 
 interface IRow {
     number: number
@@ -17,6 +19,7 @@ interface IRow {
 export const Row: FC<IRow> = ({number, name, difficult, play, description, day, bestLevel, bestPoints}) => {
    const isAvailable = bestLevel>number
     const [isShown, setIsShown] = useState(false);
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
 
     return (
 
@@ -26,13 +29,13 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={ isShown &&  day === 'monday' ? ` ${style.day}  ${style.active}` : day === 'monday' ? ` ${style.day} ${style.monday}` : `${style.day} ${style.hidden}`}
+                                className={ isShown &&  day === 'monday' ? ` ${style.day} ${style[colorScheme]}  ${style.active}` : day === 'monday' ? ` ${style.day} ${style[colorScheme]}  ${style.monday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
                                                      {number} / ПН
                             </button>
 
                         :
-                            <button className={day === 'monday' ? ` ${style.day} ${style.monday}` : `${style.day} ${style.hidden}`}
+                            <button className={day === 'monday' ? ` ${style.day} ${style[colorScheme]}  ${style.monday}` : `${style.day} ${style[colorScheme]}  ${style.hidden}`}
                                     onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
@@ -40,7 +43,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={isShown &&  day === 'wednesday' ? ` ${style.day}  ${style.active}` :day === 'wednesday' ? `${style.day} ${style.wednesday}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'wednesday' ? ` ${style.day} ${style[colorScheme]}   ${style.active}` :day === 'wednesday' ? `${style.day} ${style[colorScheme]} ${style.wednesday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / СР
@@ -49,7 +52,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
                             </button>
 
                             :
-                            <button className={day === 'wednesday' ? `${style.day} ${style.wednesday}` : `${style.day} ${style.hidden}`}
+                            <button className={day === 'wednesday' ? `${style.day} ${style[colorScheme]}  ${style.wednesday}` : `${style.day} ${style[colorScheme]}  ${style.hidden}`}
                                     onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
@@ -57,7 +60,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={isShown &&  day === 'friday' ? ` ${style.day}  ${style.active}` :day === 'friday' ? `${style.day} ${style.friday}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'friday' ? ` ${style.day} ${style[colorScheme]}  ${style.active}` :day === 'friday' ? `${style.day} ${style[colorScheme]}  ${style.friday}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / ПТ
@@ -66,7 +69,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
                             </button>
 
                             :
-                            <button className={day === 'friday' ? `${style.day} ${style.friday}` : `${style.day} ${style.hidden}`}
+                            <button className={day === 'friday' ? `${style.day} ${style[colorScheme]} ${style.friday}` : `${style.day} ${style[colorScheme]}  ${style.hidden}`}
                                     onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>
@@ -74,7 +77,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
 
                         {isAvailable ?
                             <button
-                                className={isShown &&  day === 'additional' ? ` ${style.day}  ${style.active}` :day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}
+                                className={isShown &&  day === 'additional' ? ` ${style.day} ${style[colorScheme]} ${style.active}` :day === 'additional' ? `${style.day} ${style[colorScheme]} ${style.additional}` : `${style.day} ${style.hidden}`}
                                 onClick={()=>setIsShown(true)}>
 
                                     {number} / Доп
@@ -83,7 +86,7 @@ export const Row: FC<IRow> = ({number, name, difficult, play, description, day, 
                             </button>
 
                             :
-                            <button className={day === 'additional' ? `${style.day} ${style.additional}` : `${style.day} ${style.hidden}`}
+                            <button className={day === 'additional' ? `${style.day} ${style[colorScheme]} ${style.additional}` : `${style.day} ${style.hidden}`}
                                     onClick={()=>setIsShown(true)}>
                                 <img src={lockImage} alt={'level is lock'}/>
                             </button>

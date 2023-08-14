@@ -30,8 +30,8 @@
     border-radius: 50%;
     margin: 8px;
     line-height: 80px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);*/
     font-size: 14px;
     font-weight: bolder;
 }
@@ -65,4 +65,40 @@
 
 .hidden{
     visibility: hidden;
+}
+.metelli {
+    background-color: rgba(254, 204, 0, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 74, 141, 0.4);
+    color: #00498d;
+    border: 3px solid #00498d;
+
+}
+
+.default {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.lynx {
+    background-color: rgba(146, 148, 151, 0.7);
+    box-shadow: 0 10px 20px rgba(237, 28, 36, 0.5);
+    border: 1px solid #ed1c23;
+
+}
+.mann {
+    background-color: rgba(255, 240, 1, 0.7);
+    box-shadow: 0 10px 20px rgba(1, 124, 80, 0.7);
+    border: 3px solid #017c51;
+
+}
+.asMetall{
+    background-color: rgba(241, 89, 34, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+
+}
+.bluePrint{
+    background-color: rgba(179, 213, 223, 0.7);
+    box-shadow: 0 10px 20px rgba(3, 27, 151, 0.6);
+    border: 1px solid #031c97;
 }

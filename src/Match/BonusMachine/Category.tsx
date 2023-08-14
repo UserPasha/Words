@@ -20,7 +20,7 @@ interface ICategory {
 
 export const Category: FC<ICategory> = memo( ({name, bgImage, brands, onClickBrand, selectedBrand, activeBrands, index}) => {
 
-
+    const colorScheme = useSelector<RootState, string>(state => state.colorScheme.scheme)
     //verstka current brand, description
     const machineData = useSelector<RootState, CategoryType[]>(state => state.machine)
 
@@ -82,7 +82,7 @@ export const Category: FC<ICategory> = memo( ({name, bgImage, brands, onClickBra
     const selectDescription = findBrandDescriptionByPictureUrl(selectedBrand)
 
     return (
-        <div className={style.bonusItem}>
+        <div className={`${style.bonusItem} ${style[colorScheme]}`}>
             <div className={style.bonusItemTitle} onClick={() => handleClick(index)}>
                 {name}
                 <span className={style.arrowIcon}>{activeIndex === index ? '-' : '+'}</span>
