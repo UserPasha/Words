@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.533547a1.css",
-    "main.js": "/Words/static/js/main.6ab53eb6.js",
+    "main.css": "/Words/static/css/main.c79b1048.css",
+    "main.js": "/Words/static/js/main.8fe96625.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -111,6 +111,7 @@
     "static/media/autoFrenL.jpg": "/Words/static/media/autoFrenL.83f9c60dd24bde759153.jpg",
     "static/media/victor.svg": "/Words/static/media/victor.d0feba994e0aced0a840816a10ce6263.svg",
     "static/media/panda.png": "/Words/static/media/panda.943cbacbdd0c64c030c9.png",
+    "static/media/redBG.jpg": "/Words/static/media/redBG.f034fb202b6d4f758ac2.jpg",
     "static/media/Blue_Print.jpg": "/Words/static/media/Blue_Print.60ba648a444e1330204a.jpg",
     "static/media/total.png": "/Words/static/media/total.ec425d7fa1fe40d4f1e3.png",
     "static/media/307.jpg": "/Words/static/media/307.e17dde5ee865e660312e.jpg",
@@ -166,12 +167,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.533547a1.css.map": "/Words/static/css/main.533547a1.css.map",
-    "main.6ab53eb6.js.map": "/Words/static/js/main.6ab53eb6.js.map",
+    "main.c79b1048.css.map": "/Words/static/css/main.c79b1048.css.map",
+    "main.8fe96625.js.map": "/Words/static/js/main.8fe96625.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.533547a1.css",
-    "static/js/main.6ab53eb6.js"
+    "static/css/main.c79b1048.css",
+    "static/js/main.8fe96625.js"
   ]
 }
