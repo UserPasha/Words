@@ -59,7 +59,6 @@ export const Match: FC<IMatch> = memo(({
     }, [secondCard, firstCard]);
 
     useEffect(() => {
-
         if (pairCounter === cardsToPlayLength / 2) {
             setShowModal(true)
             dispatch(saveBestLevel(levelNumber, createPointsToRedux(defaultPoints, timeLeft, attempts, multiplyBonus)))

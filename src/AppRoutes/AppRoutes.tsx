@@ -59,6 +59,7 @@ import {Shop} from "../Match/Shop/Shop";
 import {PackOpener} from "../Pack/PackOpener";
 import {TokenCreator} from "../Match/Shop/TokenCreator";
 import {addToken} from "../Store/bonusReducer";
+import {Settings} from "../Settings/Settings";
 
 let token = TokenCreator()
 export const PATH = {
@@ -79,10 +80,10 @@ export const PATH = {
     HALFTWO: '/halfTwoTwo',
     HALFTHREE: '/halfThreee',
     HALFFOUR: '/halffourPart',
-    CLASSICWITHROTATEONE: 'claRotOne',
-    CLASSICWITHROTATETWO: 'clRoTw',
-    CLASSICWITHROTATETHREE: 'cloassRotaTg',
-    CLASSICWITHROTATEFOUR: 'crf',
+    CLASSICWITHROTATEONE: '/claRotOne',
+    CLASSICWITHROTATETWO: '/clRoTw',
+    CLASSICWITHROTATETHREE: '/cloassRotaTg',
+    CLASSICWITHROTATEFOUR: '/crf',
     TRIPLEMATCHONE: '/tripleMatchOne',
     THREEMATCHESTWO: '/threeMatchesTwo',
     THREEMATCHESTWOROTATEONE: '/threeMatchesTwoRotateOne',
@@ -90,15 +91,15 @@ export const PATH = {
     POLMOONE: '/polmoOne',
     POLMOTWO: '/polmoTwo',
     POLMOTHREE: '/polmoThree',
-    POLMOFOUR: 'plmfr',
+    POLMOFOUR: '/plmfr',
     CLASSICPATTERNONE: '/clpatternOne',
     CLASSICPATTERNTWO: '/asspatternTwo',
     CLASSICPATTERNTHREE: '/icpatternTh',
     CLASSICPATTERNFOUR: '/clppatternfo',
     REFLIPONE: '/reflipOne',
     REFLIPTWO: '/reflipTwo',
-    REFLIPTHREE: 'refliptr',
-    REFLIPFOUR: 'refFo',
+    REFLIPTHREE: '/refliptr',
+    REFLIPFOUR: '/refFo',
 
     CARSBYMODELSONE: '/carsByModelsOne',
     CARSBYMODELSTWO: '/carsModelsTwo',
@@ -114,14 +115,15 @@ export const PATH = {
     PATRICKROTATETWO: '/patrickRotateTwo',
     TESTPATTERN: '/testPatt',
     CRAZYONE: '/crazyOne',
-    //PATRPATTROT: 'ppr',
+    //PATRPATTROT: '/ppr',
     CIRCLE: '/circle',
-    ROTATECIRCLE: 'rotateCircle',
+    ROTATECIRCLE: '/rotateCircle',
     MODAL: '/modal',
     TRIPLETSET: '/tripletest',
     PROFILE: '/profile',
     PACKOPENER: `/packOpener+${token}`,
-    SHOP: '/shop'
+    SHOP: '/shop',
+    SETTINGS: '/gameSettings'
 }
 
 const levels = [
@@ -429,6 +431,7 @@ const AppRoutes = () => {
                 <Route path={PATH.PACKOPENER} element={<PackOpener/>}/>
                 <Route path={PATH.PROFILE} element={<Profile/>}/>
                 <Route path={PATH.SHOP} element={<Shop/>}/>
+                <Route path={PATH.SETTINGS} element={<Settings/>}/>
                 {/*<Route path={PATH.MODAL} element={<Modal/>}/>*/}
 
                 {/*{levels.map((level, index) => (*/}
@@ -464,21 +467,21 @@ const AppRoutes = () => {
 
                 //patrick
 
-                <Route path={PATH.PATRICKFIRST}
-                       element={<Match cardsToPlay={firstPatrickLevel}
-                                       path={PATH.PATRICKSECOND}
-                                       duration={150}
-                                       rotate={false}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={0}
-                                       defaultPoints={100}
-                                       isPatrickMode={true}
-                                       isPattern={false}
-                                       patternCards={[]}
+                {/*<Route path={PATH.PATRICKFIRST}*/}
+                {/*       element={<Match cardsToPlay={firstPatrickLevel}*/}
+                {/*                       path={PATH.PATRICKSECOND}*/}
+                {/*                       duration={150}*/}
+                {/*                       rotate={false}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={0}*/}
+                {/*                       defaultPoints={100}*/}
+                {/*                       isPatrickMode={true}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
 
-                       />}/>
+                {/*       />}/>*/}
 
                 //patrick + pattern + rotate
 
@@ -519,70 +522,70 @@ const AppRoutes = () => {
 
                 //standart
 
-                <Route path={PATH.ONE}
-                       element={<Match cardsToPlay={firstLevel}
-                                       path={PATH.TWO}
-                                       duration={30}
-                                       rotate={false}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={0}
-                                       defaultPoints={100}
-                                       isPatrickMode={false}
-                                       isPattern={false}
-                                       patternCards={[]}
+                {/*<Route path={PATH.ONE}*/}
+                {/*       element={<Match cardsToPlay={firstLevel}*/}
+                {/*                       path={PATH.TWO}*/}
+                {/*                       duration={30}*/}
+                {/*                       rotate={false}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={0}*/}
+                {/*                       defaultPoints={100}*/}
+                {/*                       isPatrickMode={false}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
 
-                       />}/>
+                {/*       />}/>*/}
 
                 //rotate
 
-                <Route path={PATH.ONE}
-                       element={<Match cardsToPlay={firstLevel}
-                                       path={PATH.TWO}
-                                       duration={30}
-                                       rotate={true}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={0}
-                                       defaultPoints={100}
-                                       isPatrickMode={false}
-                                       isPattern={false}
-                                       patternCards={[]}
+                {/*<Route path={PATH.ONE}*/}
+                {/*       element={<Match cardsToPlay={firstLevel}*/}
+                {/*                       path={PATH.TWO}*/}
+                {/*                       duration={30}*/}
+                {/*                       rotate={true}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={0}*/}
+                {/*                       defaultPoints={100}*/}
+                {/*                       isPatrickMode={false}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
 
-                       />}/>
+                {/*       />}/>*/}
 
                 // two times
 
-                <Route path={PATH.REFLIPONE}
-                       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
-                                             duration={40}
-                                             path={PATH.POLMOTHREE}
-                                             description={'Два документа'} rotate={false}
-                                             levelNumber={9}
-                                             bestLevel={bestLevel}
-                                             setBestLevel={setBestLevel}
-                                             defaultPoints={160}
-                                             isPatrickMode={false}
-                                             isPattern={false}
-                                             patternCards={[]}
-                       />}/>
+                {/*<Route path={PATH.REFLIPONE}*/}
+                {/*       element={<MatchReFlip cardsToPlay={reFlipFirstLevel}*/}
+                {/*                             duration={40}*/}
+                {/*                             path={PATH.POLMOTHREE}*/}
+                {/*                             description={'Два документа'} rotate={false}*/}
+                {/*                             levelNumber={9}*/}
+                {/*                             bestLevel={bestLevel}*/}
+                {/*                             setBestLevel={setBestLevel}*/}
+                {/*                             defaultPoints={160}*/}
+                {/*                             isPatrickMode={false}*/}
+                {/*                             isPattern={false}*/}
+                {/*                             patternCards={[]}*/}
+                {/*       />}/>*/}
 
-                <Route path={PATH.PATRICKSECOND}
-                       element={<Match cardsToPlay={secondPatrickLevel}
-                                       path={PATH.TWO}
-                                       duration={180}
-                                       rotate={false}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={0}
-                                       defaultPoints={100}
-                                       isPatrickMode={true}
-                                       isPattern={false}
-                                       patternCards={[]}
-                       />}/>
+                {/*<Route path={PATH.PATRICKSECOND}*/}
+                {/*       element={<Match cardsToPlay={secondPatrickLevel}*/}
+                {/*                       path={PATH.TWO}*/}
+                {/*                       duration={180}*/}
+                {/*                       rotate={false}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={0}*/}
+                {/*                       defaultPoints={100}*/}
+                {/*                       isPatrickMode={true}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
+                {/*       />}/>*/}
 
 
 
@@ -617,7 +620,7 @@ const AppRoutes = () => {
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={1}
-                           defaultPoints={120}
+                           defaultPoints={150}
                            isPatrickMode={false}
                            isPattern={false}
                            patternCards={[]}
@@ -660,13 +663,13 @@ const AppRoutes = () => {
                        element={<Match
                            cardsToPlay={thirdLevel}
                            path={PATH.FOUR}
-                           duration={50}
+                           duration={45}
                            rotate={false}
                            description={'Найти пару'}
                            bestLevel={bestLevel}
                            setBestLevel={setBestLevel}
                            levelNumber={4}
-                           defaultPoints={150}
+                           defaultPoints={180}
                            isPatrickMode={false}
                            isPattern={false}
                            patternCards={[]}
@@ -682,7 +685,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={5}
-                                       defaultPoints={180}
+                                       defaultPoints={200}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -712,7 +715,7 @@ const AppRoutes = () => {
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={7}
-                                       defaultPoints={200}
+                                       defaultPoints={160}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -721,13 +724,13 @@ const AppRoutes = () => {
                 <Route path={PATH.CLASSICWITHROTATEONE}
                        element={<Match cardsToPlay={rotateFirstLevel}
                                        path={PATH.CLASSICWITHROTATETWO}
-                                       duration={70}
+                                       duration={45}
                                        rotate={true}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={8}
-                                       defaultPoints={200}
+                                       defaultPoints={170}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -737,7 +740,7 @@ const AppRoutes = () => {
                 <Route path={PATH.CLASSICWITHROTATETWO}
                        element={<Match cardsToPlay={rotateSecondLevel}
                                        path={PATH.POLMOTHREE}
-                                       duration={70}
+                                       duration={60}
                                        rotate={true}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
@@ -751,14 +754,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.POLMOTHREE}
                        element={<Match cardsToPlay={polmoThirdLevel}
-                                       duration={100}
+                                       duration={90}
                                        path={PATH.CARSBYMODELSONE}
                                        rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={10}
-                                       defaultPoints={300}
+                                       defaultPoints={280}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -766,14 +769,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CARSBYMODELSONE}
                        element={<Match cardsToPlay={carsByModelsFirstLevel}
-                                       duration={100}
+                                       duration={45}
                                        path={PATH.CLASSICWITHROTATETHREE}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти марку и модель автомобиля'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={11}
-                                       defaultPoints={300}
+                                       defaultPoints={180}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -781,14 +784,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CLASSICWITHROTATETHREE}
                        element={<Match cardsToPlay={rotateThirdLevel}
-                                       duration={100}
+                                       duration={95}
                                        path={PATH.FIVE}
                                        rotate={true}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={12}
-                                       defaultPoints={300}
+                                       defaultPoints={260}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -796,14 +799,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.FIVE}
                        element={<Match cardsToPlay={fifthLevel}
-                                       duration={100}
+                                       duration={90}
                                        path={PATH.CLASSICPATTERNONE}
                                        rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={13}
-                                       defaultPoints={300}
+                                       defaultPoints={270}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -811,14 +814,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CLASSICPATTERNONE}
                        element={<Match cardsToPlay={classicPatternOneLevel}
-                                       duration={100}
+                                       duration={40}
                                        path={PATH.HALFTWO}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={14}
-                                       defaultPoints={300}
+                                       defaultPoints={160}
                                        isPatrickMode={false}
                                        isPattern={true}
                                        patternCards={classicPatternOneCards}
@@ -826,14 +829,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.HALFTWO}
                        element={<Match cardsToPlay={halfSecondLevel}
-                                       duration={100}
+                                       duration={45}
                                        path={PATH.CLASSICPATTERNTWO}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти вторую половину'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={15}
-                                       defaultPoints={300}
+                                       defaultPoints={190}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -841,14 +844,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CLASSICPATTERNTWO}
                        element={<Match cardsToPlay={classicPatternSecondLevel}
-                                       duration={100}
+                                       duration={70}
                                        path={PATH.CLASSICPATTERNTHREE}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={16}
-                                       defaultPoints={300}
+                                       defaultPoints={230}
                                        isPatrickMode={false}
                                        isPattern={true}
                                        patternCards={classicPatternTwoCards}
@@ -859,11 +862,11 @@ const AppRoutes = () => {
                                        duration={100}
                                        path={PATH.CLASSICWITHROTATEFOUR}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={17}
-                                       defaultPoints={300}
+                                       defaultPoints={250}
                                        isPatrickMode={false}
                                        isPattern={true}
                                        patternCards={classicPatternThreeCards}
@@ -871,14 +874,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CLASSICWITHROTATEFOUR}
                        element={<Match cardsToPlay={rotateFourthLevel}
-                                       duration={100}
+                                       duration={110}
                                        path={PATH.CARSBYMODELSTWO}
                                        rotate={true}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={18}
-                                       defaultPoints={300}
+                                       defaultPoints={240}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -887,14 +890,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CARSBYMODELSTWO}
                        element={<Match cardsToPlay={carsByModelsSecondLevel}
-                                       duration={100}
+                                       duration={45}
                                        path={PATH.PATRICKFIRST}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти марку и модель автомобиля'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={19}
-                                       defaultPoints={300}
+                                       defaultPoints={200}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -904,13 +907,13 @@ const AppRoutes = () => {
                 <Route path={PATH.PATRICKFIRST}
                        element={<Match cardsToPlay={firstPatrickLevel}
                                        path={PATH.PATRICKSECOND}
-                                       duration={150}
+                                       duration={50}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={20}
-                                       defaultPoints={100}
+                                       defaultPoints={130}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -920,13 +923,13 @@ const AppRoutes = () => {
                 <Route path={PATH.PATRICKSECOND}
                        element={<Match cardsToPlay={secondPatrickLevel}
                                        path={PATH.PATRICKTHIRD}
-                                       duration={150}
+                                       duration={85}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={21}
-                                       defaultPoints={100}
+                                       defaultPoints={170}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -936,13 +939,13 @@ const AppRoutes = () => {
                 <Route path={PATH.PATRICKTHIRD}
                        element={<Match cardsToPlay={thirdPatrickLevel}
                                        path={PATH.HALFTHREE}
-                                       duration={150}
+                                       duration={110}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={22}
-                                       defaultPoints={100}
+                                       defaultPoints={220}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -951,14 +954,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.HALFTHREE}
                        element={<Match cardsToPlay={halfThirdLevel}
-                                       duration={30}
+                                       duration={90}
                                        path={PATH.REFLIPONE}
                                        rotate={false}
                                        description={'Найти вторую половину'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={23}
-                                       defaultPoints={200}
+                                       defaultPoints={250}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -967,9 +970,9 @@ const AppRoutes = () => {
 
                 <Route path={PATH.REFLIPONE}
                        element={<MatchReFlip cardsToPlay={reFlipFirstLevel}
-                                             duration={40}
+                                             duration={45}
                                              path={PATH.REFLIPTWO}
-                                             description={'Два документа'}
+                                             description={'Найти пару два раза'}
                                              rotate={false}
                                              levelNumber={24}
                                              bestLevel={bestLevel}
@@ -982,14 +985,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.REFLIPTWO}
                        element={<MatchReFlip cardsToPlay={reFlipSecondLevel}
-                                             duration={60}
+                                             duration={70}
                                              path={PATH.PATRICKFOUR}
-                                             description={'Два документа'}
+                                             description={'Найти пару два раза'}
                                              rotate={false}
                                              levelNumber={25}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             defaultPoints={160}
+                                             defaultPoints={180}
                                              isPatrickMode={false}
                                              isPattern={false}
                                              patternCards={[]}
@@ -998,13 +1001,13 @@ const AppRoutes = () => {
                 <Route path={PATH.PATRICKFOUR}
                        element={<Match cardsToPlay={fourthPatrickLevel}
                                        path={PATH.CARSBYMODELSTHREE}
-                                       duration={150}
+                                       duration={130}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={26}
-                                       defaultPoints={100}
+                                       defaultPoints={290}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1014,13 +1017,13 @@ const AppRoutes = () => {
                 <Route path={PATH.CARSBYMODELSTHREE}
                        element={<Match cardsToPlay={carsByModelsThirdLevel}
                                        path={PATH.REFLIPTHREE}
-                                       duration={150}
+                                       duration={85}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти марку и модель автомобиля'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={27}
-                                       defaultPoints={100}
+                                       defaultPoints={180}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1029,14 +1032,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.REFLIPTHREE}
                        element={<MatchReFlip cardsToPlay={reFlipThirdLevel}
-                                             duration={60}
+                                             duration={115}
                                              path={PATH.REFLIPFOUR}
-                                             description={'Два документа'}
+                                             description={'Найти пару два раза'}
                                              rotate={false}
                                              levelNumber={28}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             defaultPoints={160}
+                                             defaultPoints={260}
                                              isPatrickMode={false}
                                              isPattern={false}
                                              patternCards={[]}
@@ -1044,14 +1047,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.REFLIPFOUR}
                        element={<MatchReFlip cardsToPlay={reFlipFourthLevel}
-                                             duration={60}
+                                             duration={150}
                                              path={PATH.POLMOFOUR}
-                                             description={'Два документа'}
+                                             description={'Найти пару два раза'}
                                              rotate={false}
                                              levelNumber={29}
                                              bestLevel={bestLevel}
                                              setBestLevel={setBestLevel}
-                                             defaultPoints={160}
+                                             defaultPoints={310}
                                              isPatrickMode={false}
                                              isPattern={false}
                                              patternCards={[]}
@@ -1059,14 +1062,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.POLMOFOUR}
                        element={<Match cardsToPlay={polmoFourhLevel}
-                                       duration={45}
+                                       duration={175}
                                        path={PATH.HALFFOUR}
                                        rotate={false}
                                        description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={30}
-                                       defaultPoints={150}
+                                       defaultPoints={350}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1074,14 +1077,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.HALFFOUR}
                        element={<Match cardsToPlay={halfFourthLevel}
-                                       duration={70}
+                                       duration={155}
                                        path={PATH.ROTATEPATTERNONE}
                                        rotate={false}
                                        description={'Найти вторую половину'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={31}
-                                       defaultPoints={200}
+                                       defaultPoints={320}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1089,14 +1092,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.ROTATEPATTERNONE}
                        element={<Match cardsToPlay={classicPatternSecondLevel}
-                                       duration={100}
+                                       duration={90}
                                        path={PATH.ROTATEPATTERNTWO}
                                        rotate={true}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={32}
-                                       defaultPoints={300}
+                                       defaultPoints={220}
                                        isPatrickMode={false}
                                        isPattern={true}
                                        patternCards={classicPatternTwoCards}
@@ -1104,14 +1107,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.ROTATEPATTERNTWO}
                        element={<Match cardsToPlay={classicPatternThirdLevel}
-                                       duration={100}
+                                       duration={145}
                                        path={PATH.PATRICKROTATEONE}
                                        rotate={true}
-                                       description={'Найти пару'}
+                                       description={'Найти пару в определенном порядке'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={33}
-                                       defaultPoints={300}
+                                       defaultPoints={260}
                                        isPatrickMode={false}
                                        isPattern={true}
                                        patternCards={classicPatternThreeCards}
@@ -1122,11 +1125,11 @@ const AppRoutes = () => {
                                        path={PATH.CARSBYMODELSFOUR}
                                        duration={150}
                                        rotate={true}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={34}
-                                       defaultPoints={100}
+                                       defaultPoints={300}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1135,14 +1138,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CARSBYMODELSFOUR}
                        element={<Match cardsToPlay={carsByModelsFourthLevel}
-                                       duration={100}
+                                       duration={135}
                                        path={PATH.PATRICKROTATETWO}
                                        rotate={false}
-                                       description={'Найти пару'}
+                                       description={'Найти марку и модель автомобиля'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={35}
-                                       defaultPoints={300}
+                                       defaultPoints={280}
                                        isPatrickMode={false}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1151,13 +1154,13 @@ const AppRoutes = () => {
                 <Route path={PATH.PATRICKROTATETWO}
                        element={<Match cardsToPlay={fourthPatrickLevel}
                                        path={PATH.CIRCLE}
-                                       duration={150}
+                                       duration={180}
                                        rotate={true}
-                                       description={'Найти пару'}
+                                       description={'Патрик перемешивает поле, старший смены помогает найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={36}
-                                       defaultPoints={100}
+                                       defaultPoints={330}
                                        isPatrickMode={true}
                                        isPattern={false}
                                        patternCards={[]}
@@ -1166,14 +1169,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.CIRCLE}
                        element={<Circle cardsToPlay={circleLevel}
-                                        duration={110}
+                                        duration={70}
                                         path={PATH.ROTATECIRCLE}
                                         rotate={false}
-                                        description={'Крутящий момент'}
+                                        description={'Найти пару'}
                                         bestLevel={bestLevel}
                                         setBestLevel={setBestLevel}
                                         levelNumber={37}
-                                        defaultPoints={200}
+                                        defaultPoints={210}
                                         isPatrickMode={false}
                                         isPattern={false}
                                         patternCards={[]}
@@ -1181,14 +1184,14 @@ const AppRoutes = () => {
 
                 <Route path={PATH.ROTATECIRCLE}
                        element={<Circle cardsToPlay={circleLevel}
-                                        duration={110}
+                                        duration={95}
                                         path={PATH.MATCH}
                                         rotate={true}
-                                        description={'Крутящий момент'}
+                                        description={'Найти пару'}
                                         bestLevel={bestLevel}
                                         setBestLevel={setBestLevel}
                                         levelNumber={38}
-                                        defaultPoints={200}
+                                        defaultPoints={230}
                                         isPatrickMode={false}
                                         isPattern={false}
                                         patternCards={[]}
@@ -1214,21 +1217,21 @@ const AppRoutes = () => {
                                              patternCards={[]}
                        />}/>
 
-                <Route path={PATH.CARSBYMODELSONE}
-                       element={<Match cardsToPlay={carsByModelsFirstLevel}
-                                       duration={30}
-                                       path={PATH.THREEMATCHESTWO}
-                                       rotate={false}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={15}
-                                       defaultPoints={200}
-                                       isPatrickMode={false}
-                                       isPattern={false}
-                                       patternCards={[]}
+                {/*<Route path={PATH.CARSBYMODELSONE}*/}
+                {/*       element={<Match cardsToPlay={carsByModelsFirstLevel}*/}
+                {/*                       duration={30}*/}
+                {/*                       path={PATH.THREEMATCHESTWO}*/}
+                {/*                       rotate={false}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={15}*/}
+                {/*                       defaultPoints={200}*/}
+                {/*                       isPatrickMode={false}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
 
-                       />}/>
+                {/*       />}/>*/}
 
                 <Route path={PATH.THREEMATCHESTWO}
                        element={<TripleMatch cardsToPlay={tripleSecondLevel}
@@ -1278,21 +1281,21 @@ const AppRoutes = () => {
                 {/*                                 isPatrickMode={false}*/}
                 {/*       />}/>*/}
 
-                <Route path={PATH.CARSBYMODELSTWO}
-                       element={<Match cardsToPlay={carsByModelsSecondLevel}
-                                       duration={45}
-                                       path={PATH.THREEMATCHESTWOROTATEONE}
-                                       rotate={false}
-                                       description={'Найти пару'}
-                                       bestLevel={bestLevel}
-                                       setBestLevel={setBestLevel}
-                                       levelNumber={19}
-                                       defaultPoints={200}
-                                       isPatrickMode={false}
-                                       isPattern={false}
-                                       patternCards={[]}
+                {/*<Route path={PATH.CARSBYMODELSTWO}*/}
+                {/*       element={<Match cardsToPlay={carsByModelsSecondLevel}*/}
+                {/*                       duration={45}*/}
+                {/*                       path={PATH.THREEMATCHESTWOROTATEONE}*/}
+                {/*                       rotate={false}*/}
+                {/*                       description={'Найти пару'}*/}
+                {/*                       bestLevel={bestLevel}*/}
+                {/*                       setBestLevel={setBestLevel}*/}
+                {/*                       levelNumber={19}*/}
+                {/*                       defaultPoints={200}*/}
+                {/*                       isPatrickMode={false}*/}
+                {/*                       isPattern={false}*/}
+                {/*                       patternCards={[]}*/}
 
-                       />}/>
+                {/*       />}/>*/}
 
                 <Route path={PATH.THREEMATCHESTWOROTATEONE}
                        element={<TripleMatch cardsToPlay={tripleFirstLevel}

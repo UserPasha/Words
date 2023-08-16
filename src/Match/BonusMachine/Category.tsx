@@ -83,7 +83,7 @@ export const Category: FC<ICategory> = memo( ({name, bgImage, brands, onClickBra
 
     return (
         <div className={`${style.bonusItem} ${style[colorScheme]}`}>
-            <div className={style.bonusItemTitle} onClick={() => handleClick(index)}>
+            <div className={`${style.bonusItemTitle} ${style[colorScheme]}`} onClick={() => handleClick(index)}>
                 {name}
                 <span className={style.arrowIcon}>{activeIndex === index ? '-' : '+'}</span>
             </div>
