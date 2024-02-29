@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.270e902b.css",
-    "main.js": "/Words/static/js/main.770b585f.js",
+    "main.css": "/Words/static/css/main.59edb34e.css",
+    "main.js": "/Words/static/js/main.c4a6c628.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -53,7 +53,6 @@
     "static/media/Kish-Lesnik.mp3": "/Words/static/media/Kish-Lesnik.9ff57a5a5b4ef3752c81.mp3",
     "static/media/Survivor - Eye of a TigerRocky.mp3": "/Words/static/media/Survivor - Eye of a TigerRocky.4b7b8ed9d88ffe2f6f48.mp3",
     "static/media/Irakly-VovaP.mp3": "/Words/static/media/Irakly-VovaP.be11e5a6c46ed0274e61.mp3",
-    "static/media/vinylM.png": "/Words/static/media/vinylM.88f00eefc2efca396f7b.png",
     "static/media/Eminem - Lose YourselfMinus.mp3": "/Words/static/media/Eminem - Lose YourselfMinus.d8debd2726cad4d3241c.mp3",
     "static/media/Gosti-Zima2.mp3": "/Words/static/media/Gosti-Zima2.985712f4bd2aee27a111.mp3",
     "static/media/Eminem - Lose YourselfPlus.mp3": "/Words/static/media/Eminem - Lose YourselfPlus.9b4909feb2e91844be57.mp3",
@@ -156,7 +155,6 @@
     "static/media/redClose.svg": "/Words/static/media/redClose.f298f8510fdc6a94772f4fc5640fe4df.svg",
     "static/media/close.svg": "/Words/static/media/close.38fc312b5ac5f7e94a2b8a99ef7f4094.svg",
     "static/media/russianFlag.svg": "/Words/static/media/russianFlag.c89ed68ac8ea8879ad533f54957875b8.svg",
-    "static/media/arrowDown.svg": "/Words/static/media/arrowDown.45ee691b6865054cd4550da2fa8bf7a0.svg",
     "static/media/cancel.svg": "/Words/static/media/cancel.841635b3127a7fc8cd69a6e203018bd9.svg",
     "index.html": "/Words/index.html",
     "static/media/shop.svg": "/Words/static/media/shop.db23813632c613abfbf33299f8b6e99f.svg",
@@ -167,12 +165,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.270e902b.css.map": "/Words/static/css/main.270e902b.css.map",
-    "main.770b585f.js.map": "/Words/static/js/main.770b585f.js.map",
+    "main.59edb34e.css.map": "/Words/static/css/main.59edb34e.css.map",
+    "main.c4a6c628.js.map": "/Words/static/js/main.c4a6c628.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.270e902b.css",
-    "static/js/main.770b585f.js"
+    "static/css/main.59edb34e.css",
+    "static/js/main.c4a6c628.js"
   ]
 }
