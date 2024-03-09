@@ -66,7 +66,7 @@ export const GameBoard: FC<IGameBoard> = ({bestLevel}) => {
                  description={'Найти пару в определенном порядке'}
                  day={'wednesday'} bestLevel={bestLevel} bestPoints={bestPoints[17].bestPoints}/>
             <Row number={18} name={'Сборка по документу'} difficult={"1"} play={PATH.CLASSICWITHROTATEFOUR}
-                 description={'Найти пару в определенном порядке'}
+                 description={'Найти пару'}
                  day={'friday'} bestLevel={bestLevel} bestPoints={bestPoints[18].bestPoints}/>
             <Row number={19} name={'Разборка'} difficult={"2"} play={PATH.CARSBYMODELSTWO}
                  description={'Найти марку и модель автомобиля'}

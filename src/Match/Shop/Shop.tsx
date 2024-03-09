@@ -20,30 +20,30 @@ export const Shop = () => {
             </div>
            <div className={style.packsContainer}>
                <Pack lowPercent={0.6}
-                     highPercent={0.9}
+                     highPercent={0.95}
                      cover={BronzeCoverPack}
                      price={500}
                      title={'Бронзовый набор'}
-                     bestLootInPercent={10}
-                     goodLootInPercent={30}
+                     bestLootInPercent={5}
+                     goodLootInPercent={35}
                      badLootInPercent={60}
                />
                <Pack lowPercent={0.5}
-                     highPercent={0.85}
+                     highPercent={0.9}
                      cover={GoldPCoverPack}
                      price={750}
                      title={'Золотой набор'}
-                     bestLootInPercent={15}
-                     goodLootInPercent={35}
+                     bestLootInPercent={10}
+                     goodLootInPercent={40}
                      badLootInPercent={50}
                />
-               <Pack lowPercent={0.4}
-                     highPercent={0.8}
+               <Pack lowPercent={0.40}
+                     highPercent={0.85}
                      cover={PlatinumCoverPack}
                      price={990}
                      title={'Платиновый набор'}
-                     bestLootInPercent={20}
-                     goodLootInPercent={40}
+                     bestLootInPercent={15}
+                     goodLootInPercent={45}
                      badLootInPercent={40}
                />
 

@@ -17,6 +17,7 @@ import cancelIcon from "../assets/images/match/cancel.svg";
 import editIcon from "../assets/images/match/edit.svg";
 import {saveNewName} from "../Store/PlayerNameReducer";
 import {saveNewAvatar} from "../Store/PlayerAvatarReducer";
+import {Calendar} from "../Match/Calendar/Calendar";
 
 export const Settings = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -142,6 +143,7 @@ export const Settings = () => {
                 </div>
 
             </div>
+            <Calendar/>
         </div>
     );
 };

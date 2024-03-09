@@ -14,6 +14,8 @@ import {saveBestLevel} from "../Store/pointsReducer";
 import {createPointsToRedux, isArraysEqual, resetBoard} from "../Utils/matchFunctions";
 import {useBonus} from "../hooks/useBonus";
 import {UseRotate} from "../hooks/useRotate";
+import redBackGround from '../assets/images/match/bg/redBG.jpg'
+import patternGameBackGround from "../assets/images/match/bg/yellowBG.jpg";
 
 export const Circle: FC<IMatch> = ({
                                        cardsToPlay,
@@ -139,13 +141,18 @@ export const Circle: FC<IMatch> = ({
 
         return () => clearInterval(intervalId);
     }, [rotationAngle]);
+
+    const circleStyleBG = {backgroundImage: `url(${redBackGround})`}
     return (
         <>
             <BackArrow path={'/match'}/>
+            <div style={circleStyleBG} className={style.bgWreapper}>
+
             <Timer
                 timer={timer} setTimer={setTimer}
                 duration={duration} setIsEndOfTime={setIsEndOfTime} running={running} setRunning={setRunning}
                 cardsToPlayLengths={cardsToPlay.length} pairCounter={pairCounter}/>
+
             <div className={circleStyle.mode}>{description}</div>
             {isModal &&  <Modal setShowModal={setShowModal}
                                 attempts={attempts}
@@ -189,6 +196,7 @@ export const Circle: FC<IMatch> = ({
 
 
             </section>
+            </div>
         </>
     )
 }

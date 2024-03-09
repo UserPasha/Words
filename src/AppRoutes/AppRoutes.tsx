@@ -60,6 +60,40 @@ import {PackOpener} from "../Pack/PackOpener";
 import {TokenCreator} from "../Match/Shop/TokenCreator";
 import {addToken} from "../Store/bonusReducer";
 import {Settings} from "../Settings/Settings";
+import {NewGame} from "../Game/NewGame";
+import {Categories} from "../Game/Categories";
+import {StartMenu} from "../Game/StartMenu";
+
+const demoSun = require('./../Common/Assets/audio/d-sun.mp3')
+const demoSunOr = require('./../Common/Assets/audio/d-sun2.mp3')
+
+export type CategoryNameAndPathType = {
+    categoryName: string
+    path: string
+}
+const CategoryNameAndPath: CategoryNameAndPathType[] = [
+    {
+        categoryName: "Лето",
+        path: '/newgame'
+    },
+    {
+        categoryName: "Зима",
+        path: '/newgame'
+    },
+    {
+        categoryName: "Мужские имена",
+        path: '/newgame'
+    },
+    {
+        categoryName: "Русский рок",
+        path: '/newgame'
+    },
+    {
+        categoryName: "Фильмы",
+        path: '/startmenu'
+    },
+
+]
 
 let token = TokenCreator()
 export const PATH = {
@@ -123,7 +157,10 @@ export const PATH = {
     PROFILE: '/profile',
     PACKOPENER: `/packOpener+${token}`,
     SHOP: '/shop',
-    SETTINGS: '/gameSettings'
+    SETTINGS: '/gameSettings',
+    NEWGAME: '/newgame',
+    CATEGORIES: '/categories',
+    STARTMENU: '/startmenu'
 }
 
 const levels = [
@@ -459,12 +496,6 @@ const AppRoutes = () => {
                 <Route path={PATH.MATCH} element={<GameBoard bestLevel={bestLevel}/>}/>
 
 
-
-
-
-
-
-
                 //patrick
 
                 {/*<Route path={PATH.PATRICKFIRST}*/}
@@ -586,9 +617,6 @@ const AppRoutes = () => {
                 {/*                       isPattern={false}*/}
                 {/*                       patternCards={[]}*/}
                 {/*       />}/>*/}
-
-
-
 
 
                 ///start classic
@@ -877,7 +905,7 @@ const AppRoutes = () => {
                                        duration={110}
                                        path={PATH.CARSBYMODELSTWO}
                                        rotate={true}
-                                       description={'Найти пару в определенном порядке'}
+                                       description={'Найти пару'}
                                        bestLevel={bestLevel}
                                        setBestLevel={setBestLevel}
                                        levelNumber={18}
@@ -1062,7 +1090,7 @@ const AppRoutes = () => {
 
                 <Route path={PATH.POLMOFOUR}
                        element={<Match cardsToPlay={polmoFourhLevel}
-                                       duration={175}
+                                       duration={160}
                                        path={PATH.HALFFOUR}
                                        rotate={false}
                                        description={'Найти пару'}
@@ -1077,7 +1105,7 @@ const AppRoutes = () => {
 
                 <Route path={PATH.HALFFOUR}
                        element={<Match cardsToPlay={halfFourthLevel}
-                                       duration={155}
+                                       duration={135}
                                        path={PATH.ROTATEPATTERNONE}
                                        rotate={false}
                                        description={'Найти вторую половину'}
@@ -1196,7 +1224,6 @@ const AppRoutes = () => {
                                         isPattern={false}
                                         patternCards={[]}
                        />}/>
-
 
 
                 ///triple
@@ -1344,7 +1371,9 @@ const AppRoutes = () => {
                                                  isPattern={true}
 
                        />}/>
-
+                <Route path={PATH.NEWGAME} element={<NewGame original={demoSun} track={demoSunOr}/>}/>
+                <Route path={PATH.CATEGORIES} element={<Categories CategoryNameAndPath={CategoryNameAndPath}/>}/>
+                <Route path={PATH.STARTMENU} element={<StartMenu />}/>
             </Routes>
 
         </>

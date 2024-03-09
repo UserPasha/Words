@@ -89,8 +89,8 @@ export const Modal: FC<IModal> = memo(({
         const totalPoints = Math.round(temporyPoints * multiplyBonus);
         console.log(totalPoints)
         setRunning(false)
-////////////FIX THIS////////////////////////
-        dispatch(saveCurrentPoints(totalPoints/2))
+
+        dispatch(saveCurrentPoints(totalPoints))
 
         if (totalPoints > 4 && totalPoints < 20) {
             return `Поздравляем! Вы приняли ${totalPoints} единиц`

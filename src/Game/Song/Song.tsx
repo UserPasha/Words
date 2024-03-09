@@ -55,7 +55,15 @@ export const Song: FC<songType> = ({track, original}) => {
     return (
         <div className={over ? style.containerOver : playing ? style.containerActive : style.container}>
             <div className={style.base}>
-                <img className={playing ? style.playingCover : style.cover} src={cover} alt={'cover'}/>
+                {/*<div className={style.hide} >*/}
+                    <button className={style.button} onClick={() => originalTogglePlay()}>{originalPlaying ?
+                        <img className={style.controls} src={pauseIcon} alt={'pause'}/>
+                        :
+                        <img className={style.controls} src={playIcon} alt={'play'}/>}
+                    </button>
+                    {/*<img className={style.controls} src={closeIcon} alt={'close'} onClick={closeSong} />*/}
+                {/*</div>*/}
+                {/*<img className={playing ? style.playingCover : style.cover} src={cover} alt={'cover'}/>*/}
 
                 <button className={style.button}  disabled={over} onClick={() => togglePlay()}>{
                     over?
@@ -67,18 +75,10 @@ export const Song: FC<songType> = ({track, original}) => {
                     <img className={style.controls} src={playIcon} alt={'play'}/>
                 }</button>
             </div>
-            <div className={style.panel}  onClick={locker}>
-                {!result &&  <img className={style.controls} src={arrowDown} alt={'arrow down'}/>}
-            </div>
+            {/*<div className={style.panel}  onClick={locker}>*/}
+            {/*    {!result &&  <img className={style.controls} src={arrowDown} alt={'arrow down'}/>}*/}
+            {/*</div>*/}
 
-            {result && <div className={style.hide} >
-                <button className={style.button} onClick={() => originalTogglePlay()}>{originalPlaying ?
-                    <img className={style.controls} src={pauseIcon} alt={'pause'}/>
-                    :
-                    <img className={style.controls} src={playIcon} alt={'play'}/>}
-                </button>
-                <img className={style.controls} src={closeIcon} alt={'close'} onClick={closeSong} />
-            </div>}
 
 
         </div>
@@ -86,3 +86,32 @@ export const Song: FC<songType> = ({track, original}) => {
 };
 
 ;
+
+// <div className={over ? style.containerOver : playing ? style.containerActive : style.container}>
+//     <div className={style.base}>
+//         <img className={playing ? style.playingCover : style.cover} src={cover} alt={'cover'}/>
+//
+//         <button className={style.button}  disabled={over} onClick={() => togglePlay()}>{
+//             over?
+//                 <img className={style.controls} src={redClose} alt={'closed'}/>
+//                 :
+//                 playing ?
+//                     <img className={style.controls} src={pauseIcon} alt={'pause'}/>
+//                     :
+//                     <img className={style.controls} src={playIcon} alt={'play'}/>
+//         }</button>
+//     </div>
+//     <div className={style.panel}  onClick={locker}>
+//         {!result &&  <img className={style.controls} src={arrowDown} alt={'arrow down'}/>}
+//     </div>
+//
+//     {result && <div className={style.hide} >
+//         <button className={style.button} onClick={() => originalTogglePlay()}>{originalPlaying ?
+//             <img className={style.controls} src={pauseIcon} alt={'pause'}/>
+//             :
+//             <img className={style.controls} src={playIcon} alt={'play'}/>}
+//         </button>
+//         <img className={style.controls} src={closeIcon} alt={'close'} onClick={closeSong} />
+//     </div>}
+//
+// </div>
