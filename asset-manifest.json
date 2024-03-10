@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.58856f24.css",
-    "main.js": "/Words/static/js/main.5274f0e5.js",
+    "main.css": "/Words/static/css/main.030728a8.css",
+    "main.js": "/Words/static/js/main.196e726a.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/Anjelica-Vishnya.mp3": "/Words/static/media/Anjelica-Vishnya.79781196c3065c2ca540.mp3",
@@ -51,6 +51,7 @@
     "static/media/Gradusi-Zamet.mp3": "/Words/static/media/Gradusi-Zamet.91045dcd77a28f5cf0f2.mp3",
     "static/media/Anjelica-Vish.mp3": "/Words/static/media/Anjelica-Vish.40e580818d55b5518421.mp3",
     "static/media/Kish-Lesnik.mp3": "/Words/static/media/Kish-Lesnik.9ff57a5a5b4ef3752c81.mp3",
+    "static/media/Gubin-Zima2.mp3": "/Words/static/media/Gubin-Zima2.a7f14d81ff3090cdeb6b.mp3",
     "static/media/Survivor - Eye of a TigerRocky.mp3": "/Words/static/media/Survivor - Eye of a TigerRocky.4b7b8ed9d88ffe2f6f48.mp3",
     "static/media/Irakly-VovaP.mp3": "/Words/static/media/Irakly-VovaP.be11e5a6c46ed0274e61.mp3",
     "static/media/Eminem - Lose YourselfMinus.mp3": "/Words/static/media/Eminem - Lose YourselfMinus.d8debd2726cad4d3241c.mp3",
@@ -165,12 +166,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.58856f24.css.map": "/Words/static/css/main.58856f24.css.map",
-    "main.5274f0e5.js.map": "/Words/static/js/main.5274f0e5.js.map",
+    "main.030728a8.css.map": "/Words/static/css/main.030728a8.css.map",
+    "main.196e726a.js.map": "/Words/static/js/main.196e726a.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.58856f24.css",
-    "static/js/main.5274f0e5.js"
+    "static/css/main.030728a8.css",
+    "static/js/main.196e726a.js"
   ]
 }
