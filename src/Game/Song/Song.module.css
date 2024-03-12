@@ -1,7 +1,7 @@
 .container{
     width: 60%;
     /*min-height: 200px;*/
-    min-height: 60px;
+    min-height: 100px;
     /*margin: 50px auto;*/
     margin: 10px;
     border: 1px solid #004770;
@@ -16,7 +16,7 @@
 }
 .containerActive{
     width: 60%;
-    min-height: 60px;
+    min-height: 100px;
     margin: 10px;
     border: 2px solid #FFF;
     border-radius: 25px;

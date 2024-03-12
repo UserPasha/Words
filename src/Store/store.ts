@@ -14,6 +14,7 @@ import {CategoryType, machineData} from "../Match/BonusMachine/bomusMachine.data
 import {rewardsReducer} from "./RewardsReducer";
 import {colorSchemeReducer} from "./colorSchemeReducer";
 import {newGameReducer} from "./NewGameReducer";
+import {SongsReducer} from "./songsReducer";
 
 const reducers = combineReducers({
     cards: cardsReducer,
@@ -26,7 +27,8 @@ const reducers = combineReducers({
     bonus: bonusReducer,
     rewards: rewardsReducer,
     colorScheme: colorSchemeReducer,
-    newGame: newGameReducer
+    newGame: newGameReducer,
+    songs: SongsReducer
 })
 // const InitialState: {
 //     cardsReducer: InitialStateType,
@@ -67,7 +69,9 @@ const reducers = combineReducers({
 //         pointsBonus: 1,
 //     },
 // }
-const store = createStore(reducers, loadState(), applyMiddleware
+const store = createStore(reducers,
+    loadState(),
+    applyMiddleware
 (
     thunk
 //localStorageMiddleware
@@ -85,7 +89,8 @@ store.subscribe(() => {
         bonus: store.getState().bonus,
         rewards: store.getState().rewards,
         colorScheme: store.getState().colorScheme,
-        newGame: store.getState().newGame
+        newGame: store.getState().newGame,
+        songs: store.getState().songs
     })
 })
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>

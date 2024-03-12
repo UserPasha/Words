@@ -63,37 +63,33 @@ import {Settings} from "../Settings/Settings";
 import {NewGame} from "../Game/NewGame";
 import {Categories} from "../Game/Categories";
 import {StartMenu} from "../Game/StartMenu";
+import {roundType} from "../Game/songs.data";
 
 const demoSun = require('./../Common/Assets/audio/d-sun.mp3')
 const demoSunOr = require('./../Common/Assets/audio/d-sun2.mp3')
+const monacoSun = require('./../Common/Assets/audio/L-monaco-sun.mp3')
+const monacoSunOr = require('./../Common/Assets/audio/LyusyaChebotina-monako.mp3')
+const ivanushki = require('./../Common/Assets/audio/IvanushkiPuh.mp3')
+const ivanushkiOr = require('./../Common/Assets/audio/IvanushkiPuh2.mp3')
+const fabrika = require('./../Common/Assets/audio/Fabrika-minus.mp3')
+const fabrikaOr = require('./../Common/Assets/audio/Fabrika-plus.mp3')
+const olegMityaev = require('./../Common/Assets/audio/OlegMityaev-leto.mp3')
+const olegMityaevOr = require('./../Common/Assets/audio/OlegMityaev-leto2.mp3')
 
 export type CategoryNameAndPathType = {
-    categoryName: string
+    name: string
     path: string
+    isCompletedCategory: boolean
 }
-const CategoryNameAndPath: CategoryNameAndPathType[] = [
-    {
-        categoryName: "Лето",
-        path: '/newgame'
-    },
-    {
-        categoryName: "Зима",
-        path: '/newgame'
-    },
-    {
-        categoryName: "Мужские имена",
-        path: '/newgame'
-    },
-    {
-        categoryName: "Русский рок",
-        path: '/newgame'
-    },
-    {
-        categoryName: "Фильмы",
-        path: '/startmenu'
-    },
 
-]
+export type CategorySongsType = {
+    tractTitle: string
+    track: string
+    original: string
+    trackName: string
+    isComplete: boolean
+}
+
 
 let token = TokenCreator()
 export const PATH = {
@@ -158,9 +154,27 @@ export const PATH = {
     PACKOPENER: `/packOpener+${token}`,
     SHOP: '/shop',
     SETTINGS: '/gameSettings',
-    NEWGAME: '/newgame',
+
+
+    NEWGAMEZERO: '/newgameZero',
     CATEGORIES: '/categories',
-    STARTMENU: '/startmenu'
+    CATEGORIEONE: '/categoryOne',
+
+    STARTMENU: '/startmenu',
+
+    ROUNDONE: '/roundOne',
+    ROUNDTWO: '/roundTwo',
+
+    SUMMERCATEGORY: '/summerCategory',
+    WINTERCATEGORY: '/winterCategory',
+    MENNAMESCATEGORY: '/menNamesCategory',
+    RUSSIANROCK: '/russianRock',
+    ZEROMOVIES: '/zeroMovies',
+    DIGITSCATEGORY: '/digitsCategory',
+    DRINKSCATEGORY: '/drinksCategory',
+    WOMENNAMES: '/womanNames',
+    SERIALSCATEGORY: '/serialsCategory',
+    AIREMIXESONE: '/AIRemixesCategoryOne',
 }
 
 const levels = [
@@ -426,6 +440,51 @@ const levels = [
 ];
 
 const AppRoutes = () => {
+
+    const gameRounds = useSelector<RootState, roundType[]>(state => state.songs)
+    const allCategoriesNameAndPath = gameRounds.map(gr => gr.categories)
+    const backArrowWays = gameRounds.map(gr => gr.path)
+    const allSongs = gameRounds.map(gr => gr.categories.map(cat => cat.tracks))
+    const allCategoriesNamesOfGame = gameRounds.map(gr => gr.categories.map(cat => cat.name))
+    const allCategoriesNamesZeroRound = allCategoriesNamesOfGame[0]
+    const allCategoriesNamesZeroRoundSummer = allCategoriesNamesZeroRound[0]
+    const allCategoriesNamesZeroRoundWinter = allCategoriesNamesZeroRound[1]
+    const allCategoriesNamesZeroRoundMenNames = allCategoriesNamesZeroRound[2]
+    const allCategoriesNamesZeroRussianRock = allCategoriesNamesZeroRound[3]
+    const allCategoriesNamesZeroMovies = allCategoriesNamesZeroRound[4]
+
+    const allCategoriesNamesOneRound = allCategoriesNamesOfGame[1]
+    const allCategoriesNamesOneRoundDigits = allCategoriesNamesOneRound[0]
+    const allCategoriesNamesOneRoundDrinks = allCategoriesNamesOneRound[1]
+    const allCategoriesNamesOneRoundWomenNames = allCategoriesNamesOneRound[2]
+    const allCategoriesNamesOneRoundSerials = allCategoriesNamesOneRound[3]
+    const allCategoriesNamesOneRoundAIRemixes = allCategoriesNamesOneRound[4]
+
+
+    const roundZeroSongs = allSongs[0]
+    const roundOneSongs = allSongs[1]
+
+    const roundZeroSummerSongs = roundZeroSongs[0]
+    const roundZeroWinterSongs = roundZeroSongs[1]
+    const roundZeroMenNamesSongs = roundZeroSongs[2]
+    const roundZeroRussianRockSongs = roundZeroSongs[3]
+    const roundZeroMoviesSongs = roundZeroSongs[4]
+
+    const roundOneDigitsSongs = roundOneSongs[0]
+    const roundOneDrinksSongs = roundOneSongs[1]
+    const roundOneWomenNamesSongs = roundOneSongs[2]
+    const roundOneSerialsSongs = roundOneSongs[3]
+    const roundOneAIRemixesSongs = roundOneSongs[4]
+
+    const categoryNameAndPathZero = allCategoriesNameAndPath[0]
+    const categoryNameAndPathOne = allCategoriesNameAndPath[1]
+
+    const backArrowWaysZero = backArrowWays[0]
+    const backArrowWaysOne = backArrowWays[1]
+
+
+    console.log(allCategoriesNamesZeroRussianRock)
+
     const expiredToken = useSelector<RootState, string>(state => state.bonus.token)
     const dispatch = useDispatch<AppDispatch>();
     const [bestLevel, setBestLevel] = useState<number>(
@@ -1371,9 +1430,76 @@ const AppRoutes = () => {
                                                  isPattern={true}
 
                        />}/>
-                <Route path={PATH.NEWGAME} element={<NewGame original={demoSun} track={demoSunOr}/>}/>
-                <Route path={PATH.CATEGORIES} element={<Categories CategoryNameAndPath={CategoryNameAndPath}/>}/>
-                <Route path={PATH.STARTMENU} element={<StartMenu />}/>
+                {/*<Route path={PATH.NEWGAMEZERO} element={<NewGame arraySongs={roundOneSummerCategorySongs}*/}
+                {/*                                             categoryTitle={'Лето'}*/}
+                {/*                                             backWay={backArrowWaysZero}*/}
+                {/*/>}/>*/}
+                {/*<Route path={PATH.CATEGORIES} element={<Categories CategoryNameAndPath={categoryNameAndPathOne}*/}
+                {/*                                                   roundNumber={0}/>}/>*/}
+                {/*<Route path={PATH.CATEGORIEONE} element={<Categories CategoryNameAndPath={CategoryNameAndPath}*/}
+                {/*                                                   roundNumber={1}/>}/>*/}
+
+                {}
+                {/*<Route path={PATH.CATEGORIES2} element={<Categories CategoryNameAndPath={CategoryNameAndPath2}*/}
+                {/*                                                   roundNumber={1}/>}/>*/}
+                {/*<Route path={PATH.CATEGORIES3} element={<Categories CategoryNameAndPath={CategoryNameAndPath3}*/}
+                {/*                                                   roundNumber={2}/>}/>*/}
+                {/*<Route path={PATH.CATEGORIES4} element={<Categories CategoryNameAndPath={CategoryNameAndPath4}*/}
+                {/*                                                   roundNumber={3}/>}/>*/}
+                {/*<Route path={PATH.CATEGORIES5} element={<Categories CategoryNameAndPath={CategoryNameAndPath5}*/}
+                {/*                                                   roundNumber={4}/>}/>*/}
+                <Route path={PATH.STARTMENU} element={<StartMenu/>}/>
+                <Route path={PATH.ROUNDONE} element={<Categories CategoryNameAndPath={categoryNameAndPathZero}
+                                                                 roundNumber={0}
+
+                />}/>
+                <Route path={PATH.ROUNDTWO} element={<Categories CategoryNameAndPath={categoryNameAndPathOne}
+                                                                 roundNumber={1}
+
+                />}/>
+
+
+                <Route path={PATH.SUMMERCATEGORY} element={<NewGame arraySongs={roundZeroSummerSongs}
+                                                                    categoryTitle={allCategoriesNamesZeroRoundSummer}
+                                                                    backWay={backArrowWaysZero}
+                                                                    roundNumber={0}/>}/>
+                <Route path={PATH.WINTERCATEGORY} element={<NewGame arraySongs={roundZeroWinterSongs}
+                                                                    categoryTitle={allCategoriesNamesZeroRoundWinter}
+                                                                    backWay={backArrowWaysZero}
+                                                                    roundNumber={0}/>}/>
+                <Route path={PATH.MENNAMESCATEGORY} element={<NewGame arraySongs={roundZeroMenNamesSongs}
+                                                                      categoryTitle={allCategoriesNamesZeroRoundMenNames}
+                                                                      backWay={backArrowWaysZero}
+                                                                      roundNumber={0}/>}/>
+                <Route path={PATH.RUSSIANROCK} element={<NewGame arraySongs={roundZeroRussianRockSongs}
+                                                                 categoryTitle={allCategoriesNamesZeroRussianRock}
+                                                                 backWay={backArrowWaysZero}
+                                                                 roundNumber={0}/>}/>
+                <Route path={PATH.ZEROMOVIES} element={<NewGame arraySongs={roundZeroMoviesSongs}
+                                                                categoryTitle={allCategoriesNamesZeroMovies}
+                                                                backWay={backArrowWaysZero}
+                                                                roundNumber={0}/>}/>
+                <Route path={PATH.DIGITSCATEGORY} element={<NewGame arraySongs={roundOneDigitsSongs}
+                                                                categoryTitle={allCategoriesNamesOneRoundDigits}
+                                                                backWay={backArrowWaysOne}
+                                                                roundNumber={1}/>}/>
+                <Route path={PATH.DRINKSCATEGORY} element={<NewGame arraySongs={roundOneDrinksSongs}
+                                                                    categoryTitle={allCategoriesNamesOneRoundDrinks}
+                                                                    backWay={backArrowWaysOne}
+                                                                    roundNumber={1}/>}/>
+                <Route path={PATH.WOMENNAMES} element={<NewGame arraySongs={roundOneWomenNamesSongs}
+                                                                    categoryTitle={allCategoriesNamesOneRoundWomenNames}
+                                                                    backWay={backArrowWaysOne}
+                                                                    roundNumber={1}/>}/>
+                <Route path={PATH.SERIALSCATEGORY} element={<NewGame arraySongs={roundOneSerialsSongs}
+                                                                categoryTitle={allCategoriesNamesOneRoundSerials}
+                                                                backWay={backArrowWaysOne}
+                                                                roundNumber={1}/>}/>
+                <Route path={PATH.AIREMIXESONE} element={<NewGame arraySongs={roundOneAIRemixesSongs}
+                                                                     categoryTitle={allCategoriesNamesOneRoundAIRemixes}
+                                                                     backWay={backArrowWaysOne}
+                                                                     roundNumber={1}/>}/>
+
             </Routes>
 
         </>
