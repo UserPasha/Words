@@ -51,17 +51,17 @@
     animation-play-state: paused;
 }
 .controls{
-    max-width: 50px;
+    max-width: 60px;
     cursor: pointer;
 }
 .button{
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: 40px;
 }
 .button:disabled{
     cursor: not-allowed;

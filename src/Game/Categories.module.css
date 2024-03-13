@@ -16,7 +16,7 @@
     background-color: #bf1be3;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bold;
 }
 
@@ -70,6 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 80px;
 }
 
 .description{

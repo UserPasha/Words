@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
 import style from './Song.module.css'
 import playIcon from './../../Common/Assets/images/play.svg'
 import pauseIcon from './../../Common/Assets/images/pause.svg'
@@ -10,9 +10,11 @@ import redClose from './../../Common/Assets/images/redClose.svg'
 type songType = {
     track: string
     original: string
+    setTrackName: Dispatch<SetStateAction<string>>
+    trackTitle: string
 }
 
-export const Song: FC<songType> = ({track, original}) => {
+export const Song: FC<songType> = ({track, original, trackTitle, setTrackName}) => {
 
     const [result, setResult] = useState<boolean>(false)
     const [over, setOver] = useState<boolean>(false)
@@ -43,7 +45,7 @@ export const Song: FC<songType> = ({track, original}) => {
     }, [originalPlaying]);
 
     function togglePlay() {
-
+        setTrackName(trackTitle)
         setPlaying(s => !s);
     }
 

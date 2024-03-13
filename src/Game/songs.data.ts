@@ -125,6 +125,66 @@ const aiRemixOnePlusFour = require('./../Common/Assets/audio/AIRemix pl 1 4.mp3'
 const aiRemixOneMinusFive = require('./../Common/Assets/audio/AIRemix min 1 5.mp3')
 const aiRemixOnePlusFive = require('./../Common/Assets/audio/AIRemix pl 1 5.mp3')
 
+//2
+//Хиты 90-х
+
+const ninthysOneMinusOne = require('./../Common/Assets/audio/ninthys minus 1 1.mp3' )
+const ninthysOnePlusOne = require('./../Common/Assets/audio/ninthys plus 1 1.mp3' )
+const ninthysOneMinusTwo = require('./../Common/Assets/audio/ninthys minus 1 2.mp3' )
+const ninthysOnePlusTwo = require('./../Common/Assets/audio/ninthys plus 1 2.mp3' )
+const ninthysOneMinusThree = require('./../Common/Assets/audio/ninthys minus 1 3.mp3' )
+const ninthysOnePlusThree = require('./../Common/Assets/audio/ninthys plus 1 3.mp3' )
+const ninthysOneMinusFour = require('./../Common/Assets/audio/ninthys minus 1 4.mp3' )
+const ninthysOnePlusFour = require('./../Common/Assets/audio/ninthys plus 1 4.mp3' )
+const ninthysOneMinusFive = require('./../Common/Assets/audio/ninthys minus 1 5.mp3' )
+const ninthysOnePlusFive = require('./../Common/Assets/audio/ninthys plus 1 5.mp3' )
+
+//Современные
+
+const modernOneMinusOne = require('./../Common/Assets/audio/modern minus 1 1.mp3' )
+const modernOnePlusOne = require('./../Common/Assets/audio/modern plus 1 1.mp3' )
+const modernOneMinusTwo = require('./../Common/Assets/audio/modern minus 1 2.mp3' )
+const modernOnePlusTwo = require('./../Common/Assets/audio/modern plus 1 2.mp3' )
+const modernOneMinusThree = require('./../Common/Assets/audio/modern minus 1 3.mp3' )
+const modernOnePlusThree = require('./../Common/Assets/audio/modern plus 1 3.mp3' )
+const modernOneMinusFour = require('./../Common/Assets/audio/modern minus 1 4.mp3' )
+const modernOnePlusFour = require('./../Common/Assets/audio/modern plus 1 4.mp3' )
+const modernOneMinusFive = require('./../Common/Assets/audio/modern minus 1 5.mp3' )
+const modernOnePlusFive = require('./../Common/Assets/audio/modern plus 1 5.mp3' )
+
+//Автомобили
+
+const carsOneMinusOne = require('./../Common/Assets/audio/auto minus 1.mp3' )
+const carsOnePlusOne = require('./../Common/Assets/audio/auto plus 1.mp3' )
+const carsOneMinusTwo = require('./../Common/Assets/audio/auto minus 2.mp3' )
+const carsOnePlusTwo = require('./../Common/Assets/audio/auto plus 2.mp3' )
+const carsOneMinusThree = require('./../Common/Assets/audio/auto minus 3.mp3' )
+const carsOnePlusThree = require('./../Common/Assets/audio/auto plus 3.mp3' )
+const carsOneMinusFour = require('./../Common/Assets/audio/auto minus 4.mp3' )
+const carsOnePlusFour = require('./../Common/Assets/audio/auto plus 4.mp3' )
+const carsOneMinusFive = require('./../Common/Assets/audio/auto minus 5.mp3' )
+const carsOnePlusFive = require('./../Common/Assets/audio/auto plus 5.mp3' )
+
+//Передачи
+
+const showsOneMinusOne = require('./../Common/Assets/audio/peredachi 1 1.mp3' )
+const showsOneMinusTwo = require('./../Common/Assets/audio/peredachi 1 2.mp3' )
+const showsOneMinusThree = require('./../Common/Assets/audio/peredachi 1 3.mp3' )
+const showsOneMinusFour = require('./../Common/Assets/audio/peredachi 1 4.mp3' )
+const showsOneMinusFive = require('./../Common/Assets/audio/peredachi 1 5.mp3' )
+
+// ИИ Ремиксы
+
+const aiRemixTwoMinusOne = require('./../Common/Assets/audio/AIRemix min 2 1.mp3')
+const aiRemixTwoPlusOne = require('./../Common/Assets/audio/AIRemix pl 2 1.mp3')
+const aiRemixTwoMinusTwo = require('./../Common/Assets/audio/AIRemix min 2 2.mp3')
+const aiRemixTwoPlusTwo = require('./../Common/Assets/audio/AIRemix pl 2 2.mp3')
+const aiRemixTwoMinusThree = require('./../Common/Assets/audio/AIRemix min 2 3.mp3')
+const aiRemixTwoPlusThree = require('./../Common/Assets/audio/AIRemix pl 2 3.mp3')
+const aiRemixTwoMinusFour = require('./../Common/Assets/audio/AIRemix min 2 4.mp3')
+const aiRemixTwoPlusFour = require('./../Common/Assets/audio/AIRemix pl 2 4.mp3')
+const aiRemixTwoMinusFive = require('./../Common/Assets/audio/AIRemix min 2 5.mp3')
+const aiRemixTwoPlusFive = require('./../Common/Assets/audio/AIRemix pl 2 5.mp3')
 
 export type EveryCategoryType = {
     isCompletedCategory: boolean
@@ -153,7 +213,7 @@ export type CategorySongsType = {
 }
 export const dataSongs: roundType[] = [{
     round: 0,
-    path: '/roundOne',
+    path: '/roundZero',
     isCompletedRound: false,
     categories: [
         {
@@ -376,7 +436,7 @@ export const dataSongs: roundType[] = [{
 },
     {
         round: 1,
-        path: '/roundTwo',
+        path: '/roundOne',
         isCompletedRound: false,
         categories: [
             {
@@ -589,6 +649,229 @@ export const dataSongs: roundType[] = [{
                         track: aiRemixOneMinusFive,
                         original: aiRemixOnePlusFive,
                         trackName: 'Сектор Газа - 30 лет',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 2,
+        path: '/roundTwo',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 90-х',
+                path: '/nintysHits',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: ninthysOneMinusOne,
+                    original: ninthysOnePlusOne,
+                    trackName: 'Татьяна Буланова - Мой Ненаглядный',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: ninthysOneMinusTwo,
+                        original: ninthysOnePlusTwo,
+                        trackName: 'Шура - Холодная Луна',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: ninthysOneMinusThree,
+                        original: ninthysOnePlusThree,
+                        trackName: 'Отпетые Мошенники - Люби Меня Люби',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: ninthysOneMinusFour,
+                        original: ninthysOnePlusFour,
+                        trackName: 'Михей И Джуманджи Feat. Инна Steel - Туда',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: ninthysOneMinusFive,
+                        original: ninthysOnePlusFive,
+                        trackName: 'Алёна Свиридова - Бедная Овечка',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Современные',
+                path: '/modernCategory',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: modernOneMinusOne,
+                        original: modernOnePlusOne,
+                        trackName: 'Instasamka - За Деньги Да',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: modernOneMinusTwo,
+                        original: modernOnePlusTwo,
+                        trackName: 'Zivert - WAKE UP!',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: modernOneMinusThree,
+                        original: modernOnePlusThree,
+                        trackName: 'A.V.G - Я Плачу',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: modernOneMinusFour,
+                        original: modernOnePlusFour,
+                        trackName: 'Xolidayboy - Моя Хулиганка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: modernOneMinusFive,
+                        original: modernOnePlusFive,
+                        trackName: 'Markul, Тося Чайкина - Стрелы',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Автомобили',
+                path: '/carsCategory',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: carsOneMinusOne,
+                        original: carsOnePlusOne,
+                        trackName: 'Серёга - Чёрный Бумер',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: carsOneMinusTwo,
+                        original: carsOnePlusTwo,
+                        trackName: 'Тимати feat. Рекорд Оркестр - Баклажан',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: carsOneMinusThree,
+                        original: carsOnePlusThree,
+                        trackName: 'Jakone, Scirena - Ай катит чёрный Кадиллак',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: carsOneMinusFour,
+                        original: carsOnePlusFour,
+                        trackName: 'Комбинация - Твоя Вишневая Девятка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: carsOneMinusFive,
+                        original: carsOnePlusFive,
+                        trackName: 'Konfuz - Кайф ты поймала',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Передачи',
+                path: '/showsCategory',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: showsOneMinusOne,
+                        original: showsOneMinusOne,
+                        trackName: 'Фабрика Звёзд',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: showsOneMinusTwo,
+                        original: showsOneMinusTwo,
+                        trackName: 'Форт Байард',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: showsOneMinusThree,
+                        original: showsOneMinusThree,
+                        trackName: 'КВН',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: showsOneMinusFour,
+                        original: showsOneMinusFour,
+                        trackName: 'Что? Где? Когда?',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: showsOneMinusFive,
+                        original: showsOneMinusFive,
+                        trackName: 'Поле Чудес',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'ИИ Ремиксы',
+                path: '/AIRemixesCategoryTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: aiRemixTwoMinusOne,
+                        original: aiRemixTwoPlusOne,
+                        trackName: 'ВИА ГРА - Перемирие',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: aiRemixTwoMinusTwo,
+                        original: aiRemixTwoPlusTwo,
+                        trackName: 'МакSим - Нежность',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: aiRemixTwoMinusThree,
+                        original: aiRemixTwoPlusThree,
+                        trackName: 'Григорий Лепс - Я Счастливый',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: aiRemixTwoMinusFour,
+                        original: aiRemixTwoPlusFour,
+                        trackName: 'Reflex - Сойти С Ума',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: aiRemixTwoMinusFive,
+                        original: aiRemixTwoPlusFive,
+                        trackName: 'Митя Фомин - Всё Будет Хорошо',
                         isComplete: false
                     }
                 ]

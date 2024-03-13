@@ -50,7 +50,6 @@ export const NewGame: FC<songType> = ({
     const [isShow, setIsShow] = useState<boolean>(false)
     const [trackName, setTrackName] = useState<string>('')
     const complete = (trackTitle: string) => {
-         console.log(  roundNumber, categoryTitle, trackTitle  )
         dispatch(completeSong(roundNumber, categoryTitle, trackTitle));
     };
 
@@ -67,10 +66,8 @@ export const NewGame: FC<songType> = ({
             <div className={style.categories}>
                 {songsFromAppRo.map(s =>
                     <div key={s.tractTitle} className={s.isComplete ? style.categoryCompleted : style.category}>
-                        <div className={style.nameBox}
-                             onClick={() => setTrackName(s.trackName)}
-                        >{s.tractTitle}</div>
-                        <Song track={s.track} original={s.original}/>
+                        <div className={style.nameBox}>{s.tractTitle}</div>
+                        <Song track={s.track} original={s.original} setTrackName={setTrackName} trackTitle={s.trackName}/>
                         <button className={style.complete} onClick={() => complete(s.trackName)}><img
                             src={okIcon}/></button>
                     </div>

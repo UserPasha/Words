@@ -108,47 +108,47 @@ export const Game = () => {
                         ЛЕТО
                     </div>
                     {/*<Song track={testSong} original={testSong}/>*/}
-                    <Song track={demoSun} original={demoSunOr}/>
-                    <Song track={monacoSun} original={monacoSunOr}/>
-                    <Song track={ivanushki} original={ivanushkiOr}/>
-                    <Song track={fabrika} original={fabrikaOr}/>
-                    <Song track={olegMityaev} original={olegMityaevOr}/>
+                    {/*<Song track={demoSun} original={demoSunOr}/>*/}
+                    {/*<Song track={monacoSun} original={monacoSunOr}/>*/}
+                    {/*<Song track={ivanushki} original={ivanushkiOr}/>*/}
+                    {/*<Song track={fabrika} original={fabrikaOr}/>*/}
+                    {/*<Song track={olegMityaev} original={olegMityaevOr}/>*/}
                 </div>
                 <div className={style.container}>
                     <div className={style.category}>
                         ЗИМА
                     </div>
-                    <Song track={GubinZima} original={GubinZimaOr}/>
-                    <Song track={VarumVishnya} original={VarumVishnyaOr}/>
-                    <Song track={GostiZima} original={GostiZimaOr}/>
-                    <Song track={RotaruZima} original={RotaruZimaOr}/>
-                    <Song track={gradusi} original={gradusiOr}/>
+                    {/*<Song track={GubinZima} original={GubinZimaOr}/>*/}
+                    {/*<Song track={VarumVishnya} original={VarumVishnyaOr}/>*/}
+                    {/*<Song track={GostiZima} original={GostiZimaOr}/>*/}
+                    {/*<Song track={RotaruZima} original={RotaruZimaOr}/>*/}
+                    {/*<Song track={gradusi} original={gradusiOr}/>*/}
 
                 </div>
                 <div className={style.container}>
                     <div className={style.category}>
                         РУССКИЙ РОК
                     </div>
-                    <Song track={sectorLyrica} original={sectorLyricaOr}/>
-                    <Song track={zveriNapitki} original={zveriNapitkiOr}/>
-                    <Song track={kishLesnik} original={kishLesnikOr}/>
-                    <Song track={chicherinaTula} original={chicherinaTulaOr}/>
-                    <Song track={ddtMinus} original={ddtMinusOr}/>
+                    {/*<Song track={sectorLyrica} original={sectorLyricaOr}/>*/}
+                    {/*<Song track={zveriNapitki} original={zveriNapitkiOr}/>*/}
+                    {/*<Song track={kishLesnik} original={kishLesnikOr}/>*/}
+                    {/*<Song track={chicherinaTula} original={chicherinaTulaOr}/>*/}
+                    {/*<Song track={ddtMinus} original={ddtMinusOr}/>*/}
 
                 </div>
                 <div className={style.container}>
                     <div className={style.category}>
                         ФИЛЬМЫ
                     </div>
-                    <Song track={pinkPanter} original={pinkPanterOr}/>
-                    <Song track={adelleSky} original={adelleSkyOr}/>
-                    <Song track={ninaIvan} original={ninaIvanOr}/>
-                    <Song track={survivorRocky} original={survivorRockyOr}/>
-                    <Song track={prettyWoman} original={prettyWomanOr}/>
+                    {/*<Song track={pinkPanter} original={pinkPanterOr}/>*/}
+                    {/*<Song track={adelleSky} original={adelleSkyOr}/>*/}
+                    {/*<Song track={ninaIvan} original={ninaIvanOr}/>*/}
+                    {/*<Song track={survivorRocky} original={survivorRockyOr}/>*/}
+                    {/*<Song track={prettyWoman} original={prettyWomanOr}/>*/}
 
-                    <Song track={killBill} original={killBill}/>
-                    <Song track={eminemLose} original={eminemLoseOr}/>
-                    <Song track={matrix} original={matrix}/>
+                    {/*<Song track={killBill} original={killBill}/>*/}
+                    {/*<Song track={eminemLose} original={eminemLoseOr}/>*/}
+                    {/*<Song track={matrix} original={matrix}/>*/}
 
 
                 </div>
@@ -157,11 +157,11 @@ export const Game = () => {
                     <div className={style.category}>
                         МУЖСКИЕ ИМЕНА
                     </div>
-                    <Song track={iraklyVova} original={iraklyVovaOr}/>
-                    <Song track={AllegrovaAndrey} original={AllegrovaAndreyOr}/>
-                    <Song track={RukiAleshka} original={RukiAleshkaOr}/>
-                    <Song track={EstradaVite} original={EstradaViteOr}/>
-                    <Song track={GlukozaUra} original={GlukozaUraOr}/>
+                    {/*<Song track={iraklyVova} original={iraklyVovaOr}/>*/}
+                    {/*<Song track={AllegrovaAndrey} original={AllegrovaAndreyOr}/>*/}
+                    {/*<Song track={RukiAleshka} original={RukiAleshkaOr}/>*/}
+                    {/*<Song track={EstradaVite} original={EstradaViteOr}/>*/}
+                    {/*<Song track={GlukozaUra} original={GlukozaUraOr}/>*/}
 
 
                 </div>
