@@ -101,8 +101,8 @@ const womenNamesMinusThree = require('./../Common/Assets/audio/jen imena 1 3 min
 const womenNamesPlusThree = require('./../Common/Assets/audio/jen imena 1 3 plus.mp3')
 const womenNamesMinusFour = require('./../Common/Assets/audio/jen imena 1 4 minus.mp3')
 const womenNamesPlusFour = require('./../Common/Assets/audio/jen imena 1 4 plus.mp3')
-const womenNamesMinusFive = require('./../Common/Assets/audio/jen imena 1 5 minus.mp3')
-const womenNamesPlusFive = require('./../Common/Assets/audio/jen imena 1 5 plus.mp3')
+const womenNamesMinusFive = require('./../Common/Assets/audio/jen imena 1 6 minus.mp3')
+const womenNamesPlusFive = require('./../Common/Assets/audio/jen imena 1 6 plus.mp3')
 
 // Сериалы
 
@@ -185,6 +185,81 @@ const aiRemixTwoMinusFour = require('./../Common/Assets/audio/AIRemix min 2 4.mp
 const aiRemixTwoPlusFour = require('./../Common/Assets/audio/AIRemix pl 2 4.mp3')
 const aiRemixTwoMinusFive = require('./../Common/Assets/audio/AIRemix min 2 5.mp3')
 const aiRemixTwoPlusFive = require('./../Common/Assets/audio/AIRemix pl 2 5.mp3')
+
+//3
+//Зарубежное Ретро
+
+const retroOneMinusOne = require('./../Common/Assets/audio/fretro minus 1 1.mp3')
+const retroOnePlusOne = require('./../Common/Assets/audio/fretro plus 1 1.mp3')
+const retroOneMinusTwo = require('./../Common/Assets/audio/fretro minus 1 2.mp3')
+const retroOnePlusTwo = require('./../Common/Assets/audio/fretro plus 1 2.mp3')
+const retroOneMinusThree = require('./../Common/Assets/audio/fretro minus 1 3.mp3')
+const retroOnePlusThree = require('./../Common/Assets/audio/fretro plus 1 3.mp3')
+const retroOneMinusFour = require('./../Common/Assets/audio/fretro minus 1 4.mp3')
+const retroOnePlusFour = require('./../Common/Assets/audio/fretro plus 1 4.mp3')
+const retroOneMinusFive = require('./../Common/Assets/audio/fretro minus 1 5.mp3')
+const retroOnePlusFive = require('./../Common/Assets/audio/fretro plus 1 5.mp3')
+
+//Цветы
+
+const flowersMinusOne = require('./../Common/Assets/audio/cvety minus 1.mp3')
+const flowersPlusOne = require('./../Common/Assets/audio/cvety plus 1.mp3')
+const flowersMinusTwo = require('./../Common/Assets/audio/cvety minus 2.mp3')
+const flowersPlusTwo = require('./../Common/Assets/audio/cvety plus 2.mp3')
+const flowersMinusThree = require('./../Common/Assets/audio/cvety minus 3.mp3')
+const flowersPlusThree = require('./../Common/Assets/audio/cvety plus 3.mp3')
+const flowersMinusFour = require('./../Common/Assets/audio/cvety minus 4.mp3')
+const flowersPlusFour = require('./../Common/Assets/audio/cvety plus 4.mp3')
+const flowersMinusFive = require('./../Common/Assets/audio/cvety minus 5.mp3')
+const flowersPlusFive = require('./../Common/Assets/audio/cvety plus 5.mp3')
+
+//Зарубежный Рок
+
+const fRockMinusOne = require('./../Common/Assets/audio/fRock minus 1 1.mp3')
+const fRockPlusOne = require('./../Common/Assets/audio/fRock plus 1 1.mp3')
+const fRockMinusTwo = require('./../Common/Assets/audio/fRock minus 1 2.mp3')
+const fRockPlusTwo = require('./../Common/Assets/audio/fRock plus 1 2.mp3')
+const fRockMinusThree = require('./../Common/Assets/audio/fRock minus 1 3.mp3')
+const fRockPlusThree = require('./../Common/Assets/audio/fRock plus 1 3.mp3')
+const fRockMinusFour = require('./../Common/Assets/audio/fRock minus 1 4.mp3')
+const fRockPlusFour = require('./../Common/Assets/audio/fRock plus 1 4.mp3')
+const fRockMinusFive = require('./../Common/Assets/audio/fRock minus 1 5.mp3')
+const fRockPlusFive = require('./../Common/Assets/audio/fRock plus 1 5.mp3')
+
+//Фильмы
+
+const moviesMinusOne = require('./../Common/Assets/audio/filmi 2 1.mp3')
+const moviesMinusTwo = require('./../Common/Assets/audio/filmi 2 2.mp3')
+const moviesMinusThree = require('./../Common/Assets/audio/filmi 2 3.mp3')
+const moviesMinusFour = require('./../Common/Assets/audio/filmi 2 4.mp3')
+const moviesMinusFive = require('./../Common/Assets/audio/filmi 2 5.mp3')
+
+//Женские Имена
+
+const womenNameTwosMinusOne = require('./../Common/Assets/audio/jen imena 2 1 minus.mp3')
+const womenNamesTwoPlusOne = require('./../Common/Assets/audio/jen imena 2 1 plus.mp3')
+const womenNameTwosMinusTwo = require('./../Common/Assets/audio/jen imena 2 2 minus.mp3')
+const womenNamesTwoPlusTwo = require('./../Common/Assets/audio/jen imena 2 2 plus.mp3')
+const womenNameTwosMinusThree = require('./../Common/Assets/audio/jen imena 2 6 minus.mp3')
+const womenNamesTwoPlusThree = require('./../Common/Assets/audio/jen imena 2 6 plus.mp3')
+const womenNameTwosMinusFour = require('./../Common/Assets/audio/jen imena 2 4 minus.mp3')
+const womenNamesTwoPlusFour = require('./../Common/Assets/audio/jen imena 2 4 plus.mp3')
+const womenNameTwosMinusFive = require('./../Common/Assets/audio/jen imena 2 5 minus.mp3')
+const womenNamesTwoPlusFive = require('./../Common/Assets/audio/jen imena 2 5 plus.mp3')
+
+//4
+//Города
+const citiesMinusOne = require('./../Common/Assets/audio/goroda minus 1.mp3')
+const citiesPlusOne = require('./../Common/Assets/audio/goroda pus 1.mp3')
+const citiesMinusTwo = require('./../Common/Assets/audio/goroda minus 2.mp3')
+const citiesPlusTwo = require('./../Common/Assets/audio/goroda plus 2.mp3')
+const citiesMinusThree = require('./../Common/Assets/audio/goroda minus 3.mp3')
+const citiesPlusThree = require('./../Common/Assets/audio/goroda plus 3.mp3')
+const citiesMinusFour = require('./../Common/Assets/audio/goroda minus 4.mp3')
+const citiesPlusFour = require('./../Common/Assets/audio/goroda plus 4.mp3')
+const citiesMinusFive = require('./../Common/Assets/audio/goroda minus 5.mp3')
+const citiesPlusFive = require('./../Common/Assets/audio/goroda plus 5.mp3')
+
 
 export type EveryCategoryType = {
     isCompletedCategory: boolean
@@ -561,7 +636,7 @@ export const dataSongs: roundType[] = [{
                         tractTitle: "TRACK 5",
                         track: womenNamesMinusFive,
                         original: womenNamesPlusFive,
-                        trackName: 'Филипп Киркоров - Дива',
+                        trackName: 'Руки Вверх - Наташа',
                         isComplete: false
                     }
                 ]
@@ -872,6 +947,452 @@ export const dataSongs: roundType[] = [{
                         track: aiRemixTwoMinusFive,
                         original: aiRemixTwoPlusFive,
                         trackName: 'Митя Фомин - Всё Будет Хорошо',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 3,
+        path: '/roundThree',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежное Ретро',
+                path: '/foreignRetro',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: retroOneMinusOne,
+                    original: retroOnePlusOne,
+                    trackName: 'Dr. Alban - It\'s My Life',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: retroOneMinusTwo,
+                        original: retroOnePlusTwo,
+                        trackName: '2 Unlimited - No Limit',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: retroOneMinusThree,
+                        original: retroOnePlusThree,
+                        trackName: 'Ace of Base - All That She Wants',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: retroOneMinusFour,
+                        original: retroOnePlusFour,
+                        trackName: 'Abba - Gimme! Gimme! Gimme!',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: retroOneMinusFive,
+                        original: retroOnePlusFive,
+                        trackName: 'C.C. Catch - Heaven And Hell',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Цветы',
+                path: '/flowers',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: flowersMinusOne,
+                        original: flowersPlusOne,
+                        trackName: 'Виктор Королёв feat. Ирина Круг - Букет Из Белых Роз',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: flowersMinusTwo,
+                        original: flowersPlusTwo,
+                        trackName: 'Алла Пугачёва - Миллион Алых Роз',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: flowersMinusThree,
+                        original: flowersPlusThree,
+                        trackName: 'Валерий Леонтьев - Девять Хризантем',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: flowersMinusFour,
+                        original: flowersPlusFour,
+                        trackName: 'Наташа Королёва - Жёлтые Тюльпаны',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: flowersMinusFive,
+                        original: flowersPlusFive,
+                        trackName: 'Лилии (Вячеслав Назаров - Баллада Атоса)',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежный Рок',
+                path: '/foreignRock',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: fRockMinusOne,
+                        original: fRockPlusOne,
+                        trackName: 'Linkin Park - Numb',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: fRockMinusTwo,
+                        original: fRockPlusTwo,
+                        trackName: 'Red Hot Chili Peppers - Cant Stop',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: fRockMinusThree,
+                        original: fRockPlusThree,
+                        trackName: 'Limp Bizkit - Behind Blue Eyes',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: fRockMinusFour,
+                        original: fRockPlusFour,
+                        trackName: 'Rammstein - Deutschland',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: fRockMinusFive,
+                        original: fRockPlusFive,
+                        trackName: 'Evanescence - Going Under',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Фильмы',
+                path: '/moviesTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: moviesMinusOne,
+                        original: moviesMinusOne,
+                        trackName: 'Пираты Карибского Моря',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: moviesMinusTwo,
+                        original: moviesMinusTwo,
+                        trackName: 'Мстители',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: moviesMinusThree,
+                        original: moviesMinusThree,
+                        trackName: 'Д\'Артаньян и Три Мушкетёра',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: moviesMinusFour,
+                        original: moviesMinusFour,
+                        trackName: 'Грязные Танцы',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: moviesMinusFive,
+                        original: moviesMinusFive,
+                        trackName: 'Интерстеллар',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Женские Имена',
+                path: '/womenNamesTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: womenNameTwosMinusOne,
+                        original: womenNamesTwoPlusOne,
+                        trackName: 'Филипп Киркоров - Марина',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: womenNameTwosMinusTwo,
+                        original: womenNamesTwoPlusTwo,
+                        trackName: 'Натали - Черепашка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: womenNameTwosMinusThree,
+                        original: womenNamesTwoPlusThree,
+                        trackName: 'Маша И Медведи - Любочка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: womenNameTwosMinusFour,
+                        original: womenNamesTwoPlusFour,
+                        trackName: 'Кабаре-дуэт Академия - Тома',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: womenNameTwosMinusFive,
+                        original: womenNamesTwoPlusFive,
+                        trackName: 'А-Студио - Джулия',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 4,
+        path: '/roundFour',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Города',
+                path: '/cities',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: citiesMinusOne,
+                    original: citiesPlusOne,
+                    trackName: 'Иракли - Лондон-Париж',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: citiesMinusTwo,
+                        original: citiesPlusTwo,
+                        trackName: 'Олег Газманов - Москва',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: citiesMinusThree,
+                        original: citiesPlusThree,
+                        trackName: 'Мурат Насыров - Мальчик хочет в Тамбов',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: citiesMinusFour,
+                        original: citiesPlusFour,
+                        trackName: 'Валерия - Рига-Москва',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: citiesMinusFive,
+                        original: citiesPlusFive,
+                        trackName: 'Григорий Лепс & Тимати - Лондон',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Цветы',
+                path: '/flowers',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: flowersMinusOne,
+                        original: flowersPlusOne,
+                        trackName: 'Виктор Королёв feat. Ирина Круг - Букет Из Белых Роз',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: flowersMinusTwo,
+                        original: flowersPlusTwo,
+                        trackName: 'Алла Пугачёва - Миллион Алых Роз',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: flowersMinusThree,
+                        original: flowersPlusThree,
+                        trackName: 'Валерий Леонтьев - Девять Хризантем',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: flowersMinusFour,
+                        original: flowersPlusFour,
+                        trackName: 'Наташа Королёва - Жёлтые Тюльпаны',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: flowersMinusFive,
+                        original: flowersPlusFive,
+                        trackName: 'Лилии (Вячеслав Назаров - Баллада Атоса)',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежный Рок',
+                path: '/foreignRock',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: fRockMinusOne,
+                        original: fRockPlusOne,
+                        trackName: 'Linkin Park - Numb',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: fRockMinusTwo,
+                        original: fRockPlusTwo,
+                        trackName: 'Red Hot Chili Peppers - Cant Stop',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: fRockMinusThree,
+                        original: fRockPlusThree,
+                        trackName: 'Limp Bizkit - Behind Blue Eyes',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: fRockMinusFour,
+                        original: fRockPlusFour,
+                        trackName: 'Rammstein - Deutschland',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: fRockMinusFive,
+                        original: fRockPlusFive,
+                        trackName: 'Evanescence - Going Under',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Фильмы',
+                path: '/moviesTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: moviesMinusOne,
+                        original: moviesMinusOne,
+                        trackName: 'Пираты Карибского Моря',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: moviesMinusTwo,
+                        original: moviesMinusTwo,
+                        trackName: 'Мстители',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: moviesMinusThree,
+                        original: moviesMinusThree,
+                        trackName: 'Д\'Артаньян и Три Мушкетёра',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: moviesMinusFour,
+                        original: moviesMinusFour,
+                        trackName: 'Грязные Танцы',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: moviesMinusFive,
+                        original: moviesMinusFive,
+                        trackName: 'Интерстеллар',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Женские Имена',
+                path: '/womenNamesTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: womenNameTwosMinusOne,
+                        original: womenNamesTwoPlusOne,
+                        trackName: 'Филипп Киркоров - Марина',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: womenNameTwosMinusTwo,
+                        original: womenNamesTwoPlusTwo,
+                        trackName: 'Натали - Черепашка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: womenNameTwosMinusThree,
+                        original: womenNamesTwoPlusThree,
+                        trackName: 'Маша И Медведи - Любочка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: womenNameTwosMinusFour,
+                        original: womenNamesTwoPlusFour,
+                        trackName: 'Кабаре-дуэт Академия - Тома',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: womenNameTwosMinusFive,
+                        original: womenNamesTwoPlusFive,
+                        trackName: 'А-Студио - Джулия',
                         isComplete: false
                     }
                 ]

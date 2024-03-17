@@ -156,6 +156,7 @@ export const PATH = {
     ROUNDONE: '/roundOne',
     ROUNDTWO: '/roundTwo',
     ROUNDTHREE: '/roundThree',
+    ROUNDFOUR: '/roundFour',
 
     SUMMERCATEGORY: '/summerCategory',
     WINTERCATEGORY: '/winterCategory',
@@ -172,6 +173,12 @@ export const PATH = {
     CARSCATEGORY: '/carsCategory',
     SHOWSCATEGORY: '/showsCategory',
     AIREMIXESTWO: '/AIRemixesCategoryTwo',
+    FOREIGNRETRO: '/foreignRetro',
+    FLOWERS: '/flowers',
+    FOREIGNROCK: '/foreignRock',
+    MOVIESTWO: '/moviesTwo',
+    WOMENNAMESTWO: '/womenNamesTwo',
+    CITIES: '/cities',
 }
 
 const levels = [
@@ -465,10 +472,22 @@ const AppRoutes = () => {
     const allCategoriesNamesTwoRoundShows = allCategoriesNamesTwoRound[3]
     const allCategoriesNamesTwoRoundAIRemixes = allCategoriesNamesTwoRound[4]
 
+    const allCategoriesNamesThreeRound = allCategoriesNamesOfGame[3]
+    const allCategoriesNamesThreeRoundRetro = allCategoriesNamesThreeRound[0]
+    const allCategoriesNamesThreeRoundFlowers = allCategoriesNamesThreeRound[1]
+    const allCategoriesNamesThreeRoundRock = allCategoriesNamesThreeRound[2]
+    const allCategoriesNamesThreeRoundMovies = allCategoriesNamesThreeRound[3]
+    const allCategoriesNamesThreeRoundNames = allCategoriesNamesThreeRound[4]
+
+    const allCategoriesNamesFourRound = allCategoriesNamesOfGame[4]
+    const allCategoriesNamesThreeRoundCities = allCategoriesNamesFourRound[0]
+
 //Songs
     const roundZeroSongs = allSongs[0]
     const roundOneSongs = allSongs[1]
     const roundTwoSongs = allSongs[2]
+    const roundThreeSongs = allSongs[3]
+    const roundFourSongs = allSongs[4]
 
     const roundZeroSummerSongs = roundZeroSongs[0]
     const roundZeroWinterSongs = roundZeroSongs[1]
@@ -488,17 +507,29 @@ const AppRoutes = () => {
     const roundTwoShows = roundTwoSongs[3]
     const roundTwoAIRemixes = roundTwoSongs[4]
 
+    const roundThreeRetro = roundThreeSongs[0]
+    const roundThreeFlowers = roundThreeSongs[1]
+    const roundThreeRock = roundThreeSongs[2]
+    const roundThreeMovies = roundThreeSongs[3]
+    const roundThreeNames = roundThreeSongs[4]
+
+    const roundFourCities = roundFourSongs[0]
+
 // Rounds
     const categoryNameAndPathZero = allCategoriesNameAndPath[0]
     const categoryNameAndPathOne = allCategoriesNameAndPath[1]
     const categoryNameAndPathTwo = allCategoriesNameAndPath[2]
+    const categoryNameAndPathThree = allCategoriesNameAndPath[3]
+    const categoryNameAndPathFour = allCategoriesNameAndPath[4]
 
     const backArrowWaysZero = backArrowWays[0]
     const backArrowWaysOne = backArrowWays[1]
     const backArrowWaysTwo = backArrowWays[2]
+    const backArrowWaysThree = backArrowWays[3]
+    const backArrowWaysFour = backArrowWays[4]
 
 
-    //console.log(allCategoriesNamesZeroRussianRock)
+    //console.log(allCategoriesNamesOfGame)
 
     const expiredToken = useSelector<RootState, string>(state => state.bonus.token)
     const dispatch = useDispatch<AppDispatch>();
@@ -1476,6 +1507,14 @@ const AppRoutes = () => {
                                                                    roundNumber={2}
 
                 />}/>
+                <Route path={PATH.ROUNDTHREE} element={<Categories CategoryNameAndPath={categoryNameAndPathThree}
+                                                                 roundNumber={3}
+
+                />}/>
+                <Route path={PATH.ROUNDFOUR} element={<Categories CategoryNameAndPath={categoryNameAndPathFour}
+                                                                   roundNumber={4}
+
+                />}/>
 
 
                 <Route path={PATH.SUMMERCATEGORY} element={<NewGame arraySongs={roundZeroSummerSongs}
@@ -1538,6 +1577,32 @@ const AppRoutes = () => {
                                                                    categoryTitle={allCategoriesNamesTwoRoundAIRemixes}
                                                                    backWay={backArrowWaysTwo}
                                                                    roundNumber={2}/>}/>
+
+                <Route path={PATH.FOREIGNRETRO} element={<NewGame arraySongs={roundThreeRetro}
+                                                                  categoryTitle={allCategoriesNamesThreeRoundRetro}
+                                                                  backWay={backArrowWaysThree}
+                                                                  roundNumber={3}/>}/>
+                <Route path={PATH.FLOWERS} element={<NewGame arraySongs={roundThreeFlowers}
+                                                                  categoryTitle={allCategoriesNamesThreeRoundFlowers}
+                                                                  backWay={backArrowWaysThree}
+                                                                  roundNumber={3}/>}/>
+                <Route path={PATH.FOREIGNROCK} element={<NewGame arraySongs={roundThreeRock}
+                                                             categoryTitle={allCategoriesNamesThreeRoundRock}
+                                                             backWay={backArrowWaysThree}
+                                                             roundNumber={3}/>}/>
+                <Route path={PATH.MOVIESTWO} element={<NewGame arraySongs={roundThreeMovies}
+                                                                 categoryTitle={allCategoriesNamesThreeRoundMovies}
+                                                                 backWay={backArrowWaysThree}
+                                                                 roundNumber={3}/>}/>
+                <Route path={PATH.WOMENNAMESTWO} element={<NewGame arraySongs={roundThreeNames}
+                                                               categoryTitle={allCategoriesNamesThreeRoundNames}
+                                                               backWay={backArrowWaysThree}
+                                                               roundNumber={3}/>}/>
+
+                <Route path={PATH.CITIES} element={<NewGame arraySongs={roundFourCities}
+                                                                   categoryTitle={allCategoriesNamesThreeRoundCities}
+                                                                   backWay={backArrowWaysFour}
+                                                                   roundNumber={4}/>}/>
 
             </Routes>
 
