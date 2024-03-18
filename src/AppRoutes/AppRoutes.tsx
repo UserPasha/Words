@@ -179,6 +179,10 @@ export const PATH = {
     MOVIESTWO: '/moviesTwo',
     WOMENNAMESTWO: '/womenNamesTwo',
     CITIES: '/cities',
+    RUSROCKTWO: '/rusRockTwo',
+    MENSNAMESTWO: '/mensNamesTwo',
+    SERIALSTWO: '/serialsTwo',
+    AIREMIXESTHREE: '/AIRemixesThree',
 }
 
 const levels = [
@@ -480,7 +484,11 @@ const AppRoutes = () => {
     const allCategoriesNamesThreeRoundNames = allCategoriesNamesThreeRound[4]
 
     const allCategoriesNamesFourRound = allCategoriesNamesOfGame[4]
-    const allCategoriesNamesThreeRoundCities = allCategoriesNamesFourRound[0]
+    const allCategoriesNamesFourRoundCities = allCategoriesNamesFourRound[0]
+    const allCategoriesNamesFourRoundRusRock = allCategoriesNamesFourRound[1]
+    const allCategoriesNamesFourRoundMensNames = allCategoriesNamesFourRound[2]
+    const allCategoriesNamesFourRoundSerials = allCategoriesNamesFourRound[3]
+    const allCategoriesNamesFourRoundAIRemixes = allCategoriesNamesFourRound[4]
 
 //Songs
     const roundZeroSongs = allSongs[0]
@@ -514,6 +522,10 @@ const AppRoutes = () => {
     const roundThreeNames = roundThreeSongs[4]
 
     const roundFourCities = roundFourSongs[0]
+    const roundFourRusRock = roundFourSongs[1]
+    const roundFourMensNames = roundFourSongs[2]
+    const roundFourSerials = roundFourSongs[3]
+    const roundFourAIRemixes = roundFourSongs[4]
 
 // Rounds
     const categoryNameAndPathZero = allCategoriesNameAndPath[0]
@@ -1600,9 +1612,25 @@ const AppRoutes = () => {
                                                                roundNumber={3}/>}/>
 
                 <Route path={PATH.CITIES} element={<NewGame arraySongs={roundFourCities}
-                                                                   categoryTitle={allCategoriesNamesThreeRoundCities}
+                                                                   categoryTitle={allCategoriesNamesFourRoundCities}
                                                                    backWay={backArrowWaysFour}
                                                                    roundNumber={4}/>}/>
+                <Route path={PATH.RUSROCKTWO} element={<NewGame arraySongs={roundFourRusRock}
+                                                            categoryTitle={allCategoriesNamesFourRoundRusRock}
+                                                            backWay={backArrowWaysFour}
+                                                            roundNumber={4}/>}/>
+                <Route path={PATH.MENSNAMESTWO} element={<NewGame arraySongs={roundFourMensNames}
+                                                                categoryTitle={allCategoriesNamesFourRoundMensNames}
+                                                                backWay={backArrowWaysFour}
+                                                                roundNumber={4}/>}/>
+                <Route path={PATH.SERIALSTWO} element={<NewGame arraySongs={roundFourSerials}
+                                                                  categoryTitle={allCategoriesNamesFourRoundSerials}
+                                                                  backWay={backArrowWaysFour}
+                                                                  roundNumber={4}/>}/>
+                <Route path={PATH.AIREMIXESTHREE} element={<NewGame arraySongs={roundFourAIRemixes}
+                                                                categoryTitle={allCategoriesNamesFourRoundAIRemixes}
+                                                                backWay={backArrowWaysFour}
+                                                                roundNumber={4}/>}/>
 
             </Routes>
 

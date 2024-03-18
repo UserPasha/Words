@@ -249,6 +249,7 @@ const womenNamesTwoPlusFive = require('./../Common/Assets/audio/jen imena 2 5 pl
 
 //4
 //Города
+
 const citiesMinusOne = require('./../Common/Assets/audio/goroda minus 1.mp3')
 const citiesPlusOne = require('./../Common/Assets/audio/goroda pus 1.mp3')
 const citiesMinusTwo = require('./../Common/Assets/audio/goroda minus 2.mp3')
@@ -259,6 +260,53 @@ const citiesMinusFour = require('./../Common/Assets/audio/goroda minus 4.mp3')
 const citiesPlusFour = require('./../Common/Assets/audio/goroda plus 4.mp3')
 const citiesMinusFive = require('./../Common/Assets/audio/goroda minus 5.mp3')
 const citiesPlusFive = require('./../Common/Assets/audio/goroda plus 5.mp3')
+
+//Русский Рок
+
+const rusRockMinusOne = require('./../Common/Assets/audio/rusRock minus 1.mp3')
+const rusRockPlusOne = require('./../Common/Assets/audio/rusRock plus 1.mp3')
+const rusRockMinusTwo = require('./../Common/Assets/audio/rusRock minus 2.mp3')
+const rusRockPlusTwo = require('./../Common/Assets/audio/rusRock plus 2.mp3')
+const rusRockMinusThree = require('./../Common/Assets/audio/rusRock minus 3.mp3')
+const rusRockPlusThree = require('./../Common/Assets/audio/rusRock plus 3.mp3')
+const rusRockMinusFour = require('./../Common/Assets/audio/rusRock minus 4.mp3')
+const rusRockPlusFour = require('./../Common/Assets/audio/rusRock plus 4.mp3')
+const rusRockMinusFive = require('./../Common/Assets/audio/rusRock minus 5.mp3')
+const rusRockPlusFive = require('./../Common/Assets/audio/rusRock plus 5.mp3')
+
+//Мужские Имена
+
+const mensNamesMinusOne = require('./../Common/Assets/audio/muj imena 1 minus.mp3')
+const mensNamesPlusOne = require('./../Common/Assets/audio/muj imena 1 plus.mp3')
+const mensNamesMinusTwo = require('./../Common/Assets/audio/muj imena 2 minus.mp3')
+const mensNamesPlusTwo = require('./../Common/Assets/audio/muj imena 2 plus.mp3')
+const mensNamesMinusThree = require('./../Common/Assets/audio/muj imena 3 minus.mp3')
+const mensNamesPlusThree = require('./../Common/Assets/audio/muj imena 3 plus.mp3')
+const mensNamesMinusFour = require('./../Common/Assets/audio/muj imena 4 minus.mp3')
+const mensNamesPlusFour = require('./../Common/Assets/audio/muj imena 4 plus.mp3')
+const mensNamesMinusFive = require('./../Common/Assets/audio/muj imena 5 minus.mp3')
+const mensNamesPlusFive = require('./../Common/Assets/audio/muj imena 5 plus.mp3')
+
+//Сериалы
+
+const serialsTwoOne = require('./../Common/Assets/audio/serials 2 1.mp3')
+const serialsTwoTwo = require('./../Common/Assets/audio/serials 2 2.mp3')
+const serialsTwoThree = require('./../Common/Assets/audio/serials 2 3.mp3')
+const serialsTwoFour = require('./../Common/Assets/audio/serials 2 4.mp3')
+const serialsTwoFive = require('./../Common/Assets/audio/serials 2 5.mp3')
+
+// ИИ Ремиксы
+
+const aiRemixThreeMinusOne = require('./../Common/Assets/audio/AIRThree minus 1.mp3')
+const aiRemixThreePlusOne = require('./../Common/Assets/audio/AIRThree plus 1.mp3')
+const aiRemixThreeMinusTwo = require('./../Common/Assets/audio/AIRThree minus 2.mp3')
+const aiRemixThreePlusTwo = require('./../Common/Assets/audio/AIRThree plus 2.mp3')
+const aiRemixThreeMinusThree = require('./../Common/Assets/audio/AIRThree minus 3.mp3')
+const aiRemixThreePlusThree = require('./../Common/Assets/audio/AIRThree plus 3.mp3')
+const aiRemixThreeMinusFour = require('./../Common/Assets/audio/AIRThree minus 4.mp3')
+const aiRemixThreePlusFour = require('./../Common/Assets/audio/AIRThree plus 4.mp3')
+const aiRemixThreeMinusFive = require('./../Common/Assets/audio/AIRThree minus 5.mp3')
+const aiRemixThreePlusFive = require('./../Common/Assets/audio/AIRThree plus 5.mp3')
 
 
 export type EveryCategoryType = {
@@ -1227,42 +1275,42 @@ export const dataSongs: roundType[] = [{
             },
             {
                 isCompletedCategory: false,
-                name: 'Цветы',
-                path: '/flowers',
+                name: 'Русский Рок',
+                path: '/rusRockTwo',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
-                        track: flowersMinusOne,
-                        original: flowersPlusOne,
-                        trackName: 'Виктор Королёв feat. Ирина Круг - Букет Из Белых Роз',
+                        track: rusRockMinusOne,
+                        original: rusRockPlusOne,
+                        trackName: 'Танцы Минус - Цветут Цветы',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 2",
-                        track: flowersMinusTwo,
-                        original: flowersPlusTwo,
-                        trackName: 'Алла Пугачёва - Миллион Алых Роз',
+                        track: rusRockMinusTwo,
+                        original: rusRockPlusTwo,
+                        trackName: 'Смысловые Галлюцинации - Вечно Молодой',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 3",
-                        track: flowersMinusThree,
-                        original: flowersPlusThree,
-                        trackName: 'Валерий Леонтьев - Девять Хризантем',
+                        track: rusRockMinusThree,
+                        original: rusRockPlusThree,
+                        trackName: 'Агата Кристи - Сказочная Тайга',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 4",
-                        track: flowersMinusFour,
-                        original: flowersPlusFour,
-                        trackName: 'Наташа Королёва - Жёлтые Тюльпаны',
+                        track: rusRockMinusFour,
+                        original: rusRockPlusFour,
+                        trackName: '7Б - Молодые ветра',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 5",
-                        track: flowersMinusFive,
-                        original: flowersPlusFive,
-                        trackName: 'Лилии (Вячеслав Назаров - Баллада Атоса)',
+                        track: rusRockMinusFive,
+                        original: rusRockPlusFive,
+                        trackName: 'Сплин - Выхода Нет',
                         isComplete: false
                     }
                 ]
@@ -1270,42 +1318,42 @@ export const dataSongs: roundType[] = [{
             },
             {
                 isCompletedCategory: false,
-                name: 'Зарубежный Рок',
-                path: '/foreignRock',
+                name: 'Мужские Имена',
+                path: '/mensNamesTwo',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
-                        track: fRockMinusOne,
-                        original: fRockPlusOne,
-                        trackName: 'Linkin Park - Numb',
+                        track: mensNamesMinusOne,
+                        original: mensNamesPlusOne,
+                        trackName: 'Дима (Лариса Черникова - Влюблённый Самолёт)',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 2",
-                        track: fRockMinusTwo,
-                        original: fRockPlusTwo,
-                        trackName: 'Red Hot Chili Peppers - Cant Stop',
+                        track: mensNamesMinusTwo,
+                        original: mensNamesPlusTwo,
+                        trackName: 'Винтаж - Роман',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 3",
-                        track: fRockMinusThree,
-                        original: fRockPlusThree,
-                        trackName: 'Limp Bizkit - Behind Blue Eyes',
+                        track: mensNamesMinusThree,
+                        original: mensNamesPlusThree,
+                        trackName: 'Алёна Апина - Лёха',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 4",
-                        track: fRockMinusFour,
-                        original: fRockPlusFour,
-                        trackName: 'Rammstein - Deutschland',
+                        track: mensNamesMinusFour,
+                        original: mensNamesPlusFour,
+                        trackName: 'Натали и Николай Басков - Николай',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 5",
-                        track: fRockMinusFive,
-                        original: fRockPlusFive,
-                        trackName: 'Evanescence - Going Under',
+                        track: mensNamesMinusFive,
+                        original: mensNamesPlusFive,
+                        trackName: 'Афродита - Валера',
                         isComplete: false
                     }
                 ]
@@ -1314,42 +1362,42 @@ export const dataSongs: roundType[] = [{
 
             {
                 isCompletedCategory: false,
-                name: 'Фильмы',
-                path: '/moviesTwo',
+                name: 'Сериалы',
+                path: '/serialsTwo',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
-                        track: moviesMinusOne,
-                        original: moviesMinusOne,
-                        trackName: 'Пираты Карибского Моря',
+                        track: serialsTwoOne,
+                        original: serialsTwoOne,
+                        trackName: 'Секретные Материалы',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 2",
-                        track: moviesMinusTwo,
-                        original: moviesMinusTwo,
-                        trackName: 'Мстители',
+                        track: serialsTwoTwo,
+                        original: serialsTwoTwo,
+                        trackName: 'Бригада',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 3",
-                        track: moviesMinusThree,
-                        original: moviesMinusThree,
-                        trackName: 'Д\'Артаньян и Три Мушкетёра',
+                        track: serialsTwoThree,
+                        original: serialsTwoThree,
+                        trackName: 'Доктор Хаус',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 4",
-                        track: moviesMinusFour,
-                        original: moviesMinusFour,
-                        trackName: 'Грязные Танцы',
+                        track: serialsTwoFour,
+                        original: serialsTwoFour,
+                        trackName: 'Друзья',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 5",
-                        track: moviesMinusFive,
-                        original: moviesMinusFive,
-                        trackName: 'Интерстеллар',
+                        track: serialsTwoFive,
+                        original: serialsTwoFive,
+                        trackName: 'Во Все Тяжкие',
                         isComplete: false
                     }
                 ]
@@ -1357,42 +1405,42 @@ export const dataSongs: roundType[] = [{
             },
             {
                 isCompletedCategory: false,
-                name: 'Женские Имена',
-                path: '/womenNamesTwo',
+                name: 'ИИ Ремиксы',
+                path: '/AIRemixesThree',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
-                        track: womenNameTwosMinusOne,
-                        original: womenNamesTwoPlusOne,
-                        trackName: 'Филипп Киркоров - Марина',
+                        track: aiRemixThreeMinusOne,
+                        original: aiRemixThreePlusOne,
+                        trackName: 'DaBro - Юность',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 2",
-                        track: womenNameTwosMinusTwo,
-                        original: womenNamesTwoPlusTwo,
-                        trackName: 'Натали - Черепашка',
+                        track: aiRemixThreeMinusTwo,
+                        original: aiRemixThreePlusTwo,
+                        trackName: 'БандЭрос - Про Красивую Жизнь',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 3",
-                        track: womenNameTwosMinusThree,
-                        original: womenNamesTwoPlusThree,
-                        trackName: 'Маша И Медведи - Любочка',
+                        track: aiRemixThreeMinusThree,
+                        original: aiRemixThreePlusThree,
+                        trackName: 'Ленинград - Экспонат',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 4",
-                        track: womenNameTwosMinusFour,
-                        original: womenNamesTwoPlusFour,
-                        trackName: 'Кабаре-дуэт Академия - Тома',
+                        track: aiRemixThreeMinusFour,
+                        original: aiRemixThreePlusFour,
+                        trackName: 'Грибы - Тает Лёд',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 5",
-                        track: womenNameTwosMinusFive,
-                        original: womenNamesTwoPlusFive,
-                        trackName: 'А-Студио - Джулия',
+                        track: aiRemixThreeMinusFive,
+                        original: aiRemixThreePlusFive,
+                        trackName: 'Артур Пирожков – #Алкоголичка',
                         isComplete: false
                     }
                 ]
