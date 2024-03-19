@@ -308,6 +308,67 @@ const aiRemixThreePlusFour = require('./../Common/Assets/audio/AIRThree plus 4.m
 const aiRemixThreeMinusFive = require('./../Common/Assets/audio/AIRThree minus 5.mp3')
 const aiRemixThreePlusFive = require('./../Common/Assets/audio/AIRThree plus 5.mp3')
 
+//5
+//Современные
+
+const modernTwoMinusOne = require('./../Common/Assets/audio/modern minus 2 1.mp3' )
+const modernTwoPlusOne = require('./../Common/Assets/audio/modern plus 2 1.mp3' )
+const modernTwoMinusTwo = require('./../Common/Assets/audio/modern minus 2 2.mp3' )
+const modernTwoPlusTwo = require('./../Common/Assets/audio/modern plus 2 2.mp3' )
+const modernTwoMinusThree = require('./../Common/Assets/audio/modern minus 2 3.mp3' )
+const modernTwoPlusThree = require('./../Common/Assets/audio/modern plus 2 3.mp3' )
+const modernTwoMinusFour = require('./../Common/Assets/audio/modern minus 2 4.mp3' )
+const modernTwoPlusFour = require('./../Common/Assets/audio/modern plus 2 4.mp3' )
+const modernTwoMinusFive = require('./../Common/Assets/audio/modern minus 2 5.mp3' )
+const modernTwoPlusFive = require('./../Common/Assets/audio/modern plus 2 5.mp3' )
+
+//Хиты 90-х
+
+const nintyHitsTwoMinusOne = require('./../Common/Assets/audio/nintys minus 2 1.mp3' )
+const nintyHitsTwoPlusOne = require('./../Common/Assets/audio/nintys plus 2 1.mp3' )
+const nintyHitsTwoMinusTwo = require('./../Common/Assets/audio/nintys minus 2 2.mp3' )
+const nintyHitsTwoPlusTwo = require('./../Common/Assets/audio/nintys plus 2 2.mp3' )
+const nintyHitsTwoMinusThree = require('./../Common/Assets/audio/nintys minus 2 3.mp3' )
+const nintyHitsTwoPlusThree = require('./../Common/Assets/audio/nintys plus 2 3.mp3' )
+const nintyHitsTwoMinusFour = require('./../Common/Assets/audio/nintys minus 2 4.mp3' )
+const nintyHitsTwoPlusFour = require('./../Common/Assets/audio/nintys plus 2 4.mp3' )
+const nintyHitsTwoMinusFive = require('./../Common/Assets/audio/nintys minus 2 5.mp3' )
+const nintyHitsTwoPlusFive = require('./../Common/Assets/audio/nintys plus 2 5.mp3' )
+
+//Ночь
+
+const nightMinusOne = require('./../Common/Assets/audio/night minus 1.mp3' )
+const nightPlusOne = require('./../Common/Assets/audio/night plus 1.mp3' )
+const nightMinusTwo = require('./../Common/Assets/audio/night minus 2.mp3' )
+const nightPlusTwo = require('./../Common/Assets/audio/night plus 2.mp3' )
+const nightMinusThree = require('./../Common/Assets/audio/night minus 3.mp3' )
+const nightPlusThree = require('./../Common/Assets/audio/night plus 3.mp3' )
+const nightMinusFour = require('./../Common/Assets/audio/night minus 4.mp3' )
+const nightPlusFour = require('./../Common/Assets/audio/night plus 4.mp3')
+const nightMinusFive = require('./../Common/Assets/audio/night minus 5.mp3' )
+const nightPlusFive = require('./../Common/Assets/audio/night plus 5.mp3' )
+
+//Фильмы
+
+const moviesThreeOne = require('./../Common/Assets/audio/filmi 1 1 .mp3' )
+const moviesThreeTwo = require('./../Common/Assets/audio/filmi 1 2.mp3' )
+const moviesThreeThree = require('./../Common/Assets/audio/filmi 1 3.mp3' )
+const moviesThreeFour = require('./../Common/Assets/audio/filmi 1 4.mp3' )
+const moviesThreeFive = require('./../Common/Assets/audio/filmi 1 5.mp3' )
+
+// ИИ Ремиксы
+
+const airMinusOne = require('./../Common/Assets/audio/air minus 4 1.mp3' )
+const airPlusOne = require('./../Common/Assets/audio/air plus 4 1.mp3' )
+const airMinusTwo = require('./../Common/Assets/audio/air minus 4 2.mp3' )
+const airPlusTwo = require('./../Common/Assets/audio/air plus 4 2.mp3' )
+const airMinusThree = require('./../Common/Assets/audio/air minus 4 3.mp3' )
+const airPlusThree = require('./../Common/Assets/audio/air plus 4 3.mp3' )
+const airMinusFour = require('./../Common/Assets/audio/air minus 4 4.mp3' )
+const airPlusFour = require('./../Common/Assets/audio/air plus 4 4.mp3' )
+const airMinusFive = require('./../Common/Assets/audio/air minus 4 5.mp3' )
+const airPlusFive = require('./../Common/Assets/audio/air plus 4 5.mp3' )
+
 
 export type EveryCategoryType = {
     isCompletedCategory: boolean
@@ -1448,6 +1509,229 @@ export const dataSongs: roundType[] = [{
             },]
 
 
-    }
+    },
+    {
+        round: 5,
+        path: '/roundFive',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Современные',
+                path: '/modernTwo',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: modernTwoMinusOne,
+                    original: modernTwoPlusOne,
+                    trackName: 'Люся Чеботина - Плакал Голливуд',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: modernTwoMinusTwo,
+                        original: modernTwoPlusTwo,
+                        trackName: 'Amirchik - Эта Любовь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: modernTwoMinusThree,
+                        original: modernTwoPlusThree,
+                        trackName: 'Кравц feat. Гио ПиКа - Где Прошла Ты',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: modernTwoMinusFour,
+                        original: modernTwoPlusFour,
+                        trackName: 'Моя Мишель, Dose - Пташка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: modernTwoMinusFive,
+                        original: modernTwoPlusFive,
+                        trackName: 'ANNA ASTI - По Барам',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 90-х',
+                path: '/nintyTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: nintyHitsTwoMinusOne,
+                        original: nintyHitsTwoPlusOne,
+                        trackName: 'Стрелки - Ты Бросил Меня',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: nintyHitsTwoMinusTwo,
+                        original: nintyHitsTwoPlusTwo,
+                        trackName: 'Ирина Аллегрова и Игорь Крутой - Незаконченный роман',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: nintyHitsTwoMinusThree,
+                        original: nintyHitsTwoPlusThree,
+                        trackName: 'Наталья Ветлицкая - Посмотри в Глаза',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: nintyHitsTwoMinusFour,
+                        original: nintyHitsTwoPlusFour,
+                        trackName: 'Владимрир Маркин - Я Готов Целовать Песок',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: nintyHitsTwoMinusFive,
+                        original: nintyHitsTwoPlusFive,
+                        trackName: 'Комбинация - American Boy',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Ночь',
+                path: '/nightGategory',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: nightMinusOne,
+                        original: nightPlusOne,
+                        trackName: 'Данко - Московская ночь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: nightMinusTwo,
+                        original: nightPlusTwo,
+                        trackName: 'Zdob Si Zdub - Видели Ночь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: nightMinusThree,
+                        original: nightPlusThree,
+                        trackName: 'Чай Вдвоём - Белая Ночь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: nightMinusFour,
+                        original: nightPlusFour,
+                        trackName: 'Лада Дэнс – Девочка-Ночь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: nightMinusFive,
+                        original: nightPlusFive,
+                        trackName: 'Валерий Меладзе - Ночь Накануне Рождества',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Фильмы',
+                path: '/moviesThree',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: moviesThreeOne,
+                        original: moviesThreeOne,
+                        trackName: 'Иван Васильевич Меняет Профессию',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: moviesThreeTwo,
+                        original: moviesThreeTwo,
+                        trackName: 'Криминальное Чтиво',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: moviesThreeThree,
+                        original: moviesThreeThree,
+                        trackName: 'Реквием По Мечте',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: moviesThreeFour,
+                        original: moviesThreeFour,
+                        trackName: 'Начало',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: moviesThreeFive,
+                        original: moviesThreeFive,
+                        trackName: 'Ирония Судьбы, или С Лёгким Паром',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'ИИ Ремиксы',
+                path: '/AIRemixesFour',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: airMinusOne,
+                        original: airPlusOne,
+                        trackName: 'Gayazovs Brothers - Увезите Меня На Дип-Хаус',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: airMinusTwo,
+                        original: airPlusTwo,
+                        trackName: 'Artik & Asti - Девочка, Танцуй',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: airMinusThree,
+                        original: airPlusThree,
+                        trackName: 'Кипелов - Я Свободен',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: airMinusFour,
+                        original: airPlusFour,
+                        trackName: 'HammAli And Navai - Прятки',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: airMinusFive,
+                        original: airPlusFive,
+                        trackName: 'Егор Крид - Сердцеедка',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
 ]
 

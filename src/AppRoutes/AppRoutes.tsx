@@ -157,6 +157,7 @@ export const PATH = {
     ROUNDTWO: '/roundTwo',
     ROUNDTHREE: '/roundThree',
     ROUNDFOUR: '/roundFour',
+    ROUNDFIVE: '/roundFive',
 
     SUMMERCATEGORY: '/summerCategory',
     WINTERCATEGORY: '/winterCategory',
@@ -183,6 +184,11 @@ export const PATH = {
     MENSNAMESTWO: '/mensNamesTwo',
     SERIALSTWO: '/serialsTwo',
     AIREMIXESTHREE: '/AIRemixesThree',
+    MODERNTWO: '/modernTwo',
+    NINTYTWO: '/nintyTwo',
+    NIGHTCATEGORY: '/nightGategory',
+    MOVIESTHREE: '/moviesThree',
+    AIREMIXESFOUR: '/AIRemixesFour',
 }
 
 const levels = [
@@ -490,12 +496,20 @@ const AppRoutes = () => {
     const allCategoriesNamesFourRoundSerials = allCategoriesNamesFourRound[3]
     const allCategoriesNamesFourRoundAIRemixes = allCategoriesNamesFourRound[4]
 
+    const allCategoriesNamesFiveRound = allCategoriesNamesOfGame[5]
+    const allCategoriesNamesFiveRoundModern = allCategoriesNamesFiveRound[0]
+    const allCategoriesNamesFiveRoundNinty = allCategoriesNamesFiveRound[1]
+    const allCategoriesNamesFiveRoundNight = allCategoriesNamesFiveRound[2]
+    const allCategoriesNamesFiveRoundMovies = allCategoriesNamesFiveRound[3]
+    const allCategoriesNamesFiveRoundAIRemixes = allCategoriesNamesFiveRound[4]
+
 //Songs
     const roundZeroSongs = allSongs[0]
     const roundOneSongs = allSongs[1]
     const roundTwoSongs = allSongs[2]
     const roundThreeSongs = allSongs[3]
     const roundFourSongs = allSongs[4]
+    const roundFiveSongs = allSongs[5]
 
     const roundZeroSummerSongs = roundZeroSongs[0]
     const roundZeroWinterSongs = roundZeroSongs[1]
@@ -527,18 +541,26 @@ const AppRoutes = () => {
     const roundFourSerials = roundFourSongs[3]
     const roundFourAIRemixes = roundFourSongs[4]
 
+    const roundFiveModern = roundFiveSongs[0]
+    const roundFiveNinty = roundFiveSongs[1]
+    const roundFiveNight = roundFiveSongs[2]
+    const roundFiveMovies = roundFiveSongs[3]
+    const roundFiveAIRemixes = roundFiveSongs[4]
+
 // Rounds
     const categoryNameAndPathZero = allCategoriesNameAndPath[0]
     const categoryNameAndPathOne = allCategoriesNameAndPath[1]
     const categoryNameAndPathTwo = allCategoriesNameAndPath[2]
     const categoryNameAndPathThree = allCategoriesNameAndPath[3]
     const categoryNameAndPathFour = allCategoriesNameAndPath[4]
+    const categoryNameAndPathFive = allCategoriesNameAndPath[5]
 
     const backArrowWaysZero = backArrowWays[0]
     const backArrowWaysOne = backArrowWays[1]
     const backArrowWaysTwo = backArrowWays[2]
     const backArrowWaysThree = backArrowWays[3]
     const backArrowWaysFour = backArrowWays[4]
+    const backArrowWaysFive = backArrowWays[5]
 
 
     //console.log(allCategoriesNamesOfGame)
@@ -1528,6 +1550,11 @@ const AppRoutes = () => {
 
                 />}/>
 
+                <Route path={PATH.ROUNDFIVE} element={<Categories CategoryNameAndPath={categoryNameAndPathFive}
+                                                                  roundNumber={5}
+
+                />}/>
+
 
                 <Route path={PATH.SUMMERCATEGORY} element={<NewGame arraySongs={roundZeroSummerSongs}
                                                                     categoryTitle={allCategoriesNamesZeroRoundSummer}
@@ -1631,6 +1658,27 @@ const AppRoutes = () => {
                                                                 categoryTitle={allCategoriesNamesFourRoundAIRemixes}
                                                                 backWay={backArrowWaysFour}
                                                                 roundNumber={4}/>}/>
+
+                <Route path={PATH.MODERNTWO} element={<NewGame arraySongs={roundFiveModern}
+                                                                    categoryTitle={allCategoriesNamesFiveRoundModern}
+                                                                    backWay={backArrowWaysFive}
+                                                                    roundNumber={5}/>}/>
+                <Route path={PATH.NINTYTWO} element={<NewGame arraySongs={roundFiveNinty}
+                                                               categoryTitle={allCategoriesNamesFiveRoundNinty}
+                                                               backWay={backArrowWaysFive}
+                                                               roundNumber={5}/>}/>
+                <Route path={PATH.NIGHTCATEGORY} element={<NewGame arraySongs={roundFiveNight}
+                                                              categoryTitle={allCategoriesNamesFiveRoundNight}
+                                                              backWay={backArrowWaysFive}
+                                                              roundNumber={5}/>}/>
+                <Route path={PATH.MOVIESTHREE} element={<NewGame arraySongs={roundFiveMovies}
+                                                                   categoryTitle={allCategoriesNamesFiveRoundMovies}
+                                                                   backWay={backArrowWaysFive}
+                                                                   roundNumber={5}/>}/>
+                <Route path={PATH.AIREMIXESFOUR} element={<NewGame arraySongs={roundFiveAIRemixes}
+                                                                 categoryTitle={allCategoriesNamesFiveRoundAIRemixes}
+                                                                 backWay={backArrowWaysFive}
+                                                                 roundNumber={5}/>}/>
 
             </Routes>
 
