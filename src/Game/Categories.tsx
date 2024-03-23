@@ -49,12 +49,12 @@ export const Categories: FC<categoriesType> = ({CategoryNameAndPath, roundNumber
                     </div>)}
 
             </div>
-            <div className={style.description}
+            {/*<div className={style.description}*/}
 
-            >
-                Name and switch
+            {/*>*/}
+            {/*    Name and switch*/}
 
-            </div>
+            {/*</div>*/}
             <Score/>
         </div>
     );

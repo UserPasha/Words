@@ -1,7 +1,7 @@
 .wrapper{
     width: 100%;
     min-height: 200px;
-    border: 1px solid #006FB0;
+    border: 1px solid #7C7E80;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,11 +9,11 @@
     padding: 20px;
 }
 .wrapper input{
-    width: 50%;
-    height: 40px;
+    width: 80%;
+    height: 100px;
     border-radius: 20px;
     padding: 0 10px;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
 }
 .add{
@@ -51,8 +51,8 @@
 
 }
 .name{
-   width: 30%;
-    font-size: 30px;
+   width: 50%;
+    font-size: 50px;
     font-weight: bold;
 }
 .score{
