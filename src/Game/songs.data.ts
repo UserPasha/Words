@@ -1,6 +1,6 @@
 // 0
 // Лето
-const demoSun = require('./../Common/Assets/audio/d-sun.mp3')
+const demoSun = require('./../Common/Assets/audio/sol minus.mp3')
 const demoSunOr = require('./../Common/Assets/audio/d-sun2.mp3')
 const monacoSun = require('./../Common/Assets/audio/L-monaco-sun.mp3')
 const monacoSunOr = require('./../Common/Assets/audio/LyusyaChebotina-monako.mp3')
@@ -368,6 +368,74 @@ const airMinusFour = require('./../Common/Assets/audio/air minus 4 4.mp3' )
 const airPlusFour = require('./../Common/Assets/audio/air plus 4 4.mp3' )
 const airMinusFive = require('./../Common/Assets/audio/air minus 4 5.mp3' )
 const airPlusFive = require('./../Common/Assets/audio/air plus 4 5.mp3' )
+
+//6
+//Современные
+
+const modernThreeMinusOne = require('./../Common/Assets/audio/modern minus 3 1.mp3' )
+const modernThreePlusOne = require('./../Common/Assets/audio/modern plus 3 1.mp3' )
+const modernThreeMinusTwo = require('./../Common/Assets/audio/modern minus 3 2.mp3' )
+const modernThreePlusTwo = require('./../Common/Assets/audio/modern plus 3 2.mp3' )
+const modernThreeMinusThree = require('./../Common/Assets/audio/modern minus 3 3.mp3' )
+const modernThreePlusThree = require('./../Common/Assets/audio/modern plus 3 3.mp3' )
+const modernThreeMinusFour = require('./../Common/Assets/audio/modern minus 3 4.mp3' )
+const modernThreePlusFour = require('./../Common/Assets/audio/modern plus 3 4.mp3' )
+const modernThreeMinusFive = require('./../Common/Assets/audio/modern minus 3 5.mp3' )
+const modernThreePlusFive = require('./../Common/Assets/audio/modern plus 3 5.mp3' )
+
+//Хиты 2000-х
+
+const hitsOneMinusOne = require('./../Common/Assets/audio/hits minus 1 1.mp3' )
+const hitsOnePlusOne = require('./../Common/Assets/audio/hits plus 1 1.mp3' )
+const hitsOneMinusTwo = require('./../Common/Assets/audio/hits minus 1 2.mp3' )
+const hitsOnePlusTwo = require('./../Common/Assets/audio/hits plus 1 2.mp3' )
+const hitsOneMinusThree = require('./../Common/Assets/audio/hits minus 1 3.mp3' )
+const hitsOnePlusThree = require('./../Common/Assets/audio/hits plus 1 3.mp3' )
+const hitsOneMinusFour = require('./../Common/Assets/audio/hits minus 1 4.mp3' )
+const hitsOnePlusFour = require('./../Common/Assets/audio/hits plus 1 4.mp3' )
+const hitsOneMinusFive = require('./../Common/Assets/audio/hits minus 1 5.mp3' )
+const hitsOnePlusFive = require('./../Common/Assets/audio/hits plus 1 5.mp3' )
+
+//Зарубежный Рок
+
+const foreignRockTwoMinusOne = require('./../Common/Assets/audio/fRock minus 2 1.mp3' )
+const foreignRockTwoPlusOne = require('./../Common/Assets/audio/fRock plus 2 1.mp3' )
+const foreignRockTwoMinusTwo = require('./../Common/Assets/audio/fRock minus 2 2.mp3' )
+const foreignRockTwoPlusTwo = require('./../Common/Assets/audio/fRock plus 2 2.mp3' )
+const foreignRockTwoMinusThree = require('./../Common/Assets/audio/fRock minus 2 3.mp3' )
+const foreignRockTwoPlusThree = require('./../Common/Assets/audio/fRock plus 2 3.mp3' )
+const foreignRockTwoMinusFour = require('./../Common/Assets/audio/fRock minus 2 4.mp3' )
+const foreignRockTwoPlusFour = require('./../Common/Assets/audio/fRock plus 2 4.mp3' )
+const foreignRockTwoMinusFive = require('./../Common/Assets/audio/fRock minus 2 5.mp3' )
+const foreignRockTwoPlusFive = require('./../Common/Assets/audio/fRock plus 2 5.mp3' )
+
+//Зарубежный Рэп
+
+const foreignRapOneMinusOne = require('./../Common/Assets/audio/fRap minus 1 1.mp3' )
+const foreignRapOnePlusOne = require('./../Common/Assets/audio/fRap plus 1 1.mp3' )
+const foreignRapOneMinusTwo = require('./../Common/Assets/audio/fRap minus 1 2.mp3' )
+const foreignRapOnePlusTwo = require('./../Common/Assets/audio/fRap plus 1 2.mp3' )
+const foreignRapOneMinusThree = require('./../Common/Assets/audio/fRap minus 1 3.mp3' )
+const foreignRapOnePlusThree = require('./../Common/Assets/audio/fRap plus 1 3.mp3' )
+const foreignRapOneMinusFour = require('./../Common/Assets/audio/fRap minus 1 4.mp3' )
+const foreignRapOnePlusFour = require('./../Common/Assets/audio/fRap plus 1 4.mp3' )
+const foreignRapOneMinusFive = require('./../Common/Assets/audio/fRap minus 1 5.mp3' )
+const foreignRapOnePlusFive = require('./../Common/Assets/audio/fRap plus 1 5.mp3' )
+
+//Зарубежная Попса
+
+const foreignPopOneMinusOne = require('./../Common/Assets/audio/fPop minus 1 1.mp3' )
+const foreignPopOnePlusOne = require('./../Common/Assets/audio/fPop plus 1 1.mp3' )
+const foreignPopOneMinusTwo = require('./../Common/Assets/audio/fPop minus 1 2.mp3' )
+const foreignPopOnePlusTwo = require('./../Common/Assets/audio/fPop plus 1 2.mp3' )
+const foreignPopOneMinusThree = require('./../Common/Assets/audio/fPop minus 1 3.mp3' )
+const foreignPopOnePlusThree = require('./../Common/Assets/audio/fPop plus 1 3.mp3' )
+const foreignPopOneMinusFour = require('./../Common/Assets/audio/fPop minus 1 4.mp3' )
+const foreignPopOnePlusFour = require('./../Common/Assets/audio/fPop plus 1 4.mp3' )
+const foreignPopOneMinusFive = require('./../Common/Assets/audio/fPop minus 1 5.mp3' )
+const foreignPopOnePlusFive = require('./../Common/Assets/audio/fPop plus 1 5.mp3' )
+
+
 
 
 export type EveryCategoryType = {
@@ -1725,6 +1793,229 @@ export const dataSongs: roundType[] = [{
                         track: airMinusFive,
                         original: airPlusFive,
                         trackName: 'Егор Крид - Сердцеедка',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 6,
+        path: '/roundSix',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Современные',
+                path: '/modernThree',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: modernThreeMinusOne,
+                    original: modernThreePlusOne,
+                    trackName: 'Клава Кока feat. Niletto - Краш',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: modernThreeMinusTwo,
+                        original: modernThreePlusTwo,
+                        trackName: 'Лолита – Ориентация Север',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: modernThreeMinusThree,
+                        original: modernThreePlusThree,
+                        trackName: 'Хабиб - Ягода Малинка',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: modernThreeMinusFour,
+                        original: modernThreePlusFour,
+                        trackName: 'Jony - Комета',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: modernThreeMinusFive,
+                        original: modernThreePlusFive,
+                        trackName: 'MiyaGi & Andy Panda - Minor',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 2000-х',
+                path: '/hits2000',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: hitsOneMinusOne,
+                        original: hitsOnePlusOne,
+                        trackName: 'Отпетые Мошенники - Девушки Бывают Разные',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: hitsOneMinusTwo,
+                        original: hitsOnePlusTwo,
+                        trackName: 'Дискотека Авария - Заколебал Ты',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: hitsOneMinusThree,
+                        original: hitsOnePlusThree,
+                        trackName: 'Катя Лель - Мой Мармеладный',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: hitsOneMinusFour,
+                        original: hitsOnePlusFour,
+                        trackName: 'Паскаль - Шелковое Сердце',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: hitsOneMinusFive,
+                        original: hitsOnePlusFive,
+                        trackName: 'Иванушки International - Билетик В Кино',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежный Рок',
+                path: '/foreignRockTwo',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: foreignRockTwoMinusOne,
+                        original: foreignRockTwoPlusOne,
+                        trackName: 'Metallica - The Unforgiven',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: foreignRockTwoMinusTwo,
+                        original: foreignRockTwoPlusTwo,
+                        trackName: 'Queen - Bohemian Rhapsody',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: foreignRockTwoMinusThree,
+                        original: foreignRockTwoPlusThree,
+                        trackName: 'The Rasmus - In the Shadows',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: foreignRockTwoMinusFour,
+                        original: foreignRockTwoPlusFour,
+                        trackName: 'Limp Bizkit - My Way',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: foreignRockTwoMinusFive,
+                        original: foreignRockTwoPlusFive,
+                        trackName: 'Papa Roach - Last Resort',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежный Рэп',
+                path: '/foreignRap',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: foreignRapOneMinusOne,
+                        original: foreignRapOnePlusOne,
+                        trackName: '50 Cent - In Da Club',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: foreignRapOneMinusTwo,
+                        original: foreignRapOnePlusTwo,
+                        trackName: 'Usher, Ludacris, Lil Jon - Yeah!',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: foreignRapOneMinusThree,
+                        original: foreignRapOnePlusThree,
+                        trackName: 'Coolio - Gangsta\'s Paradise.mp3',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: foreignRapOneMinusFour,
+                        original: foreignRapOnePlusFour,
+                        trackName: 'Dr. Dre ft. Snoop Dogg - Still D.R.E.',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: foreignRapOneMinusFive,
+                        original: foreignRapOnePlusFive,
+                        trackName: 'Eminem - Without Me',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежная Попса',
+                path: '/ForeignPop',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: foreignPopOneMinusOne,
+                        original: foreignPopOnePlusOne,
+                        trackName: 'Lady Gaga - Poker Face',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: foreignPopOneMinusTwo,
+                        original: foreignPopOnePlusTwo,
+                        trackName: 'Kylie Minogue - Can\'t Get You Out Of My Head',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: foreignPopOneMinusThree,
+                        original: foreignPopOnePlusThree,
+                        trackName: 'O-Zone - Dragostea Din Tei',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: foreignPopOneMinusFour,
+                        original: foreignPopOnePlusFour,
+                        trackName: 'The Pussycat Dolls - Buttons',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: foreignPopOneMinusFive,
+                        original: foreignPopOnePlusFive,
+                        trackName: 'Katy Perry - I Kissed A Girl',
                         isComplete: false
                     }
                 ]

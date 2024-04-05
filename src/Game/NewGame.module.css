@@ -18,6 +18,7 @@
     justify-content: center;
     font-size: 100px;
     font-weight: bold;
+    color: #fff;
 }
 
 .categories {
@@ -98,4 +99,5 @@
     padding: 5px;
     font-size: 60px;
     line-height: 60px;
+    text-align: center;
 }

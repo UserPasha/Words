@@ -158,6 +158,7 @@ export const PATH = {
     ROUNDTHREE: '/roundThree',
     ROUNDFOUR: '/roundFour',
     ROUNDFIVE: '/roundFive',
+    ROUNDSIX: '/roundSix',
 
     SUMMERCATEGORY: '/summerCategory',
     WINTERCATEGORY: '/winterCategory',
@@ -189,6 +190,11 @@ export const PATH = {
     NIGHTCATEGORY: '/nightGategory',
     MOVIESTHREE: '/moviesThree',
     AIREMIXESFOUR: '/AIRemixesFour',
+    MODERNTHREE: '/modernThree',
+    HITS2000: '/hits2000',
+    FOREIGNROCKTWO: '/foreignRockTwo',
+    FOREIGNRAP: '/foreignRap',
+    FOREIGNPOP: '/ForeignPop',
 }
 
 const levels = [
@@ -503,6 +509,13 @@ const AppRoutes = () => {
     const allCategoriesNamesFiveRoundMovies = allCategoriesNamesFiveRound[3]
     const allCategoriesNamesFiveRoundAIRemixes = allCategoriesNamesFiveRound[4]
 
+    const allCategoriesNamesSixRound = allCategoriesNamesOfGame[6]
+    const allCategoriesNamesSixRoundModern = allCategoriesNamesSixRound[0]
+    const allCategoriesNamesSixRoundHits = allCategoriesNamesSixRound[1]
+    const allCategoriesNamesSixRoundForeighRock = allCategoriesNamesSixRound[2]
+    const allCategoriesNamesSixRoundForeignRap = allCategoriesNamesSixRound[3]
+    const allCategoriesNamesSixRoundForeignPop = allCategoriesNamesSixRound[4]
+
 //Songs
     const roundZeroSongs = allSongs[0]
     const roundOneSongs = allSongs[1]
@@ -510,6 +523,7 @@ const AppRoutes = () => {
     const roundThreeSongs = allSongs[3]
     const roundFourSongs = allSongs[4]
     const roundFiveSongs = allSongs[5]
+    const roundSixSongs = allSongs[6]
 
     const roundZeroSummerSongs = roundZeroSongs[0]
     const roundZeroWinterSongs = roundZeroSongs[1]
@@ -547,6 +561,14 @@ const AppRoutes = () => {
     const roundFiveMovies = roundFiveSongs[3]
     const roundFiveAIRemixes = roundFiveSongs[4]
 
+    const roundSixModern = roundSixSongs[0]
+    const roundSixHits = roundSixSongs[1]
+    const roundSixForeignRock = roundSixSongs[2]
+    const roundSixForeignRap = roundSixSongs[3]
+    const roundSixForeignPop = roundSixSongs[4]
+
+
+
 // Rounds
     const categoryNameAndPathZero = allCategoriesNameAndPath[0]
     const categoryNameAndPathOne = allCategoriesNameAndPath[1]
@@ -554,6 +576,7 @@ const AppRoutes = () => {
     const categoryNameAndPathThree = allCategoriesNameAndPath[3]
     const categoryNameAndPathFour = allCategoriesNameAndPath[4]
     const categoryNameAndPathFive = allCategoriesNameAndPath[5]
+    const categoryNameAndPathSix = allCategoriesNameAndPath[6]
 
     const backArrowWaysZero = backArrowWays[0]
     const backArrowWaysOne = backArrowWays[1]
@@ -561,6 +584,7 @@ const AppRoutes = () => {
     const backArrowWaysThree = backArrowWays[3]
     const backArrowWaysFour = backArrowWays[4]
     const backArrowWaysFive = backArrowWays[5]
+    const backArrowWaysSix = backArrowWays[6]
 
 
     //console.log(allCategoriesNamesOfGame)
@@ -1554,6 +1578,10 @@ const AppRoutes = () => {
                                                                   roundNumber={5}
 
                 />}/>
+                <Route path={PATH.ROUNDSIX} element={<Categories CategoryNameAndPath={categoryNameAndPathSix}
+                                                                  roundNumber={6}
+
+                />}/>
 
 
                 <Route path={PATH.SUMMERCATEGORY} element={<NewGame arraySongs={roundZeroSummerSongs}
@@ -1679,6 +1707,27 @@ const AppRoutes = () => {
                                                                  categoryTitle={allCategoriesNamesFiveRoundAIRemixes}
                                                                  backWay={backArrowWaysFive}
                                                                  roundNumber={5}/>}/>
+
+                <Route path={PATH.MODERNTHREE} element={<NewGame arraySongs={roundSixModern}
+                                                                   categoryTitle={allCategoriesNamesSixRoundModern}
+                                                                   backWay={backArrowWaysSix}
+                                                                   roundNumber={6}/>}/>
+                <Route path={PATH.HITS2000} element={<NewGame arraySongs={roundSixHits}
+                                                                 categoryTitle={allCategoriesNamesSixRoundHits}
+                                                                 backWay={backArrowWaysSix}
+                                                                 roundNumber={6}/>}/>
+                <Route path={PATH.FOREIGNROCKTWO} element={<NewGame arraySongs={roundSixForeignRock}
+                                                              categoryTitle={allCategoriesNamesSixRoundForeighRock}
+                                                              backWay={backArrowWaysSix}
+                                                              roundNumber={6}/>}/>
+                <Route path={PATH.FOREIGNRAP} element={<NewGame arraySongs={roundSixForeignRap}
+                                                                    categoryTitle={allCategoriesNamesSixRoundForeignRap}
+                                                                    backWay={backArrowWaysSix}
+                                                                    roundNumber={6}/>}/>
+                <Route path={PATH.FOREIGNPOP} element={<NewGame arraySongs={roundSixForeignPop}
+                                                                categoryTitle={allCategoriesNamesSixRoundForeignPop}
+                                                                backWay={backArrowWaysSix}
+                                                                roundNumber={6}/>}/>
 
             </Routes>
 

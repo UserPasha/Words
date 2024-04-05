@@ -16,7 +16,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #7C7E80;
+    background: rgb(103,107,106);
+    background: linear-gradient(180deg, rgba(103,107,106,1) 0%, rgba(183,187,181,1) 50%, rgba(217,217,217,1) 100%);
 }
 .levelBoxWrapper{
     margin: 10px;

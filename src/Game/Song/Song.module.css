@@ -25,6 +25,7 @@
     justify-content: space-around;
     /*flex-direction: column;*/
     background-color: #1f675f;
+    box-shadow:  5px 5px 10px #174b45;
 }
 .containerOver{
     width: 80%;
@@ -51,7 +52,7 @@
     animation-play-state: paused;
 }
 .controls{
-    max-width: 60px;
+    max-width: 80px;
     cursor: pointer;
 }
 .button{
