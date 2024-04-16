@@ -60,7 +60,6 @@ export const StartMenu = () => {
                 НАЧАТЬ ЗАНОВО
             </button>
             <Score/>
-            score and mark sucses track
         </div>
     );
 };

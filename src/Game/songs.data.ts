@@ -8,8 +8,8 @@ const ivanushki = require('./../Common/Assets/audio/IvanushkiPuh.mp3')
 const ivanushkiOr = require('./../Common/Assets/audio/IvanushkiPuh2.mp3')
 const fabrika = require('./../Common/Assets/audio/Fabrika-minus.mp3')
 const fabrikaOr = require('./../Common/Assets/audio/Fabrika-plus.mp3')
-const olegMityaev = require('./../Common/Assets/audio/OlegMityaev-leto.mp3')
-const olegMityaevOr = require('./../Common/Assets/audio/OlegMityaev-leto2.mp3')
+const olegMityaev = require('./../Common/Assets/audio/sumFivem.mp3')
+const olegMityaevOr = require('./../Common/Assets/audio/sumfivep.mp3')
 
 //Зима
 
@@ -435,7 +435,54 @@ const foreignPopOnePlusFour = require('./../Common/Assets/audio/fPop plus 1 4.mp
 const foreignPopOneMinusFive = require('./../Common/Assets/audio/fPop minus 1 5.mp3' )
 const foreignPopOnePlusFive = require('./../Common/Assets/audio/fPop plus 1 5.mp3' )
 
+//7
+//Современные
 
+const modernFourMinusOne = require('./../Common/Assets/audio/modern minus 4 1.mp3' )
+const modernFourPlusOne = require('./../Common/Assets/audio/modern plus 4 1.mp3' )
+const modernFourMinusTwo = require('./../Common/Assets/audio/modern minus 4 2.mp3' )
+const modernFourPlusTwo = require('./../Common/Assets/audio/modern plus 4 2.mp3' )
+const modernFourMinusThree = require('./../Common/Assets/audio/modern minus 4 3.mp3' )
+const modernFourPlusThree = require('./../Common/Assets/audio/modern plus 4 3.mp3' )
+const modernFourMinusFour = require('./../Common/Assets/audio/modern minus 4 4.mp3' )
+const modernFourPlusFour = require('./../Common/Assets/audio/modern plus 4 4.mp3' )
+const modernFourMinusFive = require('./../Common/Assets/audio/modern minus 4 5.mp3' )
+const modernFourPlusFive = require('./../Common/Assets/audio/modern plus 4 5.mp3' )
+
+//Цвета
+
+const colorsMinusOne = require('./../Common/Assets/audio/colors minus 1.mp3' )
+const colorsPlusOne = require('./../Common/Assets/audio/colors plus 1.mp3' )
+const colorsMinusTwo = require('./../Common/Assets/audio/colors minus 2.mp3' )
+const colorsPlusTwo = require('./../Common/Assets/audio/colors plus 2.mp3' )
+const colorsMinusThree = require('./../Common/Assets/audio/colors minus 3.mp3' )
+const colorsPlusThree = require('./../Common/Assets/audio/colors plus 3.mp3' )
+const colorsMinusFour = require('./../Common/Assets/audio/colors minus 4.mp3' )
+const colorsPlusFour = require('./../Common/Assets/audio/colors plus 4.mp3' )
+const colorsMinusFive = require('./../Common/Assets/audio/colors minus 5.mp3' )
+const colorsPlusFive = require('./../Common/Assets/audio/colors plus 5.mp3' )
+
+//Про Любовь
+
+const lovesMinusOne = require('./../Common/Assets/audio/love minus 1.mp3' )
+const lovesPlusOne = require('./../Common/Assets/audio/love plus 1.mp3' )
+const lovesMinusTwo = require('./../Common/Assets/audio/love minus 2.mp3' )
+const lovesPlusTwo = require('./../Common/Assets/audio/love plus 2.mp3' )
+const lovesMinusThree = require('./../Common/Assets/audio/love minus 3.mp3' )
+const lovesPlusThree = require('./../Common/Assets/audio/love plus 3.mp3' )
+const lovesMinusFour = require('./../Common/Assets/audio/love minus 4.mp3' )
+const lovesPlusFour = require('./../Common/Assets/audio/love plus 4.mp3' )
+const lovesMinusFive = require('./../Common/Assets/audio/love minus 5.mp3' )
+const lovesPlusFive = require('./../Common/Assets/audio/love plus 5.mp3' )
+
+//Фильмы
+
+const moviesFourOne = require('./../Common/Assets/audio/filmi 3 1.mp3' )
+const moviesFourTwo = require('./../Common/Assets/audio/filmi 3 2.mp3' )
+const moviesFourThree = require('./../Common/Assets/audio/filmi 3 3.mp3' )
+const moviesFourFour = require('./../Common/Assets/audio/filmi 3 4.mp3' )
+const moviesFourFourPlus = require('./../Common/Assets/audio/filmi 3 4p.mp3' )
+const moviesFourFive = require('./../Common/Assets/audio/filmi 3 5.mp3' )
 
 
 export type EveryCategoryType = {
@@ -504,7 +551,7 @@ export const dataSongs: roundType[] = [{
                     tractTitle: "TRACK 5",
                     track: olegMityaev,
                     original: olegMityaevOr,
-                    trackName: 'Олег Митяев - Лето это маленькая жизнь',
+                    trackName: 'RASA - Погудим',
                     isComplete: false
                 }
             ]
@@ -1958,7 +2005,7 @@ export const dataSongs: roundType[] = [{
                         tractTitle: "TRACK 3",
                         track: foreignRapOneMinusThree,
                         original: foreignRapOnePlusThree,
-                        trackName: 'Coolio - Gangsta\'s Paradise.mp3',
+                        trackName: 'Coolio - Gangsta\'s Paradise',
                         isComplete: false
                     },
                     {
@@ -1982,6 +2029,229 @@ export const dataSongs: roundType[] = [{
                 isCompletedCategory: false,
                 name: 'Зарубежная Попса',
                 path: '/ForeignPop',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: foreignPopOneMinusOne,
+                        original: foreignPopOnePlusOne,
+                        trackName: 'Lady Gaga - Poker Face',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: foreignPopOneMinusTwo,
+                        original: foreignPopOnePlusTwo,
+                        trackName: 'Kylie Minogue - Can\'t Get You Out Of My Head',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: foreignPopOneMinusThree,
+                        original: foreignPopOnePlusThree,
+                        trackName: 'O-Zone - Dragostea Din Tei',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: foreignPopOneMinusFour,
+                        original: foreignPopOnePlusFour,
+                        trackName: 'The Pussycat Dolls - Buttons',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: foreignPopOneMinusFive,
+                        original: foreignPopOnePlusFive,
+                        trackName: 'Katy Perry - I Kissed A Girl',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 7,
+        path: '/roundSeven',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Современные',
+                path: '/modernFour',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: modernFourMinusOne,
+                    original: modernFourPlusOne,
+                    trackName: 'Ваня Дмитриенко - Венера-Юпитер',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: modernFourMinusTwo,
+                        original: modernFourPlusTwo,
+                        trackName: 'Ицык Цыпер feat. Игорь Цыба - Дымок',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: modernFourMinusThree,
+                        original: modernFourPlusThree,
+                        trackName: 'ANNA ASTI feat. Филипп Киркоров - Хобби',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: modernFourMinusFour,
+                        original: modernFourPlusFour,
+                        trackName: 'Лолита, Коста Лакоста – По-другому',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: modernFourMinusFive,
+                        original: modernFourPlusFive,
+                        trackName: 'Morgenshtern - Последняя Любовь',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Цвета',
+                path: '/colors',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: colorsMinusOne,
+                        original: colorsPlusOne,
+                        trackName: 'Gayazovs Brothers - Малиновая Лада',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: colorsMinusTwo,
+                        original: colorsPlusTwo,
+                        trackName: 'Борис Моисеев & Николай Трубач - Голубая луна',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: colorsMinusThree,
+                        original: colorsPlusThree,
+                        trackName: 'Пропаганда - Мелом',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: colorsMinusFour,
+                        original: colorsPlusFour,
+                        trackName: 'Егор Крид feat. Филипп Киркоров - Цвет Настроения Чёрный',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: colorsMinusFive,
+                        original: colorsPlusFive,
+                        trackName: 'Чай Вдвоём - Белое Платье',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Про Любовь',
+                path: '/loves',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: lovesMinusOne,
+                        original: lovesPlusOne,
+                        trackName: 'Serebro - Между Нами Любовь',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: lovesMinusTwo,
+                        original: lovesPlusTwo,
+                        trackName: 'Тутси - Самый, Самый',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: lovesMinusThree,
+                        original: lovesPlusThree,
+                        trackName: 'Artik & Asti – Неделимы',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: lovesMinusFour,
+                        original: lovesPlusFour,
+                        trackName: 'Серебро - Я Тебя Не Отдам',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: lovesMinusFive,
+                        original: lovesPlusFive,
+                        trackName: 'Anivar - Любимый Человек',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Фильмы',
+                path: '/moviesFour',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: moviesFourOne,
+                        original: moviesFourOne,
+                        trackName: 'Леон',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: moviesFourTwo,
+                        original: moviesFourTwo,
+                        trackName: 'Такси',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: moviesFourThree,
+                        original: moviesFourThree,
+                        trackName: 'От Заката До Рассвета',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: moviesFourFour,
+                        original: moviesFourFourPlus,
+                        trackName: 'Форсаж',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: moviesFourFive,
+                        original: moviesFourFive,
+                        trackName: 'Обитель Зла',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'SOON...',
+                path: '/AIRFive',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
