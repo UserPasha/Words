@@ -484,6 +484,18 @@ const moviesFourFour = require('./../Common/Assets/audio/filmi 3 4.mp3' )
 const moviesFourFourPlus = require('./../Common/Assets/audio/filmi 3 4p.mp3' )
 const moviesFourFive = require('./../Common/Assets/audio/filmi 3 5.mp3' )
 
+// ИИ Ремиксы
+
+const airFiveMinusOne = require('./../Common/Assets/audio/air minus 51.mp3' )
+const airFivePlusOne = require('./../Common/Assets/audio/air plus 51.mp3' )
+const airFiveMinusTwo = require('./../Common/Assets/audio/air minus 52.mp3' )
+const airFivePlusTwo = require('./../Common/Assets/audio/air plus 52.mp3' )
+const airFiveMinusThree = require('./../Common/Assets/audio/air minus 53.mp3' )
+const airFivePlusThree = require('./../Common/Assets/audio/air plus 53.mp3' )
+const airFiveMinusFour = require('./../Common/Assets/audio/air minus 54.mp3' )
+const airFivePlusFour = require('./../Common/Assets/audio/air plus 54.mp3' )
+const airFiveMinusFive = require('./../Common/Assets/audio/air minus 55.mp3' )
+const airFivePlusFive = require('./../Common/Assets/audio/air plus 55.mp3' )
 
 export type EveryCategoryType = {
     isCompletedCategory: boolean
@@ -2250,42 +2262,42 @@ export const dataSongs: roundType[] = [{
             },
             {
                 isCompletedCategory: false,
-                name: 'SOON...',
+                name: 'ИИ Ремиксы',
                 path: '/AIRFive',
                 tracks: [
                     {
                         tractTitle: "TRACK 1",
-                        track: foreignPopOneMinusOne,
-                        original: foreignPopOnePlusOne,
-                        trackName: 'Lady Gaga - Poker Face',
+                        track: airFiveMinusOne,
+                        original: airFivePlusOne,
+                        trackName: 'Блестящие & Arash - Восточные Сказки',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 2",
-                        track: foreignPopOneMinusTwo,
-                        original: foreignPopOnePlusTwo,
-                        trackName: 'Kylie Minogue - Can\'t Get You Out Of My Head',
+                        track: airFiveMinusTwo,
+                        original: airFivePlusTwo,
+                        trackName: 'Loboda - Твои Глаза',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 3",
-                        track: foreignPopOneMinusThree,
-                        original: foreignPopOnePlusThree,
-                        trackName: 'O-Zone - Dragostea Din Tei',
+                        track: airFiveMinusThree,
+                        original: airFivePlusThree,
+                        trackName: 'Джарахов feat. Markul - Я В Моменте',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 4",
-                        track: foreignPopOneMinusFour,
-                        original: foreignPopOnePlusFour,
-                        trackName: 'The Pussycat Dolls - Buttons',
+                        track: airFiveMinusFour,
+                        original: airFivePlusFour,
+                        trackName: 'Пьер Нарцисс - Шоколадный Заяц',
                         isComplete: false
                     },
                     {
                         tractTitle: "TRACK 5",
-                        track: foreignPopOneMinusFive,
-                        original: foreignPopOnePlusFive,
-                        trackName: 'Katy Perry - I Kissed A Girl',
+                        track: airFiveMinusFive,
+                        original: airFivePlusFive,
+                        trackName: 'Юрий Шатунов - Детство',
                         isComplete: false
                     }
                 ]

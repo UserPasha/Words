@@ -58,7 +58,7 @@ export const Header = () => {
                  onClick={() => setShowModal(true)}/>
             {warning && <div className={style.warning}>
                 <div className={style.warningContainer}>
-                    <p className={style.warningMessage}>Вы уверены, что хотите список игроков?</p>
+                    <p className={style.warningMessage}>Вы уверены, что хотите удалить список игроков?</p>
                     <button
                         className={style.warningButtonGreen}
                         onClick={() => deletePlayerList()}
