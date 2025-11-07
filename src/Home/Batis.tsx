@@ -1,0 +1,168 @@
+
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "../Store/store";
+import {addInfo, removeInfo} from "../Store/BatisReducer";
+import style from "./Batis.module.css";
+
+export type ListItem = {
+    name: string;
+    size: string;
+    quantity: string;
+};
+
+
+export const SmartListComponent = () => {
+    const dispatch = useDispatch<AppDispatch>()
+
+    const batisItems = useSelector((state: RootState) => state.batis);
+
+    const [isListVisible, setIsListVisible] = useState(false);
+    const [selectedText, setSelectedText] = useState("");
+    const [selectedNumber, setSelectedNumber] = useState("");
+    const [quantity, setQuantity] = useState("");
+    const [items, setItems] = useState<ListItem[]>([]);
+    const [showConfirm, setShowConfirm] = useState(false);
+
+    const textOptions = ["Свеча Белая", "Свеча Натуральная", "Сибирская", "Таиланд"];
+    const numberOptions = [0.5, 0.7, 1, 1.2, 1.5, 1.8, 2, 2.2, 2.5, 3];
+
+
+    useEffect(() => {
+        if (batisItems.length > 0) {
+            setItems(batisItems);
+            setIsListVisible(true);
+        }
+    }, [batisItems]);
+
+
+    const handleAddList = (): void => {
+        setIsListVisible(true);
+    };
+
+    const handleAddItem = (): void => {
+        if (selectedText && selectedNumber && quantity) {
+            const newItem: ListItem = {
+                name: selectedText,
+                size: selectedNumber,
+                quantity,
+            };
+
+            setItems((prev) => [...prev, newItem]);
+            dispatch(addInfo(selectedText, selectedNumber, quantity));
+
+            setSelectedText("");
+            setSelectedNumber("");
+            setQuantity("");
+        }
+    };
+
+    const handleConfirmDelete = (): void => {
+        setItems([]);
+        setIsListVisible(false);
+        setShowConfirm(false);
+
+        dispatch(removeInfo())
+    };
+
+    return (
+        <div className={style.smartlistContainer}>
+            {/* Верхний блок */}
+            <div className={style.topBlock}></div>
+
+            {/* Салатовая кнопка */}
+            <button className={style.addSectionBtn} onClick={handleAddList}>
+                +
+            </button>
+
+            {isListVisible && (
+                <div className={style.mainSection}>
+                    <div className={style.inputRow}>
+                        <select
+                            value={selectedText}
+                            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                                setSelectedText(e.target.value)
+                            }
+                        >
+                            <option value="">Выберите текст</option>
+                            {textOptions.map((t) => (
+                                <option key={t} value={t}>
+                                    {t}
+                                </option>
+                            ))}
+                        </select>
+
+                        <select
+                            value={selectedNumber}
+                            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                                setSelectedNumber(e.target.value)
+                            }
+                        >
+                            <option value="">Выберите число</option>
+                            {numberOptions.map((n) => (
+                                <option key={n} value={String(n)}>
+                                    {n}
+                                </option>
+                            ))}
+                        </select>
+
+                        <input
+                            type="number"
+                            placeholder="Количество"
+                            value={quantity}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                                setQuantity(e.target.value)
+                            }
+                        />
+
+                        <button className={style.greenBtn} onClick={handleAddItem}>
+                            Добавить
+                        </button>
+                    </div>
+
+                    {/* Список */}
+                    <div className={style.listBlock}>
+                        {items.length === 0 ? (
+                            <p className={style.empty}>Список пуст</p>
+                        ) : (
+                            items.map((item, i) => (
+                                <div className={style.listItem} key={i}>
+                                    <span>{item.name}</span>
+                                    <span>{item.size}</span>
+                                    <span>{item.quantity}</span>
+                                </div>
+                            ))
+                        )}
+                    </div>
+
+                    {/* Красная кнопка */}
+                    <div className={style.deleteWrapper}>
+                        <button className={style.redBtn} onClick={() => setShowConfirm(true)}>
+                            ×
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Модальное окно */}
+            {showConfirm && (
+                <div className={style.modalOverlay}>
+                    <div className={style.modal}>
+                        <h3>Удалить все элементы?</h3>
+                        <div className={style.modalButtons}>
+<button
+    className={style.cancelBtn}
+    onClick={() => setShowConfirm(false)}
+>
+    Отмена
+</button>
+<button className={style.confirmBtn} onClick={handleConfirmDelete}>
+    Удалить
+</button>
+</div>
+</div>
+</div>
+)}
+</div>
+);
+}

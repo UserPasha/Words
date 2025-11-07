@@ -64,6 +64,7 @@ import {NewGame} from "../Game/NewGame";
 import {Categories} from "../Game/Categories";
 import {StartMenu} from "../Game/StartMenu";
 import {roundType} from "../Game/songs.data";
+import {SmartListComponent} from "../Home/Batis";
 
 
 export type CategoryNameAndPathType = {
@@ -145,6 +146,7 @@ export const PATH = {
     SHOP: '/shop',
     SETTINGS: '/gameSettings',
 
+    BATIS:'/batis',
 
     NEWGAMEZERO: '/newgameZero',
     CATEGORIES: '/categories',
@@ -1779,6 +1781,7 @@ const AppRoutes = () => {
                                                                 categoryTitle={allCategoriesNamesSevenRoundAIRemixes}
                                                                 backWay={backArrowWaysSeven}
                                                                 roundNumber={7}/>}/>
+                <Route path={PATH.BATIS} element={<SmartListComponent/>}/>
 
             </Routes>
 

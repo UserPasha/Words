@@ -11,27 +11,3 @@ const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
 
 export default localStorageMiddleware;
 
-//store
-
-// import { combineReducers, createStore, applyMiddleware } from 'redux';
-// import bonusReducer, { BonusReducerType } from './bonusReducer';
-// import localStorageMiddleware from './localStorageMiddleware';
-//
-// // Combine all reducers
-// const rootReducer = combineReducers({
-//     bonusReducer,
-//     // Add other reducers here
-// });
-//
-// const InitialState: { bonusReducer: BonusReducerType } = {
-//     bonusReducer: {
-//         timeBonus: 0,
-//         pointsBonus: 1,
-//     },
-//     // Add initial states for other reducers here
-// };
-//
-// // Create the store
-// const store = createStore(rootReducer, InitialState, applyMiddleware(localStorageMiddleware));
-//
-// export default store;

@@ -15,6 +15,7 @@ import {rewardsReducer} from "./RewardsReducer";
 import {colorSchemeReducer} from "./colorSchemeReducer";
 import {newGameReducer} from "./NewGameReducer";
 import {SongsReducer} from "./songsReducer";
+import {BatisReducer} from "./BatisReducer";
 
 const reducers = combineReducers({
     cards: cardsReducer,
@@ -28,47 +29,10 @@ const reducers = combineReducers({
     rewards: rewardsReducer,
     colorScheme: colorSchemeReducer,
     newGame: newGameReducer,
-    songs: SongsReducer
+    songs: SongsReducer,
+    batis: BatisReducer
 })
-// const InitialState: {
-//     cardsReducer: InitialStateType,
-//     lingvoReducer: DictionaryType,
-//     pointsReducer: InitialStatePointsType[],
-//     profileReducer: InitialStatePlayerType,
-//     playerNameReducer: InitialStateNameType,
-//     playerAvatarReducer: InitialStateAvatarType,
-//     machineReducer: CategoryType[],
-//     bonusReducer: BonusReducerType
-// } = {
-//     cardsReducer: {
-//         card: []
-//     },
-//     lingvoReducer: {
-//         title: '',
-//         description: '',
-//         url: ''
-//
-//     },
-//     pointsReducer:Array.from({ length: 24 }, (_, index) => ({
-//         level: index,
-//         bestPoints: 0,
-//         currentPoints: 0
-//     })),
-//     profileReducer: {
-//         currentPoints: 0
-//     },
-//     playerNameReducer: {
-//         name: "Мотехсовчанин"
-//     },
-//     playerAvatarReducer:{
-//         avatar: ""
-//     },
-//     machineReducer: machineData,
-//     bonusReducer: {
-//         timeBonus: 0,
-//         pointsBonus: 1,
-//     },
-// }
+
 const store = createStore(reducers,
     loadState(),
     applyMiddleware
@@ -90,7 +54,8 @@ store.subscribe(() => {
         rewards: store.getState().rewards,
         colorScheme: store.getState().colorScheme,
         newGame: store.getState().newGame,
-        songs: store.getState().songs
+        songs: store.getState().songs,
+        batis: store.getState().batis
     })
 })
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
