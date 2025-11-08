@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.5395046b.css",
-    "main.js": "/Words/static/js/main.1b253eba.js",
+    "main.css": "/Words/static/css/main.0a7759a2.css",
+    "main.js": "/Words/static/js/main.0a850bc5.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/air minus 4 3.mp3": "/Words/static/media/air minus 4 3.41d60f6de3ee66f98e4f.mp3",
@@ -203,11 +203,11 @@
     "static/media/nintys plus 2 5.mp3": "/Words/static/media/nintys plus 2 5.a113b8d98ac10de7de1a.mp3",
     "static/media/modern minus 2 3.mp3": "/Words/static/media/modern minus 2 3.da2c765a5d2f057dc649.mp3",
     "static/media/LyusyaChebotina-monako.mp3": "/Words/static/media/LyusyaChebotina-monako.3b8f536db0f222ee4805.mp3",
+    "static/media/seri 2 2.mp3": "/Words/static/media/seri 2 2.10556a6d9de607b175ed.mp3",
     "static/media/Chicherina-tula2.mp3": "/Words/static/media/Chicherina-tula2.41fee753e8dcbebe218e.mp3",
     "static/media/serial 1 4.mp3": "/Words/static/media/serial 1 4.35a52224d905cd6089cf.mp3",
     "static/media/colors plus 4.mp3": "/Words/static/media/colors plus 4.eb08d13dc04666610368.mp3",
     "static/media/cifri minus 2.mp3": "/Words/static/media/cifri minus 2.4d8f38d3e80412a23f8a.mp3",
-    "static/media/serials 2 2.mp3": "/Words/static/media/serials 2 2.fcc3879a0688b01ef360.mp3",
     "static/media/jen imena 2 4 minus.mp3": "/Words/static/media/jen imena 2 4 minus.8d14a40fca2e52088c29.mp3",
     "static/media/filmi 3 1.mp3": "/Words/static/media/filmi 3 1.6bfd7d647c136752ebce.mp3",
     "static/media/love minus 2.mp3": "/Words/static/media/love minus 2.58ceb3b63a6151c2efa7.mp3",
@@ -489,12 +489,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.5395046b.css.map": "/Words/static/css/main.5395046b.css.map",
-    "main.1b253eba.js.map": "/Words/static/js/main.1b253eba.js.map",
+    "main.0a7759a2.css.map": "/Words/static/css/main.0a7759a2.css.map",
+    "main.0a850bc5.js.map": "/Words/static/js/main.0a850bc5.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5395046b.css",
-    "static/js/main.1b253eba.js"
+    "static/css/main.0a7759a2.css",
+    "static/js/main.0a850bc5.js"
   ]
 }
