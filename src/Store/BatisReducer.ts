@@ -3,6 +3,8 @@ import {ListItem} from "../Home/Batis";
 const ADD_INFO = 'ADD_INFO';
 const REMOVE_INFO = 'REMOVE_INFO';
 const REMOVE_ITEM = 'REMOVE_ITEM';
+const SORT_BY_NAME ='SORT_BY_NAME'
+
 
 export type AddInfoAction = {
     type: typeof ADD_INFO;
@@ -20,7 +22,11 @@ export type RemoveItemAction = {
     index: number;
 };
 
-type ActionType = AddInfoAction | RemoveInfoAction | RemoveItemAction;
+export type SortByNameAction = {
+    type: typeof SORT_BY_NAME;
+};
+
+type ActionType = AddInfoAction | RemoveInfoAction | RemoveItemAction | SortByNameAction;
 
 const initialState: ListItem[] = [];
 
@@ -32,6 +38,8 @@ export const BatisReducer = (state: ListItem[] = initialState, action: ActionTyp
             return [];
         case REMOVE_ITEM:
             return state.filter((_, i) => i !== action.index);
+        case SORT_BY_NAME:
+            return [...state].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
         default:
             return state;
     }
@@ -51,4 +59,8 @@ export const removeInfo = (): RemoveInfoAction => ({
 export const removeItem = (index: number): RemoveItemAction => ({
     type: REMOVE_ITEM,
     index,
+});
+
+export const sortByName = (): SortByNameAction => ({
+    type: SORT_BY_NAME,
 });

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../Store/store";
-import {addInfo, removeInfo} from "../Store/BatisReducer";
+import {addInfo, removeInfo, removeItem, sortByName} from "../Store/BatisReducer";
 import style from "./Batis.module.css";
 
 export type ListItem = {
@@ -23,9 +23,9 @@ export const SmartListComponent = () => {
     const [quantity, setQuantity] = useState("");
     const [items, setItems] = useState<ListItem[]>([]);
     const [showConfirm, setShowConfirm] = useState(false);
-
+    const [showItemDelete, setShowItemDelete] = useState<boolean>(false);
     const textOptions = ["Свеча Белая", "Свеча Натуральная", "Сибирская", "Таиланд"];
-    const numberOptions = [0.5, 0.7, 1, 1.2, 1.5, 1.8, 2, 2.2, 2.5, 3];
+    const numberOptions = [0.5, 0.7, 1, 1.2, 1.5, 1.8, 2,0, 2.2, 2.5, 3.0];
 
 
     useEffect(() => {
@@ -63,6 +63,14 @@ export const SmartListComponent = () => {
         setShowConfirm(false);
 
         dispatch(removeInfo())
+    };
+
+    const handleDeleteItem = (index: number): void => {
+        // Удаляем из локального списка
+        setItems((prev) => prev.filter((_, i) => i !== index));
+
+        // Удаляем из Redux
+        dispatch(removeItem(index));
     };
 
     return (
@@ -120,7 +128,28 @@ export const SmartListComponent = () => {
                         </button>
                     </div>
 
-                    {/* Список */}
+                    <div className={style.listBlock}>
+                        {items.length === 0 ? (
+                            <p className={style.empty}>Список пуст</p>
+                        ) : (
+                            items.map((item, i) => (
+                                <div className={style.listItem} key={i}>
+                                    <span>{item.name}</span>
+                                    <span>{item.size}</span>
+                                    <span>{item.quantity}</span>
+                                    {showItemDelete && (
+                                        <button
+                                            className={style.deleteItemBtn}
+                                            onClick={() => handleDeleteItem(i)}
+                                        >
+                                            Удалить
+                                        </button>
+                                    )}
+                                </div>
+                            ))
+                        )}
+                    </div>
+                    {/* Список
                     <div className={style.listBlock}>
                         {items.length === 0 ? (
                             <p className={style.empty}>Список пуст</p>
@@ -137,9 +166,31 @@ export const SmartListComponent = () => {
 
                     {/* Красная кнопка */}
                     <div className={style.deleteWrapper}>
-                        <button className={style.redBtn} onClick={() => setShowConfirm(true)}>
-                            ×
-                        </button>
+                        <div className={style.bottomControls}>
+                            <label className={style.toggleSwitch}>
+                                <input
+                                    type="checkbox"
+                                    checked={showItemDelete}
+                                    onChange={(e) => setShowItemDelete(e.target.checked)}
+                                />
+                                <span className={style.slider}></span>
+                                <span className={style.toggleText}>Режим удаления элементов</span>
+                            </label>
+
+                            <button
+                                className={style.sortBtn}
+                                onClick={() => dispatch(sortByName())}
+                            >
+                                Сортировать по имени
+                            </button>
+
+                            <button
+                                className={style.redBtn}
+                                onClick={() => setShowConfirm(true)}
+                            >
+                                ×
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

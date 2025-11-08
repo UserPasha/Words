@@ -290,7 +290,7 @@ const mensNamesPlusFive = require('./../Common/Assets/audio/muj imena 5 plus.mp3
 //Сериалы
 
 const serialsTwoOne = require('./../Common/Assets/audio/serials 2 1.mp3')
-const serialsTwoTwo = require('./../Common/Assets/audio/serials 2 2.mp3')
+const serialsTwoTwo = require('./../Common/Assets/audio/seri 2 2.mp3')
 const serialsTwoThree = require('./../Common/Assets/audio/serials 2 3.mp3')
 const serialsTwoFour = require('./../Common/Assets/audio/serials 2 4.mp3')
 const serialsTwoFive = require('./../Common/Assets/audio/serials 2 5.mp3')
