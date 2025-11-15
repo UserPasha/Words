@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Words/static/css/main.0a7759a2.css",
-    "main.js": "/Words/static/js/main.913f3816.js",
+    "main.css": "/Words/static/css/main.5c66ec80.css",
+    "main.js": "/Words/static/js/main.19a0b432.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/air minus 4 3.mp3": "/Words/static/media/air minus 4 3.41d60f6de3ee66f98e4f.mp3",
@@ -474,13 +474,13 @@
     "static/media/USAFlag.svg": "/Words/static/media/USAFlag.109d20d02b2ee192bae1625a64826ada.svg",
     "static/media/ngk.svg": "/Words/static/media/ngk.03452ea363f3483650c03ee1faeced17.svg",
     "static/media/edit.svg": "/Words/static/media/edit.bcc16c123d3b97901065aac6af8d0263.svg",
+    "index.html": "/Words/index.html",
     "static/media/play.svg": "/Words/static/media/play.d0d510cd27ac0f67f6ae69ad31cdfa0c.svg",
     "static/media/pause.svg": "/Words/static/media/pause.7f9bd2709efaf78e1b1e99c863a835ce.svg",
     "static/media/redClose.svg": "/Words/static/media/redClose.f298f8510fdc6a94772f4fc5640fe4df.svg",
     "static/media/close.svg": "/Words/static/media/close.38fc312b5ac5f7e94a2b8a99ef7f4094.svg",
     "static/media/russianFlag.svg": "/Words/static/media/russianFlag.c89ed68ac8ea8879ad533f54957875b8.svg",
     "static/media/cancel.svg": "/Words/static/media/cancel.841635b3127a7fc8cd69a6e203018bd9.svg",
-    "index.html": "/Words/index.html",
     "static/media/shop.svg": "/Words/static/media/shop.db23813632c613abfbf33299f8b6e99f.svg",
     "static/media/settings.svg": "/Words/static/media/settings.c2c79171635b6746bf09740334d027c5.svg",
     "static/media/Learn.svg": "/Words/static/media/Learn.5a03ee853ea1381f97c959ee17b2dd81.svg",
@@ -489,12 +489,12 @@
     "static/media/search.svg": "/Words/static/media/search.a4fc60ea515e8ec41f5e9e83aa4f7107.svg",
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
-    "main.0a7759a2.css.map": "/Words/static/css/main.0a7759a2.css.map",
-    "main.913f3816.js.map": "/Words/static/js/main.913f3816.js.map",
+    "main.5c66ec80.css.map": "/Words/static/css/main.5c66ec80.css.map",
+    "main.19a0b432.js.map": "/Words/static/js/main.19a0b432.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a7759a2.css",
-    "static/js/main.913f3816.js"
+    "static/css/main.5c66ec80.css",
+    "static/js/main.19a0b432.js"
   ]
 }
