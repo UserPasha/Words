@@ -1,8 +1,10 @@
 
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../Store/store";
 import {addInfo, removeInfo, removeItem, sortByName} from "../Store/BatisReducer";
+import { setTitle, clearTitle } from "../Store/BatisTitleReducer";
 import style from "./Batis.module.css";
 
 export type ListItem = {
@@ -16,6 +18,8 @@ export const SmartListComponent = () => {
     const dispatch = useDispatch<AppDispatch>()
 
     const batisItems = useSelector((state: RootState) => state.batis);
+    const title = useSelector((state: RootState) => state.batisTitle);
+
 
     const [isListVisible, setIsListVisible] = useState(false);
     const [selectedText, setSelectedText] = useState("");
@@ -25,7 +29,11 @@ export const SmartListComponent = () => {
     const [showConfirm, setShowConfirm] = useState(false);
     const [showItemDelete, setShowItemDelete] = useState<boolean>(false);
     const textOptions = ["Свеча Белая", "Свеча Натуральная", "Сибирская", "Таиланд"];
-    const numberOptions = [0.5, 0.7, 1, 1.2, 1.5, 1.8, 2,0, 2.2, 2.5, 3.0];
+    const numberOptions = [0.5, 0.7, 1, 1.2, 1.5, 1.8, "2.0", 2.2, 2.5, "3.0"];
+
+    const [isEditingTitle, setIsEditingTitle] = useState(false);
+    const [titleInput, setTitleInput] = useState("");
+
 
 
     useEffect(() => {
@@ -82,6 +90,61 @@ export const SmartListComponent = () => {
             <button className={style.addSectionBtn} onClick={handleAddList}>
                 +
             </button>
+            {/* Заголовок */}
+            <div className={style.titleBlock}>
+                {!isEditingTitle ? (
+                    <div className={style.titleRow}>
+
+                        {/* Левая кнопка — редактировать */}
+                        <button
+                            className={style.iconBtn}
+                            onClick={() => {
+                                setTitleInput(title);
+                                setIsEditingTitle(true);
+                            }}
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 20h9" />
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+                            </svg>
+                        </button>
+
+                        {/* Центр — название */}
+                        <h2 className={style.titleText}>{title || "Клиент"}</h2>
+
+                        {/* Правая кнопка — удалить */}
+                        {title ? (
+                            <button
+                                className={style.iconBtn}
+                                onClick={() => dispatch(clearTitle())}
+                            >
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="3 6 5 6 21 6" />
+                                    <path d="M19 6l-1 14H6L5 6" />
+                                    <path d="M10 11v6" />
+                                    <path d="M14 11v6" />
+                                    <path d="M9 6V4h6v2" />
+                                </svg>
+                            </button>
+                        ) : (
+                            <div style={{ width: 20 }}></div>  // чтобы центр не съезжал
+                        )}
+                    </div>
+                ) : (
+                    <>
+                        <input
+                            value={titleInput}
+                            onChange={(e) => setTitleInput(e.target.value)}
+                            placeholder="Введите название"
+                        />
+                        <button onClick={() => { dispatch(setTitle(titleInput)); setIsEditingTitle(false); }}>✔️</button>
+                        <button onClick={() => setIsEditingTitle(false)}>✖️</button>
+                    </>
+                )}
+            </div>
+
 
             {isListVisible && (
                 <div className={style.mainSection}>
@@ -92,7 +155,7 @@ export const SmartListComponent = () => {
                                 setSelectedText(e.target.value)
                             }
                         >
-                            <option value="">Выберите текст</option>
+                            <option value="">Ёлка</option>
                             {textOptions.map((t) => (
                                 <option key={t} value={t}>
                                     {t}
@@ -106,7 +169,7 @@ export const SmartListComponent = () => {
                                 setSelectedNumber(e.target.value)
                             }
                         >
-                            <option value="">Выберите число</option>
+                            <option value="">Размер</option>
                             {numberOptions.map((n) => (
                                 <option key={n} value={String(n)}>
                                     {n}
@@ -201,19 +264,19 @@ export const SmartListComponent = () => {
                     <div className={style.modal}>
                         <h3>Удалить все элементы?</h3>
                         <div className={style.modalButtons}>
-<button
-    className={style.cancelBtn}
-    onClick={() => setShowConfirm(false)}
->
-    Отмена
-</button>
-<button className={style.confirmBtn} onClick={handleConfirmDelete}>
-    Удалить
-</button>
-</div>
-</div>
-</div>
-)}
-</div>
-);
+                            <button
+                                className={style.cancelBtn}
+                                onClick={() => setShowConfirm(false)}
+                            >
+                                Отмена
+                            </button>
+                            <button className={style.confirmBtn} onClick={handleConfirmDelete}>
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
 }

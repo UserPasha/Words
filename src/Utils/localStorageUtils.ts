@@ -1,23 +1,16 @@
-import {AppStateType} from "../Store/store";
+export const saveState = (state: any) => {
+    try {
+        const serialized = JSON.stringify(state);
+        localStorage.setItem('state', serialized);
+    } catch {}
+};
 
 export const loadState = () => {
     try {
-        const serializedState = localStorage.getItem('app-state')
-        if (serializedState === null) {
-            return undefined
-        }
-        return JSON.parse(serializedState)
-    } catch (err) {
-        return undefined
-    }
-}
-
-export const saveState = (state: AppStateType) => {
-    try {
-        const serializedState = JSON.stringify(state)
-        localStorage.setItem('app-state', serializedState)
+        const serialized = localStorage.getItem('state');
+        if (!serialized) return undefined;
+        return JSON.parse(serialized);
     } catch {
-
+        return undefined;
     }
-}
-
+};

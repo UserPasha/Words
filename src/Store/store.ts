@@ -16,6 +16,7 @@ import {colorSchemeReducer} from "./colorSchemeReducer";
 import {newGameReducer} from "./NewGameReducer";
 import {SongsReducer} from "./songsReducer";
 import {BatisReducer} from "./BatisReducer";
+import {BatisTitleReducer} from "./BatisTitleReducer";
 
 const reducers = combineReducers({
     cards: cardsReducer,
@@ -30,15 +31,16 @@ const reducers = combineReducers({
     colorScheme: colorSchemeReducer,
     newGame: newGameReducer,
     songs: SongsReducer,
-    batis: BatisReducer
+    batis: BatisReducer,
+    batisTitle: BatisTitleReducer
 })
 
 const store = createStore(reducers,
     loadState(),
     applyMiddleware
 (
-    thunk
-//localStorageMiddleware
+    thunk,
+localStorageMiddleware
 ))
 
 store.subscribe(() => {
@@ -55,7 +57,8 @@ store.subscribe(() => {
         colorScheme: store.getState().colorScheme,
         newGame: store.getState().newGame,
         songs: store.getState().songs,
-        batis: store.getState().batis
+        batis: store.getState().batis,
+        batisTitle: store.getState().batisTitle,
     })
 })
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
