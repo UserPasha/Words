@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {render} from '@testing-library/react';
 import {Match} from './Match';
 import {filtronMix} from "./Levels";
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {ICard} from "../hooks/useMatch";
 import Elring from "../assets/images/match/elring.svg";
 import TRW from "../assets/images/match/TRW.jpg";

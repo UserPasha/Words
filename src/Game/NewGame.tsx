@@ -1,14 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
 import style from './NewGame.module.css'
 import {Song} from "./Song/Song";
-import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Score} from "./Score";
 import okIcon from '../Common/Assets/images/ok.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {completeCategory, completeSong} from "../Store/songsReducer";
-import {roundType} from "./songs.data";
-import {log} from "util";
 import {BackArrowCopy} from "./BackArrowCopy";
 
 export type CategorySongsType = {

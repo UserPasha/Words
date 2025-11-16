@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {PointsAfterShop} from "../Store/profileReducer";
 import {useNavigate} from 'react-router-dom';
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {saveCurrentReward} from "../Store/RewardsReducer";
 import {addToken} from "../Store/bonusReducer";
 

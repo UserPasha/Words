@@ -1,15 +1,16 @@
 import React, {FC, useEffect} from 'react';
 import style from './Categories.module.css'
-import {CategoryNameAndPathType} from "../AppRoutes/AppRoutes";
+
 import {Link} from "react-router-dom";
 import {BackArrow} from "../Common/Components/BackArrow/BackArrow";
 import {Score} from "./Score";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
-import {roundType} from "./songs.data";
+
 import {completeCategory, completeRound} from "../Store/songsReducer";
 import {log} from "util";
 import {BackArrowCopy} from "./BackArrowCopy";
+import {CategoryNameAndPathType} from "./types";
 
 
 type categoriesNewType = {
@@ -49,12 +50,6 @@ export const Categories: FC<categoriesType> = ({CategoryNameAndPath, roundNumber
                     </div>)}
 
             </div>
-            {/*<div className={style.description}*/}
-
-            {/*>*/}
-            {/*    Name and switch*/}
-
-            {/*</div>*/}
             <Score/>
         </div>
     );

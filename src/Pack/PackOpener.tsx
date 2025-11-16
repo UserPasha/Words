@@ -3,7 +3,7 @@ import style from './PackOpener.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {showProductPicture} from "../Store/machineReducer";
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {useNavigate} from "react-router-dom";
 import {machineData} from "../Match/BonusMachine/bomusMachine.data";
 

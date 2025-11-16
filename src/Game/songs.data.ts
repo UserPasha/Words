@@ -1,5 +1,7 @@
 // 0
 // Лето
+import {roundType} from "./types";
+
 const demoSun = require('./../Common/Assets/audio/sol minus.mp3')
 const demoSunOr = require('./../Common/Assets/audio/d-sun2.mp3')
 const monacoSun = require('./../Common/Assets/audio/L-monaco-sun.mp3')
@@ -497,31 +499,144 @@ const airFivePlusFour = require('./../Common/Assets/audio/air plus 54.mp3' )
 const airFiveMinusFive = require('./../Common/Assets/audio/air minus 55.mp3' )
 const airFivePlusFive = require('./../Common/Assets/audio/air plus 55.mp3' )
 
-export type EveryCategoryType = {
-    isCompletedCategory: boolean
-    name: string,
-    path: string,
-    tracks: CategorySongsType[],
+//8
+// Хиты 90-х
 
-}
-// export type categoriesType = {
-//     categories: EveryCategoryType []
-//
-// }
-export type roundType = {
-    round: number
-    path: string
-    isCompletedRound: boolean
-    categories: EveryCategoryType[]
-}
+const nintyHitsThreeMinusOne = require('./../Common/Assets/audio/90 1.mp3' )
+const nintyHitsThreePlusOne = require('./../Common/Assets/audio/90 1 p .mp3' )
+const nintyHitsThreeMinusTwo = require('./../Common/Assets/audio/90 2.mp3' )
+const nintyHitsThreePlusTwo = require('./../Common/Assets/audio/90 2 p.mp3' )
+const nintyHitsThreeMinusThree = require('./../Common/Assets/audio/90 3.mp3' )
+const nintyHitsThreePlusThree = require('./../Common/Assets/audio/90 3 p.mp3' )
+const nintyHitsThreeMinusFour = require('./../Common/Assets/audio/90 4.mp3' )
+const nintyHitsThreePlusFour = require('./../Common/Assets/audio/90 4 p.mp3' )
+const nintyHitsThreeMinusFive = require('./../Common/Assets/audio/90 5.mp3' )
+const nintyHitsThreePlusFive = require('./../Common/Assets/audio/90 5 p .mp3' )
 
-export type CategorySongsType = {
-    tractTitle: string
-    track: string
-    original: string
-    trackName: string
-    isComplete: boolean
-}
+// Женские Имена
+
+const womenNameThreeMinusOne = require('./../Common/Assets/audio/жим 1.mp3')
+const womenNamesThreePlusOne = require('./../Common/Assets/audio/жим 1 пр.mp3')
+const womenNameThreeMinusTwo = require('./../Common/Assets/audio/жим 2 .mp3')
+const womenNamesThreePlusTwo = require('./../Common/Assets/audio/жим 2 пр.mp3')
+const womenNameThreeMinusThree = require('./../Common/Assets/audio/жим 3.mp3')
+const womenNamesThreePlusThree = require('./../Common/Assets/audio/жим 3 пр.mp3')
+const womenNameThreeMinusFour = require('./../Common/Assets/audio/жим 4.mp3')
+const womenNamesThreePlusFour = require('./../Common/Assets/audio/жим 4 пр.mp3')
+const womenNameThreeMinusFive = require('./../Common/Assets/audio/жим 5.mp3')
+const womenNamesThreePlusFive = require('./../Common/Assets/audio/жим 5 пр.mp3')
+
+// Цифры
+
+const cifryTwoMinusOne = require('./../Common/Assets/audio/циф 1.mp3')
+const cifryTwoPlusOne = require('./../Common/Assets/audio/циф 1 пр.mp3')
+const cifryTwoMinusTwo = require('./../Common/Assets/audio/циф 2.mp3')
+const cifryTwoPlusTwo = require('./../Common/Assets/audio/циф 2 пр.mp3')
+const cifryTwoMinusThree = require('./../Common/Assets/audio/циф 3 .mp3')
+const cifryTwoPlusThree = require('./../Common/Assets/audio/циф 3 пр.mp3')
+const cifryTwoMinusFour = require('./../Common/Assets/audio/циф 4.mp3')
+const cifryTwoPlusFour = require('./../Common/Assets/audio/циф 4 пр.mp3')
+const cifryTwoMinusFive = require('./../Common/Assets/audio/циф 5.mp3')
+const cifryTwoPlusFive = require('./../Common/Assets/audio/циф 5 пр .mp3')
+
+// Осень
+
+const autumnMinusOne = require('./../Common/Assets/audio/осень 1.mp3')
+const autumnPlusOne = require('./../Common/Assets/audio/осень 1 пр.mp3')
+const autumnMinusTwo = require('./../Common/Assets/audio/осень 2.mp3')
+const autumnPlusTwo = require('./../Common/Assets/audio/осень 2 пр.mp3')
+const autumnMinusThree = require('./../Common/Assets/audio/осень 3.mp3')
+const autumnPlusThree = require('./../Common/Assets/audio/осень 3 пр.mp3')
+const autumnMinusFour = require('./../Common/Assets/audio/осень 4.mp3')
+const autumnPlusFour = require('./../Common/Assets/audio/осень 4 пр.mp3')
+const autumnMinusFive = require('./../Common/Assets/audio/осень 5.mp3')
+const autumnPlusFive = require('./../Common/Assets/audio/осень 5 пр.mp3')
+
+// Русский Рок
+
+const rusRocTwoMinusOne = require('./../Common/Assets/audio/ррур 1.mp3')
+const rusRockTwoPlusOne = require('./../Common/Assets/audio/ррур 1 пр.mp3')
+const rusRocTwoMinusTwo = require('./../Common/Assets/audio/ррур 2.mp3')
+const rusRockTwoPlusTwo = require('./../Common/Assets/audio/ррур 2 пр.mp3')
+const rusRocTwoMinusThree = require('./../Common/Assets/audio/ррур 3.mp3')
+const rusRockTwoPlusThree = require('./../Common/Assets/audio/ррур 3 пр.mp3')
+const rusRocTwoMinusFour = require('./../Common/Assets/audio/ррур 4.mp3')
+const rusRockTwoPlusFour = require('./../Common/Assets/audio/ррур 4 пр.mp3')
+const rusRocTwoMinusFive = require('./../Common/Assets/audio/ррур 5.mp3')
+const rusRockTwoPlusFive = require('./../Common/Assets/audio/ррур 5 пр.mp3')
+
+//9
+// Хиты 90-х
+
+const nintyHitsFourMinusOne = require('./../Common/Assets/audio/90 11 .mp3' )
+const nintyHitsFourPlusOne = require('./../Common/Assets/audio/90 11 пр.mp3' )
+const nintyHitsFourMinusTwo = require('./../Common/Assets/audio/90 22 .mp3' )
+const nintyHitsFourPlusTwo = require('./../Common/Assets/audio/90 22 пр .mp3' )
+const nintyHitsFourMinusThree = require('./../Common/Assets/audio/90 33.mp3' )
+const nintyHitsFourPlusThree = require('./../Common/Assets/audio/90 33 пр.mp3' )
+const nintyHitsFourMinusFour = require('./../Common/Assets/audio/90 44.mp3' )
+const nintyHitsFourPlusFour = require('./../Common/Assets/audio/90 44 пр.mp3' )
+const nintyHitsFourMinusFive = require('./../Common/Assets/audio/90 55.mp3' )
+const nintyHitsFourPlusFive = require('./../Common/Assets/audio/90 55 пр.mp3' )
+
+// Хиты 2000-х
+
+const hitsOnesTwoMinusOne = require('./../Common/Assets/audio/20 1.mp3' )
+const hitsOnesTwoPlusOne = require('./../Common/Assets/audio/20 1 пр.mp3' )
+const hitsOnesTwoMinusTwo = require('./../Common/Assets/audio/20 2.mp3' )
+const hitsOnesTwoPlusTwo = require('./../Common/Assets/audio/20 2 пр.mp3' )
+const hitsOnesTwoMinusThree = require('./../Common/Assets/audio/20 3 .mp3' )
+const hitsOnesTwoPlusThree = require('./../Common/Assets/audio/20 3 пр.mp3' )
+const hitsOnesTwoMinusFour = require('./../Common/Assets/audio/20 4.mp3' )
+const hitsOnesTwoPlusFour = require('./../Common/Assets/audio/20 4 пр.mp3' )
+const hitsOnesTwoMinusFive = require('./../Common/Assets/audio/20 5.mp3' )
+const hitsOnesTwoPlusFive = require('./../Common/Assets/audio/20 5 пр.mp3' )
+
+// Весна
+
+const springMinusOne = require('./../Common/Assets/audio/весна 1.mp3' )
+const springPlusOne = require('./../Common/Assets/audio/весна 1 пр.mp3' )
+const springMinusTwo = require('./../Common/Assets/audio/весна 2.mp3' )
+const springPlusTwo = require('./../Common/Assets/audio/весна 2 пр.mp3' )
+const springMinusThree = require('./../Common/Assets/audio/весна 3.mp3' )
+const springPlusThree = require('./../Common/Assets/audio/весна 3 пр.mp3' )
+const springMinusFour = require('./../Common/Assets/audio/весна 4.mp3' )
+const springPlusFour = require('./../Common/Assets/audio/весна 4 пр.mp3' )
+const springMinusFive = require('./../Common/Assets/audio/весна 5.mp3' )
+const springPlusFive = require('./../Common/Assets/audio/весна 5 пр.mp3' )
+
+// Съедобное
+
+const edibleMinusOne = require('./../Common/Assets/audio/се 1.mp3' )
+const ediblePlusOne = require('./../Common/Assets/audio/се 1 пр.mp3' )
+const edibleMinusTwo = require('./../Common/Assets/audio/се 2.mp3' )
+const ediblePlusTwo = require('./../Common/Assets/audio/се 2 пр.mp3' )
+const edibleMinusThree = require('./../Common/Assets/audio/се 3.mp3' )
+const ediblePlusThree = require('./../Common/Assets/audio/се 3 пр.mp3' )
+const edibleMinusFour = require('./../Common/Assets/audio/се 4.mp3' )
+const ediblePlusFour = require('./../Common/Assets/audio/се 4 пр.mp3' )
+const edibleMinusFive = require('./../Common/Assets/audio/се 5 .mp3' )
+const ediblePlusFive = require('./../Common/Assets/audio/се 5 пр.mp3' )
+
+//Зарубежное Ретро
+
+const retroTwoMinusOne = require('./../Common/Assets/audio/zre 1 .mp3')
+const retroTwoPlusOne = require('./../Common/Assets/audio/zre 1 pr .mp3')
+const retroTwoMinusTwo = require('./../Common/Assets/audio/zre 2.mp3')
+const retroTwoPlusTwo = require('./../Common/Assets/audio/zre 2 pr .mp3')
+const retroTwoMinusThree = require('./../Common/Assets/audio/zre 3.mp3')
+const retroTwoPlusThree = require('./../Common/Assets/audio/zre 3 pr.mp3')
+const retroTwoMinusFour = require('./../Common/Assets/audio/zre 4.mp3')
+const retroTwoPlusFour = require('./../Common/Assets/audio/zre 4 pr.mp3')
+const retroTwoMinusFive = require('./../Common/Assets/audio/zre 5.mp3')
+const retroTwoPlusFive = require('./../Common/Assets/audio/zre 5 pr.mp3')
+
+
+
+
+
+
+
 export const dataSongs: roundType[] = [{
     round: 0,
     path: '/roundZero',
@@ -2298,6 +2413,452 @@ export const dataSongs: roundType[] = [{
                         track: airFiveMinusFive,
                         original: airFivePlusFive,
                         trackName: 'Юрий Шатунов - Детство',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 8,
+        path: '/roundEight',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 90-х',
+                path: '/nintysHits2',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: nintyHitsThreeMinusOne,
+                    original: nintyHitsThreePlusOne,
+                    trackName: 'Александр Иванов/Рондо - Боже, Какой Пустяк',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: nintyHitsThreeMinusTwo,
+                        original: nintyHitsThreePlusTwo,
+                        trackName: 'Олег Газманов - Танцуй Пока Молодой',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: nintyHitsThreeMinusThree,
+                        original: nintyHitsThreePlusThree,
+                        trackName: 'На-на - Шляпа',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: nintyHitsThreeMinusFour,
+                        original: nintyHitsThreePlusFour,
+                        trackName: 'Ирина Аллегрова - Фотография',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: nintyHitsThreeMinusFive,
+                        original: nintyHitsThreePlusFive,
+                        trackName: 'Евгений Осин - Качка',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Женские Имена',
+                path: '/womenNamesThree',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: womenNameThreeMinusOne,
+                        original: womenNamesThreePlusOne,
+                        trackName: 'Артур Пирожков - Чика',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: womenNameThreeMinusTwo,
+                        original: womenNamesThreePlusTwo,
+                        trackName: 'Валерий Меладзе - Сэра',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: womenNameThreeMinusThree,
+                        original: womenNamesThreePlusThree,
+                        trackName: 'Иванушки - Кукла',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: womenNameThreeMinusFour,
+                        original: womenNamesThreePlusFour,
+                        trackName: 'Андрей Державин - Не Плачь Алиса',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: womenNameThreeMinusFive,
+                        original: womenNamesThreePlusFive,
+                        trackName: 'Конец Фильма - Элис',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Цифры',
+                path: '/digitsCategory2',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: cifryTwoMinusOne,
+                        original: cifryTwoPlusOne,
+                        trackName: 'Дмитрий Нестеров feat. Бурановские Бабушки - Мне Снова 18',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: cifryTwoMinusTwo,
+                        original: cifryTwoPlusTwo,
+                        trackName: 'Анна Герман - Когда Цвели Сады',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: cifryTwoMinusThree,
+                        original: cifryTwoPlusThree,
+                        trackName: 'Юрий Антонов - 20 лЛт Спустя',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: cifryTwoMinusFour,
+                        original: cifryTwoPlusFour,
+                        trackName: 'ВИА Гра и Валерий Меладзе - Океан и Три Реки',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: cifryTwoMinusFive,
+                        original: cifryTwoPlusFive,
+                        trackName: 'Комбинация - Два Кусочека Колбаски',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Осень',
+                path: '/autumn',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: autumnMinusOne,
+                        original: autumnPlusOne,
+                        trackName: 'ДДТ - Осень',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: autumnMinusTwo,
+                        original: autumnPlusTwo,
+                        trackName: 'Лицей - Осень',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: autumnMinusThree,
+                        original: autumnPlusThree,
+                        trackName: 'Михаил Шуфутинский - 3 Сентября',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: autumnMinusFour,
+                        original: autumnPlusFour,
+                        trackName: 'Александр Буйнов - Падают Листья',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: autumnMinusFive,
+                        original: autumnPlusFive,
+                        trackName: "Алла Пугачева - Осенний поцелуй",
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Русский Рок',
+                path: '/russianRock2',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: rusRocTwoMinusOne,
+                        original: rusRockTwoPlusOne,
+                        trackName: 'Алиса - Трасса Е-95',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: rusRocTwoMinusTwo,
+                        original: rusRockTwoPlusTwo,
+                        trackName: 'Uma2Rman - Просковья',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: rusRocTwoMinusThree,
+                        original: rusRockTwoPlusThree,
+                        trackName: 'Танцв Минус - Город',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: rusRocTwoMinusFour,
+                        original: rusRockTwoPlusFour,
+                        trackName: 'Ленинград - Мне Бы в Небо',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: rusRocTwoMinusFive,
+                        original: rusRockTwoPlusFive,
+                        trackName: 'Кино - Пачка Сигарет',
+                        isComplete: false
+                    }
+                ]
+
+            },]
+
+
+    },
+    {
+        round: 9,
+        path: '/roundNine',
+        isCompletedRound: false,
+        categories: [
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 90-х',
+                path: '/nintysHits3',
+                tracks: [{
+                    tractTitle: "TRACK 1",
+                    track: nintyHitsFourMinusOne,
+                    original: nintyHitsFourPlusOne,
+                    trackName: 'Мурат Насыров ft. Алена Апина - Лунные ночи',
+                    isComplete: false
+                },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: nintyHitsFourMinusTwo,
+                        original: nintyHitsFourPlusTwo,
+                        trackName: 'Леприконсы - Хали-Гали',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: nintyHitsFourMinusThree,
+                        original: nintyHitsFourPlusThree,
+                        trackName: 'Владимир Пресняков feat. Леонид Агутин - Аэропорты',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: nintyHitsFourMinusFour,
+                        original: nintyHitsFourPlusFour,
+                        trackName: 'Валерий Сюткин - 7 тысяч над Землёй',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: nintyHitsFourMinusFive,
+                        original: nintyHitsFourPlusFive,
+                        trackName: 'Белый Орёл - Потому что нельзя быть красивой такой',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Хиты 2000-х',
+                path: '/twentyHits',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: hitsOnesTwoMinusOne,
+                        original: hitsOnesTwoPlusOne,
+                        trackName: 'Акула - Кислотный DJ',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: hitsOnesTwoMinusTwo,
+                        original: hitsOnesTwoPlusTwo,
+                        trackName: 'ТаТу - Мальчик - Гей',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: hitsOnesTwoMinusThree,
+                        original: hitsOnesTwoPlusThree,
+                        trackName: 'Гости Из Будущего - Так Отважно',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: hitsOnesTwoMinusFour,
+                        original: hitsOnesTwoPlusFour,
+                        trackName: 'Кристина Орбакайте - Перелетная птица',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: hitsOnesTwoMinusFive,
+                        original: hitsOnesTwoPlusFive,
+                        trackName: 'Юлия Савичева - Если В Сердце Живёт Любовь',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Весна',
+                path: '/spring',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: springMinusOne,
+                        original: springPlusOne,
+                        trackName: 'Воплі Відоплясова - Весна',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: springMinusTwo,
+                        original: springPlusTwo,
+                        trackName: 'Потап и Настя - Чумачечая Весна',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: springMinusThree,
+                        original: springPlusThree,
+                        trackName: 'Стрелки – Весна',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: springMinusFour,
+                        original: springPlusFour,
+                        trackName: 'Ю-Питер - Девушка по городу',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: springMinusFive,
+                        original: springPlusFive,
+                        trackName: 'Алсу - Весна',
+                        isComplete: false
+                    }
+                ]
+
+            },
+
+            {
+                isCompletedCategory: false,
+                name: 'Съедобное',
+                path: '/edible',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: edibleMinusOne,
+                        original: ediblePlusOne,
+                        trackName: 'Дискотека Аврия - Яйца',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: edibleMinusTwo,
+                        original: ediblePlusTwo,
+                        trackName: 'Блестящие - Апельсиновая Песня',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: edibleMinusThree,
+                        original: ediblePlusThree,
+                        trackName: 'Александр Солодуха - Виноград',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: edibleMinusFour,
+                        original: ediblePlusFour,
+                        trackName: 'Пропаганда - Яй-я',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: edibleMinusFive,
+                        original: ediblePlusFive,
+                        trackName: 'Горячие Головы-Бананы Лопала Бомба',
+                        isComplete: false
+                    }
+                ]
+
+            },
+            {
+                isCompletedCategory: false,
+                name: 'Зарубежное Ретро',
+                path: '/foreignRetro2',
+                tracks: [
+                    {
+                        tractTitle: "TRACK 1",
+                        track: retroTwoMinusOne,
+                        original: retroTwoPlusOne,
+                        trackName: 'Haddaway - What Is Love',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 2",
+                        track: retroTwoMinusTwo,
+                        original: retroTwoPlusTwo,
+                        trackName: 'Mr. President - Coco Jambo',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 3",
+                        track: retroTwoMinusThree,
+                        original: retroTwoPlusThree,
+                        trackName: 'No Doubt - Dont Speak',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 4",
+                        track: retroTwoMinusFour,
+                        original: retroTwoPlusFour,
+                        trackName: 'Bad Boys Blue - Youre a woman',
+                        isComplete: false
+                    },
+                    {
+                        tractTitle: "TRACK 5",
+                        track: retroTwoMinusFive,
+                        original: retroTwoPlusFive,
+                        trackName: 'E-Type - Set The World On Fire',
                         isComplete: false
                     }
                 ]

@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import style from './StartMenu.module.css'
 import {Link} from "react-router-dom";
 import {Score} from "./Score";
-import {dataSongs, roundType} from "./songs.data";
+import {dataSongs} from "./songs.data";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../Store/store";
 import {removePlayers} from "../Store/NewGameReducer";
 import {resetGame} from "../Store/songsReducer";
+import {roundType} from "./types";
 
 
 export const StartMenu = () => {

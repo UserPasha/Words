@@ -3,7 +3,7 @@ import style from './Modal.module.css'
 import {Link} from "react-router-dom";
 import smile from '../assets/images/match/smile.svg'
 import sad from '../assets/images/match/sad.svg'
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {Score} from "./Score/Score";
 import {restartGame} from "../Utils/matchFunctions";
 import {ICard} from "../hooks/useMatch";

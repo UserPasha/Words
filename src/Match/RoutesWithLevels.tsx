@@ -1,44 +1,7 @@
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {Match} from "./Match";
 import {firstLevel, polmoFirstLevel, secondLevel} from "./Levels";
 import {Route, Routes} from "react-router-dom";
-
-const levels = [
-    {
-        path: PATH.ONE,
-        component: Match,
-        cardsToPlay: firstLevel,
-        duration: 30,
-        nextPath: PATH.TWO,
-        rotate: false,
-        description: 'Найти пару',
-        levelNumber: 0,
-        defaultPoints: 100,
-    },
-    {
-        path: PATH.TWO,
-        component: Match,
-        cardsToPlay: secondLevel,
-        duration: 40,
-        nextPath: PATH.POLMOONE,
-        rotate: false,
-        description: 'Найти пару',
-        levelNumber: 1,
-        defaultPoints: 120,
-    },
-    {
-        path: PATH.POLMOONE,
-        component: Match,
-        cardsToPlay: polmoFirstLevel,
-        duration: 45,
-        nextPath: PATH.FILTRON,
-        rotate: false,
-        description: 'Найти пару',
-        levelNumber: 2,
-        defaultPoints: 150,
-    },
-
-
 
 
 
@@ -55,9 +18,9 @@ const levels = [
     //     defaultPoints: 200,
     // },
     // Add other levels here with their respective properties
-];
 
-const generateRoutes = () => {
+
+
 //     return levels.map((level, index) => (
 //         <Route
 //             key={index}
@@ -77,7 +40,7 @@ const generateRoutes = () => {
 // }
 //     />
 // ));
-};
+
 
 // Inside your JSX component
 

@@ -3,7 +3,7 @@ import style from './ProfileBoard.module.css'
 import {useSelector} from "react-redux";
 import {RootState} from "../../Store/store";
 import {Link} from "react-router-dom";
-import {PATH} from "../../AppRoutes/AppRoutes";
+import {PATH} from "../../AppRoutes/Path";
 import profileBonusBG from '../../assets/images/match/bg/ProfileCoinsBG.svg'
 export const ProfileBoard = () => {
 

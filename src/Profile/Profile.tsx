@@ -17,7 +17,7 @@ import multiplyBonusBG from '../assets/images/match/bg/multiplyBonusBG.svg'
 import profileBonusBG from '../assets/images/match/bg/ProfileCoinsBG.svg'
 import timeBonusBG from '../assets/images/match/bg/timeBonusBG.svg'
 import {Link} from "react-router-dom";
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {useBonus} from "../hooks/useBonus";
 
 

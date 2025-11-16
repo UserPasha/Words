@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import style from './GameBoard.module.css'
-import {PATH} from "../AppRoutes/AppRoutes";
+import {PATH} from "../AppRoutes/Path";
 import {Row} from "./Row";
 import {useSelector} from "react-redux";
 import {RootState} from "../Store/store";
