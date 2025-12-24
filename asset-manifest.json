@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Words/static/css/main.e2fa98cf.css",
-    "main.js": "/Words/static/js/main.ff70e711.js",
+    "main.js": "/Words/static/js/main.a477c854.js",
     "static/js/787.72486cdd.chunk.js": "/Words/static/js/787.72486cdd.chunk.js",
     "static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.mp3": "/Words/static/media/Tomoyasu Hotei - Battle Without Honor or Humanity.470406d54dbe33323e8e.mp3",
     "static/media/air minus 4 3.mp3": "/Words/static/media/air minus 4 3.41d60f6de3ee66f98e4f.mp3",
@@ -551,11 +551,11 @@
     "static/media/plus.svg": "/Words/static/media/plus.6e61cd21fa7bff765c021bd0df9d895d.svg",
     "static/media/ok.svg": "/Words/static/media/ok.28d5f9f4df86ff9cdc2c2a01a1e2f8a8.svg",
     "main.e2fa98cf.css.map": "/Words/static/css/main.e2fa98cf.css.map",
-    "main.ff70e711.js.map": "/Words/static/js/main.ff70e711.js.map",
+    "main.a477c854.js.map": "/Words/static/js/main.a477c854.js.map",
     "787.72486cdd.chunk.js.map": "/Words/static/js/787.72486cdd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e2fa98cf.css",
-    "static/js/main.ff70e711.js"
+    "static/js/main.a477c854.js"
   ]
 }
