@@ -35,9 +35,10 @@ export const StartMenu = () => {
                 {gameRounds.map((gr, index) =>
                     <div key={index}
                          className={gr.isCompletedRound ? style.levelBoxWrapperComplete : style.levelBoxWrapper}>
-                        <Link to={gr.path}>
+                        <Link to={`/round/${gr.round}`}>
                             <div className={style.levelBox}>{gr.round}</div>
                         </Link>
+
                     </div>
                 )}
             </div>

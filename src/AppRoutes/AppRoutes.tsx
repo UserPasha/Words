@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../Store/store";
 
 import { Home } from "../Home/Home";
 import { Cards } from "../Cards/Cards";
@@ -17,16 +19,17 @@ import { StartMenu } from "../Game/StartMenu";
 import { Categories } from "../Game/Categories";
 import { NewGame } from "../Game/NewGame";
 
-import { dataSongs } from "../Game/songs.data";
-import {SmartListComponent} from "../Home/Batis"; // твой источник раундов/категорий
-
+import { SmartListComponent } from "../Home/Batis";
 
 const AppRoutes = () => {
 
 
-    // Роуты, которые не зависят от раундов
-    const staticRoutes = (
-        <>
+    const rounds = useSelector((state: RootState) => state.songs);
+
+    return (
+        <Routes>
+
+            {/* --- СТАТИЧЕСКИЕ РОУТЫ --- */}
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/word" element={<CurrentCard />} />
@@ -39,84 +42,41 @@ const AppRoutes = () => {
             <Route path="/gameSettings" element={<Settings />} />
             <Route path="/startmenu" element={<StartMenu />} />
             <Route path="/batis" element={<SmartListComponent />} />
-        </>
-    );
+
+            {/* --- РАУНДЫ --- */}
 
 
-    // --- ДИНАМИЧЕСКИЕ РОУТЫ ДЛЯ РАУНДОВ ---
-    const roundRoutes = dataSongs.map(round => (
-        <React.Fragment key={round.round}>
-
-            {/* --- СТАРЫЙ ПУТЬ ДЛЯ ОБРАТНОЙ СОВМЕСТИМОСТИ --- */}
             <Route
-                path={round.path}
-                element={
-                    <Categories
-                        CategoryNameAndPath={round.categories}
-                        roundNumber={round.round}
-                    />
-                }
+                path="/round/:round/category/:categoryId"
+                element={<NewGame />}
             />
 
-            {/* --- НОВЫЙ ДИНАМИЧЕСКИЙ ПУТЬ --- */}
-            <Route
-                path={`/round/${round.round}`}
-                element={
-                    <Categories
-                        CategoryNameAndPath={round.categories}
-                        roundNumber={round.round}
+            {rounds.map(round => (
+                <React.Fragment key={round.round}>
+                    {/* Список категорий в раунде */}
+                    <Route
+                        path={`/round/${round.round}`}
+                        element={<Categories CategoryNameAndPath={round.categories}
+                                             roundNumber={round.round}
+                        />}
                     />
-                }
-            />
 
-        </React.Fragment>
-    ));
+                    {/* Конкретная категория */}
 
-
-    // --- ДИНАМИЧЕСКИЕ РОУТЫ ДЛЯ КАТЕГОРИЙ ---
-    const categoryRoutes = dataSongs.flatMap(round =>
-        round.categories.map((category, index) => (
-            <React.Fragment key={round.round + "_" + index}>
-
-                {/* --- СТАРЫЙ ПУТЬ --- */}
-                <Route
-                    path={category.path}
-                    element={
-                        <NewGame
-                            arraySongs={category.tracks}
-                            categoryTitle={category.name}
-                            backWay={round.path}
-                            roundNumber={round.round}
-                        />
-                    }
-                />
-
-                {/* --- НОВЫЙ ПУТЬ --- */}
-                <Route
-                    path={`/round/${round.round}/category/${index}`}
-                    element={
-                        <NewGame
-                            arraySongs={category.tracks}
-                            categoryTitle={category.name}
-                            backWay={round.path}
-                            roundNumber={round.round}
-                        />
-                    }
-                />
-
-            </React.Fragment>
-        ))
-    );
+                </React.Fragment>
+            ))}
 
 
-    return (
-        <Routes>
-
-            {staticRoutes}
-
-            {roundRoutes}
-
-            {categoryRoutes}
+            {/* --- КАТЕГОРИИ --- */}
+            {/*{rounds.flatMap(round =>
+                round.categories.map(category => (
+                    <Route
+                        key={`${round.round}_${category.id}`}
+                        path={`/round/${round.round}/category/:categoryId`}
+                        element={<NewGame  />}
+                    />
+                ))
+            )} */}
 
         </Routes>
     );
